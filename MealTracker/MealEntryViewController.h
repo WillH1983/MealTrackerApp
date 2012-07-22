@@ -12,7 +12,7 @@
 - (void)viewController:(id)sender didFinishWithMealMutableDictionary:(NSMutableDictionary *)dictionary;
 @end
 
-@interface MealEntryViewController : UIViewController
+@interface MealEntryViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *mealNameText;
 @property (weak, nonatomic) IBOutlet UITextField *carbsText;
 @property (weak, nonatomic) IBOutlet UITextField *dietaryFiberText;
@@ -23,5 +23,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *mealDescriptionText;
 
 @property (nonatomic, weak) id <MealTextEntryDelegate> textEntryDelegate;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end

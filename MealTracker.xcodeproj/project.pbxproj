@@ -48,7 +48,7 @@
 		BEDEAC6415BB9470008D3BF4 /* Meal+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Meal+Create.m"; sourceTree = "<group>"; };
 		BEDEAC6E15BBA0CA008D3BF4 /* MealEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealEntryViewController.h; sourceTree = "<group>"; };
 		BEDEAC6F15BBA0CA008D3BF4 /* MealEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealEntryViewController.m; sourceTree = "<group>"; };
-		BEDEAC7115BBA3D8008D3BF4 /* NSMutableDictionary+MealDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; path = "NSMutableDictionary+MealDictionary.h"; sourceTree = "<group>"; };
+		BEDEAC7115BBA3D8008D3BF4 /* NSMutableDictionary+MealDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+MealDictionary.h"; sourceTree = "<group>"; };
 		BEDEAC7215BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+MealDictionary.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
