@@ -49,10 +49,34 @@
     [[self presentingViewController] dismissModalViewControllerAnimated:YES];
 }
 
+- (IBAction)cancelButtonPressed:(UIBarButtonItem *)sender 
+{
+   [[self presentingViewController] dismissModalViewControllerAnimated:YES]; 
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] 
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [tap setCancelsTouchesInView:NO];
+    [self.view addGestureRecognizer:tap];
+
+}
+
+-(void)dismissKeyboard {
+    [self.mealNameText resignFirstResponder];
+    [self.carbsText resignFirstResponder];
+    [self.dietaryFiberText resignFirstResponder];
+    [self.totalProteinText resignFirstResponder];
+    [self.servingSizeText resignFirstResponder];
+    [self.totalFatText resignFirstResponder];
+    [self.WWPointsText resignFirstResponder];
+    [self.mealDescriptionText resignFirstResponder];
 }
 
 - (void)viewDidUnload
