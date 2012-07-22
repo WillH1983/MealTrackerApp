@@ -13,6 +13,15 @@
 		BE3AFEFC15BB754F006BC0D6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE3AFEFA15BB754F006BC0D6 /* InfoPlist.strings */; };
 		BE3AFEFE15BB754F006BC0D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AFEFD15BB754F006BC0D6 /* main.m */; };
 		BE3AFF0215BB754F006BC0D6 /* MealTrackerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AFF0115BB754F006BC0D6 /* MealTrackerAppDelegate.m */; };
+		BE3AFF0A15BB75BD006BC0D6 /* MealTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE3AFF0815BB75BD006BC0D6 /* MealTracker.xcdatamodeld */; };
+		BE3AFF0C15BB79F9006BC0D6 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE3AFF0B15BB79F9006BC0D6 /* iPhone.storyboard */; };
+		BE3AFF0F15BB7A3A006BC0D6 /* MealTrackerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AFF0E15BB7A3A006BC0D6 /* MealTrackerTableViewController.m */; };
+		BE3AFF1515BB7E5B006BC0D6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3AFF1415BB7E5B006BC0D6 /* CoreData.framework */; };
+		BE3AFF1815BB7F88006BC0D6 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AFF1715BB7F88006BC0D6 /* CoreDataTableViewController.m */; };
+		BEDEAC6115BB9412008D3BF4 /* Meal.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDEAC6015BB9412008D3BF4 /* Meal.m */; };
+		BEDEAC6515BB9470008D3BF4 /* Meal+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDEAC6415BB9470008D3BF4 /* Meal+Create.m */; };
+		BEDEAC7015BBA0CA008D3BF4 /* MealEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDEAC6F15BBA0CA008D3BF4 /* MealEntryViewController.m */; };
+		BEDEAC7315BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDEAC7215BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +29,27 @@
 		BE3AFEF115BB754F006BC0D6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BE3AFEF315BB754F006BC0D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BE3AFEF515BB754F006BC0D6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		BE3AFEF915BB754F006BC0D6 /* MealTracker-Info.plist */ = {isa = PBXFileReference; path = "MealTracker-Info.plist"; sourceTree = "<group>"; };
+		BE3AFEF915BB754F006BC0D6 /* MealTracker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MealTracker-Info.plist"; sourceTree = "<group>"; };
 		BE3AFEFB15BB754F006BC0D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BE3AFEFD15BB754F006BC0D6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BE3AFEFF15BB754F006BC0D6 /* MealTracker-Prefix.pch */ = {isa = PBXFileReference; path = "MealTracker-Prefix.pch"; sourceTree = "<group>"; };
-		BE3AFF0015BB754F006BC0D6 /* MealTrackerAppDelegate.h */ = {isa = PBXFileReference; path = MealTrackerAppDelegate.h; sourceTree = "<group>"; };
+		BE3AFEFF15BB754F006BC0D6 /* MealTracker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MealTracker-Prefix.pch"; sourceTree = "<group>"; };
+		BE3AFF0015BB754F006BC0D6 /* MealTrackerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MealTrackerAppDelegate.h; sourceTree = "<group>"; };
 		BE3AFF0115BB754F006BC0D6 /* MealTrackerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MealTrackerAppDelegate.m; sourceTree = "<group>"; };
+		BE3AFF0915BB75BD006BC0D6 /* MealTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MealTracker.xcdatamodel; sourceTree = "<group>"; };
+		BE3AFF0B15BB79F9006BC0D6 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
+		BE3AFF0D15BB7A3A006BC0D6 /* MealTrackerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealTrackerTableViewController.h; sourceTree = "<group>"; };
+		BE3AFF0E15BB7A3A006BC0D6 /* MealTrackerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealTrackerTableViewController.m; sourceTree = "<group>"; };
+		BE3AFF1415BB7E5B006BC0D6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BE3AFF1615BB7F88006BC0D6 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		BE3AFF1715BB7F88006BC0D6 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		BEDEAC5F15BB9412008D3BF4 /* Meal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meal.h; sourceTree = "<group>"; };
+		BEDEAC6015BB9412008D3BF4 /* Meal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meal.m; sourceTree = "<group>"; };
+		BEDEAC6315BB9470008D3BF4 /* Meal+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Meal+Create.h"; sourceTree = "<group>"; };
+		BEDEAC6415BB9470008D3BF4 /* Meal+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Meal+Create.m"; sourceTree = "<group>"; };
+		BEDEAC6E15BBA0CA008D3BF4 /* MealEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealEntryViewController.h; sourceTree = "<group>"; };
+		BEDEAC6F15BBA0CA008D3BF4 /* MealEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealEntryViewController.m; sourceTree = "<group>"; };
+		BEDEAC7115BBA3D8008D3BF4 /* NSMutableDictionary+MealDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; path = "NSMutableDictionary+MealDictionary.h"; sourceTree = "<group>"; };
+		BEDEAC7215BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+MealDictionary.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE3AFF1515BB7E5B006BC0D6 /* CoreData.framework in Frameworks */,
 				BE3AFEF215BB754F006BC0D6 /* UIKit.framework in Frameworks */,
 				BE3AFEF415BB754F006BC0D6 /* Foundation.framework in Frameworks */,
 				BE3AFEF615BB754F006BC0D6 /* CoreGraphics.framework in Frameworks */,
@@ -45,6 +70,7 @@
 		BE3AFEE215BB754F006BC0D6 = {
 			isa = PBXGroup;
 			children = (
+				BE3AFF1415BB7E5B006BC0D6 /* CoreData.framework */,
 				BE3AFEF715BB754F006BC0D6 /* MealTracker */,
 				BE3AFEF015BB754F006BC0D6 /* Frameworks */,
 				BE3AFEEE15BB754F006BC0D6 /* Products */,
@@ -72,6 +98,20 @@
 		BE3AFEF715BB754F006BC0D6 /* MealTracker */ = {
 			isa = PBXGroup;
 			children = (
+				BEDEAC6315BB9470008D3BF4 /* Meal+Create.h */,
+				BEDEAC6415BB9470008D3BF4 /* Meal+Create.m */,
+				BEDEAC7115BBA3D8008D3BF4 /* NSMutableDictionary+MealDictionary.h */,
+				BEDEAC7215BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m */,
+				BE3AFF0815BB75BD006BC0D6 /* MealTracker.xcdatamodeld */,
+				BEDEAC5F15BB9412008D3BF4 /* Meal.h */,
+				BEDEAC6015BB9412008D3BF4 /* Meal.m */,
+				BE3AFF0B15BB79F9006BC0D6 /* iPhone.storyboard */,
+				BEDEAC6E15BBA0CA008D3BF4 /* MealEntryViewController.h */,
+				BEDEAC6F15BBA0CA008D3BF4 /* MealEntryViewController.m */,
+				BE3AFF0D15BB7A3A006BC0D6 /* MealTrackerTableViewController.h */,
+				BE3AFF0E15BB7A3A006BC0D6 /* MealTrackerTableViewController.m */,
+				BE3AFF1615BB7F88006BC0D6 /* CoreDataTableViewController.h */,
+				BE3AFF1715BB7F88006BC0D6 /* CoreDataTableViewController.m */,
 				BE3AFF0015BB754F006BC0D6 /* MealTrackerAppDelegate.h */,
 				BE3AFF0115BB754F006BC0D6 /* MealTrackerAppDelegate.m */,
 				BE3AFEF815BB754F006BC0D6 /* Supporting Files */,
@@ -142,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE3AFEFC15BB754F006BC0D6 /* InfoPlist.strings in Resources */,
+				BE3AFF0C15BB79F9006BC0D6 /* iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +195,13 @@
 			files = (
 				BE3AFEFE15BB754F006BC0D6 /* main.m in Sources */,
 				BE3AFF0215BB754F006BC0D6 /* MealTrackerAppDelegate.m in Sources */,
+				BE3AFF0A15BB75BD006BC0D6 /* MealTracker.xcdatamodeld in Sources */,
+				BE3AFF0F15BB7A3A006BC0D6 /* MealTrackerTableViewController.m in Sources */,
+				BE3AFF1815BB7F88006BC0D6 /* CoreDataTableViewController.m in Sources */,
+				BEDEAC6115BB9412008D3BF4 /* Meal.m in Sources */,
+				BEDEAC6515BB9470008D3BF4 /* Meal+Create.m in Sources */,
+				BEDEAC7015BBA0CA008D3BF4 /* MealEntryViewController.m in Sources */,
+				BEDEAC7315BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +307,22 @@
 				BE3AFF0715BB754F006BC0D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BE3AFF0815BB75BD006BC0D6 /* MealTracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BE3AFF0915BB75BD006BC0D6 /* MealTracker.xcdatamodel */,
+			);
+			currentVersion = BE3AFF0915BB75BD006BC0D6 /* MealTracker.xcdatamodel */;
+			path = MealTracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BE3AFEE415BB754F006BC0D6 /* Project object */;
 }
