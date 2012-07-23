@@ -98,6 +98,15 @@
     self.WWPointsText.delegate = self;
     self.mealDescriptionText.delegate = self;
     
+    self.mealNameText.text = @"";
+    self.carbsText.text = @"";
+    self.dietaryFiberText.text = @"";
+    self.totalProteinText.text = @"";
+    self.servingSizeText.text = @"";
+    self.totalFatText.text = @"";
+    self.WWPointsText.text = @"";
+    self.mealDescriptionText.text = @"";
+    
     [self registerForKeyboardNotifications];
 }
 

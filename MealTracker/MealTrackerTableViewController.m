@@ -30,6 +30,8 @@
 {
     [self.mealDatabase.managedObjectContext performBlock:^{
         [Meal mealForDictionaryInfo:dictionary inManagedObjectContext:self.mealDatabase.managedObjectContext];
+        BOOL success = [self.mealDatabase.managedObjectContext save:NULL];
+        NSLog(@"The value of the bool is %@\n", (success ? @"YES" : @"NO"));
     }];
 }
 
@@ -125,7 +127,7 @@
     Meal *meal = [self.fetchedResultsController objectAtIndexPath:indexPath];
     // Then configure the cell using it ...
     cell.textLabel.text = meal.name;
-    cell.detailTextLabel.text = meal.mealDescription;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ Weight Watchers Points", [meal.weightWatchersPlusPoints stringValue]];
     
     return cell;
 }
