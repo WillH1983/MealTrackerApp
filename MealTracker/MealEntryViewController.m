@@ -37,18 +37,28 @@
 
 - (IBAction)saveButtonPressed:(UIBarButtonItem *)sender 
 {
-    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
-    dictionary.name = mealNameText.text;
-    dictionary.description = mealDescriptionText.text;
-    dictionary.carbs = [NSDecimalNumber decimalNumberWithString:carbsText.text];
-    dictionary.dietaryFiber = [NSDecimalNumber decimalNumberWithString:dietaryFiberText.text];
-    dictionary.protein = [NSDecimalNumber decimalNumberWithString:totalProteinText.text];
-    dictionary.serving = servingSizeText.text;
-    dictionary.totalFat = [NSDecimalNumber decimalNumberWithString:totalFatText.text];
-    dictionary.points = [NSDecimalNumber decimalNumberWithString:WWPointsText.text];
+    NSString *mealName = self.mealNameText.text;
+    [mealName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
-    [self.textEntryDelegate viewController:self didFinishWithMealMutableDictionary:dictionary];
-    [[self presentingViewController] dismissModalViewControllerAnimated:YES];
+    if ([mealName length] > 0)
+    {
+        NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
+        dictionary.name = mealNameText.text;
+        dictionary.description = mealDescriptionText.text;
+        dictionary.carbs = [NSDecimalNumber decimalNumberWithString:carbsText.text];
+        dictionary.dietaryFiber = [NSDecimalNumber decimalNumberWithString:dietaryFiberText.text];
+        dictionary.protein = [NSDecimalNumber decimalNumberWithString:totalProteinText.text];
+        dictionary.serving = servingSizeText.text;
+        dictionary.totalFat = [NSDecimalNumber decimalNumberWithString:totalFatText.text];
+        dictionary.points = [NSDecimalNumber decimalNumberWithString:WWPointsText.text];
+        
+        [self.textEntryDelegate viewController:self didFinishWithMealMutableDictionary:dictionary];
+        [[self presentingViewController] dismissModalViewControllerAnimated:YES];
+    }
+    else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Meal Tracker" message:@"Please Enter a Meal Name" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 - (IBAction)cancelButtonPressed:(UIBarButtonItem *)sender 
@@ -129,17 +139,11 @@
 {
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-     
                                              selector:@selector(keyboardWasShown:)
-     
                                                  name:UIKeyboardDidShowNotification object:nil];
     
-    
-    
     [[NSNotificationCenter defaultCenter] addObserver:self
-     
                                              selector:@selector(keyboardWillBeHidden:)
-     
                                                  name:UIKeyboardWillHideNotification object:nil];
     
     
