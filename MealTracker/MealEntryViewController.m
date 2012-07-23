@@ -55,6 +55,17 @@
 {
    [[self presentingViewController] dismissModalViewControllerAnimated:YES]; 
 }
+//pp = max {round((p x 16 + c x 19 + fa x 45)/175) - fi x (2/25), 0}, where pp is ProPoints, p is protein, c is carbohydrate, fa is total fat, and fi is dietary fiber, all in grams
+- (NSDecimalNumber *)weightWatchersPointsForProtein:(NSDecimalNumber *)p 
+                                      carbohydrates:(NSDecimalNumber *)c 
+                                           totalFat:(NSDecimalNumber *)fa 
+                                    andDietaryFiber:(NSDecimalNumber *)fi
+{
+    
+    double pp = MAX(round(([p doubleValue] * 16 + [c doubleValue] * 19 + [fa doubleValue] * 45)/175) - [fi doubleValue] * (2/25), 0);
+    NSDecimalNumber *num = [[NSDecimalNumber alloc] initWithDouble:pp];
+    return num;
+}
 
 - (void)viewDidLoad
 {
@@ -147,7 +158,7 @@
     
     
     
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, self.view.bounds.size.height + kbSize.height, 0.0);
     
     self.scrollView.contentInset = contentInsets;
     
@@ -159,14 +170,13 @@
     
     // Your application might not need or want this behavior.
     
-    CGRect aRect = self.view.frame;
+    CGRect aRect = self.scrollView.bounds;
     
     aRect.size.height -= kbSize.height;
-    NSLog(@"%@", self.activeField.frame.origin.x);
     
     if (!CGRectContainsPoint(aRect, self.activeField.frame.origin) ) {
         
-        CGPoint scrollPoint = CGPointMake(0.0, self.activeField.frame.origin.y-kbSize.height);
+        CGPoint scrollPoint = CGPointMake(0.0, self.activeField.frame.origin.y-kbSize.height+self.scrollView.frame.origin.y + 10);
         
         [self.scrollView setContentOffset:scrollPoint animated:YES];
         
@@ -177,7 +187,6 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 
 {
-    
     self.activeField = textField;
     
 }
@@ -187,8 +196,15 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField
 
 {
-    
     self.activeField = nil;
+    if (([self.totalProteinText.text length] > 0) & ([self.carbsText.text length] > 0) & ([self.totalFatText.text length] > 0) & ([self.dietaryFiberText.text length] > 0))
+    {
+        NSDecimalNumber *wwPoints = [self weightWatchersPointsForProtein:[NSDecimalNumber decimalNumberWithString:totalProteinText.text] 
+                                                           carbohydrates:[NSDecimalNumber decimalNumberWithString:carbsText.text] 
+                                                                totalFat:[NSDecimalNumber decimalNumberWithString:totalFatText.text] 
+                                                         andDietaryFiber:[NSDecimalNumber decimalNumberWithString:dietaryFiberText.text]];
+        self.WWPointsText.text = [wwPoints stringValue]; 
+    }
     
 }
 
