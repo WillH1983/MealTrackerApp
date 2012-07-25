@@ -40,19 +40,23 @@
     NSError *error = nil;
     NSArray *matches = [context executeFetchRequest:request error:&error];
     
-    if (!matches || ([matches count] > 1)) {
-        // handle error
-    } else {
+    if (![matches count])
+    {
         meal = [NSEntityDescription insertNewObjectForEntityForName:@"Meal" inManagedObjectContext:context];
-        meal.name = mealDictionary.name;
-        meal.carbs = mealDictionary.carbs;
-        meal.dietaryFiber = mealDictionary.dietaryFiber;
-        meal.mealDescription = mealDictionary.description;
-        meal.protein = mealDictionary.protein;
-        meal.servingSize = mealDictionary.serving;
-        meal.totalFat = mealDictionary.totalFat;
-        meal.weightWatchersPlusPoints = mealDictionary.points;
     }
+    else
+    {
+        meal = [matches lastObject];
+    }
+    
+    meal.name = mealDictionary.name;
+    meal.carbs = mealDictionary.carbs;
+    meal.dietaryFiber = mealDictionary.dietaryFiber;
+    meal.mealDescription = mealDictionary.description;
+    meal.protein = mealDictionary.protein;
+    meal.servingSize = mealDictionary.serving;
+    meal.totalFat = mealDictionary.totalFat;
+    meal.weightWatchersPlusPoints = mealDictionary.points;
     
     return meal;
 }
