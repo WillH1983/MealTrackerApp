@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2818" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="x93-6u-W6r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="x93-6u-W6r">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1900"/>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
         <!--Meal Tracker Table View Controller - Meals-->
@@ -21,30 +21,33 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" text="Title" adjustsFontSizeToFit="NO" autoshrinkMode="none" id="bZo-hf-HMR">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bZo-hf-HMR">
                                             <rect key="frame" x="10" y="2" width="38" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" text="Subtitle" adjustsFontSizeToFit="NO" autoshrinkMode="none" id="313-a9-ZHF">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="313-a9-ZHF">
                                             <rect key="frame" x="10" y="24" width="47" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="dl7-9k-R8R" kind="modal" identifier="ViewMealDetails" id="KJX-Bh-HTd"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="Meals" id="D2R-vd-iLM">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="QfF-Qv-94R">
                             <connections>
-                                <segue destination="dl7-9k-R8R" kind="modal" modalTransitionStyle="coverVertical" id="Uh3-6n-9CZ"/>
+                                <segue destination="dl7-9k-R8R" kind="modal" identifier="" modalTransitionStyle="coverVertical" id="Uh3-6n-9CZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -65,109 +68,109 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" text="Meal Description" textAlignment="right" autoshrinkMode="minimumFontSize" id="gf8-0d-ccx">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Meal Description" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="gf8-0d-ccx">
                                         <rect key="frame" x="96" y="336" width="129" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" text="WW Points" textAlignment="right" autoshrinkMode="minimumFontSize" id="UfO-fk-ZKs">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="WW Points" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="UfO-fk-ZKs">
                                         <rect key="frame" x="14" y="259" width="98" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" text="Total Fat" textAlignment="right" autoshrinkMode="minimumFontSize" id="dOz-Z4-lxG">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Total Fat" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="dOz-Z4-lxG">
                                         <rect key="frame" x="9" y="181" width="98" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" text="Serving Size" textAlignment="right" autoshrinkMode="minimumFontSize" id="aJj-jj-z0z">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Serving Size" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="aJj-jj-z0z">
                                         <rect key="frame" x="14" y="220" width="98" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" text="Total Protein" textAlignment="right" autoshrinkMode="minimumFontSize" id="JGp-ws-Rbq">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Total Protein" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="JGp-ws-Rbq">
                                         <rect key="frame" x="14" y="142" width="98" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" text="Dietary Fiber" textAlignment="right" autoshrinkMode="minimumFontSize" id="AOh-4J-eAJ">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Dietary Fiber" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="AOh-4J-eAJ">
                                         <rect key="frame" x="9" y="103" width="98" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" text="Meal Name" textAlignment="right" autoshrinkMode="minimumFontSize" id="7iE-bb-pX7">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Meal Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="7iE-bb-pX7">
                                         <rect key="frame" x="20" y="25" width="87" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" text="Carbs" textAlignment="right" autoshrinkMode="minimumFontSize" id="Gsz-L3-LQN">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Carbs" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Gsz-L3-LQN">
                                         <rect key="frame" x="20" y="64" width="87" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="286-Rv-gSJ">
                                         <rect key="frame" x="115" y="21" width="185" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <textInputTraits key="textInputTraits"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="QQm-GI-w5Y">
                                         <rect key="frame" x="115" y="59" width="185" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Bjp-Xp-zaE">
                                         <rect key="frame" x="115" y="98" width="185" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="FRU-LD-vAs">
                                         <rect key="frame" x="115" y="137" width="185" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Lkn-mB-H3O">
                                         <rect key="frame" x="115" y="215" width="185" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <textInputTraits key="textInputTraits"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="iCo-zk-M2R">
                                         <rect key="frame" x="115" y="176" width="185" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="wCe-bY-50F">
                                         <rect key="frame" x="115" y="254" width="185" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" text="" id="5tM-iZ-b1x">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="5tM-iZ-b1x">
                                         <rect key="frame" x="9" y="365" width="291" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <textInputTraits key="textInputTraits"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                             </scrollView>
@@ -231,8 +234,6 @@
         <class className="MealEntryViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MealEntryViewController.h"/>
             <relationships>
-                <relationship kind="action" name="cancelButtonPressed:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="saveButtonPressed:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="WWPointsText" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="carbsText" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="dietaryFiberText" candidateClass="UITextField"/>
@@ -253,4 +254,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="KJX-Bh-HTd"/>
+    </inferredMetricsTieBreakers>
 </document>

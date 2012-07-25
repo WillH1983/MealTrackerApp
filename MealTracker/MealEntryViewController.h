@@ -25,4 +25,6 @@
 @property (nonatomic, weak) id <MealTextEntryDelegate> textEntryDelegate;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
+@property (nonatomic, strong) NSMutableDictionary *mealDetails;
+
 @end

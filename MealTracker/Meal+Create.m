@@ -11,43 +11,21 @@
 
 @implementation Meal (Create)
 
-+ (Meal *)mealWithName:(NSString *)name 
-            totalCarbs:(NSDecimalNumber *)carbs 
-     totalDietaryFiber:(NSDecimalNumber *)dietaryFiber 
-       mealDescription:(NSString *)description 
-          totalProtein:(NSDecimalNumber *)protein 
-           servingSize:(NSString *)serving 
-              totalFat:(NSDecimalNumber *)fat 
-          WWPlusPoints:(NSDecimalNumber *)points
-inManagedObjectContext:(NSManagedObjectContext *)context
++ (NSMutableDictionary *)mutableMealDictionaryForMeal:(Meal *)meal inManagedObjectContext:(NSManagedObjectContext *)context
 {
-    Meal *meal = nil;
+    NSMutableDictionary *mealDictionary = [[NSMutableDictionary alloc] init];
+    mealDictionary.name = meal.name;
+    mealDictionary.carbs = meal.carbs;
+    mealDictionary.dietaryFiber = meal.dietaryFiber;
+    mealDictionary.description = meal.mealDescription;
+    mealDictionary.protein = meal.protein;
+    mealDictionary.serving = meal.servingSize;
+    mealDictionary.totalFat = meal.totalFat;
+    mealDictionary.points = meal.weightWatchersPlusPoints;
     
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Meal"];
-    request.predicate = [NSPredicate predicateWithFormat:@"name = %@", name];
-    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
-    request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-    
-    NSError *error = nil;
-    NSArray *photographers = [context executeFetchRequest:request error:&error];
-    
-    if (!photographers || ([photographers count] > 1)) {
-        // handle error
-    } else {
-        meal = [NSEntityDescription insertNewObjectForEntityForName:@"Meal"
-                                                     inManagedObjectContext:context];
-        meal.name = name;
-        meal.carbs = carbs;
-        meal.dietaryFiber = dietaryFiber;
-        meal.mealDescription = description;
-        meal.protein = protein;
-        meal.servingSize = serving;
-        meal.totalFat = fat;
-        meal.weightWatchersPlusPoints = points;
-    } 
-    
-    return meal;
+    return mealDictionary;
 }
+
 
 + (Meal *)mealForDictionaryInfo:(NSMutableDictionary *)mealDictionary
          inManagedObjectContext:(NSManagedObjectContext *)context

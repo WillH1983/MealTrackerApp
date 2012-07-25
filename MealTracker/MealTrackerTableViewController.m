@@ -38,6 +38,16 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     [segue.destinationViewController setTextEntryDelegate:self];
+    
+    if ([sender isKindOfClass:[UITableViewCell class]])
+    {
+        UITableViewCell *cell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        Meal *meal = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        
+        NSMutableDictionary *mealDetails = [Meal mutableMealDictionaryForMeal:meal inManagedObjectContext:self.mealDatabase.managedObjectContext];
+        [segue.destinationViewController setMealDetails:mealDetails];
+    }
 }
 
 - (void)useDocument

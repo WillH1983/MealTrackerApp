@@ -25,6 +25,7 @@
 @synthesize textEntryDelegate = _textEntryDelegate;
 @synthesize scrollView;
 @synthesize activeField = _activeField;
+@synthesize mealDetails = _mealDetails;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -106,6 +107,18 @@
     self.totalFatText.text = @"";
     self.WWPointsText.text = @"";
     self.mealDescriptionText.text = @"";
+    
+    if (self.mealDetails)
+    {
+        if (self.mealDetails.name) self.mealNameText.text = self.mealDetails.name;
+        if (self.mealDetails.description) self.mealDescriptionText.text = self.mealDetails.description;
+        if (self.mealDetails.carbs) self.carbsText.text = [self.mealDetails.carbs stringValue];
+        if (self.mealDetails.dietaryFiber) self.dietaryFiberText.text = [self.mealDetails.dietaryFiber stringValue];
+        if (self.mealDetails.protein) self.totalProteinText.text = [self.mealDetails.protein stringValue];
+        if (self.mealDetails.serving) self.servingSizeText.text = self.servingSizeText.text;
+        if (self.mealDetails.totalFat) self.totalFatText.text = [self.mealDetails.totalFat stringValue];
+        if (self.mealDetails.points) self.WWPointsText.text = [self.mealDetails.points stringValue];
+    }
     
     [self registerForKeyboardNotifications];
 }
