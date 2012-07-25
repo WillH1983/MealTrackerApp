@@ -92,7 +92,7 @@
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewDidUnload
@@ -130,6 +130,16 @@
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ Weight Watchers Points", [meal.weightWatchersPlusPoints stringValue]];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //If the table view is asking to cmmit a delete command
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        Meal *meal = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [self.mealDatabase.managedObjectContext deleteObject:meal];
+    }
 }
 
 #pragma mark - Table view delegate
