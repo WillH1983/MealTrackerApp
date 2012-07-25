@@ -2,13 +2,14 @@
 //  Meal.h
 //  MealTracker
 //
-//  Created by Will Hindenburg on 7/21/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by William Hindenburg on 7/25/12.
+//
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class DateEaten;
 
 @interface Meal : NSManagedObject
 
@@ -21,5 +22,14 @@
 @property (nonatomic, retain) NSString * servingSize;
 @property (nonatomic, retain) NSDecimalNumber * totalFat;
 @property (nonatomic, retain) NSDecimalNumber * weightWatchersPlusPoints;
+@property (nonatomic, retain) NSSet *whenEaten;
+@end
+
+@interface Meal (CoreDataGeneratedAccessors)
+
+- (void)addWhenEatenObject:(DateEaten *)value;
+- (void)removeWhenEatenObject:(DateEaten *)value;
+- (void)addWhenEaten:(NSSet *)values;
+- (void)removeWhenEaten:(NSSet *)values;
 
 @end

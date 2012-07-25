@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1803" systemVersion="11E53" minimumToolsVersion="Xcode 4.1" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11E53" minimumToolsVersion="Xcode 4.1" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="DateEaten" representedClassName="DateEaten" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="whatWasEaten" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Meal" inverseName="whenEaten" inverseEntity="Meal" syncable="YES"/>
+    </entity>
     <entity name="Meal" representedClassName="Meal" syncable="YES">
         <attribute name="calories" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="carbs" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
@@ -10,8 +14,10 @@
         <attribute name="servingSize" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="totalFat" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="weightWatchersPlusPoints" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="whenEaten" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DateEaten" inverseName="whatWasEaten" inverseEntity="DateEaten" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Meal" positionX="160" positionY="192" width="128" height="180"/>
+        <element name="DateEaten" positionX="421" positionY="189" width="128" height="75"/>
+        <element name="Meal" positionX="160" positionY="192" width="128" height="195"/>
     </elements>
 </model>

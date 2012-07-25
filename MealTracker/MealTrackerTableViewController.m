@@ -9,6 +9,7 @@
 #import "MealTrackerTableViewController.h"
 #import "MealEntryViewController.h"
 #import "Meal+Create.h"
+#import "DateEaten+Create.h"
 #import <CoreData/CoreData.h>
 
 @interface MealTrackerTableViewController () <MealTextEntryDelegate>
@@ -30,8 +31,11 @@
 {
     [self.mealDatabase.managedObjectContext performBlock:^{
         [Meal mealForDictionaryInfo:dictionary inManagedObjectContext:self.mealDatabase.managedObjectContext];
-        BOOL success = [self.mealDatabase.managedObjectContext save:NULL];
-        NSLog(@"The value of the bool is %@\n", (success ? @"YES" : @"NO"));
+        [self.mealDatabase saveToURL:self.mealDatabase.fileURL 
+                    forSaveOperation:UIDocumentSaveForOverwriting 
+                   completionHandler:^(BOOL success) {
+                       if (!success) NSLog(@"failed to save document %@", self.mealDatabase.localizedName);
+               }];
     }];
 }
 
@@ -149,6 +153,11 @@
     {
         Meal *meal = [self.fetchedResultsController objectAtIndexPath:indexPath];
         [self.mealDatabase.managedObjectContext deleteObject:meal];
+        [self.mealDatabase saveToURL:self.mealDatabase.fileURL 
+                    forSaveOperation:UIDocumentSaveForOverwriting 
+                   completionHandler:^(BOOL success) {
+                       if (!success) NSLog(@"failed to save document %@", self.mealDatabase.localizedName);
+                   }];
     }
 }
 
@@ -163,6 +172,24 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    [self.mealDatabase.managedObjectContext performBlock:^{
+        DateEaten *dateEaten = [DateEaten dailyMealsinManagedObjectContext:self.mealDatabase.managedObjectContext];
+        
+        Meal *meal = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        NSLog(@"%@", dateEaten);
+        [meal addWhenEatenObject:dateEaten];
+        [self.mealDatabase saveToURL:self.mealDatabase.fileURL 
+                    forSaveOperation:UIDocumentSaveForOverwriting 
+                   completionHandler:^(BOOL success) {
+                       if (!success) NSLog(@"failed to save document %@", self.mealDatabase.localizedName);
+                   }];
+        NSLog(@"%@", dateEaten);
+        NSLog(@"%@", meal);
+    }];
 }
 
 @end

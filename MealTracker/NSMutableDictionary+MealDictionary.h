@@ -10,15 +10,6 @@
 
 @interface NSMutableDictionary (MealDictionary)
 
-+ (NSDictionary *)mealWithName:(NSString *)name 
-            totalCarbs:(NSDecimalNumber *)carbs 
-     totalDietaryFiber:(NSDecimalNumber *)dietaryFiber 
-       mealDescription:(NSString *)description 
-          totalProtein:(NSDecimalNumber *)protein 
-           servingSize:(NSString *)serving 
-              totalFat:(NSDecimalNumber *)fat 
-          WWPlusPoints:(NSDecimalNumber *)points;
-
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *description;
 @property (nonatomic, strong) NSDecimalNumber *carbs;

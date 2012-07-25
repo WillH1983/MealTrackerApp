@@ -18,7 +18,11 @@
 		BE3AFF0F15BB7A3A006BC0D6 /* MealTrackerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AFF0E15BB7A3A006BC0D6 /* MealTrackerTableViewController.m */; };
 		BE3AFF1515BB7E5B006BC0D6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3AFF1415BB7E5B006BC0D6 /* CoreData.framework */; };
 		BE3AFF1815BB7F88006BC0D6 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AFF1715BB7F88006BC0D6 /* CoreDataTableViewController.m */; };
-		BEDEAC6115BB9412008D3BF4 /* Meal.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDEAC6015BB9412008D3BF4 /* Meal.m */; };
+		BE4392E415C0AD5E00745158 /* NSDate+day.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4392E315C0AD5E00745158 /* NSDate+day.m */; };
+		BE7E957315C0965500AE0C94 /* TrackerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7E957215C0965500AE0C94 /* TrackerTableViewController.m */; };
+		BE9886AC15C09049008CD618 /* Meal.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9886AB15C09049008CD618 /* Meal.m */; };
+		BE9886AF15C09049008CD618 /* DateEaten.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9886AE15C09049008CD618 /* DateEaten.m */; };
+		BE9886B215C0908D008CD618 /* DateEaten+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9886B115C0908D008CD618 /* DateEaten+Create.m */; };
 		BEDEAC6515BB9470008D3BF4 /* Meal+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDEAC6415BB9470008D3BF4 /* Meal+Create.m */; };
 		BEDEAC7015BBA0CA008D3BF4 /* MealEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDEAC6F15BBA0CA008D3BF4 /* MealEntryViewController.m */; };
 		BEDEAC7315BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDEAC7215BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m */; };
@@ -42,8 +46,16 @@
 		BE3AFF1415BB7E5B006BC0D6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		BE3AFF1615BB7F88006BC0D6 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		BE3AFF1715BB7F88006BC0D6 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
-		BEDEAC5F15BB9412008D3BF4 /* Meal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meal.h; sourceTree = "<group>"; };
-		BEDEAC6015BB9412008D3BF4 /* Meal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meal.m; sourceTree = "<group>"; };
+		BE4392E215C0AD5E00745158 /* NSDate+day.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+day.h"; sourceTree = "<group>"; };
+		BE4392E315C0AD5E00745158 /* NSDate+day.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+day.m"; sourceTree = "<group>"; };
+		BE7E957115C0965500AE0C94 /* TrackerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackerTableViewController.h; sourceTree = "<group>"; };
+		BE7E957215C0965500AE0C94 /* TrackerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackerTableViewController.m; sourceTree = "<group>"; };
+		BE9886AA15C09049008CD618 /* Meal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meal.h; sourceTree = "<group>"; };
+		BE9886AB15C09049008CD618 /* Meal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meal.m; sourceTree = "<group>"; };
+		BE9886AD15C09049008CD618 /* DateEaten.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateEaten.h; sourceTree = "<group>"; };
+		BE9886AE15C09049008CD618 /* DateEaten.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateEaten.m; sourceTree = "<group>"; };
+		BE9886B015C0908D008CD618 /* DateEaten+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DateEaten+Create.h"; sourceTree = "<group>"; };
+		BE9886B115C0908D008CD618 /* DateEaten+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DateEaten+Create.m"; sourceTree = "<group>"; };
 		BEDEAC6315BB9470008D3BF4 /* Meal+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Meal+Create.h"; sourceTree = "<group>"; };
 		BEDEAC6415BB9470008D3BF4 /* Meal+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Meal+Create.m"; sourceTree = "<group>"; };
 		BEDEAC6E15BBA0CA008D3BF4 /* MealEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealEntryViewController.h; sourceTree = "<group>"; };
@@ -98,14 +110,22 @@
 		BE3AFEF715BB754F006BC0D6 /* MealTracker */ = {
 			isa = PBXGroup;
 			children = (
+				BE9886B015C0908D008CD618 /* DateEaten+Create.h */,
+				BE9886B115C0908D008CD618 /* DateEaten+Create.m */,
 				BEDEAC6315BB9470008D3BF4 /* Meal+Create.h */,
 				BEDEAC6415BB9470008D3BF4 /* Meal+Create.m */,
 				BEDEAC7115BBA3D8008D3BF4 /* NSMutableDictionary+MealDictionary.h */,
 				BEDEAC7215BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m */,
 				BE3AFF0815BB75BD006BC0D6 /* MealTracker.xcdatamodeld */,
-				BEDEAC5F15BB9412008D3BF4 /* Meal.h */,
-				BEDEAC6015BB9412008D3BF4 /* Meal.m */,
+				BE9886AA15C09049008CD618 /* Meal.h */,
+				BE9886AB15C09049008CD618 /* Meal.m */,
+				BE9886AD15C09049008CD618 /* DateEaten.h */,
+				BE9886AE15C09049008CD618 /* DateEaten.m */,
 				BE3AFF0B15BB79F9006BC0D6 /* iPhone.storyboard */,
+				BE7E957115C0965500AE0C94 /* TrackerTableViewController.h */,
+				BE7E957215C0965500AE0C94 /* TrackerTableViewController.m */,
+				BE4392E215C0AD5E00745158 /* NSDate+day.h */,
+				BE4392E315C0AD5E00745158 /* NSDate+day.m */,
 				BEDEAC6E15BBA0CA008D3BF4 /* MealEntryViewController.h */,
 				BEDEAC6F15BBA0CA008D3BF4 /* MealEntryViewController.m */,
 				BE3AFF0D15BB7A3A006BC0D6 /* MealTrackerTableViewController.h */,
@@ -198,10 +218,14 @@
 				BE3AFF0A15BB75BD006BC0D6 /* MealTracker.xcdatamodeld in Sources */,
 				BE3AFF0F15BB7A3A006BC0D6 /* MealTrackerTableViewController.m in Sources */,
 				BE3AFF1815BB7F88006BC0D6 /* CoreDataTableViewController.m in Sources */,
-				BEDEAC6115BB9412008D3BF4 /* Meal.m in Sources */,
 				BEDEAC6515BB9470008D3BF4 /* Meal+Create.m in Sources */,
 				BEDEAC7015BBA0CA008D3BF4 /* MealEntryViewController.m in Sources */,
 				BEDEAC7315BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m in Sources */,
+				BE9886AC15C09049008CD618 /* Meal.m in Sources */,
+				BE9886AF15C09049008CD618 /* DateEaten.m in Sources */,
+				BE9886B215C0908D008CD618 /* DateEaten+Create.m in Sources */,
+				BE7E957315C0965500AE0C94 /* TrackerTableViewController.m in Sources */,
+				BE4392E415C0AD5E00745158 /* NSDate+day.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

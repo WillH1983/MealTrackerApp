@@ -2,11 +2,12 @@
 //  Meal.m
 //  MealTracker
 //
-//  Created by Will Hindenburg on 7/21/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by William Hindenburg on 7/25/12.
+//
 //
 
 #import "Meal.h"
+#import "DateEaten.h"
 
 
 @implementation Meal
@@ -20,5 +21,6 @@
 @dynamic servingSize;
 @dynamic totalFat;
 @dynamic weightWatchersPlusPoints;
+@dynamic whenEaten;
 
 @end
