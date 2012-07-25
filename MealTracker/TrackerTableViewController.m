@@ -66,7 +66,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewDidUnload
@@ -110,6 +111,21 @@
     cell.textLabel.text = dateEaten.whatWasEaten.name;
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //If the table view is asking to cmmit a delete command
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        DateEaten *dateEaten = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [self.mealDatabase.managedObjectContext deleteObject:dateEaten];
+        [self.mealDatabase saveToURL:self.mealDatabase.fileURL 
+                    forSaveOperation:UIDocumentSaveForOverwriting 
+                   completionHandler:^(BOOL success) {
+                       if (!success) NSLog(@"failed to save document %@", self.mealDatabase.localizedName);
+                   }];
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
