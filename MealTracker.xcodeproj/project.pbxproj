@@ -79,6 +79,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE1BC63C15EDE777000E31F8 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				BEDEAC7115BBA3D8008D3BF4 /* NSMutableDictionary+MealDictionary.h */,
+				BEDEAC7215BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m */,
+				BE4392E215C0AD5E00745158 /* NSDate+day.h */,
+				BE4392E315C0AD5E00745158 /* NSDate+day.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		BE1BC63E15EDE7A9000E31F8 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				BE3AFF1615BB7F88006BC0D6 /* CoreDataTableViewController.h */,
+				BE3AFF1715BB7F88006BC0D6 /* CoreDataTableViewController.m */,
+				BE9886B015C0908D008CD618 /* DateEaten+Create.h */,
+				BE9886B115C0908D008CD618 /* DateEaten+Create.m */,
+				BEDEAC6315BB9470008D3BF4 /* Meal+Create.h */,
+				BEDEAC6415BB9470008D3BF4 /* Meal+Create.m */,
+				BE3AFF0815BB75BD006BC0D6 /* MealTracker.xcdatamodeld */,
+				BE9886AA15C09049008CD618 /* Meal.h */,
+				BE9886AB15C09049008CD618 /* Meal.m */,
+				BE9886AD15C09049008CD618 /* DateEaten.h */,
+				BE9886AE15C09049008CD618 /* DateEaten.m */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
 		BE3AFEE215BB754F006BC0D6 = {
 			isa = PBXGroup;
 			children = (
@@ -110,30 +139,17 @@
 		BE3AFEF715BB754F006BC0D6 /* MealTracker */ = {
 			isa = PBXGroup;
 			children = (
-				BE9886B015C0908D008CD618 /* DateEaten+Create.h */,
-				BE9886B115C0908D008CD618 /* DateEaten+Create.m */,
-				BEDEAC6315BB9470008D3BF4 /* Meal+Create.h */,
-				BEDEAC6415BB9470008D3BF4 /* Meal+Create.m */,
-				BEDEAC7115BBA3D8008D3BF4 /* NSMutableDictionary+MealDictionary.h */,
-				BEDEAC7215BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m */,
-				BE3AFF0815BB75BD006BC0D6 /* MealTracker.xcdatamodeld */,
-				BE9886AA15C09049008CD618 /* Meal.h */,
-				BE9886AB15C09049008CD618 /* Meal.m */,
-				BE9886AD15C09049008CD618 /* DateEaten.h */,
-				BE9886AE15C09049008CD618 /* DateEaten.m */,
 				BE3AFF0B15BB79F9006BC0D6 /* iPhone.storyboard */,
 				BE7E957115C0965500AE0C94 /* TrackerTableViewController.h */,
 				BE7E957215C0965500AE0C94 /* TrackerTableViewController.m */,
-				BE4392E215C0AD5E00745158 /* NSDate+day.h */,
-				BE4392E315C0AD5E00745158 /* NSDate+day.m */,
 				BEDEAC6E15BBA0CA008D3BF4 /* MealEntryViewController.h */,
 				BEDEAC6F15BBA0CA008D3BF4 /* MealEntryViewController.m */,
 				BE3AFF0D15BB7A3A006BC0D6 /* MealTrackerTableViewController.h */,
 				BE3AFF0E15BB7A3A006BC0D6 /* MealTrackerTableViewController.m */,
-				BE3AFF1615BB7F88006BC0D6 /* CoreDataTableViewController.h */,
-				BE3AFF1715BB7F88006BC0D6 /* CoreDataTableViewController.m */,
 				BE3AFF0015BB754F006BC0D6 /* MealTrackerAppDelegate.h */,
 				BE3AFF0115BB754F006BC0D6 /* MealTrackerAppDelegate.m */,
+				BE1BC63E15EDE7A9000E31F8 /* Core Data */,
+				BE1BC63C15EDE777000E31F8 /* Categories */,
 				BE3AFEF815BB754F006BC0D6 /* Supporting Files */,
 			);
 			path = MealTracker;

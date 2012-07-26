@@ -11,9 +11,30 @@
 @implementation MealTrackerAppDelegate
 
 @synthesize window = _window;
+@synthesize mealDatabase = _mealDatabase;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    url = [url URLByAppendingPathComponent:@"Default Photo Database"];
+    
+    self.mealDatabase = [[UIManagedDocument alloc] initWithFileURL:url];
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:[self.mealDatabase.fileURL path]]) {
+        // does not exist on disk, so create it
+        [self.mealDatabase saveToURL:self.mealDatabase.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
+            
+        }];
+    } else if (self.mealDatabase.documentState == UIDocumentStateClosed) {
+        // exists on disk, but we need to open it
+        [self.mealDatabase openWithCompletionHandler:^(BOOL success) {
+            
+        }];
+    } else if (self.mealDatabase.documentState == UIDocumentStateNormal) {
+        // already open and ready to use
+        
+    }
     
     return YES;
 }

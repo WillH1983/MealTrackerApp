@@ -11,6 +11,7 @@
 #import "Meal+Create.h"
 #import "DateEaten+Create.h"
 #import <CoreData/CoreData.h>
+#import "MealTrackerAppDelegate.h"
 
 @interface MealTrackerTableViewController () <MealTextEntryDelegate>
 @end
@@ -18,14 +19,6 @@
 
 @implementation MealTrackerTableViewController
 @synthesize mealDatabase = _mealDatabase;
-
-- (void)setMealDatabase:(UIManagedDocument *)mealDatabase
-{
-    if (_mealDatabase != mealDatabase) {
-        _mealDatabase = mealDatabase;
-        [self useDocument];
-    }
-}
 
 - (void)viewController:(id)sender didFinishWithMealMutableDictionary:(NSMutableDictionary *)dictionary
 {
@@ -54,24 +47,6 @@
     }
 }
 
-- (void)useDocument
-{
-    if (![[NSFileManager defaultManager] fileExistsAtPath:[self.mealDatabase.fileURL path]]) {
-        // does not exist on disk, so create it
-        [self.mealDatabase saveToURL:self.mealDatabase.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
-            [self setupFetchedResultsController];
-        }];
-    } else if (self.mealDatabase.documentState == UIDocumentStateClosed) {
-        // exists on disk, but we need to open it
-        [self.mealDatabase openWithCompletionHandler:^(BOOL success) {
-            [self setupFetchedResultsController];
-        }];
-    } else if (self.mealDatabase.documentState == UIDocumentStateNormal) {
-        // already open and ready to use
-        [self setupFetchedResultsController];
-    }
-}
-
 - (void)setupFetchedResultsController // attaches an NSFetchRequest to this UITableViewController
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Meal"];
@@ -84,11 +59,6 @@
                                                                                    cacheName:nil];
 }
 
-- (void)fetchFlickrDataIntoDocument:(UIManagedDocument *)document
-{
-    
-}
-
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -96,6 +66,22 @@
         // Custom initialization
     }
     return self;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(documentStateChanged:)
+                                                 name:UIDocumentStateChangedNotification object:self.mealDatabase];
+    
+    MealTrackerAppDelegate *appDelegate = (MealTrackerAppDelegate *)[[UIApplication sharedApplication] delegate];
+    self.mealDatabase = appDelegate.mealDatabase;
+    
+    if (self.mealDatabase.documentState == UIDocumentStateNormal)
+    {
+        [self setupFetchedResultsController];
+    }
 }
 
 - (void)viewDidLoad
@@ -111,9 +97,26 @@
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-    [self.mealDatabase closeWithCompletionHandler:^(BOOL success) {
-        if (!success) NSLog(@"failed to close document %@", self.mealDatabase.localizedName);
-    }];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIDocumentStateChangedNotification 
+                                                  object:self.mealDatabase];
+}
+
+- (void)documentStateChanged:(NSNotification *)notification
+{
+    id notificationObject = [notification object];
+    if ([notificationObject isKindOfClass:[UIManagedDocument class]])
+    {
+        UIManagedDocument *document = notificationObject;
+        if (document.documentState == UIDocumentStateNormal) [self setupFetchedResultsController];
+    }
+    
 }
 
 - (void)viewDidUnload
@@ -123,15 +126,7 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-    url = [url URLByAppendingPathComponent:@"Default Photo Database"];
 
-    self.mealDatabase = [[UIManagedDocument alloc] initWithFileURL:url]; // setter will create this for us on disk
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -187,6 +182,7 @@
         Meal *meal = [self.fetchedResultsController objectAtIndexPath:indexPath];
         NSLog(@"%@", dateEaten);
         [meal addWhenEatenObject:dateEaten];
+        NSLog(@"%@", self.mealDatabase);
         [self.mealDatabase saveToURL:self.mealDatabase.fileURL 
                     forSaveOperation:UIDocumentSaveForOverwriting 
                    completionHandler:^(BOOL success) {

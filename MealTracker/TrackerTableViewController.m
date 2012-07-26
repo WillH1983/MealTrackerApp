@@ -9,6 +9,7 @@
 #import "TrackerTableViewController.h"
 #import "Meal+Create.h"
 #import "DateEaten+Create.h"
+#import "MealTrackerAppDelegate.h"
 
 @interface TrackerTableViewController ()
 @end
@@ -16,36 +17,11 @@
 @implementation TrackerTableViewController
 @synthesize mealDatabase = _mealDatabase;
 
-- (void)setMealDatabase:(UIManagedDocument *)mealDatabase
-{
-    if (_mealDatabase != mealDatabase) {
-        _mealDatabase = mealDatabase;
-        [self useDocument];
-    }
-}
-
-- (void)useDocument
-{
-    if (![[NSFileManager defaultManager] fileExistsAtPath:[self.mealDatabase.fileURL path]]) {
-        // does not exist on disk, so create it
-        [self.mealDatabase saveToURL:self.mealDatabase.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
-            [self setupFetchedResultsController];
-        }];
-    } else if (self.mealDatabase.documentState == UIDocumentStateClosed) {
-        // exists on disk, but we need to open it
-        [self.mealDatabase openWithCompletionHandler:^(BOOL success) {
-            [self setupFetchedResultsController];
-        }];
-    } else if (self.mealDatabase.documentState == UIDocumentStateNormal) {
-        // already open and ready to use
-        [self setupFetchedResultsController];
-    }
-}
-
 - (void)setupFetchedResultsController // attaches an NSFetchRequest to this UITableViewController
 {
+    
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"DateEaten"];
-    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO selector:@selector(localizedCaseInsensitiveCompare:)]];
+    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO selector:@selector(compare:)]];
     // no predicate because we want ALL the Photographers
     
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
@@ -68,15 +44,37 @@
     [super viewDidLoad];
 	
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    MealTrackerAppDelegate *appDelegate = (MealTrackerAppDelegate *)[[UIApplication sharedApplication] delegate];
+    self.mealDatabase = appDelegate.mealDatabase;
+    
+    if (self.mealDatabase.documentState == UIDocumentStateNormal)
+    {
+        [self setupFetchedResultsController];
+    }
+    
+}
+
+- (void)documentStateChanged:(NSNotification *)notification
+{
+    id notificationObject = [notification object];
+    if ([notificationObject isKindOfClass:[UIManagedDocument class]])
+    {
+        UIManagedDocument *document = notificationObject;
+        if (document.documentState == UIDocumentStateNormal) [self setupFetchedResultsController];
+    }
+    
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    
-    [self.mealDatabase closeWithCompletionHandler:^(BOOL success) {
-        if (!success) NSLog(@"failed to close document %@", self.mealDatabase.localizedName);
-    }];
 }
 
 - (void)viewDidUnload
@@ -89,11 +87,6 @@
 {
     [super viewWillAppear:animated];
     
-    NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-    url = [url URLByAppendingPathComponent:@"Default Photo Database"];
-        
-    self.mealDatabase = [[UIManagedDocument alloc] initWithFileURL:url]; // setter will create this for us on disk
-    [self performFetch];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
