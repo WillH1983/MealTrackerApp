@@ -112,12 +112,27 @@
     {
         if (self.mealDetails.name) self.mealNameText.text = self.mealDetails.name;
         if (self.mealDetails.description) self.mealDescriptionText.text = self.mealDetails.description;
-        if (self.mealDetails.carbs) self.carbsText.text = [self.mealDetails.carbs stringValue];
-        if (self.mealDetails.dietaryFiber) self.dietaryFiberText.text = [self.mealDetails.dietaryFiber stringValue];
-        if (self.mealDetails.protein) self.totalProteinText.text = [self.mealDetails.protein stringValue];
         if (self.mealDetails.serving) self.servingSizeText.text = self.servingSizeText.text;
-        if (self.mealDetails.totalFat) self.totalFatText.text = [self.mealDetails.totalFat stringValue];
-        if (self.mealDetails.points) self.WWPointsText.text = [self.mealDetails.points stringValue];
+        if ((self.mealDetails.carbs != nil) & [self.mealDetails.carbs compare:[NSDecimalNumber notANumber]]) 
+        {
+            self.carbsText.text = [self.mealDetails.carbs stringValue];
+        }
+        if ((self.mealDetails.dietaryFiber != nil) & ([self.mealDetails.dietaryFiber compare:[NSDecimalNumber notANumber]])) 
+        {
+            self.dietaryFiberText.text = [self.mealDetails.dietaryFiber stringValue];
+        }
+        if ((self.mealDetails.protein != nil) & ([self.mealDetails.protein compare:[NSDecimalNumber notANumber]]))
+        {
+            self.totalProteinText.text = [self.mealDetails.protein stringValue];
+        }
+        if ((self.mealDetails.totalFat != nil) & ([self.mealDetails.totalFat compare:[NSDecimalNumber notANumber]]))
+        {
+            self.totalFatText.text = [self.mealDetails.totalFat stringValue];
+        }
+        if ((self.mealDetails.points != nil) & ([self.mealDetails.points compare:[NSDecimalNumber notANumber]])) 
+        {
+            self.WWPointsText.text = [self.mealDetails.points stringValue];
+        }
     }
     
     [self registerForKeyboardNotifications];
