@@ -17,6 +17,7 @@
 
 - (NSString *)name
 {
+    if (![self objectForKey:@"name"]) self.name = @"";
     return [self objectForKey:@"name"];
 }
 
@@ -27,6 +28,7 @@
 
 - (NSString *)description
 {
+    if (![self objectForKey:@"description"]) self.description = @"";
     return [self objectForKey:@"description"];
 }
 
@@ -37,6 +39,7 @@
 
 - (NSDecimalNumber *)carbs
 {
+    if (![self objectForKey:@"carbs"]) self.carbs = [NSDecimalNumber notANumber];
     return [self objectForKey:@"carbs"];
 }
 
@@ -47,6 +50,7 @@
 
 - (NSDecimalNumber *)dietaryFiber
 {
+    if (![self objectForKey:@"dietaryFiber"]) self.dietaryFiber = [NSDecimalNumber notANumber];
     return [self objectForKey:@"dietaryFiber"];
 }
 
@@ -57,6 +61,7 @@
 
 - (NSDecimalNumber *)protein
 {
+    if (![self objectForKey:@"protein"]) self.protein = [NSDecimalNumber notANumber];
     return [self objectForKey:@"protein"];
 }
 
@@ -67,6 +72,7 @@
 
 - (NSString *)serving
 {
+    if (![self objectForKey:@"serving"]) self.serving = @"";
     return [self objectForKey:@"serving"];
 }
 
@@ -77,6 +83,7 @@
 
 - (NSDecimalNumber *)totalFat
 {
+    if (![self objectForKey:@"totalFat"]) self.totalFat = [NSDecimalNumber notANumber];
     return [self objectForKey:@"totalFat"];
 }
 
@@ -87,21 +94,8 @@
 
 - (NSDecimalNumber *)points
 {
+    if (![self objectForKey:@"points"]) self.points = [NSDecimalNumber notANumber];
     return [self objectForKey:@"points"];
 }
-
-+ (NSDictionary *)mealWithName:(NSString *)name 
-                    totalCarbs:(NSDecimalNumber *)carbs 
-             totalDietaryFiber:(NSDecimalNumber *)dietaryFiber 
-               mealDescription:(NSString *)description 
-                  totalProtein:(NSDecimalNumber *)protein 
-                   servingSize:(NSString *)serving 
-                      totalFat:(NSDecimalNumber *)fat 
-                  WWPlusPoints:(NSDecimalNumber *)points
-{
-    return nil;
-}
-
-
 
 @end

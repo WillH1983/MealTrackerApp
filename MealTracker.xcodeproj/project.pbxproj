@@ -111,7 +111,6 @@
 		BE3AFEE215BB754F006BC0D6 = {
 			isa = PBXGroup;
 			children = (
-				BE3AFF1415BB7E5B006BC0D6 /* CoreData.framework */,
 				BE3AFEF715BB754F006BC0D6 /* MealTracker */,
 				BE3AFEF015BB754F006BC0D6 /* Frameworks */,
 				BE3AFEEE15BB754F006BC0D6 /* Products */,
@@ -129,6 +128,7 @@
 		BE3AFEF015BB754F006BC0D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BE3AFF1415BB7E5B006BC0D6 /* CoreData.framework */,
 				BE3AFEF115BB754F006BC0D6 /* UIKit.framework */,
 				BE3AFEF315BB754F006BC0D6 /* Foundation.framework */,
 				BE3AFEF515BB754F006BC0D6 /* CoreGraphics.framework */,
