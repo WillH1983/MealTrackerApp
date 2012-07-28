@@ -10,8 +10,10 @@
 
 @interface Meal (Create)
 
-+ (Meal *)mealForDictionaryInfo:(NSDictionary *)mealDictionary
++ (Meal *)mealForDictionaryInfo:(NSMutableDictionary *)mealDictionary
        inManagedObjectContext:(NSManagedObjectContext *)context;
+
++ (Meal *)updatedMealOldDictionaryInfo:(NSMutableDictionary *)oldMealDictionary withNewDictionaryInfo:(NSMutableDictionary *)newMealDictionary inManagedObjectContext:(NSManagedObjectContext *)context;
 
 + (NSMutableDictionary *)mutableMealDictionaryForMeal:(Meal *)meal inManagedObjectContext:(NSManagedObjectContext *)context;
 

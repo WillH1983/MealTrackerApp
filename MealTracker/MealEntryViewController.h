@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @protocol MealTextEntryDelegate <NSObject>
-- (void)viewController:(id)sender didFinishWithMealMutableDictionary:(NSMutableDictionary *)dictionary;
+- (void)viewController:(id)sender didFinishWithMealMutableDictionary:(NSMutableDictionary *)mealDetails;
+
+- (void)viewController:(id)sender didFinishEditingMealMutableDictionary:(NSMutableDictionary *)newMealDetails withOldMealMutableDictionary:(NSMutableDictionary *)oldMealDetails;
 @end
 
 @interface MealEntryViewController : UIViewController <UITextFieldDelegate>

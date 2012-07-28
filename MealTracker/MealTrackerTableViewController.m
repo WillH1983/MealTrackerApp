@@ -32,6 +32,18 @@
     }];
 }
 
+- (void)viewController:(id)sender didFinishEditingMealMutableDictionary:(NSMutableDictionary *)newMealDetails withOldMealMutableDictionary:(NSMutableDictionary *)oldMealDetails
+{
+    [self.mealDatabase.managedObjectContext performBlock:^{
+        [Meal updatedMealOldDictionaryInfo:oldMealDetails withNewDictionaryInfo:newMealDetails inManagedObjectContext:self.mealDatabase.managedObjectContext];
+        [self.mealDatabase saveToURL:self.mealDatabase.fileURL 
+                    forSaveOperation:UIDocumentSaveForOverwriting 
+                   completionHandler:^(BOOL success) {
+                       if (!success) NSLog(@"failed to save document %@", self.mealDatabase.localizedName);
+                   }];
+    }];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     [segue.destinationViewController setTextEntryDelegate:self];

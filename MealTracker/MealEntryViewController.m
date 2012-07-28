@@ -53,7 +53,15 @@
         dictionary.totalFat = [NSDecimalNumber decimalNumberWithString:totalFatText.text];
         dictionary.points = [NSDecimalNumber decimalNumberWithString:WWPointsText.text];
         
-        [self.textEntryDelegate viewController:self didFinishWithMealMutableDictionary:dictionary];
+        if (self.mealDetails)
+        {
+            [self.textEntryDelegate viewController:self didFinishEditingMealMutableDictionary:dictionary withOldMealMutableDictionary:self.mealDetails];
+        }
+        else 
+        {
+            [self.textEntryDelegate viewController:self didFinishWithMealMutableDictionary:dictionary];
+        }
+        
         [[self presentingViewController] dismissModalViewControllerAnimated:YES];
     }
     else {
