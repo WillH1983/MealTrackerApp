@@ -147,8 +147,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        
     }
-    
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 35, 35)];
+    [button setBackgroundImage:[UIImage imageNamed:@"plusButton"] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(disclosureButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    cell.accessoryView = button;
     // ask NSFetchedResultsController for the NSMO at the row in question
     Meal *meal = [self.fetchedResultsController objectAtIndexPath:indexPath];
     // Then configure the cell using it ...
@@ -175,19 +179,11 @@
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)disclosureButtonPressed:(id)sender
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
-
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
-{
+    UITableViewCell *cell = (UITableViewCell *)[sender superview];
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    
     [self.mealDatabase.managedObjectContext performBlock:^{
         DateEaten *dateEaten = [DateEaten dailyMealsinManagedObjectContext:self.mealDatabase.managedObjectContext];
         
@@ -195,6 +191,21 @@
         NSLog(@"%@", dateEaten);
         [meal addWhenEatenObject:dateEaten];
         NSLog(@"%@", self.mealDatabase);
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"plusButton"]];
+        
+        CGPoint p = [self.tableView convertPoint:cell.accessoryView.frame.origin fromView:cell];
+        imageView.frame = CGRectMake(p.x, p.y, 35, 35);
+        [self.view addSubview:imageView];
+        
+        
+        [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+            imageView.frame = CGRectMake(self.view.frame.size.width - ((self.view.frame.size.width - cell.accessoryView.frame.origin.x) + 50.0), self.view.frame.size.height, imageView.frame.size.width, imageView.frame.size.height);
+            imageView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.99, 0.99);
+        } completion:^(BOOL finished) {
+            imageView.transform = CGAffineTransformIdentity;
+            [imageView removeFromSuperview];
+        }];
+        
         [self.mealDatabase saveToURL:self.mealDatabase.fileURL 
                     forSaveOperation:UIDocumentSaveForOverwriting 
                    completionHandler:^(BOOL success) {

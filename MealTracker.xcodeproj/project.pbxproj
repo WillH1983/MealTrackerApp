@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE2C9AD815C47E2300DD6070 /* plusButton.png in Resources */ = {isa = PBXBuildFile; fileRef = BE2C9AD715C47E2300DD6070 /* plusButton.png */; };
 		BE3AFEF215BB754F006BC0D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3AFEF115BB754F006BC0D6 /* UIKit.framework */; };
 		BE3AFEF415BB754F006BC0D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3AFEF315BB754F006BC0D6 /* Foundation.framework */; };
 		BE3AFEF615BB754F006BC0D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3AFEF515BB754F006BC0D6 /* CoreGraphics.framework */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE2C9AD715C47E2300DD6070 /* plusButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusButton.png; sourceTree = "<group>"; };
 		BE3AFEED15BB754F006BC0D6 /* MealTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE3AFEF115BB754F006BC0D6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BE3AFEF315BB754F006BC0D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -148,6 +150,7 @@
 				BE3AFF0E15BB7A3A006BC0D6 /* MealTrackerTableViewController.m */,
 				BE3AFF0015BB754F006BC0D6 /* MealTrackerAppDelegate.h */,
 				BE3AFF0115BB754F006BC0D6 /* MealTrackerAppDelegate.m */,
+				BE2C9AD715C47E2300DD6070 /* plusButton.png */,
 				BE1BC63E15EDE7A9000E31F8 /* Core Data */,
 				BE1BC63C15EDE777000E31F8 /* Categories */,
 				BE3AFEF815BB754F006BC0D6 /* Supporting Files */,
@@ -219,6 +222,7 @@
 			files = (
 				BE3AFEFC15BB754F006BC0D6 /* InfoPlist.strings in Resources */,
 				BE3AFF0C15BB79F9006BC0D6 /* iPhone.storyboard in Resources */,
+				BE2C9AD815C47E2300DD6070 /* plusButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
