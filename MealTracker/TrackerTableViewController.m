@@ -70,6 +70,15 @@
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    [self.mealDatabase closeWithCompletionHandler:^(BOOL success) {
+        if (!success) NSLog(@"failed to close document %@", self.mealDatabase.localizedName);
+    }];
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -80,12 +89,10 @@
 {
     [super viewWillAppear:animated];
     
-    if (!self.mealDatabase) {
-        NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-        url = [url URLByAppendingPathComponent:@"Default Photo Database"];
+    NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    url = [url URLByAppendingPathComponent:@"Default Photo Database"];
         
-        self.mealDatabase = [[UIManagedDocument alloc] initWithFileURL:url]; // setter will create this for us on disk
-    }
+    self.mealDatabase = [[UIManagedDocument alloc] initWithFileURL:url]; // setter will create this for us on disk
     [self performFetch];
 }
 
@@ -107,10 +114,27 @@
     [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
     
     NSString *formattedDateString = [dateFormatter stringFromDate:dateEaten.date];
-    cell.detailTextLabel.text = formattedDateString;
+    NSString *fullString = [[NSString alloc] initWithFormat:@"%@ - %@ Points", formattedDateString, [dateEaten.whatWasEaten.weightWatchersPlusPoints stringValue]];
+    cell.detailTextLabel.text = fullString;
     cell.textLabel.text = dateEaten.whatWasEaten.name;
     
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+	NSArray *sections = [self.fetchedResultsController sections];
+    id <NSFetchedResultsSectionInfo> info = [sections objectAtIndex:section];
+    NSArray *array = info.objects;
+    
+    int points = 0;
+    for (DateEaten *dateEaten in array)
+    {
+        points += [dateEaten.whatWasEaten.weightWatchersPlusPoints integerValue];
+    }
+    NSString *sectionTitle = [[[self.fetchedResultsController sections] objectAtIndex:section] name];
+    NSString *fullSectionTitle = [[NSString alloc] initWithFormat:@"%@ - %i Points Used", sectionTitle, points]; 
+    return fullSectionTitle;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -118,13 +142,19 @@
     //If the table view is asking to cmmit a delete command
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        DateEaten *dateEaten = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        [self.mealDatabase.managedObjectContext deleteObject:dateEaten];
-        [self.mealDatabase saveToURL:self.mealDatabase.fileURL 
-                    forSaveOperation:UIDocumentSaveForOverwriting 
-                   completionHandler:^(BOOL success) {
-                       if (!success) NSLog(@"failed to save document %@", self.mealDatabase.localizedName);
-                   }];
+        [self.mealDatabase.managedObjectContext performBlock:^{
+            DateEaten *dateEaten = [self.fetchedResultsController objectAtIndexPath:indexPath];
+            [self.mealDatabase.managedObjectContext deleteObject:dateEaten];
+            [self.mealDatabase saveToURL:self.mealDatabase.fileURL 
+                        forSaveOperation:UIDocumentSaveForOverwriting 
+                       completionHandler:^(BOOL success) {
+                           if (!success)
+                           {
+                               NSLog(@"failed to save document %@", self.mealDatabase.localizedName);
+                           }
+                           [self.tableView reloadData];
+                       }];
+        }];
     }
 }
 

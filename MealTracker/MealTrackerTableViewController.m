@@ -109,6 +109,13 @@
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [self.mealDatabase closeWithCompletionHandler:^(BOOL success) {
+        if (!success) NSLog(@"failed to close document %@", self.mealDatabase.localizedName);
+    }];
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -120,12 +127,10 @@
 {
     [super viewWillAppear:animated];
     
-    if (!self.mealDatabase) {
-        NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-        url = [url URLByAppendingPathComponent:@"Default Photo Database"];
+    NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    url = [url URLByAppendingPathComponent:@"Default Photo Database"];
 
-        self.mealDatabase = [[UIManagedDocument alloc] initWithFileURL:url]; // setter will create this for us on disk
-    }
+    self.mealDatabase = [[UIManagedDocument alloc] initWithFileURL:url]; // setter will create this for us on disk
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
