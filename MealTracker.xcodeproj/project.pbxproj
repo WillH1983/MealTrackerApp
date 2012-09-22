@@ -21,6 +21,7 @@
 		BE3AFF1815BB7F88006BC0D6 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AFF1715BB7F88006BC0D6 /* CoreDataTableViewController.m */; };
 		BE4392E415C0AD5E00745158 /* NSDate+day.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4392E315C0AD5E00745158 /* NSDate+day.m */; };
 		BE7E957315C0965500AE0C94 /* TrackerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7E957215C0965500AE0C94 /* TrackerTableViewController.m */; };
+		BE852A03160E474200A35FA2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE852A02160E474200A35FA2 /* Default-568h@2x.png */; };
 		BE9886AC15C09049008CD618 /* Meal.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9886AB15C09049008CD618 /* Meal.m */; };
 		BE9886AF15C09049008CD618 /* DateEaten.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9886AE15C09049008CD618 /* DateEaten.m */; };
 		BE9886B215C0908D008CD618 /* DateEaten+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9886B115C0908D008CD618 /* DateEaten+Create.m */; };
@@ -52,6 +53,7 @@
 		BE4392E315C0AD5E00745158 /* NSDate+day.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+day.m"; sourceTree = "<group>"; };
 		BE7E957115C0965500AE0C94 /* TrackerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackerTableViewController.h; sourceTree = "<group>"; };
 		BE7E957215C0965500AE0C94 /* TrackerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackerTableViewController.m; sourceTree = "<group>"; };
+		BE852A02160E474200A35FA2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		BE9886AA15C09049008CD618 /* Meal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meal.h; sourceTree = "<group>"; };
 		BE9886AB15C09049008CD618 /* Meal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meal.m; sourceTree = "<group>"; };
 		BE9886AD15C09049008CD618 /* DateEaten.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateEaten.h; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		BE3AFEE215BB754F006BC0D6 = {
 			isa = PBXGroup;
 			children = (
+				BE852A02160E474200A35FA2 /* Default-568h@2x.png */,
 				BE3AFEF715BB754F006BC0D6 /* MealTracker */,
 				BE3AFEF015BB754F006BC0D6 /* Frameworks */,
 				BE3AFEEE15BB754F006BC0D6 /* Products */,
@@ -223,6 +226,7 @@
 				BE3AFEFC15BB754F006BC0D6 /* InfoPlist.strings in Resources */,
 				BE3AFF0C15BB79F9006BC0D6 /* iPhone.storyboard in Resources */,
 				BE2C9AD815C47E2300DD6070 /* plusButton.png in Resources */,
+				BE852A03160E474200A35FA2 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

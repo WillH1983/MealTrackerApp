@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="jBA-0G-x40">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="jBA-0G-x40">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
         <scene sceneID="Lnp-19-tMl">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IVE-qW-ljR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController definesPresentationContext="YES" id="jBA-0G-x40" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="mT6-Cy-cje">
@@ -21,6 +19,7 @@
                         <segue destination="mzU-vB-L3J" kind="relationship" relationship="viewControllers" id="wSi-Mh-HPs"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IVE-qW-ljR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-400" y="341"/>
         </scene>
@@ -249,7 +248,6 @@
         <!--Tracker Table View Controller - Tracker-->
         <scene sceneID="Ah5-6Q-g4U">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hzl-0o-R6B" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="BzW-oU-sfT" customClass="TrackerTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="nBv-Lc-pDc">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
@@ -285,13 +283,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Tracker" id="Qny-Ja-T4k"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hzl-0o-R6B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="655" y="617"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g50-ox-3Dl">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rlo-LS-dxa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="mzU-vB-L3J" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="history" id="2Iu-mB-ocf"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="TI7-fc-aaR">
@@ -301,6 +299,7 @@
                         <segue destination="BzW-oU-sfT" kind="relationship" relationship="rootViewController" id="CrO-0S-r1m"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rlo-LS-dxa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="183" y="617"/>
         </scene>

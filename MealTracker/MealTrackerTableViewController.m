@@ -198,8 +198,8 @@
         [self.view addSubview:imageView];
         
         
-        [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-            imageView.frame = CGRectMake(self.view.frame.size.width - ((self.view.frame.size.width - cell.accessoryView.frame.origin.x) + 50.0), self.view.frame.size.height, imageView.frame.size.width, imageView.frame.size.height);
+        [UIView animateWithDuration:1.0 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            imageView.frame = CGRectMake(self.view.frame.size.width - ((self.view.frame.size.width - cell.accessoryView.frame.origin.x) + 50.0), (self.tableView.bounds.size.height + self.tableView.contentOffset.y), imageView.frame.size.width, imageView.frame.size.height);
             imageView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.99, 0.99);
         } completion:^(BOOL finished) {
             imageView.transform = CGAffineTransformIdentity;
