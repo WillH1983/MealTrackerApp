@@ -62,7 +62,7 @@
             [self.textEntryDelegate viewController:self didFinishWithMealMutableDictionary:dictionary];
         }
         
-        [[self presentingViewController] dismissModalViewControllerAnimated:YES];
+        [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
     }
     else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Meal Tracker" message:@"Please Enter a Meal Name" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
@@ -72,7 +72,7 @@
 
 - (IBAction)cancelButtonPressed:(UIBarButtonItem *)sender 
 {
-   [[self presentingViewController] dismissModalViewControllerAnimated:YES]; 
+    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 //pp = max {round((p x 16 + c x 19 + fa x 45)/175) - fi x (2/25), 0}, where pp is ProPoints, p is protein, c is carbohydrate, fa is total fat, and fi is dietary fiber, all in grams
 - (NSDecimalNumber *)weightWatchersPointsForProtein:(NSDecimalNumber *)p 
