@@ -56,7 +56,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="dl7-9k-R8R" kind="modal" identifier="ViewMealDetails" id="KJX-Bh-HTd"/>
+                                    <segue destination="n25-Ug-G5f" kind="modal" identifier="ViewMealDetails" modalTransitionStyle="coverVertical" id="wge-PS-Eo9"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -64,7 +64,7 @@
                     <navigationItem key="navigationItem" title="Meals" id="D2R-vd-iLM">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="QfF-Qv-94R">
                             <connections>
-                                <segue destination="dl7-9k-R8R" kind="modal" identifier="" modalTransitionStyle="coverVertical" id="Uh3-6n-9CZ"/>
+                                <segue destination="n25-Ug-G5f" kind="modal" modalTransitionStyle="coverVertical" id="uB2-tv-A7d"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -73,12 +73,28 @@
             </objects>
             <point key="canvasLocation" x="655" y="-20"/>
         </scene>
-        <!--Meal Entry View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="KmG-da-dKf">
+            <objects>
+                <navigationController id="n25-Ug-G5f" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" id="yY7-Dg-6eW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="dl7-9k-R8R" kind="relationship" relationship="rootViewController" id="IdO-IG-srP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ET1-E9-n4F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1131" y="-570"/>
+        </scene>
+        <!--Meal Details-->
         <scene sceneID="tFW-Wd-0JS">
             <objects>
                 <viewController id="dl7-9k-R8R" customClass="MealEntryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gho-u7-8KJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="CvW-Df-j2C">
@@ -191,28 +207,21 @@
                                     </textField>
                                 </subviews>
                             </scrollView>
-                            <navigationBar contentMode="scaleToFill" id="QD5-99-Rnv">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Meal Details" id="hYQ-fF-AxV">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="aH1-VP-Opv">
-                                            <connections>
-                                                <action selector="cancelButtonPressed:" destination="dl7-9k-R8R" id="JQZ-OR-yJv"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="trA-Qe-EMm">
-                                            <connections>
-                                                <action selector="saveButtonPressed:" destination="dl7-9k-R8R" id="ST7-w4-zBs"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" title="Meal Details" id="1x2-bY-aDI">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="aH1-VP-Opv">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="dl7-9k-R8R" id="JQZ-OR-yJv"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="trA-Qe-EMm">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="dl7-9k-R8R" id="ST7-w4-zBs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="WWPointsText" destination="wCe-bY-50F" id="5gS-ct-Ncq"/>
                         <outlet property="carbsText" destination="QQm-GI-w5Y" id="C92-tu-srg"/>
@@ -309,6 +318,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Uh3-6n-9CZ"/>
+        <segue reference="wge-PS-Eo9"/>
     </inferredMetricsTieBreakers>
 </document>

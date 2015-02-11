@@ -46,7 +46,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [segue.destinationViewController setTextEntryDelegate:self];
+    UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
+    [(MealEntryViewController *)navController.topViewController setTextEntryDelegate:self];
     
     if ([sender isKindOfClass:[UITableViewCell class]])
     {
