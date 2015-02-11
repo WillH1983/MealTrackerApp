@@ -56,7 +56,7 @@
         Meal *meal = [self.fetchedResultsController objectAtIndexPath:indexPath];
         
         NSMutableDictionary *mealDetails = [Meal mutableMealDictionaryForMeal:meal inManagedObjectContext:self.mealDatabase.managedObjectContext];
-        [segue.destinationViewController setMealDetails:mealDetails];
+        [(MealEntryViewController *)navController.topViewController setMealDetails:mealDetails];
     }
 }
 

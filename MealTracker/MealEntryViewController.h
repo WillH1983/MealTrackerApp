@@ -14,7 +14,7 @@
 - (void)viewController:(id)sender didFinishEditingMealMutableDictionary:(NSMutableDictionary *)newMealDetails withOldMealMutableDictionary:(NSMutableDictionary *)oldMealDetails;
 @end
 
-@interface MealEntryViewController : UIViewController <UITextFieldDelegate>
+@interface MealEntryViewController : UITableViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *mealNameText;
 @property (weak, nonatomic) IBOutlet UITextField *carbsText;
 @property (weak, nonatomic) IBOutlet UITextField *dietaryFiberText;
