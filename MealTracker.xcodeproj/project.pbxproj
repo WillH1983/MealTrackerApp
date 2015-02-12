@@ -36,6 +36,9 @@
 		BEBDCDB91A8C515F0033FD4C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBDCDB81A8C515F0033FD4C /* SystemConfiguration.framework */; };
 		BEBDCDBD1A8C55740033FD4C /* SaveMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCDBC1A8C55740033FD4C /* SaveMealService.m */; };
 		BEBDCDC11A8C5F1A0033FD4C /* MealData.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCDC01A8C5F1A0033FD4C /* MealData.m */; };
+		BEBDCDC41A8C674A0033FD4C /* LoginTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCDC31A8C674A0033FD4C /* LoginTableViewController.m */; };
+		BEBDCDC71A8C6D0B0033FD4C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCDC61A8C6D0B0033FD4C /* User.m */; };
+		BEBDCDCA1A8C6F360033FD4C /* MealAuthenticationService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCDC91A8C6F360033FD4C /* MealAuthenticationService.m */; };
 		BEDEAC6515BB9470008D3BF4 /* Meal+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDEAC6415BB9470008D3BF4 /* Meal+Create.m */; };
 		BEDEAC7015BBA0CA008D3BF4 /* MealEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDEAC6F15BBA0CA008D3BF4 /* MealEntryViewController.m */; };
 		BEDEAC7315BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDEAC7215BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m */; };
@@ -126,6 +129,12 @@
 		BEBDCDBC1A8C55740033FD4C /* SaveMealService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveMealService.m; sourceTree = "<group>"; };
 		BEBDCDBF1A8C5F1A0033FD4C /* MealData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealData.h; sourceTree = "<group>"; };
 		BEBDCDC01A8C5F1A0033FD4C /* MealData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealData.m; sourceTree = "<group>"; };
+		BEBDCDC21A8C674A0033FD4C /* LoginTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTableViewController.h; sourceTree = "<group>"; };
+		BEBDCDC31A8C674A0033FD4C /* LoginTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTableViewController.m; sourceTree = "<group>"; };
+		BEBDCDC51A8C6D0B0033FD4C /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		BEBDCDC61A8C6D0B0033FD4C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		BEBDCDC81A8C6F360033FD4C /* MealAuthenticationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealAuthenticationService.h; sourceTree = "<group>"; };
+		BEBDCDC91A8C6F360033FD4C /* MealAuthenticationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealAuthenticationService.m; sourceTree = "<group>"; };
 		BEDEAC6315BB9470008D3BF4 /* Meal+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Meal+Create.h"; sourceTree = "<group>"; };
 		BEDEAC6415BB9470008D3BF4 /* Meal+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Meal+Create.m"; sourceTree = "<group>"; };
 		BEDEAC6E15BBA0CA008D3BF4 /* MealEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealEntryViewController.h; sourceTree = "<group>"; };
@@ -220,22 +229,24 @@
 		BE3AFEF715BB754F006BC0D6 /* MealTracker */ = {
 			isa = PBXGroup;
 			children = (
+				BE1BC63C15EDE777000E31F8 /* Categories */,
+				BE1BC63E15EDE7A9000E31F8 /* Core Data */,
+				BE16D42F1A8B0968004E897A /* Images.xcassets */,
 				BE3AFF0B15BB79F9006BC0D6 /* iPhone.storyboard */,
-				BE7E957115C0965500AE0C94 /* TrackerTableViewController.h */,
 				BE16D4321A8B0D33004E897A /* Launch Screen.xib */,
-				BE7E957215C0965500AE0C94 /* TrackerTableViewController.m */,
+				BEBDCDC21A8C674A0033FD4C /* LoginTableViewController.h */,
+				BEBDCDC31A8C674A0033FD4C /* LoginTableViewController.m */,
 				BEDEAC6E15BBA0CA008D3BF4 /* MealEntryViewController.h */,
 				BEDEAC6F15BBA0CA008D3BF4 /* MealEntryViewController.m */,
-				BE3AFF0D15BB7A3A006BC0D6 /* MealTrackerTableViewController.h */,
-				BE3AFF0E15BB7A3A006BC0D6 /* MealTrackerTableViewController.m */,
 				BE3AFF0015BB754F006BC0D6 /* MealTrackerAppDelegate.h */,
 				BE3AFF0115BB754F006BC0D6 /* MealTrackerAppDelegate.m */,
+				BE3AFF0D15BB7A3A006BC0D6 /* MealTrackerTableViewController.h */,
+				BE3AFF0E15BB7A3A006BC0D6 /* MealTrackerTableViewController.m */,
 				BE2C9AD715C47E2300DD6070 /* plusButton.png */,
-				BE1BC63E15EDE7A9000E31F8 /* Core Data */,
-				BE1BC63C15EDE777000E31F8 /* Categories */,
 				BEBDCDA81A8C4B4B0033FD4C /* Service Layer */,
-				BE16D42F1A8B0968004E897A /* Images.xcassets */,
 				BE3AFEF815BB754F006BC0D6 /* Supporting Files */,
+				BE7E957115C0965500AE0C94 /* TrackerTableViewController.h */,
+				BE7E957215C0965500AE0C94 /* TrackerTableViewController.m */,
 			);
 			path = MealTracker;
 			sourceTree = "<group>";
@@ -267,6 +278,8 @@
 			children = (
 				BEBDCDAA1A8C4C170033FD4C /* BaseMealService.h */,
 				BEBDCDAB1A8C4C170033FD4C /* BaseMealService.m */,
+				BEBDCDC81A8C6F360033FD4C /* MealAuthenticationService.h */,
+				BEBDCDC91A8C6F360033FD4C /* MealAuthenticationService.m */,
 				BEBDCDAC1A8C4C170033FD4C /* MealService.h */,
 				BEBDCDAD1A8C4C170033FD4C /* MealServiceErrors.h */,
 				BEBDCDBE1A8C5EFD0033FD4C /* Model */,
@@ -283,6 +296,8 @@
 			children = (
 				BEBDCDBF1A8C5F1A0033FD4C /* MealData.h */,
 				BEBDCDC01A8C5F1A0033FD4C /* MealData.m */,
+				BEBDCDC51A8C6D0B0033FD4C /* User.h */,
+				BEBDCDC61A8C6D0B0033FD4C /* User.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -399,6 +414,7 @@
 			files = (
 				BEBDCDB01A8C4C170033FD4C /* BaseMealService.m in Sources */,
 				BEBDCDC11A8C5F1A0033FD4C /* MealData.m in Sources */,
+				BEBDCDCA1A8C6F360033FD4C /* MealAuthenticationService.m in Sources */,
 				BE3AFEFE15BB754F006BC0D6 /* main.m in Sources */,
 				BE3AFF0215BB754F006BC0D6 /* MealTrackerAppDelegate.m in Sources */,
 				BE3AFF0A15BB75BD006BC0D6 /* MealTracker.xcdatamodeld in Sources */,
@@ -410,7 +426,9 @@
 				BEDEAC7315BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m in Sources */,
 				BE9886AC15C09049008CD618 /* Meal.m in Sources */,
 				BE9886AF15C09049008CD618 /* DateEaten.m in Sources */,
+				BEBDCDC41A8C674A0033FD4C /* LoginTableViewController.m in Sources */,
 				BE9886B215C0908D008CD618 /* DateEaten+Create.m in Sources */,
+				BEBDCDC71A8C6D0B0033FD4C /* User.m in Sources */,
 				BE7E957315C0965500AE0C94 /* TrackerTableViewController.m in Sources */,
 				BEBDCDB11A8C4C170033FD4C /* ServiceClient.m in Sources */,
 				BE4392E415C0AD5E00745158 /* NSDate+day.m in Sources */,

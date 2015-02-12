@@ -17,4 +17,5 @@
 - (NSString *)baseURL;
 - (NSString *)rootKeyPath;
 - (NSString *)rootRequestKeyPath;
+- (NSDictionary *)parameters;
 @end
