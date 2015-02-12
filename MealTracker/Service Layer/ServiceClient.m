@@ -51,8 +51,8 @@ NSString* const LifeServiceErrorDomain = @"com.LifeServices.Life";
     [objectManager addRequestDescriptor:request];
         
     
-    [objectManager.HTTPClient setDefaultHeader:@"X-Parse-Application-Id" value:@"T9cA8cAcMI1QG19yPHs1snumn6QTzwCtyB8BrsQO"];
-    [objectManager.HTTPClient setDefaultHeader:@"X-Parse-REST-API-Key" value:@"ITqKlECNdFyRCmYe5PCr9IrBY9IjzIOoCG4FOMTw"];
+    [objectManager.HTTPClient setDefaultHeader:@"X-Parse-Application-Id" value:@"Wme1ksSkFZg9S4RyXWwvl7qsg6vREiSKk971ums0"];
+    [objectManager.HTTPClient setDefaultHeader:@"X-Parse-REST-API-Key" value:@"AzU3ZJMuvgWDj5ladeVSLmQozm04MJL8yA8OGI44"];
     RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);
     return objectManager;
 }
