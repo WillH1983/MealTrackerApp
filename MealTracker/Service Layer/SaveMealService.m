@@ -29,7 +29,7 @@
     }];
 }
 
-- (void)updateMeal:(Meal *)meal withSuccessBlock:(void (^)())successBlock andError:(void (^)(NSError *error))errorBlock {
+- (void)updateMeal:(MealData *)meal withSuccessBlock:(void (^)())successBlock andError:(void (^)(NSError *error))errorBlock {
     
 }
 

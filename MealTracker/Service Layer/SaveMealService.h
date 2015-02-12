@@ -8,9 +8,9 @@
 
 #import "BaseMealService.h"
 
-@class Meal;
+@class MealData;
 
 @interface SaveMealService : BaseMealService <MealService>
-- (void)updateMeal:(Meal *)meal withSuccessBlock:(void (^)())successBlock andError:(void (^)(NSError *error))errorBlock;
-- (void)saveMeal:(Meal *)meal withSuccessBlock:(void (^)())successBlock andError:(void (^)(NSError *error))errorBlock;
+- (void)updateMeal:(MealData *)meal withSuccessBlock:(void (^)())successBlock andError:(void (^)(NSError *error))errorBlock;
+- (void)saveMeal:(MealData *)meal withSuccessBlock:(void (^)())successBlock andError:(void (^)(NSError *error))errorBlock;
 @end
