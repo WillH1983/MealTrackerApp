@@ -12,6 +12,7 @@
 #import "DateEaten+Create.h"
 #import <CoreData/CoreData.h>
 #import "MealTrackerAppDelegate.h"
+#import "SaveMealService.h"
 
 @interface MealTrackerTableViewController () <MealTextEntryDelegate>
 @end
@@ -22,6 +23,11 @@
 
 - (void)viewController:(id)sender didFinishWithMealMutableDictionary:(NSMutableDictionary *)dictionary
 {
+    [[SaveMealService new] saveMeal:[Meal mealForDictionaryInfo:dictionary] withSuccessBlock:^{
+        
+    } andError:^(NSError *error) {
+        
+    }];
     [self.mealDatabase.managedObjectContext performBlock:^{
         [Meal mealForDictionaryInfo:dictionary inManagedObjectContext:self.mealDatabase.managedObjectContext];
         [self.mealDatabase saveToURL:self.mealDatabase.fileURL 

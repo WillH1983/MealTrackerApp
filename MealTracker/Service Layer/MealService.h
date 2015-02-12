@@ -12,7 +12,6 @@
 
 @protocol MealService <NSObject>
 - (NSString *)serviceURL;
-- (NSDictionary *)parameters;
 - (RKObjectMapping *)mappingProvider;
 - (RKObjectMapping *)serializedMappingProvider;
 - (NSString *)baseURL;

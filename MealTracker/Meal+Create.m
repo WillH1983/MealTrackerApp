@@ -26,6 +26,19 @@
     return mealDictionary;
 }
 
++ (MealData *)mealForDictionaryInfo:(NSMutableDictionary *)mealDictionary {
+    MealData *meal = [MealData new];
+    meal.name = mealDictionary.name;
+    meal.carbs = mealDictionary.carbs;
+    meal.dietaryFiber = mealDictionary.dietaryFiber;
+    meal.mealDescription = mealDictionary.description;
+    meal.protein = mealDictionary.protein;
+    meal.servingSize = mealDictionary.serving;
+    meal.totalFat = mealDictionary.totalFat;
+    meal.weightWatchersPlusPoints = mealDictionary.points;
+    return meal;
+}
+
 
 + (Meal *)mealForDictionaryInfo:(NSMutableDictionary *)mealDictionary
          inManagedObjectContext:(NSManagedObjectContext *)context

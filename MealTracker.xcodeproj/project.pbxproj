@@ -34,6 +34,8 @@
 		BEBDCDB51A8C513B0033FD4C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBDCDB41A8C513B0033FD4C /* MobileCoreServices.framework */; };
 		BEBDCDB71A8C51500033FD4C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBDCDB61A8C51500033FD4C /* Security.framework */; };
 		BEBDCDB91A8C515F0033FD4C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBDCDB81A8C515F0033FD4C /* SystemConfiguration.framework */; };
+		BEBDCDBD1A8C55740033FD4C /* SaveMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCDBC1A8C55740033FD4C /* SaveMealService.m */; };
+		BEBDCDC11A8C5F1A0033FD4C /* MealData.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCDC01A8C5F1A0033FD4C /* MealData.m */; };
 		BEDEAC6515BB9470008D3BF4 /* Meal+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDEAC6415BB9470008D3BF4 /* Meal+Create.m */; };
 		BEDEAC7015BBA0CA008D3BF4 /* MealEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDEAC6F15BBA0CA008D3BF4 /* MealEntryViewController.m */; };
 		BEDEAC7315BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDEAC7215BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m */; };
@@ -120,6 +122,10 @@
 		BEBDCDB41A8C513B0033FD4C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		BEBDCDB61A8C51500033FD4C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BEBDCDB81A8C515F0033FD4C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		BEBDCDBB1A8C55740033FD4C /* SaveMealService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveMealService.h; sourceTree = "<group>"; };
+		BEBDCDBC1A8C55740033FD4C /* SaveMealService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveMealService.m; sourceTree = "<group>"; };
+		BEBDCDBF1A8C5F1A0033FD4C /* MealData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealData.h; sourceTree = "<group>"; };
+		BEBDCDC01A8C5F1A0033FD4C /* MealData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealData.m; sourceTree = "<group>"; };
 		BEDEAC6315BB9470008D3BF4 /* Meal+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Meal+Create.h"; sourceTree = "<group>"; };
 		BEDEAC6415BB9470008D3BF4 /* Meal+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Meal+Create.m"; sourceTree = "<group>"; };
 		BEDEAC6E15BBA0CA008D3BF4 /* MealEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealEntryViewController.h; sourceTree = "<group>"; };
@@ -263,10 +269,22 @@
 				BEBDCDAB1A8C4C170033FD4C /* BaseMealService.m */,
 				BEBDCDAC1A8C4C170033FD4C /* MealService.h */,
 				BEBDCDAD1A8C4C170033FD4C /* MealServiceErrors.h */,
+				BEBDCDBE1A8C5EFD0033FD4C /* Model */,
+				BEBDCDBB1A8C55740033FD4C /* SaveMealService.h */,
+				BEBDCDBC1A8C55740033FD4C /* SaveMealService.m */,
 				BEBDCDAE1A8C4C170033FD4C /* ServiceClient.h */,
 				BEBDCDAF1A8C4C170033FD4C /* ServiceClient.m */,
 			);
 			path = "Service Layer";
+			sourceTree = "<group>";
+		};
+		BEBDCDBE1A8C5EFD0033FD4C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BEBDCDBF1A8C5F1A0033FD4C /* MealData.h */,
+				BEBDCDC01A8C5F1A0033FD4C /* MealData.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,11 +398,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEBDCDB01A8C4C170033FD4C /* BaseMealService.m in Sources */,
+				BEBDCDC11A8C5F1A0033FD4C /* MealData.m in Sources */,
 				BE3AFEFE15BB754F006BC0D6 /* main.m in Sources */,
 				BE3AFF0215BB754F006BC0D6 /* MealTrackerAppDelegate.m in Sources */,
 				BE3AFF0A15BB75BD006BC0D6 /* MealTracker.xcdatamodeld in Sources */,
 				BE3AFF0F15BB7A3A006BC0D6 /* MealTrackerTableViewController.m in Sources */,
 				BE3AFF1815BB7F88006BC0D6 /* CoreDataTableViewController.m in Sources */,
+				BEBDCDBD1A8C55740033FD4C /* SaveMealService.m in Sources */,
 				BEDEAC6515BB9470008D3BF4 /* Meal+Create.m in Sources */,
 				BEDEAC7015BBA0CA008D3BF4 /* MealEntryViewController.m in Sources */,
 				BEDEAC7315BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m in Sources */,
