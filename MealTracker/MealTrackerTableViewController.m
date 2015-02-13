@@ -13,8 +13,10 @@
 #import <CoreData/CoreData.h>
 #import "MealTrackerAppDelegate.h"
 #import "SaveMealService.h"
+#import "RetrieveMealService.h"
 
 @interface MealTrackerTableViewController () <MealTextEntryDelegate>
+@property (nonatomic, strong) NSArray *dataSource;
 @end
 
 
@@ -28,14 +30,6 @@
     } andError:^(NSError *error) {
         
     }];
-    [self.mealDatabase.managedObjectContext performBlock:^{
-        [Meal mealForDictionaryInfo:dictionary inManagedObjectContext:self.mealDatabase.managedObjectContext];
-        [self.mealDatabase saveToURL:self.mealDatabase.fileURL 
-                    forSaveOperation:UIDocumentSaveForOverwriting 
-                   completionHandler:^(BOOL success) {
-                       if (!success) NSLog(@"failed to save document %@", self.mealDatabase.localizedName);
-               }];
-    }];
 }
 
 - (void)viewController:(id)sender didFinishEditingMealMutableDictionary:(NSMutableDictionary *)newMealDetails withOldMealMutableDictionary:(NSMutableDictionary *)oldMealDetails
@@ -47,6 +41,15 @@
                    completionHandler:^(BOOL success) {
                        if (!success) NSLog(@"failed to save document %@", self.mealDatabase.localizedName);
                    }];
+    }];
+}
+
+- (void)viewController:(id)sender didFinishEditingMeal:(MealData *)meal {
+    SaveMealService *saveService = [SaveMealService new];
+    [saveService updateMeal:meal withSuccessBlock:^{
+        NSLog(@"Success");
+    } andError:^(NSError *error) {
+        NSLog(@"%@", error);
     }];
 }
 
@@ -63,6 +66,7 @@
         
         NSMutableDictionary *mealDetails = [Meal mutableMealDictionaryForMeal:meal inManagedObjectContext:self.mealDatabase.managedObjectContext];
         [(MealEntryViewController *)navController.topViewController setMealDetails:mealDetails];
+        [(MealEntryViewController *)navController.topViewController setMealData:[self.dataSource objectAtIndex:indexPath.row]];
     }
 }
 
@@ -101,6 +105,14 @@
     {
         [self setupFetchedResultsController];
     }
+    
+    RetrieveMealService *mealService = [RetrieveMealService new];
+    [mealService retrieveMealsWithSuccessBlock:^(NSArray *meals) {
+        self.dataSource = meals;
+        [self.tableView reloadData];
+    } andError:^(NSError *error) {
+        NSLog(@"%@", error);
+    }];
 }
 
 - (void)viewDidLoad
@@ -161,7 +173,7 @@
     [button addTarget:self action:@selector(disclosureButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     cell.accessoryView = button;
     // ask NSFetchedResultsController for the NSMO at the row in question
-    Meal *meal = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    Meal *meal = [self.dataSource objectAtIndex:indexPath.row];
     // Then configure the cell using it ...
     cell.textLabel.text = meal.name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ Weight Watchers Points", [meal.weightWatchersPlusPoints stringValue]];
@@ -182,6 +194,18 @@
                        if (!success) NSLog(@"failed to save document %@", self.mealDatabase.localizedName);
                    }];
     }
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.dataSource.count;
 }
 
 #pragma mark - Table view delegate

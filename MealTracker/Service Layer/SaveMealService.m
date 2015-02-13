@@ -15,7 +15,8 @@
 @interface SaveMealService()
 @property (strong, nonatomic) NSString *url;
 @property (strong, nonatomic) NSString *keyPath;
-@property (assign, nonatomic) BOOL isFacebookObjectMapping;
+@property (strong, nonatomic) NSString *mealObjectId;
+@property (assign, nonatomic) BOOL isUpdatingMeal;
 @end
 
 @implementation SaveMealService
@@ -30,7 +31,14 @@
 }
 
 - (void)updateMeal:(MealData *)meal withSuccessBlock:(void (^)())successBlock andError:(void (^)(NSError *error))errorBlock {
-    
+    self.isUpdatingMeal = YES;
+    self.mealObjectId = meal.objectId;
+    ServiceClient *serviceClient = [ServiceClient new];
+    [serviceClient putObject:meal andService:self withSuccessBlock:^(RKMappingResult *result) {
+        successBlock();
+    } andError:^(NSError *error) {
+        errorBlock(error);
+    }];
 }
 
 //- (void)updatePrivateMessage:(PrivateMessage *)privateMessage fromCapsule:(Capsule *)capsule withSuccessBlock:(void (^)())successBlock andError:(void (^)(NSError *error))errorBlock {
@@ -40,7 +48,11 @@
 //}
 
 - (NSString *)serviceURL {
-    return [NSString stringWithFormat:@"/1/classes/%@", NSStringFromClass([MealData class])];
+    if (self.isUpdatingMeal) {
+        return [NSString stringWithFormat:@"/1/classes/%@/%@", NSStringFromClass([MealData class]), self.mealObjectId];
+    } else {
+        return [NSString stringWithFormat:@"/1/classes/%@", NSStringFromClass([MealData class])];
+    }
 }
 
 - (NSString *)rootKeyPath {
@@ -48,6 +60,10 @@
 }
 
 - (NSString *)rootRequestKeyPath {
+    return nil;
+}
+
+- (NSDictionary *)parameters {
     return nil;
 }
 

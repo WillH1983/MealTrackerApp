@@ -8,6 +8,7 @@
 
 #import "MealEntryViewController.h"
 #import "NSMutableDictionary+MealDictionary.h"
+#import "MealData.h"
 
 @interface MealEntryViewController ()
 @property (nonatomic, strong) UITextField *activeField;
@@ -53,9 +54,19 @@
         dictionary.totalFat = [NSDecimalNumber decimalNumberWithString:totalFatText.text];
         dictionary.points = [NSDecimalNumber decimalNumberWithString:WWPointsText.text];
         
+        self.mealData.name = mealNameText.text;
+        self.mealData.mealDescription = mealDescriptionText.text;
+        self.mealData.carbs = [NSDecimalNumber decimalNumberWithString:carbsText.text];
+        self.mealData.dietaryFiber = [NSDecimalNumber decimalNumberWithString:dietaryFiberText.text];
+        self.mealData.protein = [NSDecimalNumber decimalNumberWithString:totalProteinText.text];
+        self.mealData.servingSize = servingSizeText.text;
+        self.mealData.totalFat = [NSDecimalNumber decimalNumberWithString:totalFatText.text];
+        self.mealData.weightWatchersPlusPoints = [NSDecimalNumber decimalNumberWithString:WWPointsText.text];
+        
         if (self.mealDetails)
         {
             [self.textEntryDelegate viewController:self didFinishEditingMealMutableDictionary:dictionary withOldMealMutableDictionary:self.mealDetails];
+            [self.textEntryDelegate viewController:self didFinishEditingMeal:self.mealData];
         }
         else 
         {
