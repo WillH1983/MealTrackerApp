@@ -9,23 +9,20 @@
 #import "MealEntryViewController.h"
 #import "Meal.h"
 
-@interface MealEntryViewController ()
+@interface MealEntryViewController () <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *mealNameText;
+@property (weak, nonatomic) IBOutlet UITextField *carbsText;
+@property (weak, nonatomic) IBOutlet UITextField *dietaryFiberText;
+@property (weak, nonatomic) IBOutlet UITextField *totalProteinText;
+@property (weak, nonatomic) IBOutlet UITextField *servingSizeText;
+@property (weak, nonatomic) IBOutlet UITextField *totalFatText;
+@property (weak, nonatomic) IBOutlet UITextField *WWPointsText;
+@property (weak, nonatomic) IBOutlet UITextField *mealDescriptionText;
+
 @property (nonatomic, strong) UITextField *activeField;
 @end
 
 @implementation MealEntryViewController
-@synthesize mealNameText;
-@synthesize carbsText;
-@synthesize dietaryFiberText;
-@synthesize totalProteinText;
-@synthesize servingSizeText;
-@synthesize totalFatText;
-@synthesize WWPointsText;
-@synthesize mealDescriptionText;
-@synthesize textEntryDelegate = _textEntryDelegate;
-@synthesize scrollView;
-@synthesize activeField = _activeField;
-
 
 - (Meal *)mealData {
     if (_mealData == nil) {
@@ -41,14 +38,14 @@
     
     if ([mealName length] > 0)
     {
-        self.mealData.name = mealNameText.text;
-        self.mealData.mealDescription = mealDescriptionText.text;
-        self.mealData.carbs = [NSDecimalNumber decimalNumberWithString:carbsText.text];
-        self.mealData.dietaryFiber = [NSDecimalNumber decimalNumberWithString:dietaryFiberText.text];
-        self.mealData.protein = [NSDecimalNumber decimalNumberWithString:totalProteinText.text];
-        self.mealData.servingSize = servingSizeText.text;
-        self.mealData.totalFat = [NSDecimalNumber decimalNumberWithString:totalFatText.text];
-        self.mealData.weightWatchersPlusPoints = [NSDecimalNumber decimalNumberWithString:WWPointsText.text];
+        self.mealData.name = self.mealNameText.text;
+        self.mealData.mealDescription = self.mealDescriptionText.text;
+        self.mealData.carbs = [NSDecimalNumber decimalNumberWithString:self.carbsText.text];
+        self.mealData.dietaryFiber = [NSDecimalNumber decimalNumberWithString:self.dietaryFiberText.text];
+        self.mealData.protein = [NSDecimalNumber decimalNumberWithString:self.totalProteinText.text];
+        self.mealData.servingSize = self.servingSizeText.text;
+        self.mealData.totalFat = [NSDecimalNumber decimalNumberWithString:self.totalFatText.text];
+        self.mealData.weightWatchersPlusPoints = [NSDecimalNumber decimalNumberWithString:self.WWPointsText.text];
         
         if (self.mealData.objectId)
         {
@@ -140,7 +137,6 @@
         }
     }
     
-    [self registerForKeyboardNotifications];
 }
 
 -(void)dismissKeyboard {
@@ -154,119 +150,23 @@
     [self.mealDescriptionText resignFirstResponder];
 }
 
-- (void)viewDidUnload
-{
-    [self setCarbsText:nil];
-    [self setDietaryFiberText:nil];
-    [self setMealNameText:nil];
-    [self setTotalProteinText:nil];
-    [self setServingSizeText:nil];
-    [self setTotalFatText:nil];
-    [self setWWPointsText:nil];
-    [self setMealDescriptionText:nil];
-    [self setScrollView:nil];
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
-// Call this method somewhere in your view controller setup code.
-
-- (void)registerForKeyboardNotifications
-
-{
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWasShown:)
-                                                 name:UIKeyboardDidShowNotification object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillBeHidden:)
-                                                 name:UIKeyboardWillHideNotification object:nil];
-    
-    
-    
-}
-
-// Called when the UIKeyboardDidShowNotification is sent.
-
-- (void)keyboardWasShown:(NSNotification*)aNotification
-
-{
-    
-    NSDictionary* info = [aNotification userInfo];
-    
-    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    
-    
-    
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, self.view.bounds.size.height + kbSize.height, 0.0);
-    
-    self.scrollView.contentInset = contentInsets;
-    
-    self.scrollView.scrollIndicatorInsets = contentInsets;
-    
-    
-    
-    // If active text field is hidden by keyboard, scroll it so it's visible
-    
-    // Your application might not need or want this behavior.
-    
-    CGRect aRect = self.scrollView.bounds;
-    
-    aRect.size.height -= kbSize.height;
-    
-    if (!CGRectContainsPoint(aRect, self.activeField.frame.origin) ) {
-        
-        CGPoint scrollPoint = CGPointMake(0.0, self.activeField.frame.origin.y-kbSize.height+self.scrollView.frame.origin.y + 10);
-        
-        [self.scrollView setContentOffset:scrollPoint animated:YES];
-        
-    }
-    
-}
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-
-{
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
     self.activeField = textField;
     
 }
 
 
 
-- (void)textFieldDidEndEditing:(UITextField *)textField
-
-{
+- (void)textFieldDidEndEditing:(UITextField *)textField {
     self.activeField = nil;
     if (([self.totalProteinText.text length] > 0) & ([self.carbsText.text length] > 0) & ([self.totalFatText.text length] > 0) & ([self.dietaryFiberText.text length] > 0))
     {
-        NSDecimalNumber *wwPoints = [self weightWatchersPointsForProtein:[NSDecimalNumber decimalNumberWithString:totalProteinText.text] 
-                                                           carbohydrates:[NSDecimalNumber decimalNumberWithString:carbsText.text] 
-                                                                totalFat:[NSDecimalNumber decimalNumberWithString:totalFatText.text] 
-                                                         andDietaryFiber:[NSDecimalNumber decimalNumberWithString:dietaryFiberText.text]];
+        NSDecimalNumber *wwPoints = [self weightWatchersPointsForProtein:[NSDecimalNumber decimalNumberWithString:self.totalProteinText.text]
+                                                           carbohydrates:[NSDecimalNumber decimalNumberWithString:self.carbsText.text]
+                                                                totalFat:[NSDecimalNumber decimalNumberWithString:self.totalFatText.text]
+                                                         andDietaryFiber:[NSDecimalNumber decimalNumberWithString:self.dietaryFiberText.text]];
         self.WWPointsText.text = [wwPoints stringValue]; 
     }
-    
-}
-
-
-
-// Called when the UIKeyboardWillHideNotification is sent
-
-- (void)keyboardWillBeHidden:(NSNotification*)aNotification
-
-{
-    
-    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
-    
-    scrollView.contentInset = contentInsets;
-    
-    scrollView.scrollIndicatorInsets = contentInsets;
     
 }
 
