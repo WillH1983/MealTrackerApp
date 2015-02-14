@@ -28,6 +28,7 @@
 		BE9886AC15C09049008CD618 /* Meal.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9886AB15C09049008CD618 /* Meal.m */; };
 		BE9886AF15C09049008CD618 /* DateEaten.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9886AE15C09049008CD618 /* DateEaten.m */; };
 		BE9886B215C0908D008CD618 /* DateEaten+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9886B115C0908D008CD618 /* DateEaten+Create.m */; };
+		BEA221C81A8F105B00BFC1DD /* MealEaten.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA221C71A8F105B00BFC1DD /* MealEaten.m */; };
 		BEBDCDA71A8C49E90033FD4C /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBDCD9E1A8C49490033FD4C /* libRestKit.a */; };
 		BEBDCDB01A8C4C170033FD4C /* BaseMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCDAB1A8C4C170033FD4C /* BaseMealService.m */; };
 		BEBDCDB11A8C4C170033FD4C /* ServiceClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCDAF1A8C4C170033FD4C /* ServiceClient.m */; };
@@ -117,6 +118,8 @@
 		BE9886AE15C09049008CD618 /* DateEaten.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateEaten.m; sourceTree = "<group>"; };
 		BE9886B015C0908D008CD618 /* DateEaten+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DateEaten+Create.h"; sourceTree = "<group>"; };
 		BE9886B115C0908D008CD618 /* DateEaten+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DateEaten+Create.m"; sourceTree = "<group>"; };
+		BEA221C61A8F105B00BFC1DD /* MealEaten.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealEaten.h; sourceTree = "<group>"; };
+		BEA221C71A8F105B00BFC1DD /* MealEaten.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealEaten.m; sourceTree = "<group>"; };
 		BEBDCD961A8C49490033FD4C /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = MealTracker/RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		BEBDCDAA1A8C4C170033FD4C /* BaseMealService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMealService.h; sourceTree = "<group>"; };
 		BEBDCDAB1A8C4C170033FD4C /* BaseMealService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseMealService.m; sourceTree = "<group>"; };
@@ -301,6 +304,8 @@
 			children = (
 				BEBDCDBF1A8C5F1A0033FD4C /* MealData.h */,
 				BEBDCDC01A8C5F1A0033FD4C /* MealData.m */,
+				BEA221C61A8F105B00BFC1DD /* MealEaten.h */,
+				BEA221C71A8F105B00BFC1DD /* MealEaten.m */,
 				BEBDCDC51A8C6D0B0033FD4C /* User.h */,
 				BEBDCDC61A8C6D0B0033FD4C /* User.m */,
 			);
@@ -433,6 +438,7 @@
 				BE9886AF15C09049008CD618 /* DateEaten.m in Sources */,
 				BEBDCDC41A8C674A0033FD4C /* LoginTableViewController.m in Sources */,
 				BE9886B215C0908D008CD618 /* DateEaten+Create.m in Sources */,
+				BEA221C81A8F105B00BFC1DD /* MealEaten.m in Sources */,
 				BEBDCDC71A8C6D0B0033FD4C /* User.m in Sources */,
 				BE6947101A8DAFC500BDB146 /* RetrieveMealService.m in Sources */,
 				BE7E957315C0965500AE0C94 /* TrackerTableViewController.m in Sources */,

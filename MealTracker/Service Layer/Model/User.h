@@ -13,4 +13,8 @@
 @property (nonatomic, strong) NSString *password;
 @property (nonatomic, strong) NSString *objectId;
 @property (nonatomic, strong) NSString *sessionToken;
+
++ (User *)userObjectFromDictionary:(NSDictionary *)dictionary;
+
+- (NSDictionary *)dictionaryRepresentation;
 @end

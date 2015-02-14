@@ -17,12 +17,12 @@
 @end
 
 @implementation MealAuthenticationService
-- (void)registerUser:(User *)user withSuccessBlock:(void (^)())successBlock andError:(void (^)(NSError *error))errorBlock {
+- (void)registerUser:(User *)user withSuccessBlock:(void (^)(User *user))successBlock andError:(void (^)(NSError *error))errorBlock {
     ServiceClient *serviceClient = [ServiceClient new];
     [serviceClient postObject:user andService:self withSuccessBlock:^(RKMappingResult *result) {
-        NSLog(@"%@", user);
+        successBlock(result.firstObject);
     } andError:^(NSError *error) {
-        NSLog(@"%@", error);
+        errorBlock(error);
     }];
 }
 
@@ -33,7 +33,7 @@
     [serviceClient getForService:self withSuccess:^(RKMappingResult *result) {
         successBlock(result.firstObject);
     } andError:^(NSError *error) {
-        NSLog(@"%@", error);
+        errorBlock(error);
     }];
 }
 

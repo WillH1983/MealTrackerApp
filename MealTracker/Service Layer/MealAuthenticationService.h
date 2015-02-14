@@ -11,6 +11,6 @@
 @class User;
 
 @interface MealAuthenticationService : BaseMealService <MealService>
-- (void)registerUser:(User *)user withSuccessBlock:(void (^)())successBlock andError:(void (^)(NSError *error))errorBlock;
+- (void)registerUser:(User *)user withSuccessBlock:(void (^)(User *user))successBlock andError:(void (^)(NSError *error))errorBlock;
 - (void)loginUser:(User *)user withSuccessBlock:(void (^)(User *user))successBlock andError:(void (^)(NSError *error))errorBlock;
 @end
