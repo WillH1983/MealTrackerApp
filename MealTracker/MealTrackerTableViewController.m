@@ -27,8 +27,8 @@
 @implementation MealTrackerTableViewController
 
 - (void)viewController:(id)sender didFinishWithMeal:(Meal *)meal {
-    [[SaveMealService new] saveMeal:meal withSuccessBlock:^{
-        
+    [[SaveMealService new] saveMeal:meal withSuccessBlock:^(Meal *meal) {
+        [self.tableView reloadData];
     } andError:^(NSError *error) {
         
     }];

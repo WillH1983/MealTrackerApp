@@ -21,12 +21,12 @@
 
 @implementation SaveMealService
 
-- (void)saveMeal:(Meal *)meal withSuccessBlock:(void (^)())successBlock andError:(void (^)(NSError *error))errorBlock {
+- (void)saveMeal:(Meal *)meal withSuccessBlock:(void (^)(Meal *meal))successBlock andError:(void (^)(NSError *error))errorBlock {
     ServiceClient *serviceClient = [ServiceClient new];
     [serviceClient postObject:meal andService:self withSuccessBlock:^(RKMappingResult *result) {
-        NSLog(@"%@", result.firstObject);
+        successBlock(result.firstObject);
     } andError:^(NSError *error) {
-        NSLog(@"%@", error);
+        errorBlock(error);
     }];
 }
 
