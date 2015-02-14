@@ -8,6 +8,6 @@
 
 #import "CoreDataTableViewController.h"
 
-@interface TrackerTableViewController : CoreDataTableViewController
+@interface TrackerTableViewController : UITableViewController
 @property (nonatomic, strong) UIManagedDocument *mealDatabase;
 @end
