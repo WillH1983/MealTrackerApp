@@ -8,7 +8,7 @@
 
 #import "RestKit/RestKit.h"
 #import "RetrieveMealService.h"
-#import "MealData.h"
+#import "Meal.h"
 #import "ServiceClient.h"
 
 @implementation RetrieveMealService
@@ -23,7 +23,7 @@
 }
 
 - (NSString *)serviceURL {
-    NSString *serviceString = [NSString stringWithFormat:@"/1/classes/%@", NSStringFromClass([MealData class])];
+    NSString *serviceString = [NSString stringWithFormat:@"/1/classes/%@", NSStringFromClass([Meal class])];
     return serviceString;
 }
 
@@ -40,7 +40,7 @@
 }
 
 - (RKObjectMapping *)mappingProvider {
-    RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[MealData class]];
+    RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[Meal class]];
     [mapping addAttributeMappingsFromDictionary:@{@"calories":@"calories"}];
     [mapping addAttributeMappingsFromDictionary:@{@"carbs":@"carbs"}];
     [mapping addAttributeMappingsFromDictionary:@{@"dietaryFiber":@"dietaryFiber"}];

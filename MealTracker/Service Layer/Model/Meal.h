@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MealData : NSObject
+@interface Meal : NSObject
 @property (nonatomic, strong) NSDecimalNumber *calories;
 @property (nonatomic, strong) NSDecimalNumber *carbs;
 @property (nonatomic, strong) NSDecimalNumber *dietaryFiber;
@@ -22,5 +22,7 @@
 @property (nonatomic, strong) NSString *objectId;
 @property (strong, nonatomic) NSString *className;
 @property (strong, nonatomic) NSString *objectType;
+
++ (Meal *)mealForDictionaryInfo:(NSMutableDictionary *)mealDictionary;
 
 @end

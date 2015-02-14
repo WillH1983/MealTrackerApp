@@ -29,7 +29,7 @@
 
 - (void)viewController:(id)sender didFinishWithMealMutableDictionary:(NSMutableDictionary *)dictionary
 {
-    [[SaveMealService new] saveMeal:[MealCoreData mealForDictionaryInfo:dictionary] withSuccessBlock:^{
+    [[SaveMealService new] saveMeal:[Meal mealForDictionaryInfo:dictionary] withSuccessBlock:^{
         
     } andError:^(NSError *error) {
         
@@ -48,7 +48,7 @@
     }];
 }
 
-- (void)viewController:(id)sender didFinishEditingMeal:(MealData *)meal {
+- (void)viewController:(id)sender didFinishEditingMeal:(Meal *)meal {
     SaveMealService *saveService = [SaveMealService new];
     [saveService updateMeal:meal withSuccessBlock:^{
         NSLog(@"Success");
@@ -213,6 +213,22 @@
 {
     UITableViewCell *cell = (UITableViewCell *)[sender superview];
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"plusButton"]];
+    
+    CGPoint p = [self.tableView convertPoint:cell.accessoryView.frame.origin fromView:cell];
+    imageView.frame = CGRectMake(p.x, p.y, 35, 35);
+    [self.view addSubview:imageView];
+    
+    
+    [UIView animateWithDuration:1.0 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        imageView.frame = CGRectMake(self.view.frame.size.width - ((self.view.frame.size.width - cell.accessoryView.frame.origin.x) + 50.0), (self.tableView.bounds.size.height + self.tableView.contentOffset.y), imageView.frame.size.width, imageView.frame.size.height);
+        imageView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.99, 0.99);
+    } completion:^(BOOL finished) {
+        imageView.transform = CGAffineTransformIdentity;
+        [imageView removeFromSuperview];
+    }];
+
     
     MealEaten *mealEaten = [MealEaten new];
     mealEaten.meal = [self.dataSource objectAtIndex:indexPath.row];

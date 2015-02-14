@@ -10,7 +10,7 @@
 
 #import "SaveMealService.h"
 #import "ServiceClient.h"
-#import "MealData.h"
+#import "Meal.h"
 
 @interface SaveMealService()
 @property (strong, nonatomic) NSString *url;
@@ -21,7 +21,7 @@
 
 @implementation SaveMealService
 
-- (void)saveMeal:(MealData *)meal withSuccessBlock:(void (^)())successBlock andError:(void (^)(NSError *error))errorBlock {
+- (void)saveMeal:(Meal *)meal withSuccessBlock:(void (^)())successBlock andError:(void (^)(NSError *error))errorBlock {
     ServiceClient *serviceClient = [ServiceClient new];
     [serviceClient postObject:meal andService:self withSuccessBlock:^(RKMappingResult *result) {
         NSLog(@"%@", result.firstObject);
@@ -30,7 +30,7 @@
     }];
 }
 
-- (void)updateMeal:(MealData *)meal withSuccessBlock:(void (^)())successBlock andError:(void (^)(NSError *error))errorBlock {
+- (void)updateMeal:(Meal *)meal withSuccessBlock:(void (^)())successBlock andError:(void (^)(NSError *error))errorBlock {
     self.isUpdatingMeal = YES;
     self.mealObjectId = meal.objectId;
     ServiceClient *serviceClient = [ServiceClient new];
@@ -43,9 +43,9 @@
 
 - (NSString *)serviceURL {
     if (self.isUpdatingMeal) {
-        return [NSString stringWithFormat:@"/1/classes/%@/%@", NSStringFromClass([MealData class]), self.mealObjectId];
+        return [NSString stringWithFormat:@"/1/classes/%@/%@", NSStringFromClass([Meal class]), self.mealObjectId];
     } else {
-        return [NSString stringWithFormat:@"/1/classes/%@", NSStringFromClass([MealData class])];
+        return [NSString stringWithFormat:@"/1/classes/%@", NSStringFromClass([Meal class])];
     }
 }
 
@@ -62,13 +62,13 @@
 }
 
 - (RKObjectMapping *)mappingProvider {
-    RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[MealData class]];
+    RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[Meal class]];
     [mapping addAttributeMappingsFromDictionary:@{@"objectId":@"objectId"}];
     return mapping;
 }
 
 - (RKObjectMapping *)serializedMappingProvider {
-    RKObjectMapping *seriallMapping = [RKObjectMapping mappingForClass:[MealData class]];
+    RKObjectMapping *seriallMapping = [RKObjectMapping mappingForClass:[Meal class]];
     [seriallMapping addAttributeMappingsFromDictionary:@{@"calories":@"calories"}];
     [seriallMapping addAttributeMappingsFromDictionary:@{@"carbs":@"carbs"}];
     [seriallMapping addAttributeMappingsFromDictionary:@{@"dietaryFiber":@"dietaryFiber"}];

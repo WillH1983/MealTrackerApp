@@ -7,11 +7,11 @@
 //
 
 #import "MealCoreData.h"
-#import "MealData.h"
+#import "Meal.h"
 
 @interface MealCoreData (Create)
 
-+ (MealData *)mealForDictionaryInfo:(NSMutableDictionary *)mealDictionary;
++ (Meal *)mealForDictionaryInfo:(NSMutableDictionary *)mealDictionary;
 
 + (MealCoreData *)mealForDictionaryInfo:(NSMutableDictionary *)mealDictionary
        inManagedObjectContext:(NSManagedObjectContext *)context;

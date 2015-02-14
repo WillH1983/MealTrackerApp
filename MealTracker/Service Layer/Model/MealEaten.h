@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@class MealData;
+@class Meal;
 @class User;
 
 @interface MealEaten : NSObject
 @property (strong, nonatomic) NSDate *dateEaten;
 @property (strong, nonatomic) User *user;
-@property (strong, nonatomic) MealData *meal;
+@property (strong, nonatomic) Meal *meal;
 @property (strong, nonatomic) NSString *objectId;
 @end

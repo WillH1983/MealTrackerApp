@@ -26,8 +26,8 @@
     return mealDictionary;
 }
 
-+ (MealData *)mealForDictionaryInfo:(NSMutableDictionary *)mealDictionary {
-    MealData *meal = [MealData new];
++ (Meal *)mealForDictionaryInfo:(NSMutableDictionary *)mealDictionary {
+    Meal *meal = [Meal new];
     meal.name = mealDictionary.name;
     meal.carbs = mealDictionary.carbs;
     meal.dietaryFiber = mealDictionary.dietaryFiber;

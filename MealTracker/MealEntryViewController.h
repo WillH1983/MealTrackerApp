@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@class MealData;
+@class Meal;
 
 @protocol MealTextEntryDelegate <NSObject>
 - (void)viewController:(id)sender didFinishWithMealMutableDictionary:(NSMutableDictionary *)mealDetails;
 
 - (void)viewController:(id)sender didFinishEditingMealMutableDictionary:(NSMutableDictionary *)newMealDetails withOldMealMutableDictionary:(NSMutableDictionary *)oldMealDetails;
 
-- (void)viewController:(id)sender didFinishEditingMeal:(MealData *)meal;
+- (void)viewController:(id)sender didFinishEditingMeal:(Meal *)meal;
 @end
 
 @interface MealEntryViewController : UITableViewController <UITextFieldDelegate>
@@ -32,6 +32,6 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (nonatomic, strong) NSMutableDictionary *mealDetails;
-@property (nonatomic, strong) MealData *mealData;
+@property (nonatomic, strong) Meal *mealData;
 
 @end

@@ -8,7 +8,7 @@
 
 #import "MealEntryViewController.h"
 #import "NSMutableDictionary+MealDictionary.h"
-#import "MealData.h"
+#import "Meal.h"
 
 @interface MealEntryViewController ()
 @property (nonatomic, strong) UITextField *activeField;

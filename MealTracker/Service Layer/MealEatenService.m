@@ -10,7 +10,7 @@
 #import "MealEaten.h"
 #import "ServiceClient.h"
 #import "User.h"
-#import "MealData.h"
+#import "Meal.h"
 #import "RestKit/RestKit.h"
 
 @implementation MealEatenService
@@ -57,7 +57,7 @@
     RKRelationshipMapping *userPointerRelationshipMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"user" toKeyPath:@"user" withMapping:userPointerMapping];
     [seriallMapping addPropertyMapping:userPointerRelationshipMapping];
     
-    RKObjectMapping *mealMapping = [RKObjectMapping mappingForClass:[MealData class]];
+    RKObjectMapping *mealMapping = [RKObjectMapping mappingForClass:[Meal class]];
     [mealMapping addAttributeMappingsFromDictionary:@{@"__type":@"objectType"}];
     [mealMapping addAttributeMappingsFromDictionary:@{@"objectId": @"objectId"}];
     [mealMapping addAttributeMappingsFromDictionary:@{@"className": @"className"}];
