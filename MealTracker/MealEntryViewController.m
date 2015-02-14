@@ -27,13 +27,12 @@
 @synthesize scrollView;
 @synthesize activeField = _activeField;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+
+- (Meal *)mealData {
+    if (_mealData == nil) {
+        _mealData = [Meal new];
     }
-    return self;
+    return _mealData;
 }
 
 - (IBAction)saveButtonPressed:(UIBarButtonItem *)sender 
@@ -52,7 +51,7 @@
         self.mealData.totalFat = [NSDecimalNumber decimalNumberWithString:totalFatText.text];
         self.mealData.weightWatchersPlusPoints = [NSDecimalNumber decimalNumberWithString:WWPointsText.text];
         
-        if (self.mealData)
+        if (self.mealData.objectId)
         {
             [self.textEntryDelegate viewController:self didFinishEditingMeal:self.mealData];
         }

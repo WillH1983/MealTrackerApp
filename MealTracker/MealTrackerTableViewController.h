@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CoreDataTableViewController.h"
 
-@interface MealTrackerTableViewController : CoreDataTableViewController
-
-@property (nonatomic, strong) UIManagedDocument *mealDatabase;  // Model is a Core Data database of photos
+@interface MealTrackerTableViewController : UITableViewController
 
 @end

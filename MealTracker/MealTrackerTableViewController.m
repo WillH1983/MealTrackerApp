@@ -25,7 +25,6 @@
 
 
 @implementation MealTrackerTableViewController
-@synthesize mealDatabase = _mealDatabase;
 
 - (void)viewController:(id)sender didFinishWithMeal:(Meal *)meal {
     [[SaveMealService new] saveMeal:meal withSuccessBlock:^{
@@ -58,41 +57,9 @@
     }
 }
 
-- (void)setupFetchedResultsController // attaches an NSFetchRequest to this UITableViewController
-{
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Meal"];
-    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
-    // no predicate because we want ALL the Photographers
-    
-    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
-                                                                        managedObjectContext:self.mealDatabase.managedObjectContext
-                                                                          sectionNameKeyPath:nil
-                                                                                   cacheName:nil];
-}
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(documentStateChanged:)
-                                                 name:UIDocumentStateChangedNotification object:self.mealDatabase];
-    
-    MealTrackerAppDelegate *appDelegate = (MealTrackerAppDelegate *)[[UIApplication sharedApplication] delegate];
-    self.mealDatabase = appDelegate.mealDatabase;
-    
-    if (self.mealDatabase.documentState == UIDocumentStateNormal)
-    {
-        [self setupFetchedResultsController];
-    }
     
     RetrieveMealService *mealService = [RetrieveMealService new];
     [mealService retrieveMealsWithSuccessBlock:^(NSArray *meals) {
@@ -117,30 +84,6 @@
     self.user = [User userObjectFromDictionary:userDictionary];
 }
 
-- (void)viewDidDisappear:(BOOL)animated
-{
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIDocumentStateChangedNotification 
-                                                  object:self.mealDatabase];
-}
-
-- (void)documentStateChanged:(NSNotification *)notification
-{
-    id notificationObject = [notification object];
-    if ([notificationObject isKindOfClass:[UIManagedDocument class]])
-    {
-        UIManagedDocument *document = notificationObject;
-        if (document.documentState == UIDocumentStateNormal) [self setupFetchedResultsController];
-    }
-    
-}
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -162,21 +105,6 @@
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ Weight Watchers Points", [meal.weightWatchersPlusPoints stringValue]];
     
     return cell;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    //If the table view is asking to cmmit a delete command
-    if (editingStyle == UITableViewCellEditingStyleDelete)
-    {
-        MealCoreData *meal = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        [self.mealDatabase.managedObjectContext deleteObject:meal];
-        [self.mealDatabase saveToURL:self.mealDatabase.fileURL 
-                    forSaveOperation:UIDocumentSaveForOverwriting 
-                   completionHandler:^(BOOL success) {
-                       if (!success) NSLog(@"failed to save document %@", self.mealDatabase.localizedName);
-                   }];
-    }
 }
 
 #pragma mark - UITableViewDataSource
