@@ -7,7 +7,7 @@
 //
 
 #import "DateEaten.h"
-#import "Meal.h"
+#import "MealCoreData.h"
 
 
 @implementation DateEaten

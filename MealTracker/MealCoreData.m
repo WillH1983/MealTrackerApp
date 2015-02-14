@@ -6,11 +6,11 @@
 //
 //
 
-#import "Meal.h"
+#import "MealCoreData.h"
 #import "DateEaten.h"
 
 
-@implementation Meal
+@implementation MealCoreData
 
 @dynamic calories;
 @dynamic carbs;

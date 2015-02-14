@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Meal;
+@class MealCoreData;
 
 @interface DateEaten : NSManagedObject
 
 @property (nonatomic, retain) NSDate * date;
-@property (nonatomic, retain) Meal *whatWasEaten;
+@property (nonatomic, retain) MealCoreData *whatWasEaten;
 
 @end

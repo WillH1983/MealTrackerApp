@@ -9,9 +9,9 @@
 #import "Meal+Create.h"
 #import "NSMutableDictionary+MealDictionary.h"
 
-@implementation Meal (Create)
+@implementation MealCoreData (Create)
 
-+ (NSMutableDictionary *)mutableMealDictionaryForMeal:(Meal *)meal inManagedObjectContext:(NSManagedObjectContext *)context
++ (NSMutableDictionary *)mutableMealDictionaryForMeal:(MealCoreData *)meal inManagedObjectContext:(NSManagedObjectContext *)context
 {
     NSMutableDictionary *mealDictionary = [[NSMutableDictionary alloc] init];
     mealDictionary.name = meal.name;
@@ -40,12 +40,12 @@
 }
 
 
-+ (Meal *)mealForDictionaryInfo:(NSMutableDictionary *)mealDictionary
++ (MealCoreData *)mealForDictionaryInfo:(NSMutableDictionary *)mealDictionary
          inManagedObjectContext:(NSManagedObjectContext *)context
 {
-    Meal *meal = nil;
+    MealCoreData *meal = nil;
     
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Meal"];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"MealCoreData"];
     request.predicate = [NSPredicate predicateWithFormat:@"name = %@", mealDictionary.name];
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
     request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
@@ -55,7 +55,7 @@
     
     if (![matches count])
     {
-        meal = [NSEntityDescription insertNewObjectForEntityForName:@"Meal" inManagedObjectContext:context];
+        meal = [NSEntityDescription insertNewObjectForEntityForName:@"MealCoreData" inManagedObjectContext:context];
     }
     else
     {
@@ -74,11 +74,11 @@
     return meal;
 }
 
-+ (Meal *)updatedMealOldDictionaryInfo:(NSMutableDictionary *)oldMealDictionary withNewDictionaryInfo:(NSMutableDictionary *)newMealDictionary inManagedObjectContext:(NSManagedObjectContext *)context
++ (MealCoreData *)updatedMealOldDictionaryInfo:(NSMutableDictionary *)oldMealDictionary withNewDictionaryInfo:(NSMutableDictionary *)newMealDictionary inManagedObjectContext:(NSManagedObjectContext *)context
 {
-    Meal *meal = nil;
+    MealCoreData *meal = nil;
     
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Meal"];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"MealCoreData"];
     request.predicate = [NSPredicate predicateWithFormat:@"name = %@", oldMealDictionary.name];
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
     request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
@@ -88,7 +88,7 @@
     
     if (![matches count])
     {
-        meal = [NSEntityDescription insertNewObjectForEntityForName:@"Meal" inManagedObjectContext:context];
+        meal = [NSEntityDescription insertNewObjectForEntityForName:@"MealCoreData" inManagedObjectContext:context];
     }
     else
     {

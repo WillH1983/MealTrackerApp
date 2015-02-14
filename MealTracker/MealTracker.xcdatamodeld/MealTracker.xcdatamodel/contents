@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11E53" minimumToolsVersion="Xcode 4.1" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Xcode 4.1" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="DateEaten" representedClassName="DateEaten" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
-        <relationship name="whatWasEaten" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Meal" inverseName="whenEaten" inverseEntity="Meal" syncable="YES"/>
+        <relationship name="whatWasEaten" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MealCoreData" inverseName="whenEaten" inverseEntity="MealCoreData" syncable="YES"/>
     </entity>
-    <entity name="Meal" representedClassName="Meal" syncable="YES">
+    <entity name="MealCoreData" representedClassName="MealCoreData" syncable="YES">
         <attribute name="calories" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="carbs" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="dietaryFiber" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
@@ -17,7 +17,7 @@
         <relationship name="whenEaten" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DateEaten" inverseName="whatWasEaten" inverseEntity="DateEaten" syncable="YES"/>
     </entity>
     <elements>
-        <element name="DateEaten" positionX="421" positionY="189" width="128" height="75"/>
-        <element name="Meal" positionX="160" positionY="192" width="128" height="195"/>
+        <element name="DateEaten" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="MealCoreData" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

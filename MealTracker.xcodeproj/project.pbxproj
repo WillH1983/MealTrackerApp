@@ -25,7 +25,7 @@
 		BE6947101A8DAFC500BDB146 /* RetrieveMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69470F1A8DAFC500BDB146 /* RetrieveMealService.m */; };
 		BE7E957315C0965500AE0C94 /* TrackerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7E957215C0965500AE0C94 /* TrackerTableViewController.m */; };
 		BE852A03160E474200A35FA2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE852A02160E474200A35FA2 /* Default-568h@2x.png */; };
-		BE9886AC15C09049008CD618 /* Meal.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9886AB15C09049008CD618 /* Meal.m */; };
+		BE9886AC15C09049008CD618 /* MealCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9886AB15C09049008CD618 /* MealCoreData.m */; };
 		BE9886AF15C09049008CD618 /* DateEaten.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9886AE15C09049008CD618 /* DateEaten.m */; };
 		BE9886B215C0908D008CD618 /* DateEaten+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9886B115C0908D008CD618 /* DateEaten+Create.m */; };
 		BEA221C81A8F105B00BFC1DD /* MealEaten.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA221C71A8F105B00BFC1DD /* MealEaten.m */; };
@@ -113,8 +113,8 @@
 		BE7E957115C0965500AE0C94 /* TrackerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackerTableViewController.h; sourceTree = "<group>"; };
 		BE7E957215C0965500AE0C94 /* TrackerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackerTableViewController.m; sourceTree = "<group>"; };
 		BE852A02160E474200A35FA2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		BE9886AA15C09049008CD618 /* Meal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meal.h; sourceTree = "<group>"; };
-		BE9886AB15C09049008CD618 /* Meal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meal.m; sourceTree = "<group>"; };
+		BE9886AA15C09049008CD618 /* MealCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealCoreData.h; sourceTree = "<group>"; };
+		BE9886AB15C09049008CD618 /* MealCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealCoreData.m; sourceTree = "<group>"; };
 		BE9886AD15C09049008CD618 /* DateEaten.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateEaten.h; sourceTree = "<group>"; };
 		BE9886AE15C09049008CD618 /* DateEaten.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateEaten.m; sourceTree = "<group>"; };
 		BE9886B015C0908D008CD618 /* DateEaten+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DateEaten+Create.h"; sourceTree = "<group>"; };
@@ -193,8 +193,8 @@
 				BEDEAC6315BB9470008D3BF4 /* Meal+Create.h */,
 				BEDEAC6415BB9470008D3BF4 /* Meal+Create.m */,
 				BE3AFF0815BB75BD006BC0D6 /* MealTracker.xcdatamodeld */,
-				BE9886AA15C09049008CD618 /* Meal.h */,
-				BE9886AB15C09049008CD618 /* Meal.m */,
+				BE9886AA15C09049008CD618 /* MealCoreData.h */,
+				BE9886AB15C09049008CD618 /* MealCoreData.m */,
 				BE9886AD15C09049008CD618 /* DateEaten.h */,
 				BE9886AE15C09049008CD618 /* DateEaten.m */,
 			);
@@ -440,7 +440,7 @@
 				BEDEAC6515BB9470008D3BF4 /* Meal+Create.m in Sources */,
 				BEDEAC7015BBA0CA008D3BF4 /* MealEntryViewController.m in Sources */,
 				BEDEAC7315BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m in Sources */,
-				BE9886AC15C09049008CD618 /* Meal.m in Sources */,
+				BE9886AC15C09049008CD618 /* MealCoreData.m in Sources */,
 				BE9886AF15C09049008CD618 /* DateEaten.m in Sources */,
 				BEBDCDC41A8C674A0033FD4C /* LoginTableViewController.m in Sources */,
 				BE9886B215C0908D008CD618 /* DateEaten+Create.m in Sources */,

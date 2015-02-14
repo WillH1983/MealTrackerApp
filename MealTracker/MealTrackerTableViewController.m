@@ -29,7 +29,7 @@
 
 - (void)viewController:(id)sender didFinishWithMealMutableDictionary:(NSMutableDictionary *)dictionary
 {
-    [[SaveMealService new] saveMeal:[Meal mealForDictionaryInfo:dictionary] withSuccessBlock:^{
+    [[SaveMealService new] saveMeal:[MealCoreData mealForDictionaryInfo:dictionary] withSuccessBlock:^{
         
     } andError:^(NSError *error) {
         
@@ -39,7 +39,7 @@
 - (void)viewController:(id)sender didFinishEditingMealMutableDictionary:(NSMutableDictionary *)newMealDetails withOldMealMutableDictionary:(NSMutableDictionary *)oldMealDetails
 {
     [self.mealDatabase.managedObjectContext performBlock:^{
-        [Meal updatedMealOldDictionaryInfo:oldMealDetails withNewDictionaryInfo:newMealDetails inManagedObjectContext:self.mealDatabase.managedObjectContext];
+        [MealCoreData updatedMealOldDictionaryInfo:oldMealDetails withNewDictionaryInfo:newMealDetails inManagedObjectContext:self.mealDatabase.managedObjectContext];
         [self.mealDatabase saveToURL:self.mealDatabase.fileURL 
                     forSaveOperation:UIDocumentSaveForOverwriting 
                    completionHandler:^(BOOL success) {
@@ -66,9 +66,9 @@
     {
         UITableViewCell *cell = sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-        Meal *meal = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        MealCoreData *meal = [self.fetchedResultsController objectAtIndexPath:indexPath];
         
-        NSMutableDictionary *mealDetails = [Meal mutableMealDictionaryForMeal:meal inManagedObjectContext:self.mealDatabase.managedObjectContext];
+        NSMutableDictionary *mealDetails = [MealCoreData mutableMealDictionaryForMeal:meal inManagedObjectContext:self.mealDatabase.managedObjectContext];
         [(MealEntryViewController *)navController.topViewController setMealDetails:mealDetails];
         [(MealEntryViewController *)navController.topViewController setMealData:[self.dataSource objectAtIndex:indexPath.row]];
     }
@@ -172,7 +172,7 @@
     [button addTarget:self action:@selector(disclosureButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     cell.accessoryView = button;
     // ask NSFetchedResultsController for the NSMO at the row in question
-    Meal *meal = [self.dataSource objectAtIndex:indexPath.row];
+    MealCoreData *meal = [self.dataSource objectAtIndex:indexPath.row];
     // Then configure the cell using it ...
     cell.textLabel.text = meal.name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ Weight Watchers Points", [meal.weightWatchersPlusPoints stringValue]];
@@ -185,7 +185,7 @@
     //If the table view is asking to cmmit a delete command
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        Meal *meal = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        MealCoreData *meal = [self.fetchedResultsController objectAtIndexPath:indexPath];
         [self.mealDatabase.managedObjectContext deleteObject:meal];
         [self.mealDatabase saveToURL:self.mealDatabase.fileURL 
                     forSaveOperation:UIDocumentSaveForOverwriting 

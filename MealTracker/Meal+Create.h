@@ -6,18 +6,18 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "Meal.h"
+#import "MealCoreData.h"
 #import "MealData.h"
 
-@interface Meal (Create)
+@interface MealCoreData (Create)
 
 + (MealData *)mealForDictionaryInfo:(NSMutableDictionary *)mealDictionary;
 
-+ (Meal *)mealForDictionaryInfo:(NSMutableDictionary *)mealDictionary
++ (MealCoreData *)mealForDictionaryInfo:(NSMutableDictionary *)mealDictionary
        inManagedObjectContext:(NSManagedObjectContext *)context;
 
-+ (Meal *)updatedMealOldDictionaryInfo:(NSMutableDictionary *)oldMealDictionary withNewDictionaryInfo:(NSMutableDictionary *)newMealDictionary inManagedObjectContext:(NSManagedObjectContext *)context;
++ (MealCoreData *)updatedMealOldDictionaryInfo:(NSMutableDictionary *)oldMealDictionary withNewDictionaryInfo:(NSMutableDictionary *)newMealDictionary inManagedObjectContext:(NSManagedObjectContext *)context;
 
-+ (NSMutableDictionary *)mutableMealDictionaryForMeal:(Meal *)meal inManagedObjectContext:(NSManagedObjectContext *)context;
++ (NSMutableDictionary *)mutableMealDictionaryForMeal:(MealCoreData *)meal inManagedObjectContext:(NSManagedObjectContext *)context;
 
 @end

@@ -11,7 +11,7 @@
 
 @class DateEaten;
 
-@interface Meal : NSManagedObject
+@interface MealCoreData : NSManagedObject
 
 @property (nonatomic, retain) NSDecimalNumber * calories;
 @property (nonatomic, retain) NSDecimalNumber * carbs;
@@ -25,7 +25,7 @@
 @property (nonatomic, retain) NSSet *whenEaten;
 @end
 
-@interface Meal (CoreDataGeneratedAccessors)
+@interface MealCoreData (CoreDataGeneratedAccessors)
 
 - (void)addWhenEatenObject:(DateEaten *)value;
 - (void)removeWhenEatenObject:(DateEaten *)value;
