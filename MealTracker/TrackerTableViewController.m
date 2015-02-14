@@ -84,11 +84,21 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     NSDictionary *dataSourceForSection = [self.dataSource objectAtIndex:section];
     NSDate *date = [dataSourceForSection valueForKey:@"month"];
+    NSArray *array = [dataSourceForSection valueForKey:@"meals"];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateStyle = NSDateFormatterMediumStyle;
     dateFormatter.timeStyle = NSDateFormatterNoStyle;
-    return [dateFormatter stringFromDate:date];
+    
+    int points = 0;
+    for (MealEaten *dateEaten in array)
+    {
+        points += [dateEaten.meal.weightWatchersPlusPoints integerValue];
+    }
+    NSString *sectionTitle = [dateFormatter stringFromDate:date];
+    NSString *fullSectionTitle = [[NSString alloc] initWithFormat:@"%@ - %i Points Used", sectionTitle, points];
+    return fullSectionTitle;
+    
 }
 
 @end

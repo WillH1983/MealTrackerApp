@@ -49,7 +49,10 @@
             }
             lastDate = mealEaten.dateEaten;
         }
-        [mutableArrayOfMonthDictionaries addObject:currentMonthDictionary];
+        if (currentMonthDictionary) {
+            [mutableArrayOfMonthDictionaries addObject:currentMonthDictionary];
+        }
+        
         successBlock([mutableArrayOfMonthDictionaries copy]);
     } andError:^(NSError *error) {
         errorBlock(error);
