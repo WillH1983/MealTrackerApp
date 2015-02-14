@@ -10,8 +10,13 @@
 #import "Meal+Create.h"
 #import "DateEaten+Create.h"
 #import "MealTrackerAppDelegate.h"
+#import "RetrieveMealHistoryService.h"
+#import "User.h"
+#import "MealEaten.h"
 
 @interface TrackerTableViewController ()
+@property (strong, nonatomic) User *user;
+@property (strong, nonatomic) NSArray *dataSource;
 @end
 
 @implementation TrackerTableViewController
@@ -44,7 +49,8 @@
     [super viewDidLoad];
 	
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    
+    NSDictionary *userDictionary = [[NSUserDefaults standardUserDefaults] objectForKey:@"userData"];
+    self.user = [User userObjectFromDictionary:userDictionary];
     
 }
 
@@ -59,6 +65,14 @@
         [self setupFetchedResultsController];
     }
     
+    RetrieveMealHistoryService *service = [RetrieveMealHistoryService new];
+    [service loadMealHistoryBasedOnUser:self.user withSuccessBlock:^(NSArray *data) {
+        self.dataSource = data;
+        [self.tableView reloadData];
+    } andError:^(NSError *error) {
+        
+    }];
+    
 }
 
 - (void)documentStateChanged:(NSNotification *)notification
@@ -72,23 +86,6 @@
     
 }
 
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Date Eaten Cell";
@@ -99,17 +96,17 @@
     }
     
     // ask NSFetchedResultsController for the NSMO at the row in question
-    DateEaten *dateEaten = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    MealEaten *mealEaten = [self.dataSource objectAtIndex:indexPath.row];
     // Then configure the cell using it ...
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
     [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
     
-    NSString *formattedDateString = [dateFormatter stringFromDate:dateEaten.date];
-    NSString *fullString = [[NSString alloc] initWithFormat:@"%@ - %@ Points", formattedDateString, [dateEaten.whatWasEaten.weightWatchersPlusPoints stringValue]];
+    NSString *formattedDateString = [dateFormatter stringFromDate:mealEaten.dateEaten];
+    NSString *fullString = [[NSString alloc] initWithFormat:@"%@ - %@ Points", formattedDateString, [mealEaten.meal.weightWatchersPlusPoints stringValue]];
     cell.detailTextLabel.text = fullString;
-    cell.textLabel.text = dateEaten.whatWasEaten.name;
+    cell.textLabel.text = mealEaten.meal.name;
     
     return cell;
 }
@@ -154,6 +151,18 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.dataSource.count;
 }
 
 @end
