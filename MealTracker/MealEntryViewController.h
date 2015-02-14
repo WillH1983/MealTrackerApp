@@ -11,10 +11,7 @@
 @class Meal;
 
 @protocol MealTextEntryDelegate <NSObject>
-- (void)viewController:(id)sender didFinishWithMealMutableDictionary:(NSMutableDictionary *)mealDetails;
-
-- (void)viewController:(id)sender didFinishEditingMealMutableDictionary:(NSMutableDictionary *)newMealDetails withOldMealMutableDictionary:(NSMutableDictionary *)oldMealDetails;
-
+- (void)viewController:(id)sender didFinishWithMeal:(Meal *)meal;
 - (void)viewController:(id)sender didFinishEditingMeal:(Meal *)meal;
 @end
 
@@ -31,7 +28,6 @@
 @property (nonatomic, weak) id <MealTextEntryDelegate> textEntryDelegate;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
-@property (nonatomic, strong) NSMutableDictionary *mealDetails;
 @property (nonatomic, strong) Meal *mealData;
 
 @end

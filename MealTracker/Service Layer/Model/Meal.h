@@ -23,6 +23,4 @@
 @property (strong, nonatomic) NSString *className;
 @property (strong, nonatomic) NSString *objectType;
 
-+ (Meal *)mealForDictionaryInfo:(NSMutableDictionary *)mealDictionary;
-
 @end

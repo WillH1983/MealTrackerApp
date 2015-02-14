@@ -26,7 +26,6 @@
 @synthesize textEntryDelegate = _textEntryDelegate;
 @synthesize scrollView;
 @synthesize activeField = _activeField;
-@synthesize mealDetails = _mealDetails;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -44,16 +43,6 @@
     
     if ([mealName length] > 0)
     {
-        NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
-        dictionary.name = mealNameText.text;
-        dictionary.description = mealDescriptionText.text;
-        dictionary.carbs = [NSDecimalNumber decimalNumberWithString:carbsText.text];
-        dictionary.dietaryFiber = [NSDecimalNumber decimalNumberWithString:dietaryFiberText.text];
-        dictionary.protein = [NSDecimalNumber decimalNumberWithString:totalProteinText.text];
-        dictionary.serving = servingSizeText.text;
-        dictionary.totalFat = [NSDecimalNumber decimalNumberWithString:totalFatText.text];
-        dictionary.points = [NSDecimalNumber decimalNumberWithString:WWPointsText.text];
-        
         self.mealData.name = mealNameText.text;
         self.mealData.mealDescription = mealDescriptionText.text;
         self.mealData.carbs = [NSDecimalNumber decimalNumberWithString:carbsText.text];
@@ -63,14 +52,13 @@
         self.mealData.totalFat = [NSDecimalNumber decimalNumberWithString:totalFatText.text];
         self.mealData.weightWatchersPlusPoints = [NSDecimalNumber decimalNumberWithString:WWPointsText.text];
         
-        if (self.mealDetails)
+        if (self.mealData)
         {
-            [self.textEntryDelegate viewController:self didFinishEditingMealMutableDictionary:dictionary withOldMealMutableDictionary:self.mealDetails];
             [self.textEntryDelegate viewController:self didFinishEditingMeal:self.mealData];
         }
         else 
         {
-            [self.textEntryDelegate viewController:self didFinishWithMealMutableDictionary:dictionary];
+            [self.textEntryDelegate viewController:self didFinishWithMeal:self.mealData];
         }
         
         [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
@@ -127,30 +115,30 @@
     self.WWPointsText.text = @"";
     self.mealDescriptionText.text = @"";
     
-    if (self.mealDetails)
+    if (self.mealData)
     {
-        if (self.mealDetails.name) self.mealNameText.text = self.mealDetails.name;
-        if (self.mealDetails.description) self.mealDescriptionText.text = self.mealDetails.description;
-        if (self.mealDetails.serving) self.servingSizeText.text = self.servingSizeText.text;
-        if ((self.mealDetails.carbs != nil) & [self.mealDetails.carbs compare:[NSDecimalNumber notANumber]]) 
+        if (self.mealData.name) self.mealNameText.text = self.mealData.name;
+        if (self.mealData.mealDescription) self.mealDescriptionText.text = self.mealData.mealDescription;
+        if (self.mealData.servingSize) self.servingSizeText.text = self.mealData.servingSize;
+        if ((self.mealData.carbs != nil) & [self.mealData.carbs compare:[NSDecimalNumber notANumber]])
         {
-            self.carbsText.text = [self.mealDetails.carbs stringValue];
+            self.carbsText.text = [self.mealData.carbs stringValue];
         }
-        if ((self.mealDetails.dietaryFiber != nil) & ([self.mealDetails.dietaryFiber compare:[NSDecimalNumber notANumber]])) 
+        if ((self.mealData.dietaryFiber != nil) & ([self.mealData.dietaryFiber compare:[NSDecimalNumber notANumber]]))
         {
-            self.dietaryFiberText.text = [self.mealDetails.dietaryFiber stringValue];
+            self.dietaryFiberText.text = [self.mealData.dietaryFiber stringValue];
         }
-        if ((self.mealDetails.protein != nil) & ([self.mealDetails.protein compare:[NSDecimalNumber notANumber]]))
+        if ((self.mealData.protein != nil) & ([self.mealData.protein compare:[NSDecimalNumber notANumber]]))
         {
-            self.totalProteinText.text = [self.mealDetails.protein stringValue];
+            self.totalProteinText.text = [self.mealData.protein stringValue];
         }
-        if ((self.mealDetails.totalFat != nil) & ([self.mealDetails.totalFat compare:[NSDecimalNumber notANumber]]))
+        if ((self.mealData.totalFat != nil) & ([self.mealData.totalFat compare:[NSDecimalNumber notANumber]]))
         {
-            self.totalFatText.text = [self.mealDetails.totalFat stringValue];
+            self.totalFatText.text = [self.mealData.totalFat stringValue];
         }
-        if ((self.mealDetails.points != nil) & ([self.mealDetails.points compare:[NSDecimalNumber notANumber]])) 
+        if ((self.mealData.weightWatchersPlusPoints != nil) & ([self.mealData.weightWatchersPlusPoints compare:[NSDecimalNumber notANumber]]))
         {
-            self.WWPointsText.text = [self.mealDetails.points stringValue];
+            self.WWPointsText.text = [self.mealData.weightWatchersPlusPoints stringValue];
         }
     }
     

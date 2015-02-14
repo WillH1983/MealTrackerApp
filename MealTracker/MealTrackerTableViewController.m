@@ -27,24 +27,11 @@
 @implementation MealTrackerTableViewController
 @synthesize mealDatabase = _mealDatabase;
 
-- (void)viewController:(id)sender didFinishWithMealMutableDictionary:(NSMutableDictionary *)dictionary
-{
-    [[SaveMealService new] saveMeal:[Meal mealForDictionaryInfo:dictionary] withSuccessBlock:^{
+- (void)viewController:(id)sender didFinishWithMeal:(Meal *)meal {
+    [[SaveMealService new] saveMeal:meal withSuccessBlock:^{
         
     } andError:^(NSError *error) {
         
-    }];
-}
-
-- (void)viewController:(id)sender didFinishEditingMealMutableDictionary:(NSMutableDictionary *)newMealDetails withOldMealMutableDictionary:(NSMutableDictionary *)oldMealDetails
-{
-    [self.mealDatabase.managedObjectContext performBlock:^{
-        [MealCoreData updatedMealOldDictionaryInfo:oldMealDetails withNewDictionaryInfo:newMealDetails inManagedObjectContext:self.mealDatabase.managedObjectContext];
-        [self.mealDatabase saveToURL:self.mealDatabase.fileURL 
-                    forSaveOperation:UIDocumentSaveForOverwriting 
-                   completionHandler:^(BOOL success) {
-                       if (!success) NSLog(@"failed to save document %@", self.mealDatabase.localizedName);
-                   }];
     }];
 }
 
@@ -66,10 +53,7 @@
     {
         UITableViewCell *cell = sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-        MealCoreData *meal = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        
-        NSMutableDictionary *mealDetails = [MealCoreData mutableMealDictionaryForMeal:meal inManagedObjectContext:self.mealDatabase.managedObjectContext];
-        [(MealEntryViewController *)navController.topViewController setMealDetails:mealDetails];
+
         [(MealEntryViewController *)navController.topViewController setMealData:[self.dataSource objectAtIndex:indexPath.row]];
     }
 }
