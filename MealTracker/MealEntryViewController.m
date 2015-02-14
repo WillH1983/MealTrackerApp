@@ -7,7 +7,6 @@
 //
 
 #import "MealEntryViewController.h"
-#import "NSMutableDictionary+MealDictionary.h"
 #import "Meal.h"
 
 @interface MealEntryViewController ()

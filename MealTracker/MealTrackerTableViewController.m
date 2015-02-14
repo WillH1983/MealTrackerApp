@@ -8,15 +8,12 @@
 
 #import "MealTrackerTableViewController.h"
 #import "MealEntryViewController.h"
-#import "Meal+Create.h"
-#import "DateEaten+Create.h"
-#import <CoreData/CoreData.h>
-#import "MealTrackerAppDelegate.h"
 #import "SaveMealService.h"
 #import "RetrieveMealService.h"
 #import "User.h"
 #import "MealEaten.h"
 #import "MealEatenService.h"
+#import "Meal.h"
 
 @interface MealTrackerTableViewController () <MealTextEntryDelegate>
 @property (nonatomic, strong) NSArray *dataSource;
@@ -99,7 +96,7 @@
     [button addTarget:self action:@selector(disclosureButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     cell.accessoryView = button;
     // ask NSFetchedResultsController for the NSMO at the row in question
-    MealCoreData *meal = [self.dataSource objectAtIndex:indexPath.row];
+    Meal *meal = [self.dataSource objectAtIndex:indexPath.row];
     // Then configure the cell using it ...
     cell.textLabel.text = meal.name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ Weight Watchers Points", [meal.weightWatchersPlusPoints stringValue]];

@@ -6,8 +6,7 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "CoreDataTableViewController.h"
+#import <UIKit/UIKit.h>
 
 @interface TrackerTableViewController : UITableViewController
-@property (nonatomic, strong) UIManagedDocument *mealDatabase;
 @end

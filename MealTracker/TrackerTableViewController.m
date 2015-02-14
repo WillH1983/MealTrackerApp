@@ -7,12 +7,10 @@
 //
 
 #import "TrackerTableViewController.h"
-#import "Meal+Create.h"
-#import "DateEaten+Create.h"
-#import "MealTrackerAppDelegate.h"
 #import "RetrieveMealHistoryService.h"
 #import "User.h"
 #import "MealEaten.h"
+#import "Meal.h"
 
 @interface TrackerTableViewController ()
 @property (strong, nonatomic) User *user;
@@ -54,9 +52,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    // ask NSFetchedResultsController for the NSMO at the row in question
     MealEaten *mealEaten = [self.dataSource objectAtIndex:indexPath.row];
-    // Then configure the cell using it ...
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
@@ -69,19 +65,6 @@
     
     return cell;
 }
-
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-//{
-//
-//    NSString *sectionTitle = [[[self.fetchedResultsController sections] objectAtIndex:section] name];
-//    NSString *fullSectionTitle = [[NSString alloc] initWithFormat:@"%@ - %i Points Used", sectionTitle, points]; 
-//    return fullSectionTitle;
-//}
-
-//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    
-//}
 
 #pragma mark - UITableViewDataSource
 
