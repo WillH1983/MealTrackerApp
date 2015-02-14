@@ -14,9 +14,13 @@
 #import "MealTrackerAppDelegate.h"
 #import "SaveMealService.h"
 #import "RetrieveMealService.h"
+#import "User.h"
+#import "MealEaten.h"
+#import "MealEatenService.h"
 
 @interface MealTrackerTableViewController () <MealTextEntryDelegate>
 @property (nonatomic, strong) NSArray *dataSource;
+@property (strong, nonatomic) User *user;
 @end
 
 
@@ -124,6 +128,9 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
+    NSDictionary *userDictionary = [[NSUserDefaults standardUserDefaults] objectForKey:@"userData"];
+    self.user = [User userObjectFromDictionary:userDictionary];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -149,14 +156,6 @@
     }
     
 }
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -215,35 +214,15 @@
     UITableViewCell *cell = (UITableViewCell *)[sender superview];
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     
-    [self.mealDatabase.managedObjectContext performBlock:^{
-        DateEaten *dateEaten = [DateEaten dailyMealsinManagedObjectContext:self.mealDatabase.managedObjectContext];
+    MealEaten *mealEaten = [MealEaten new];
+    mealEaten.meal = [self.dataSource objectAtIndex:indexPath.row];
+    mealEaten.user = self.user;
+    mealEaten.dateEaten = [NSDate date];
+    
+    [[MealEatenService new] saveMealEaten:mealEaten withSuccessBlock:^(MealEaten *mealEaten) {
         
-        Meal *meal = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        NSLog(@"%@", dateEaten);
-        [meal addWhenEatenObject:dateEaten];
-        NSLog(@"%@", self.mealDatabase);
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"plusButton"]];
+    } andError:^(NSError *error) {
         
-        CGPoint p = [self.tableView convertPoint:cell.accessoryView.frame.origin fromView:cell];
-        imageView.frame = CGRectMake(p.x, p.y, 35, 35);
-        [self.view addSubview:imageView];
-        
-        
-        [UIView animateWithDuration:1.0 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            imageView.frame = CGRectMake(self.view.frame.size.width - ((self.view.frame.size.width - cell.accessoryView.frame.origin.x) + 50.0), (self.tableView.bounds.size.height + self.tableView.contentOffset.y), imageView.frame.size.width, imageView.frame.size.height);
-            imageView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.99, 0.99);
-        } completion:^(BOOL finished) {
-            imageView.transform = CGAffineTransformIdentity;
-            [imageView removeFromSuperview];
-        }];
-        
-        [self.mealDatabase saveToURL:self.mealDatabase.fileURL 
-                    forSaveOperation:UIDocumentSaveForOverwriting 
-                   completionHandler:^(BOOL success) {
-                       if (!success) NSLog(@"failed to save document %@", self.mealDatabase.localizedName);
-                   }];
-        NSLog(@"%@", dateEaten);
-        NSLog(@"%@", meal);
     }];
 }
 

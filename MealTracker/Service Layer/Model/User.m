@@ -22,4 +22,12 @@
     return [NSDictionary dictionaryWithObjectsAndKeys:self.username, @"username", self.objectId, @"objectId", self.sessionToken, @"sessionToken", nil];
 }
 
+- (NSString *)className {
+    return @"_User";
+}
+
+- (NSString *)objectType {
+    return @"Pointer";
+}
+
 @end

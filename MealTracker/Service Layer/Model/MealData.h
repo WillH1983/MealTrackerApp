@@ -20,4 +20,7 @@
 @property (nonatomic, strong) NSDecimalNumber *weightWatchersPlusPoints;
 @property (nonatomic, strong) NSSet *whenEaten;
 @property (nonatomic, strong) NSString *objectId;
+@property (strong, nonatomic) NSString *className;
+@property (strong, nonatomic) NSString *objectType;
+
 @end

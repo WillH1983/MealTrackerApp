@@ -41,12 +41,6 @@
     }];
 }
 
-//- (void)updatePrivateMessage:(PrivateMessage *)privateMessage fromCapsule:(Capsule *)capsule withSuccessBlock:(void (^)())successBlock andError:(void (^)(NSError *error))errorBlock {
-//    self.url = [NSString stringWithFormat:@"/1/classes/%@/%@", NSStringFromClass([PrivateMessage class]), privateMessage.objectId];
-//    ServiceClient *serviceClient = [ServiceClient new];
-//    [serviceClient putObject:privateMessage andService:self withSuccessBlock:successBlock andError:errorBlock];
-//}
-
 - (NSString *)serviceURL {
     if (self.isUpdatingMeal) {
         return [NSString stringWithFormat:@"/1/classes/%@/%@", NSStringFromClass([MealData class]), self.mealObjectId];

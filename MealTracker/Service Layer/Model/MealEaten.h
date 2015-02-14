@@ -13,8 +13,7 @@
 
 @interface MealEaten : NSObject
 @property (strong, nonatomic) NSDate *dateEaten;
-@property (strong, nonatomic) MealData *mealEaten;
 @property (strong, nonatomic) User *user;
-@property (strong, nonatomic) NSString *className;
-@property (strong, nonatomic) NSString *objectType;
+@property (strong, nonatomic) MealData *meal;
+@property (strong, nonatomic) NSString *objectId;
 @end

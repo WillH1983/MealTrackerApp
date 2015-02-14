@@ -10,12 +10,4 @@
 
 @implementation MealEaten
 
-- (NSString *)className {
-    return @"_User";
-}
-
-- (NSString *)objectType {
-    return @"Pointer";
-}
-
 @end
