@@ -14,6 +14,7 @@
 #import "MealEaten.h"
 #import "MealEatenService.h"
 #import "Meal.h"
+#import "DeleteMealService.h"
 
 @interface MealTrackerTableViewController () <MealTextEntryDelegate>
 @property (nonatomic, strong) NSArray *dataSource;
@@ -102,6 +103,21 @@
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ Weight Watchers Points", [meal.weightWatchersPlusPoints stringValue]];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        Meal *meal = [self.dataSource objectAtIndex:indexPath.row];
+        [[DeleteMealService new] removeMeal:meal withSuccessBlock:^{
+            NSMutableArray *mutableCapsuleArray = [self.dataSource mutableCopy];
+            [mutableCapsuleArray removeObjectAtIndex:indexPath.row];
+            self.dataSource = [mutableCapsuleArray copy];
+            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        } andError:^(NSError *error) {
+            NSLog(@"%@", error);
+        }];
+    }
 }
 
 #pragma mark - UITableViewDataSource

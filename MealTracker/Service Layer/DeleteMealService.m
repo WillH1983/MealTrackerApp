@@ -66,6 +66,10 @@
     return @"requests";
 }
 
+- (NSString *)rootKeyPath {
+    return @"";
+}
+
 - (RKObjectMapping *)serializedMappingProvider {
     RKObjectMapping *seriallMapping = [RKObjectMapping mappingForClass:[Meal class]];
     [seriallMapping addAttributeMappingsFromDictionary:@{@"method":@"method"}];
