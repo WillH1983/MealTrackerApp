@@ -22,5 +22,7 @@
 @property (nonatomic, strong) NSString *objectId;
 @property (strong, nonatomic) NSString *className;
 @property (strong, nonatomic) NSString *objectType;
+@property (strong, nonatomic) NSString *method;
+@property (strong, nonatomic) NSString *path;
 
 @end
