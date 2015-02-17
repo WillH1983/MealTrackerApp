@@ -20,8 +20,14 @@
 		BE3AFF0F15BB7A3A006BC0D6 /* MealTrackerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AFF0E15BB7A3A006BC0D6 /* MealTrackerTableViewController.m */; };
 		BE4392E415C0AD5E00745158 /* NSDate+day.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4392E315C0AD5E00745158 /* NSDate+day.m */; };
 		BE6947101A8DAFC500BDB146 /* RetrieveMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69470F1A8DAFC500BDB146 /* RetrieveMealService.m */; };
+		BE729BFD1A93041E006823DC /* UIImage+KVNEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729BFA1A93041E006823DC /* UIImage+KVNEmpty.m */; };
+		BE729BFE1A93041E006823DC /* UIImage+KVNImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729BFC1A93041E006823DC /* UIImage+KVNImageEffects.m */; };
+		BE729C041A9304D7006823DC /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729C031A9304D7006823DC /* BaseTableViewController.m */; };
 		BE7E957315C0965500AE0C94 /* TrackerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7E957215C0965500AE0C94 /* TrackerTableViewController.m */; };
 		BE852A03160E474200A35FA2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE852A02160E474200A35FA2 /* Default-568h@2x.png */; };
+		BE94A6001A93038400CB6231 /* KVNProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94A5FC1A93038400CB6231 /* KVNProgress.m */; };
+		BE94A6011A93038400CB6231 /* KVNProgressConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94A5FE1A93038400CB6231 /* KVNProgressConfiguration.m */; };
+		BE94A6021A93038400CB6231 /* KVNProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE94A5FF1A93038400CB6231 /* KVNProgressView.xib */; };
 		BEA221C81A8F105B00BFC1DD /* MealEaten.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA221C71A8F105B00BFC1DD /* MealEaten.m */; };
 		BEA221CE1A8F144500BFC1DD /* MealEatenService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA221CD1A8F144500BFC1DD /* MealEatenService.m */; };
 		BEA221D21A8F319500BFC1DD /* RetrieveMealHistoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA221D11A8F319500BFC1DD /* RetrieveMealHistoryService.m */; };
@@ -104,9 +110,20 @@
 		BE4392E315C0AD5E00745158 /* NSDate+day.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+day.m"; sourceTree = "<group>"; };
 		BE69470E1A8DAFC500BDB146 /* RetrieveMealService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetrieveMealService.h; sourceTree = "<group>"; };
 		BE69470F1A8DAFC500BDB146 /* RetrieveMealService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetrieveMealService.m; sourceTree = "<group>"; };
+		BE729BF91A93041E006823DC /* UIImage+KVNEmpty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KVNEmpty.h"; sourceTree = "<group>"; };
+		BE729BFA1A93041E006823DC /* UIImage+KVNEmpty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KVNEmpty.m"; sourceTree = "<group>"; };
+		BE729BFB1A93041E006823DC /* UIImage+KVNImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KVNImageEffects.h"; sourceTree = "<group>"; };
+		BE729BFC1A93041E006823DC /* UIImage+KVNImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KVNImageEffects.m"; sourceTree = "<group>"; };
+		BE729C021A9304D7006823DC /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		BE729C031A9304D7006823DC /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 		BE7E957115C0965500AE0C94 /* TrackerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackerTableViewController.h; sourceTree = "<group>"; };
 		BE7E957215C0965500AE0C94 /* TrackerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackerTableViewController.m; sourceTree = "<group>"; };
 		BE852A02160E474200A35FA2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		BE94A5FB1A93038400CB6231 /* KVNProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVNProgress.h; sourceTree = "<group>"; };
+		BE94A5FC1A93038400CB6231 /* KVNProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVNProgress.m; sourceTree = "<group>"; };
+		BE94A5FD1A93038400CB6231 /* KVNProgressConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVNProgressConfiguration.h; sourceTree = "<group>"; };
+		BE94A5FE1A93038400CB6231 /* KVNProgressConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVNProgressConfiguration.m; sourceTree = "<group>"; };
+		BE94A5FF1A93038400CB6231 /* KVNProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KVNProgressView.xib; sourceTree = "<group>"; };
 		BEA221C61A8F105B00BFC1DD /* MealEaten.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealEaten.h; sourceTree = "<group>"; };
 		BEA221C71A8F105B00BFC1DD /* MealEaten.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealEaten.m; sourceTree = "<group>"; };
 		BEA221CC1A8F144500BFC1DD /* MealEatenService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealEatenService.h; sourceTree = "<group>"; };
@@ -203,15 +220,16 @@
 		BE3AFEF015BB754F006BC0D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BEBDCDB81A8C515F0033FD4C /* SystemConfiguration.framework */,
-				BEBDCDB61A8C51500033FD4C /* Security.framework */,
-				BEBDCDB41A8C513B0033FD4C /* MobileCoreServices.framework */,
 				BEBDCDB21A8C512A0033FD4C /* CFNetwork.framework */,
-				BEBDCD961A8C49490033FD4C /* RestKit.xcodeproj */,
 				BE3AFF1415BB7E5B006BC0D6 /* CoreData.framework */,
-				BE3AFEF115BB754F006BC0D6 /* UIKit.framework */,
-				BE3AFEF315BB754F006BC0D6 /* Foundation.framework */,
 				BE3AFEF515BB754F006BC0D6 /* CoreGraphics.framework */,
+				BE3AFEF315BB754F006BC0D6 /* Foundation.framework */,
+				BE94A5FA1A93038400CB6231 /* KVNProgressHUD */,
+				BEBDCDB41A8C513B0033FD4C /* MobileCoreServices.framework */,
+				BEBDCD961A8C49490033FD4C /* RestKit.xcodeproj */,
+				BEBDCDB61A8C51500033FD4C /* Security.framework */,
+				BEBDCDB81A8C515F0033FD4C /* SystemConfiguration.framework */,
+				BE3AFEF115BB754F006BC0D6 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -219,6 +237,8 @@
 		BE3AFEF715BB754F006BC0D6 /* MealTracker */ = {
 			isa = PBXGroup;
 			children = (
+				BE729C021A9304D7006823DC /* BaseTableViewController.h */,
+				BE729C031A9304D7006823DC /* BaseTableViewController.m */,
 				BE1BC63C15EDE777000E31F8 /* Categories */,
 				BE1BC63E15EDE7A9000E31F8 /* Core Data */,
 				BE16D42F1A8B0968004E897A /* Images.xcassets */,
@@ -250,6 +270,23 @@
 				BE3AFEFF15BB754F006BC0D6 /* MealTracker-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BE94A5FA1A93038400CB6231 /* KVNProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				BE94A5FB1A93038400CB6231 /* KVNProgress.h */,
+				BE94A5FC1A93038400CB6231 /* KVNProgress.m */,
+				BE94A5FD1A93038400CB6231 /* KVNProgressConfiguration.h */,
+				BE94A5FE1A93038400CB6231 /* KVNProgressConfiguration.m */,
+				BE94A5FF1A93038400CB6231 /* KVNProgressView.xib */,
+				BE729BF91A93041E006823DC /* UIImage+KVNEmpty.h */,
+				BE729BFA1A93041E006823DC /* UIImage+KVNEmpty.m */,
+				BE729BFB1A93041E006823DC /* UIImage+KVNImageEffects.h */,
+				BE729BFC1A93041E006823DC /* UIImage+KVNImageEffects.m */,
+			);
+			name = KVNProgressHUD;
+			path = MealTracker/Frameworks/KVNProgressHUD;
 			sourceTree = "<group>";
 		};
 		BEBDCD971A8C49490033FD4C /* Products */ = {
@@ -403,6 +440,7 @@
 				BE3AFF0C15BB79F9006BC0D6 /* iPhone.storyboard in Resources */,
 				BE2C9AD815C47E2300DD6070 /* plusButton.png in Resources */,
 				BE852A03160E474200A35FA2 /* Default-568h@2x.png in Resources */,
+				BE94A6021A93038400CB6231 /* KVNProgressView.xib in Resources */,
 				BE16D4331A8B0D33004E897A /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,9 +454,12 @@
 			files = (
 				BEBDCDB01A8C4C170033FD4C /* BaseMealService.m in Sources */,
 				BEBDCDC11A8C5F1A0033FD4C /* Meal.m in Sources */,
+				BE729BFD1A93041E006823DC /* UIImage+KVNEmpty.m in Sources */,
 				BEBDCDCA1A8C6F360033FD4C /* MealAuthenticationService.m in Sources */,
+				BE729C041A9304D7006823DC /* BaseTableViewController.m in Sources */,
 				BE3AFEFE15BB754F006BC0D6 /* main.m in Sources */,
 				BE3AFF0215BB754F006BC0D6 /* MealTrackerAppDelegate.m in Sources */,
+				BE94A6001A93038400CB6231 /* KVNProgress.m in Sources */,
 				BE3AFF0F15BB7A3A006BC0D6 /* MealTrackerTableViewController.m in Sources */,
 				BEA221CE1A8F144500BFC1DD /* MealEatenService.m in Sources */,
 				BEBDCDBD1A8C55740033FD4C /* SaveMealService.m in Sources */,
@@ -430,10 +471,12 @@
 				BEBDCDC71A8C6D0B0033FD4C /* User.m in Sources */,
 				BE6947101A8DAFC500BDB146 /* RetrieveMealService.m in Sources */,
 				BE7E957315C0965500AE0C94 /* TrackerTableViewController.m in Sources */,
+				BE729BFE1A93041E006823DC /* UIImage+KVNImageEffects.m in Sources */,
 				BEB0A2B61A91AD11004E7B82 /* DeleteMealService.m in Sources */,
 				BEBDCDB11A8C4C170033FD4C /* ServiceClient.m in Sources */,
 				BE4392E415C0AD5E00745158 /* NSDate+day.m in Sources */,
 				BEA221D21A8F319500BFC1DD /* RetrieveMealHistoryService.m in Sources */,
+				BE94A6011A93038400CB6231 /* KVNProgressConfiguration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +579,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: William Hindenburg (5EW7K5N9Y3)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MealTracker/MealTracker-Prefix.pch";
@@ -557,6 +601,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: William Hindenburg (5EW7K5N9Y3)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MealTracker/MealTracker-Prefix.pch";

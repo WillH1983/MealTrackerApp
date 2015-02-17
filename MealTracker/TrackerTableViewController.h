@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseTableViewController.h"
 
-@interface TrackerTableViewController : UITableViewController
+@interface TrackerTableViewController : BaseTableViewController
 @end

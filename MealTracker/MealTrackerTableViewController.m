@@ -28,16 +28,20 @@
     [[SaveMealService new] saveMeal:meal withSuccessBlock:^(Meal *meal) {
         [self.tableView reloadData];
     } andError:^(NSError *error) {
-        
+        [super showError:error withRetryBlock:^{
+            [self viewController:sender didFinishWithMeal:meal];
+        }];
     }];
 }
 
 - (void)viewController:(id)sender didFinishEditingMeal:(Meal *)meal {
     SaveMealService *saveService = [SaveMealService new];
     [saveService updateMeal:meal withSuccessBlock:^{
-        NSLog(@"Success");
+        
     } andError:^(NSError *error) {
-        NSLog(@"%@", error);
+        [super showError:error withRetryBlock:^{
+            [self viewController:sender didFinishEditingMeal:meal];
+        }];
     }];
 }
 
@@ -58,13 +62,22 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [self retrieveMealsFromService];
     
+}
+
+- (void)retrieveMealsFromService {
     RetrieveMealService *mealService = [RetrieveMealService new];
+    [super showActivityIndicatorAnimated:YES];
     [mealService retrieveMealsWithSuccessBlock:^(NSArray *meals) {
         self.dataSource = meals;
         [self.tableView reloadData];
+        [super hideActivityIndicatorAnimated:YES];
     } andError:^(NSError *error) {
-        NSLog(@"%@", error);
+        [super hideActivityIndicatorAnimated:YES];
+        [super showError:error withRetryBlock:^{
+            [self retrieveMealsFromService];
+        }];
     }];
 }
 
@@ -109,13 +122,18 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         Meal *meal = [self.dataSource objectAtIndex:indexPath.row];
+        [super showActivityIndicatorAnimated:YES];
         [[DeleteMealService new] removeMeal:meal withSuccessBlock:^{
             NSMutableArray *mutableCapsuleArray = [self.dataSource mutableCopy];
             [mutableCapsuleArray removeObjectAtIndex:indexPath.row];
             self.dataSource = [mutableCapsuleArray copy];
             [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            [super hideActivityIndicatorAnimated:YES];
         } andError:^(NSError *error) {
-            NSLog(@"%@", error);
+            [super hideActivityIndicatorAnimated:YES];
+            [super showError:error withRetryBlock:^{
+                [self tableView:tableView commitEditingStyle:editingStyle forRowAtIndexPath:indexPath];
+            }];
         }];
     }
 }
@@ -159,11 +177,19 @@
     mealEaten.meal = [self.dataSource objectAtIndex:indexPath.row];
     mealEaten.user = self.user;
     mealEaten.dateEaten = [NSDate date];
+    [self saveMealEaten:mealEaten];
     
+}
+
+- (void)saveMealEaten:(MealEaten *)mealEaten {
+    [super showActivityIndicatorAnimated:YES];
     [[MealEatenService new] saveMealEaten:mealEaten withSuccessBlock:^(MealEaten *mealEaten) {
-        
+        [super hideActivityIndicatorAnimated:YES];
     } andError:^(NSError *error) {
-        
+        [super hideActivityIndicatorAnimated:YES];
+        [super showError:error withRetryBlock:^{
+            [self saveMealEaten:mealEaten];
+        }];
     }];
 }
 

@@ -33,15 +33,23 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [self retrieveMealHistory];
     
+}
+
+- (void)retrieveMealHistory {
+    [super showActivityIndicatorAnimated:YES];
     RetrieveMealHistoryService *service = [RetrieveMealHistoryService new];
     [service loadMealHistoryBasedOnUser:self.user withSuccessBlock:^(NSArray *data) {
         self.dataSource = data;
         [self.tableView reloadData];
+        [super hideActivityIndicatorAnimated:YES];
     } andError:^(NSError *error) {
-        
+        [super hideActivityIndicatorAnimated:YES];
+        [super showError:error withRetryBlock:^{
+            [self retrieveMealHistory];
+        }];
     }];
-    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -103,13 +111,18 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [super showActivityIndicatorAnimated:YES];
         MealEaten *meal = [self mealEatenForIndexPath:indexPath];
         [[DeleteMealEatenService new] removeMealEaten:meal withSuccessBlock:^{
             NSMutableArray *mutableCapsuleArray = [self dataSourceArrayForSection:indexPath.section];
             [mutableCapsuleArray removeObjectAtIndex:indexPath.row];
             [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationAutomatic];
+            [super hideActivityIndicatorAnimated:YES];
         } andError:^(NSError *error) {
-            NSLog(@"%@", error);
+            [super hideActivityIndicatorAnimated:YES];
+            [super showError:error withRetryBlock:^{
+                [self tableView:tableView commitEditingStyle:editingStyle forRowAtIndexPath:indexPath];
+            }];
         }];
     }
 }
