@@ -16,4 +16,6 @@
 @property (strong, nonatomic) User *user;
 @property (strong, nonatomic) Meal *meal;
 @property (strong, nonatomic) NSString *objectId;
+@property (strong, nonatomic) NSString *method;
+@property (strong, nonatomic) NSString *path;
 @end

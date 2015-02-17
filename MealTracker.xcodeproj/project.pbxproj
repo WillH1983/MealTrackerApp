@@ -27,6 +27,7 @@
 		BEA221D21A8F319500BFC1DD /* RetrieveMealHistoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA221D11A8F319500BFC1DD /* RetrieveMealHistoryService.m */; };
 		BEA221D61A8F48AE00BFC1DD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3AFF1415BB7E5B006BC0D6 /* CoreData.framework */; };
 		BEB0A2B61A91AD11004E7B82 /* DeleteMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB0A2B51A91AD11004E7B82 /* DeleteMealService.m */; };
+		BEB0A2BD1A91B39B004E7B82 /* DeleteMealEatenService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB0A2BC1A91B39B004E7B82 /* DeleteMealEatenService.m */; };
 		BEBDCDA71A8C49E90033FD4C /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBDCD9E1A8C49490033FD4C /* libRestKit.a */; };
 		BEBDCDB01A8C4C170033FD4C /* BaseMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCDAB1A8C4C170033FD4C /* BaseMealService.m */; };
 		BEBDCDB11A8C4C170033FD4C /* ServiceClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCDAF1A8C4C170033FD4C /* ServiceClient.m */; };
@@ -114,6 +115,8 @@
 		BEA221D11A8F319500BFC1DD /* RetrieveMealHistoryService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetrieveMealHistoryService.m; sourceTree = "<group>"; };
 		BEB0A2B41A91AD11004E7B82 /* DeleteMealService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteMealService.h; sourceTree = "<group>"; };
 		BEB0A2B51A91AD11004E7B82 /* DeleteMealService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteMealService.m; sourceTree = "<group>"; };
+		BEB0A2BB1A91B39B004E7B82 /* DeleteMealEatenService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteMealEatenService.h; sourceTree = "<group>"; };
+		BEB0A2BC1A91B39B004E7B82 /* DeleteMealEatenService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteMealEatenService.m; sourceTree = "<group>"; };
 		BEBDCD961A8C49490033FD4C /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = MealTracker/RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		BEBDCDAA1A8C4C170033FD4C /* BaseMealService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMealService.h; sourceTree = "<group>"; };
 		BEBDCDAB1A8C4C170033FD4C /* BaseMealService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseMealService.m; sourceTree = "<group>"; };
@@ -265,6 +268,8 @@
 			children = (
 				BEBDCDAA1A8C4C170033FD4C /* BaseMealService.h */,
 				BEBDCDAB1A8C4C170033FD4C /* BaseMealService.m */,
+				BEB0A2BB1A91B39B004E7B82 /* DeleteMealEatenService.h */,
+				BEB0A2BC1A91B39B004E7B82 /* DeleteMealEatenService.m */,
 				BEB0A2B41A91AD11004E7B82 /* DeleteMealService.h */,
 				BEB0A2B51A91AD11004E7B82 /* DeleteMealService.m */,
 				BEBDCDC81A8C6F360033FD4C /* MealAuthenticationService.h */,
@@ -420,6 +425,7 @@
 				BEDEAC7015BBA0CA008D3BF4 /* MealEntryViewController.m in Sources */,
 				BEDEAC7315BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m in Sources */,
 				BEBDCDC41A8C674A0033FD4C /* LoginTableViewController.m in Sources */,
+				BEB0A2BD1A91B39B004E7B82 /* DeleteMealEatenService.m in Sources */,
 				BEA221C81A8F105B00BFC1DD /* MealEaten.m in Sources */,
 				BEBDCDC71A8C6D0B0033FD4C /* User.m in Sources */,
 				BE6947101A8DAFC500BDB146 /* RetrieveMealService.m in Sources */,

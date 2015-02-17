@@ -11,6 +11,7 @@
 #import "User.h"
 #import "MealEaten.h"
 #import "Meal.h"
+#import "DeleteMealEatenService.h"
 
 @interface TrackerTableViewController ()
 @property (strong, nonatomic) User *user;
@@ -51,9 +52,8 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    NSDictionary *dataSourceForSection = [self.dataSource objectAtIndex:indexPath.section];
-    NSArray *array = [dataSourceForSection valueForKey:@"meals"];
-    MealEaten *mealEaten = [array objectAtIndex:indexPath.row];
+
+    MealEaten *mealEaten = [self mealEatenForIndexPath:indexPath];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
@@ -99,6 +99,32 @@
     NSString *fullSectionTitle = [[NSString alloc] initWithFormat:@"%@ - %i Points Used", sectionTitle, points];
     return fullSectionTitle;
     
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        MealEaten *meal = [self mealEatenForIndexPath:indexPath];
+        [[DeleteMealEatenService new] removeMealEaten:meal withSuccessBlock:^{
+            NSMutableArray *mutableCapsuleArray = [self dataSourceArrayForSection:indexPath.section];
+            [mutableCapsuleArray removeObjectAtIndex:indexPath.row];
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationAutomatic];
+        } andError:^(NSError *error) {
+            NSLog(@"%@", error);
+        }];
+    }
+}
+
+- (NSMutableArray *)dataSourceArrayForSection:(NSInteger)section {
+    NSDictionary *dataSourceForSection = [self.dataSource objectAtIndex:section];
+    NSMutableArray *array = [dataSourceForSection valueForKey:@"meals"];
+    return array;
+}
+
+- (MealEaten *)mealEatenForIndexPath:(NSIndexPath *)indexPath {
+    NSDictionary *dataSourceForSection = [self.dataSource objectAtIndex:indexPath.section];
+    NSArray *array = [dataSourceForSection valueForKey:@"meals"];
+    MealEaten *mealEaten = [array objectAtIndex:indexPath.row];
+    return mealEaten;
 }
 
 @end
