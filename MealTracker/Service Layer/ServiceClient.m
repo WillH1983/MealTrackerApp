@@ -10,6 +10,7 @@
 #import "ServiceClient.h"
 #import "MealServiceErrors.h"
 #import "RestKit/Restkit.h"
+#import "User.h"
 
 NSString* const LifeServiceErrorDomain = @"com.LifeServices.Life";
 
@@ -50,6 +51,10 @@ NSString* const LifeServiceErrorDomain = @"com.LifeServices.Life";
     RKRequestDescriptor *request = [RKRequestDescriptor requestDescriptorWithMapping:[self getSerializationMappingForService:service] objectClass:[self getSerializationObjectClassForService:service] rootKeyPath:[service rootRequestKeyPath] method:RKRequestMethodPOST|RKRequestMethodPUT|RKRequestMethodDELETE];
     [objectManager addRequestDescriptor:request];
         
+    User *user = [User persistentUserObject];
+    if (user.sessionToken) {
+        [objectManager.HTTPClient setDefaultHeader:@"X-Parse-Session-Token" value:user.sessionToken];
+    }
     
     [objectManager.HTTPClient setDefaultHeader:@"X-Parse-Application-Id" value:@"Wme1ksSkFZg9S4RyXWwvl7qsg6vREiSKk971ums0"];
     [objectManager.HTTPClient setDefaultHeader:@"X-Parse-REST-API-Key" value:@"AzU3ZJMuvgWDj5ladeVSLmQozm04MJL8yA8OGI44"];

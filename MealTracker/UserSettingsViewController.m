@@ -7,16 +7,20 @@
 //
 
 #import "UserSettingsViewController.h"
+#import "UserService.h"
+#import "User.h"
 
 @interface UserSettingsViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userPointsTextField;
-
+@property (strong, nonatomic) User *user;
 @end
 
 @implementation UserSettingsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.user = [User persistentUserObject];
+    self.userPointsTextField.text = [NSString stringWithFormat:@"%ld", [self.user.pointsPerWeek integerValue]];
     self.userPointsTextField.delegate = self;
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
@@ -29,7 +33,29 @@
 
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    
+    [super showActivityIndicatorAnimated:YES];
+    [self saveWeeklyPoints:textField.text];
+}
+
+- (void)saveWeeklyPoints:(NSString *)points {
+    self.user.pointsPerWeek = [NSNumber numberWithInteger:[points integerValue]];
+    UserService *service = [UserService new];
+    [service updateUser:self.user withSuccessBlock:^(User *user) {
+        [user save];
+        [super hideActivityIndicatorAnimated:YES];
+    } andError:^(NSError *error) {
+        [super hideActivityIndicatorAnimated:YES];
+        [super showError:error withRetryBlock:^{
+            [self saveWeeklyPoints:points];
+        }];
+    }];
+}
+
+- (IBAction)saveButtonTapped:(id)sender {
+    if (self.userPointsTextField.text.length > 0) {
+        [self saveWeeklyPoints:self.userPointsTextField.text];
+        [self dismissKeyboard];
+    }
 }
 
 -(void)dismissKeyboard {

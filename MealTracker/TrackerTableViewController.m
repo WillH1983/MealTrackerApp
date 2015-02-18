@@ -25,9 +25,6 @@
     [super viewDidLoad];
 	
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    NSDictionary *userDictionary = [[NSUserDefaults standardUserDefaults] objectForKey:@"userData"];
-    self.user = [User userObjectFromDictionary:userDictionary];
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -35,6 +32,11 @@
     [super viewDidAppear:animated];
     [self retrieveMealHistory];
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.user = [User persistentUserObject];
 }
 
 - (void)retrieveMealHistory {
@@ -102,13 +104,14 @@
     dateFormatter.dateStyle = NSDateFormatterMediumStyle;
     dateFormatter.timeStyle = NSDateFormatterNoStyle;
     
-    int points = 0;
+    NSInteger points = 0;
     for (MealEaten *dateEaten in array)
     {
         points += [dateEaten.meal.weightWatchersPlusPoints integerValue];
     }
+    NSInteger pointsLeft = [self.user.pointsPerWeek integerValue] - points;
     NSString *sectionTitle = [dateFormatter stringFromDate:date];
-    NSString *fullSectionTitle = [[NSString alloc] initWithFormat:@"%@ - %i Points Used", sectionTitle, points];
+    NSString *fullSectionTitle = [[NSString alloc] initWithFormat:@"%@ - %li Points Left", sectionTitle, (long)pointsLeft];
     return fullSectionTitle;
     
 }

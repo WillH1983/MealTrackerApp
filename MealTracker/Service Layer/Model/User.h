@@ -15,8 +15,10 @@
 @property (nonatomic, strong) NSString *sessionToken;
 @property (strong, nonatomic) NSString *className;
 @property (strong, nonatomic) NSString *objectType;
+@property (assign, nonatomic) NSNumber *pointsPerWeek;
 
-+ (User *)userObjectFromDictionary:(NSDictionary *)dictionary;
++ (User *)persistentUserObject;
 
-- (NSDictionary *)dictionaryRepresentation;
+- (void)save;
+
 @end

@@ -63,6 +63,7 @@
     [mapping addAttributeMappingsFromDictionary:@{@"objectId":@"objectId"}];
     [mapping addAttributeMappingsFromDictionary:@{@"sessionToken":@"sessionToken"}];
     [mapping addAttributeMappingsFromDictionary:@{@"username":@"username"}];
+    [mapping addAttributeMappingsFromDictionary:@{@"pointsPerWeek":@"pointsPerWeek"}];
     return mapping;
 }
 

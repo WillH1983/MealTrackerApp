@@ -30,8 +30,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    NSDictionary *userDictionary = [[NSUserDefaults standardUserDefaults] objectForKey:@"userData"];
-    User *user = [User userObjectFromDictionary:userDictionary];
+    User *user = [User persistentUserObject];
     if (user.sessionToken) {
         [self performSegueWithIdentifier:@"tabbar" sender:self];
     }
@@ -70,9 +69,7 @@
 }
 
 - (void)saveUser:(User *)user {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:[user dictionaryRepresentation] forKey:@"userData"];
-    [userDefaults synchronize];
+    [user save];
 }
 
 #pragma mark - Table view data source
