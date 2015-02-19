@@ -25,6 +25,12 @@
     return [User userObjectFromDictionary:userDictionary];
 }
 
++ (void)deleteUser {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults removeObjectForKey:@"userData"];
+    [userDefaults synchronize];
+}
+
 - (NSDictionary *)dictionaryRepresentation {
     return [NSDictionary dictionaryWithObjectsAndKeys:self.username, @"username", self.objectId, @"objectId", self.sessionToken, @"sessionToken", self.pointsPerWeek, @"pointsPerWeek", nil];
 }

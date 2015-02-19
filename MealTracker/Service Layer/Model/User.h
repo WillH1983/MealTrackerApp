@@ -18,7 +18,9 @@
 @property (assign, nonatomic) NSNumber *pointsPerWeek;
 
 + (User *)persistentUserObject;
++ (void)deleteUser;
 
 - (void)save;
+
 
 @end

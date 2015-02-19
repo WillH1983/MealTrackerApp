@@ -46,12 +46,19 @@
     User *user = [User new];
     user.username = self.userName.text;
     user.password = self.password.text;
+    [super showActivityIndicatorAnimated:YES];
     [authService registerUser:user withSuccessBlock:^(User *user) {
         user.password = nil;
         [self saveUser:user];
         [self performSegueWithIdentifier:@"tabbar" sender:self];
+        self.userName.text = @"";
+        self.password.text = @"";
+        [super hideActivityIndicatorAnimated:YES];
     } andError:^(NSError *error) {
-        
+        [super hideActivityIndicatorAnimated:YES];
+        [super showError:error withRetryBlock:^{
+            [self registerNowTapped:sender];
+        }];
     }];
 }
 
@@ -60,11 +67,18 @@
     User *user = [User new];
     user.username = self.userName.text;
     user.password = self.password.text;
+    [super showActivityIndicatorAnimated:YES];
     [authService loginUser:user withSuccessBlock:^(User *user) {
         [self saveUser:user];
         [self performSegueWithIdentifier:@"tabbar" sender:self];
+        [super hideActivityIndicatorAnimated:YES];
+        self.userName.text = @"";
+        self.password.text = @"";
     } andError:^(NSError *error) {
-        
+        [super hideActivityIndicatorAnimated:YES];
+        [super showError:error withRetryBlock:^{
+            [self loginTapped:sender];
+        }];
     }];
 }
 

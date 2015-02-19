@@ -58,6 +58,10 @@
     }
 }
 
+- (IBAction)logoutTapped:(id)sender {
+    [super logout];
+}
+
 -(void)dismissKeyboard {
     [self.userPointsTextField resignFirstResponder];
 }

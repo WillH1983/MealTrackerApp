@@ -8,6 +8,8 @@
 
 #import "BaseTableViewController.h"
 #import "KVNProgress.h"
+#import "User.h"
+
 @interface BaseTableViewController ()
 
 @end
@@ -15,7 +17,8 @@
 @implementation BaseTableViewController
 
 - (void)logout {
-
+    [User deleteUser];
+    [self.tabBarController.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)refreshData:(id)sender {
