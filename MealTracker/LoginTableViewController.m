@@ -7,7 +7,7 @@
 //
 
 #import "LoginTableViewController.h"
-#import "MealAuthenticationService.h"
+#import <BaseClasses/AuthenticationService.h>
 #import "User.h"
 
 @interface LoginTableViewController ()
@@ -42,7 +42,7 @@
 }
 
 - (IBAction)registerNowTapped:(id)sender {
-    MealAuthenticationService *authService = [MealAuthenticationService new];
+    AuthenticationService *authService = [AuthenticationService new];
     User *user = [User new];
     user.username = self.userName.text;
     user.password = self.password.text;
@@ -63,7 +63,7 @@
 }
 
 - (IBAction)loginTapped:(id)sender {
-    MealAuthenticationService *authService = [MealAuthenticationService new];
+    AuthenticationService *authService = [AuthenticationService new];
     User *user = [User new];
     user.username = self.userName.text;
     user.password = self.password.text;
