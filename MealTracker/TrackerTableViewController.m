@@ -6,9 +6,10 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+#import <BaseClasses/User.h>
+
 #import "TrackerTableViewController.h"
 #import "RetrieveMealHistoryService.h"
-#import "User.h"
 #import "MealEaten.h"
 #import "Meal.h"
 #import "DeleteMealEatenService.h"

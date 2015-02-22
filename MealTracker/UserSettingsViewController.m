@@ -6,9 +6,10 @@
 //
 //
 
+#import <BaseClasses/User.h>
+
 #import "UserSettingsViewController.h"
 #import "UserService.h"
-#import "User.h"
 
 @interface UserSettingsViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userPointsTextField;

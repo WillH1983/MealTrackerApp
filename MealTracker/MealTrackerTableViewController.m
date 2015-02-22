@@ -6,11 +6,12 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+#import <BaseClasses/User.h>
+
 #import "MealTrackerTableViewController.h"
 #import "MealEntryViewController.h"
 #import "SaveMealService.h"
 #import "RetrieveMealService.h"
-#import "User.h"
 #import "MealEaten.h"
 #import "MealEatenService.h"
 #import "Meal.h"

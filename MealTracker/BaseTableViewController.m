@@ -6,9 +6,10 @@
 //
 //
 
+#import <BaseClasses/User.h>
+
 #import "BaseTableViewController.h"
 #import "KVNProgress.h"
-#import "User.h"
 
 @interface BaseTableViewController ()
 

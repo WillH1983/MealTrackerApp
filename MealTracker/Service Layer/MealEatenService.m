@@ -7,10 +7,10 @@
 //
 
 #import <BaseClasses/ServiceClient.h>
+#import <BaseClasses/User.h>
 
 #import "MealEatenService.h"
 #import "MealEaten.h"
-#import "User.h"
 #import "Meal.h"
 #import "RestKit/RestKit.h"
 
