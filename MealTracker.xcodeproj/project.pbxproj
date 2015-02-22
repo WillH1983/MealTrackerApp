@@ -27,6 +27,8 @@
 		BE729C041A9304D7006823DC /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729C031A9304D7006823DC /* BaseTableViewController.m */; };
 		BE729C071A93126E006823DC /* UserSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729C061A93126E006823DC /* UserSettingsViewController.m */; };
 		BE7E957315C0965500AE0C94 /* TrackerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7E957215C0965500AE0C94 /* TrackerTableViewController.m */; };
+		BE8499D51A9A91A80029C6C2 /* BaseClasses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5E20261A9A8B1A003074D9 /* BaseClasses.framework */; };
+		BE8499D61A9A91A80029C6C2 /* BaseClasses.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE5E20261A9A8B1A003074D9 /* BaseClasses.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE852A03160E474200A35FA2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE852A02160E474200A35FA2 /* Default-568h@2x.png */; };
 		BE94A6001A93038400CB6231 /* KVNProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94A5FC1A93038400CB6231 /* KVNProgress.m */; };
 		BE94A6011A93038400CB6231 /* KVNProgressConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94A5FE1A93038400CB6231 /* KVNProgressConfiguration.m */; };
@@ -89,6 +91,20 @@
 			remoteInfo = RestKit;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BE8499D71A9A91A90029C6C2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BE8499D61A9A91A80029C6C2 /* BaseClasses.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		BE16D42F1A8B0968004E897A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -178,6 +194,7 @@
 				BEBDCDA71A8C49E90033FD4C /* libRestKit.a in Frameworks */,
 				BE3AFEF215BB754F006BC0D6 /* UIKit.framework in Frameworks */,
 				BE3AFEF415BB754F006BC0D6 /* Foundation.framework in Frameworks */,
+				BE8499D51A9A91A80029C6C2 /* BaseClasses.framework in Frameworks */,
 				BE5E20271A9A8B1A003074D9 /* BaseClasses.framework in Frameworks */,
 				BE3AFEF615BB754F006BC0D6 /* CoreGraphics.framework in Frameworks */,
 			);
@@ -358,6 +375,7 @@
 				BE3AFEE915BB754F006BC0D6 /* Sources */,
 				BE3AFEEA15BB754F006BC0D6 /* Frameworks */,
 				BE3AFEEB15BB754F006BC0D6 /* Resources */,
+				BE8499D71A9A91A90029C6C2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -597,6 +615,7 @@
 				GCC_PREFIX_HEADER = "MealTracker/MealTracker-Prefix.pch";
 				INFOPLIST_FILE = "MealTracker/MealTracker-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -623,6 +642,7 @@
 				GCC_PREFIX_HEADER = "MealTracker/MealTracker-Prefix.pch";
 				INFOPLIST_FILE = "MealTracker/MealTracker-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
