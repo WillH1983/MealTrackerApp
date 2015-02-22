@@ -6,10 +6,10 @@
 //
 //
 
-#import "BaseMealService.h"
+#import <BaseClasses/BaseService.h>
 
 @class User;
 
-@interface RetrieveMealHistoryService : BaseMealService <Service>
+@interface RetrieveMealHistoryService : BaseService <Service>
 - (void)loadMealHistoryBasedOnUser:(User *)user withSuccessBlock:(void (^)(NSArray * data))successBlock andError:(void (^)(NSError *error))errorBlock;
 @end
