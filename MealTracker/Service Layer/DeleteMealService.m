@@ -6,8 +6,9 @@
 //
 //
 
+#import <BaseClasses/ServiceClient.h>
+
 #import "DeleteMealService.h"
-#import "ServiceClient.h"
 #import "Meal.h"
 #import "RestKit/RestKit.h"
 

@@ -6,10 +6,11 @@
 //
 //
 
+#import <BaseClasses/ServiceClient.h>
+
 #import "RestKit/RestKit.h"
 #import "RetrieveMealService.h"
 #import "Meal.h"
-#import "ServiceClient.h"
 
 @implementation RetrieveMealService
 

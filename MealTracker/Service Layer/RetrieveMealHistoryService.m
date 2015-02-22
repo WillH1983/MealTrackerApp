@@ -6,12 +6,12 @@
 //
 //
 
+#import <BaseClasses/ServiceClient.h>
+
 #import "RetrieveMealHistoryService.h"
-#import "ServiceClient.h"
 #import "MealEaten.h"
 #import "User.h"
 #import "Meal.h"
-#import "ServiceClient.h"
 #import "RestKit/RestKit.h"
 
 @interface RetrieveMealHistoryService()

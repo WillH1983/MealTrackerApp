@@ -40,7 +40,6 @@
 		BEB0A2B61A91AD11004E7B82 /* DeleteMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB0A2B51A91AD11004E7B82 /* DeleteMealService.m */; };
 		BEB0A2BD1A91B39B004E7B82 /* DeleteMealEatenService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB0A2BC1A91B39B004E7B82 /* DeleteMealEatenService.m */; };
 		BEBDCDA71A8C49E90033FD4C /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBDCD9E1A8C49490033FD4C /* libRestKit.a */; };
-		BEBDCDB11A8C4C170033FD4C /* ServiceClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCDAF1A8C4C170033FD4C /* ServiceClient.m */; };
 		BEBDCDB31A8C512A0033FD4C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBDCDB21A8C512A0033FD4C /* CFNetwork.framework */; };
 		BEBDCDB51A8C513B0033FD4C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBDCDB41A8C513B0033FD4C /* MobileCoreServices.framework */; };
 		BEBDCDB71A8C51500033FD4C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBDCDB61A8C51500033FD4C /* Security.framework */; };
@@ -158,8 +157,6 @@
 		BEB0A2BC1A91B39B004E7B82 /* DeleteMealEatenService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteMealEatenService.m; sourceTree = "<group>"; };
 		BEBDCD961A8C49490033FD4C /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = MealTracker/RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		BEBDCDAD1A8C4C170033FD4C /* MealServiceErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealServiceErrors.h; sourceTree = "<group>"; };
-		BEBDCDAE1A8C4C170033FD4C /* ServiceClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceClient.h; sourceTree = "<group>"; };
-		BEBDCDAF1A8C4C170033FD4C /* ServiceClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceClient.m; sourceTree = "<group>"; };
 		BEBDCDB21A8C512A0033FD4C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		BEBDCDB41A8C513B0033FD4C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		BEBDCDB61A8C51500033FD4C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -339,8 +336,6 @@
 				BE69470F1A8DAFC500BDB146 /* RetrieveMealService.m */,
 				BEBDCDBB1A8C55740033FD4C /* SaveMealService.h */,
 				BEBDCDBC1A8C55740033FD4C /* SaveMealService.m */,
-				BEBDCDAE1A8C4C170033FD4C /* ServiceClient.h */,
-				BEBDCDAF1A8C4C170033FD4C /* ServiceClient.m */,
 				BE4FD4181A943CA40041003F /* UserService.h */,
 				BE4FD4191A943CA40041003F /* UserService.m */,
 			);
@@ -493,7 +488,6 @@
 				BE7E957315C0965500AE0C94 /* TrackerTableViewController.m in Sources */,
 				BE729BFE1A93041E006823DC /* UIImage+KVNImageEffects.m in Sources */,
 				BEB0A2B61A91AD11004E7B82 /* DeleteMealService.m in Sources */,
-				BEBDCDB11A8C4C170033FD4C /* ServiceClient.m in Sources */,
 				BE4392E415C0AD5E00745158 /* NSDate+day.m in Sources */,
 				BEA221D21A8F319500BFC1DD /* RetrieveMealHistoryService.m in Sources */,
 				BE94A6011A93038400CB6231 /* KVNProgressConfiguration.m in Sources */,
@@ -553,6 +547,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$(BUILT_PRODUCTS_DIR)/../../Headers\"",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "12e3c392-8232-41eb-bed5-036efe6e586f";
@@ -585,6 +584,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$(BUILT_PRODUCTS_DIR)/../../Headers\"",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "12e3c392-8232-41eb-bed5-036efe6e586f";
@@ -616,7 +620,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "12e3c392-8232-41eb-bed5-036efe6e586f";
-				USER_HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include \"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -643,7 +647,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "12e3c392-8232-41eb-bed5-036efe6e586f";
-				USER_HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include \"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

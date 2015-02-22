@@ -7,9 +7,9 @@
 //
 
 #import "RestKit/RestKit.h"
+#import <BaseClasses/ServiceClient.h>
 
 #import "SaveMealService.h"
-#import "ServiceClient.h"
 #import "Meal.h"
 
 @interface SaveMealService()

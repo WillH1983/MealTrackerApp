@@ -6,9 +6,10 @@
 //
 //
 
+#import <BaseClasses/ServiceClient.h>
+
 #import "UserService.h"
 #import "User.h"
-#import "ServiceClient.h"
 #import "RestKit/RestKit.h"
 
 @interface UserService()
