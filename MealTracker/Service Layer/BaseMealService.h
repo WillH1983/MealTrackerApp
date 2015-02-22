@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-#import "MealService.h"
+#import <BaseClasses/Service.h>
 
 @interface BaseMealService : NSObject
 - (NSString *)baseURL;

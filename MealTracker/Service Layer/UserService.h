@@ -10,6 +10,6 @@
 
 @class User;
 
-@interface UserService : BaseMealService <MealService>
+@interface UserService : BaseMealService <Service>
 - (void)updateUser:(User *)user withSuccessBlock:(void (^)(User *user))successBlock andError:(void (^)(NSError *error))errorBlock;
 @end

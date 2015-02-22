@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MealService.h"
+#import <BaseClasses/Service.h>
 
 @class RKMappingResult;
 
@@ -15,14 +15,14 @@ extern NSString* const LifeServiceErrorDomain;
 
 @interface ServiceClient : NSObject
 
-- (void)postObject:(id)object andService:(id<MealService>)lifeService withSuccessBlock:(void (^)(RKMappingResult *result))successBlock andError:(void (^)(NSError *error))errorBlock;
+- (void)postObject:(id)object andService:(id<Service>)lifeService withSuccessBlock:(void (^)(RKMappingResult *result))successBlock andError:(void (^)(NSError *error))errorBlock;
 
-- (void)putObject:(id)object andService:(id<MealService>)lifeService withSuccessBlock:(void (^)(RKMappingResult *result))successBlock andError:(void (^)(NSError *error))errorBlock;
+- (void)putObject:(id)object andService:(id<Service>)lifeService withSuccessBlock:(void (^)(RKMappingResult *result))successBlock andError:(void (^)(NSError *error))errorBlock;
 
-- (void)getForService:(id<MealService>)service withSuccess:(void (^)(RKMappingResult *result))successBlock andError:(void (^)(NSError *error))errorBlock;
+- (void)getForService:(id<Service>)service withSuccess:(void (^)(RKMappingResult *result))successBlock andError:(void (^)(NSError *error))errorBlock;
 
-- (void)deleteObject:(id)object andService:(id<MealService>)lifeService withSuccessBlock:(void (^)(RKMappingResult *result))successBlock andError:(void (^)(NSError *error))errorBlock;
+- (void)deleteObject:(id)object andService:(id<Service>)lifeService withSuccessBlock:(void (^)(RKMappingResult *result))successBlock andError:(void (^)(NSError *error))errorBlock;
 
-- (void)deleteObjects:(NSArray *)objects andService:(id<MealService>)lifeService withSuccessBlock:(void (^)(RKMappingResult *result))successBlock andError:(void (^)(NSError *error))errorBlock;
+- (void)deleteObjects:(NSArray *)objects andService:(id<Service>)lifeService withSuccessBlock:(void (^)(RKMappingResult *result))successBlock andError:(void (^)(NSError *error))errorBlock;
 
 @end

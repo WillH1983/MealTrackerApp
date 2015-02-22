@@ -10,6 +10,6 @@
 
 @class MealEaten;
 
-@interface MealEatenService : BaseMealService <MealService>
+@interface MealEatenService : BaseMealService <Service>
 - (void)saveMealEaten:(MealEaten *)mealEaten withSuccessBlock:(void (^)(MealEaten *mealEaten))successBlock andError:(void (^)(NSError *error))errorBlock;
 @end

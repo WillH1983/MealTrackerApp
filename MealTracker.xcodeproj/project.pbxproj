@@ -144,7 +144,6 @@
 		BEBDCD961A8C49490033FD4C /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = MealTracker/RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		BEBDCDAA1A8C4C170033FD4C /* BaseMealService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMealService.h; sourceTree = "<group>"; };
 		BEBDCDAB1A8C4C170033FD4C /* BaseMealService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseMealService.m; sourceTree = "<group>"; };
-		BEBDCDAC1A8C4C170033FD4C /* MealService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealService.h; sourceTree = "<group>"; };
 		BEBDCDAD1A8C4C170033FD4C /* MealServiceErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealServiceErrors.h; sourceTree = "<group>"; };
 		BEBDCDAE1A8C4C170033FD4C /* ServiceClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceClient.h; sourceTree = "<group>"; };
 		BEBDCDAF1A8C4C170033FD4C /* ServiceClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceClient.m; sourceTree = "<group>"; };
@@ -320,7 +319,6 @@
 				BEB0A2B51A91AD11004E7B82 /* DeleteMealService.m */,
 				BEA221CC1A8F144500BFC1DD /* MealEatenService.h */,
 				BEA221CD1A8F144500BFC1DD /* MealEatenService.m */,
-				BEBDCDAC1A8C4C170033FD4C /* MealService.h */,
 				BEBDCDAD1A8C4C170033FD4C /* MealServiceErrors.h */,
 				BEBDCDBE1A8C5EFD0033FD4C /* Model */,
 				BEA221D01A8F319500BFC1DD /* RetrieveMealHistoryService.h */,

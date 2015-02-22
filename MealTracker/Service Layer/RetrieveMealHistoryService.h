@@ -10,6 +10,6 @@
 
 @class User;
 
-@interface RetrieveMealHistoryService : BaseMealService <MealService>
+@interface RetrieveMealHistoryService : BaseMealService <Service>
 - (void)loadMealHistoryBasedOnUser:(User *)user withSuccessBlock:(void (^)(NSArray * data))successBlock andError:(void (^)(NSError *error))errorBlock;
 @end

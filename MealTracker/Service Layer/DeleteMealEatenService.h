@@ -10,7 +10,7 @@
 
 @class MealEaten;
 
-@interface DeleteMealEatenService : BaseMealService <MealService>
+@interface DeleteMealEatenService : BaseMealService <Service>
 - (void)removeMealsEaten:(NSArray *)mealsEaten withSuccessBlock:(void (^)())successBlock andError:(void (^)(NSError *error))errorBlock;
 - (void)removeMealEaten:(MealEaten *)meal withSuccessBlock:(void (^)())successBlock andError:(void (^)(NSError *error))errorBlock;
 @end
