@@ -20,7 +20,6 @@
 		BE3AFF0F15BB7A3A006BC0D6 /* MealTrackerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AFF0E15BB7A3A006BC0D6 /* MealTrackerTableViewController.m */; };
 		BE4392E415C0AD5E00745158 /* NSDate+day.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4392E315C0AD5E00745158 /* NSDate+day.m */; };
 		BE4FD41A1A943CA40041003F /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4FD4191A943CA40041003F /* UserService.m */; };
-		BE5E20271A9A8B1A003074D9 /* BaseClasses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5E20261A9A8B1A003074D9 /* BaseClasses.framework */; };
 		BE6947101A8DAFC500BDB146 /* RetrieveMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69470F1A8DAFC500BDB146 /* RetrieveMealService.m */; };
 		BE729BFD1A93041E006823DC /* UIImage+KVNEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729BFA1A93041E006823DC /* UIImage+KVNEmpty.m */; };
 		BE729BFE1A93041E006823DC /* UIImage+KVNImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729BFC1A93041E006823DC /* UIImage+KVNImageEffects.m */; };
@@ -145,7 +144,6 @@
 				BE3AFEF215BB754F006BC0D6 /* UIKit.framework in Frameworks */,
 				BE3AFEF415BB754F006BC0D6 /* Foundation.framework in Frameworks */,
 				BE8499D51A9A91A80029C6C2 /* BaseClasses.framework in Frameworks */,
-				BE5E20271A9A8B1A003074D9 /* BaseClasses.framework in Frameworks */,
 				BE3AFEF615BB754F006BC0D6 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
