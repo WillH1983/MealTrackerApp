@@ -10,7 +10,7 @@
 #import <BaseClasses/User.h>
 
 #import "UserService.h"
-#import "RestKit/RestKit.h"
+#import <BaseClasses/RestKit/RestKit.h>
 
 @interface UserService()
 @property (strong, nonatomic) NSString *objectId;

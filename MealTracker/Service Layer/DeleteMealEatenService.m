@@ -10,7 +10,7 @@
 
 #import "DeleteMealEatenService.h"
 #import "MealEaten.h"
-#import "RestKit/RestKit.h"
+#import <BaseClasses/RestKit/RestKit.h>
 
 @implementation DeleteMealEatenService
 

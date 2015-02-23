@@ -8,7 +8,7 @@
 
 #import <BaseClasses/ServiceClient.h>
 
-#import "RestKit/RestKit.h"
+#import <BaseClasses/RestKit/RestKit.h>
 #import "RetrieveMealService.h"
 #import "Meal.h"
 

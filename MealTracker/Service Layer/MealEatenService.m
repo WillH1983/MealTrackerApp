@@ -12,7 +12,7 @@
 #import "MealEatenService.h"
 #import "MealEaten.h"
 #import "Meal.h"
-#import "RestKit/RestKit.h"
+#import <BaseClasses/RestKit/RestKit.h>
 
 @implementation MealEatenService
 

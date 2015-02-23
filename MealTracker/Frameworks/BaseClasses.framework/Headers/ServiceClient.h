@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <RestKit/RestKit.h>
+#import "RestKit/RestKit.h"
 #import "Service.h"
 
 extern NSString* const LifeServiceErrorDomain;

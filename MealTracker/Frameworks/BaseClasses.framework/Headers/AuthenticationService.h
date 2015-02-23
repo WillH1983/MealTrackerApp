@@ -6,7 +6,7 @@
 //
 //
 
-#import <RestKit/RestKit.h>
+#import "RestKit/RestKit.h"
 
 #import "BaseService.h"
 
