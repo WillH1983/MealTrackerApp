@@ -6,11 +6,11 @@
 //
 //
 
-#import <BaseClasses/ServiceClient.h>
-#import <BaseClasses/User.h>
+#import <BaseClassesSDK/ServiceClient.h>
+#import <BaseClassesSDK/User.h>
 
 #import "UserService.h"
-#import <BaseClasses/RestKit/RestKit.h>
+#import <BaseClassesSDK/RestKit/RestKit.h>
 
 @interface UserService()
 @property (strong, nonatomic) NSString *objectId;
@@ -19,7 +19,7 @@
 @implementation UserService
 
 - (void)updateUser:(User *)user withSuccessBlock:(void (^)(User *user))successBlock andError:(void (^)(NSError *error))errorBlock {
-    self.objectId = user.objectId;
+    self.objectId = user.objectId2;
     ServiceClient *serviceClient = [ServiceClient new];
     [serviceClient putObject:user andService:self withSuccessBlock:^(RKMappingResult *result) {
         successBlock(user);

@@ -6,7 +6,7 @@
 //
 //
 
-#import <BaseClasses/BaseService.h>
+#import <BaseClassesSDK/BaseService.h>
 
 @class MealEaten;
 

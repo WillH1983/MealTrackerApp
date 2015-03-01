@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 William Hindenburg. All rights reserved.
 //
 
-#import <BaseClasses/BaseService.h>
+#import <BaseClassesSDK/BaseService.h>
 
 @class Meal;
 

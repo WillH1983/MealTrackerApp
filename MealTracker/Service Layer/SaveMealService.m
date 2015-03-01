@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 William Hindenburg. All rights reserved.
 //
 
-#import <BaseClasses/RestKit/RestKit.h>
-#import <BaseClasses/ServiceClient.h>
+#import <BaseClassesSDK/RestKit/RestKit.h>
+#import <BaseClassesSDK/ServiceClient.h>
 
 #import "SaveMealService.h"
 #import "Meal.h"

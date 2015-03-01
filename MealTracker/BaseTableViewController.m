@@ -6,7 +6,7 @@
 //
 //
 
-#import <BaseClasses/User.h>
+#import <BaseClassesSDK/User.h>
 
 #import "BaseTableViewController.h"
 #import "KVNProgress.h"

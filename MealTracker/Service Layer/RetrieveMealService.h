@@ -6,7 +6,7 @@
 //
 //
 
-#import <BaseClasses/BaseService.h>
+#import <BaseClassesSDK/BaseService.h>
 
 @interface RetrieveMealService : BaseService <Service>
 - (void)retrieveMealsWithSuccessBlock:(void (^)(NSArray *meals))successBlock andError:(void (^)(NSError *error))errorBlock;

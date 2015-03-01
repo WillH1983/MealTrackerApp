@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import <BaseClasses/User.h>
+#import <BaseClassesSDK/User.h>
 
 #import "TrackerTableViewController.h"
 #import "RetrieveMealHistoryService.h"
@@ -110,7 +110,7 @@
     {
         points += [dateEaten.meal.weightWatchersPlusPoints integerValue];
     }
-    NSInteger pointsLeft = [self.user.pointsPerWeek integerValue] - points;
+    NSInteger pointsLeft = [self.user.pointsPerWeek2 integerValue] - points;
     NSString *sectionTitle = [dateFormatter stringFromDate:date];
     NSString *fullSectionTitle = [[NSString alloc] initWithFormat:@"%@ - %li Points Left", sectionTitle, (long)pointsLeft];
     return fullSectionTitle;
