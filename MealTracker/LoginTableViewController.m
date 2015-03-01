@@ -32,7 +32,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     User *user = [User persistentUserObject];
-    if (user.sessionToken2) {
+    if (user.sessionToken) {
         [self performSegueWithIdentifier:@"tabbar" sender:self];
     }
 }
@@ -45,11 +45,11 @@
 - (IBAction)registerNowTapped:(id)sender {
     AuthenticationService *authService = [AuthenticationService new];
     User *user = [User new];
-    user.username2 = self.userName.text;
-    user.password2 = self.password.text;
+    user.username = self.userName.text;
+    user.password = self.password.text;
     [super showActivityIndicatorAnimated:YES];
     [authService registerUser:user withSuccessBlock:^(User *user) {
-        user.password2 = nil;
+        user.password = nil;
         [self saveUser:user];
         [self performSegueWithIdentifier:@"tabbar" sender:self];
         self.userName.text = @"";
@@ -66,8 +66,8 @@
 - (IBAction)loginTapped:(id)sender {
     AuthenticationService *authService = [AuthenticationService new];
     User *user = [User new];
-    user.username2 = self.userName.text;
-    user.password2 = self.password.text;
+    user.username = self.userName.text;
+    user.password = self.password.text;
     [super showActivityIndicatorAnimated:YES];
     [authService loginUser:user withSuccessBlock:^(User *user) {
         [self saveUser:user];

@@ -19,7 +19,7 @@
 @implementation UserService
 
 - (void)updateUser:(User *)user withSuccessBlock:(void (^)(User *user))successBlock andError:(void (^)(NSError *error))errorBlock {
-    self.objectId = user.objectId2;
+    self.objectId = user.objectId;
     ServiceClient *serviceClient = [ServiceClient new];
     [serviceClient putObject:user andService:self withSuccessBlock:^(RKMappingResult *result) {
         successBlock(user);

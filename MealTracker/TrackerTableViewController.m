@@ -110,7 +110,7 @@
     {
         points += [dateEaten.meal.weightWatchersPlusPoints integerValue];
     }
-    NSInteger pointsLeft = [self.user.pointsPerWeek2 integerValue] - points;
+    NSInteger pointsLeft = [self.user.pointsPerWeek integerValue] - points;
     NSString *sectionTitle = [dateFormatter stringFromDate:date];
     NSString *fullSectionTitle = [[NSString alloc] initWithFormat:@"%@ - %li Points Left", sectionTitle, (long)pointsLeft];
     return fullSectionTitle;
