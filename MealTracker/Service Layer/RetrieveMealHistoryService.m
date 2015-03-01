@@ -8,11 +8,13 @@
 
 #import <BaseClasses/ServiceClient.h>
 #import <BaseClasses/User.h>
+#import <BaseClasses/RestKit/RKObjectMapping.h>
+#import <BaseClasses/RestKit/RKMappingResult.h>
+#import <BaseClasses/RestKit/RKRelationshipMapping.h>
 
 #import "RetrieveMealHistoryService.h"
 #import "MealEaten.h"
 #import "Meal.h"
-#import <BaseClasses/RestKit/RestKit.h>
 
 @interface RetrieveMealHistoryService()
 @property (strong, nonatomic) User *user;

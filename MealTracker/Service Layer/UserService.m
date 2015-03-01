@@ -8,9 +8,9 @@
 
 #import <BaseClasses/ServiceClient.h>
 #import <BaseClasses/User.h>
+#import <BaseClasses/RestKit/RKObjectMapping.h>
 
 #import "UserService.h"
-#import <BaseClasses/RestKit/RestKit.h>
 
 @interface UserService()
 @property (strong, nonatomic) NSString *objectId;

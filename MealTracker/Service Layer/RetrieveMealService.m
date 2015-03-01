@@ -7,8 +7,9 @@
 //
 
 #import <BaseClasses/ServiceClient.h>
+#import <BaseClasses/RestKit/RKObjectMapping.h>
+#import <BaseClasses/RestKit/RKMappingResult.h>
 
-#import <BaseClasses/RestKit/RestKit.h>
 #import "RetrieveMealService.h"
 #import "Meal.h"
 
