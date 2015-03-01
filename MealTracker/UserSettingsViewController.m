@@ -6,7 +6,7 @@
 //
 //
 
-#import <BaseClassesSDK/User.h>
+#import <BaseClasses/User.h>
 
 #import "UserSettingsViewController.h"
 #import "UserService.h"

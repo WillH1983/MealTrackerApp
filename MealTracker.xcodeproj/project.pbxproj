@@ -21,6 +21,7 @@
 		BE4392E415C0AD5E00745158 /* NSDate+day.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4392E315C0AD5E00745158 /* NSDate+day.m */; };
 		BE4FD41A1A943CA40041003F /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4FD4191A943CA40041003F /* UserService.m */; };
 		BE6947101A8DAFC500BDB146 /* RetrieveMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69470F1A8DAFC500BDB146 /* RetrieveMealService.m */; };
+		BE70BED21AA3B47C00513EE4 /* BaseClasses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE70BED11AA3B47C00513EE4 /* BaseClasses.framework */; };
 		BE729BFD1A93041E006823DC /* UIImage+KVNEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729BFA1A93041E006823DC /* UIImage+KVNEmpty.m */; };
 		BE729BFE1A93041E006823DC /* UIImage+KVNImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729BFC1A93041E006823DC /* UIImage+KVNImageEffects.m */; };
 		BE729C041A9304D7006823DC /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729C031A9304D7006823DC /* BaseTableViewController.m */; };
@@ -36,7 +37,6 @@
 		BEA221D61A8F48AE00BFC1DD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3AFF1415BB7E5B006BC0D6 /* CoreData.framework */; };
 		BEB0A2B61A91AD11004E7B82 /* DeleteMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB0A2B51A91AD11004E7B82 /* DeleteMealService.m */; };
 		BEB0A2BD1A91B39B004E7B82 /* DeleteMealEatenService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB0A2BC1A91B39B004E7B82 /* DeleteMealEatenService.m */; };
-		BEB596921AA2D6E30037CB29 /* BaseClassesSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB596911AA2D6E30037CB29 /* BaseClassesSDK.framework */; };
 		BEBDCDB31A8C512A0033FD4C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBDCDB21A8C512A0033FD4C /* CFNetwork.framework */; };
 		BEBDCDB51A8C513B0033FD4C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBDCDB41A8C513B0033FD4C /* MobileCoreServices.framework */; };
 		BEBDCDB71A8C51500033FD4C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBDCDB61A8C51500033FD4C /* Security.framework */; };
@@ -85,6 +85,7 @@
 		BE4FD4191A943CA40041003F /* UserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserService.m; sourceTree = "<group>"; };
 		BE69470E1A8DAFC500BDB146 /* RetrieveMealService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetrieveMealService.h; sourceTree = "<group>"; };
 		BE69470F1A8DAFC500BDB146 /* RetrieveMealService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetrieveMealService.m; sourceTree = "<group>"; };
+		BE70BED11AA3B47C00513EE4 /* BaseClasses.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaseClasses.framework; path = MealTracker/Frameworks/BaseClasses.framework; sourceTree = "<group>"; };
 		BE729BF91A93041E006823DC /* UIImage+KVNEmpty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KVNEmpty.h"; sourceTree = "<group>"; };
 		BE729BFA1A93041E006823DC /* UIImage+KVNEmpty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KVNEmpty.m"; sourceTree = "<group>"; };
 		BE729BFB1A93041E006823DC /* UIImage+KVNImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KVNImageEffects.h"; sourceTree = "<group>"; };
@@ -111,7 +112,6 @@
 		BEB0A2B51A91AD11004E7B82 /* DeleteMealService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteMealService.m; sourceTree = "<group>"; };
 		BEB0A2BB1A91B39B004E7B82 /* DeleteMealEatenService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteMealEatenService.h; sourceTree = "<group>"; };
 		BEB0A2BC1A91B39B004E7B82 /* DeleteMealEatenService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteMealEatenService.m; sourceTree = "<group>"; };
-		BEB596911AA2D6E30037CB29 /* BaseClassesSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaseClassesSDK.framework; path = MealTracker/Frameworks/BaseClassesSDK.framework; sourceTree = "<group>"; };
 		BEBDCDAD1A8C4C170033FD4C /* MealServiceErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealServiceErrors.h; sourceTree = "<group>"; };
 		BEBDCDB21A8C512A0033FD4C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		BEBDCDB41A8C513B0033FD4C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -139,9 +139,9 @@
 				BEBDCDB71A8C51500033FD4C /* Security.framework in Frameworks */,
 				BEBDCDB51A8C513B0033FD4C /* MobileCoreServices.framework in Frameworks */,
 				BEBDCDB31A8C512A0033FD4C /* CFNetwork.framework in Frameworks */,
-				BEB596921AA2D6E30037CB29 /* BaseClassesSDK.framework in Frameworks */,
 				BE3AFEF215BB754F006BC0D6 /* UIKit.framework in Frameworks */,
 				BE3AFEF415BB754F006BC0D6 /* Foundation.framework in Frameworks */,
+				BE70BED21AA3B47C00513EE4 /* BaseClasses.framework in Frameworks */,
 				BE3AFEF615BB754F006BC0D6 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,7 +188,7 @@
 		BE3AFEF015BB754F006BC0D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BEB596911AA2D6E30037CB29 /* BaseClassesSDK.framework */,
+				BE70BED11AA3B47C00513EE4 /* BaseClasses.framework */,
 				BEBDCDB21A8C512A0033FD4C /* CFNetwork.framework */,
 				BE3AFF1415BB7E5B006BC0D6 /* CoreData.framework */,
 				BE3AFEF515BB754F006BC0D6 /* CoreGraphics.framework */,

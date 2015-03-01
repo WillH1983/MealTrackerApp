@@ -1,0 +1,18 @@
+//
+//  BaseClasses-Prefix.pch
+//  BaseClasses
+//
+//  Created by William Hindenburg on 3/1/15.
+//  Copyright (c) 2015 William Hindenburg. All rights reserved.
+//
+
+#ifndef BaseClasses_BaseClasses_Prefix_pch
+#define BaseClasses_BaseClasses_Prefix_pch
+
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif

@@ -6,11 +6,11 @@
 //
 //
 
-#import <BaseClassesSDK/ServiceClient.h>
-#import <BaseClassesSDK/User.h>
+#import <BaseClasses/ServiceClient.h>
+#import <BaseClasses/User.h>
 
 #import "UserService.h"
-#import <BaseClassesSDK/RestKit/RestKit.h>
+#import <BaseClasses/RestKit/RestKit.h>
 
 @interface UserService()
 @property (strong, nonatomic) NSString *objectId;

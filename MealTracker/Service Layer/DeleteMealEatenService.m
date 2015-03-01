@@ -6,11 +6,11 @@
 //
 //
 
-#import <BaseClassesSDK/ServiceClient.h>
+#import <BaseClasses/ServiceClient.h>
 
 #import "DeleteMealEatenService.h"
 #import "MealEaten.h"
-#import <BaseClassesSDK/RestKit/RestKit.h>
+#import <BaseClasses/RestKit/RestKit.h>
 
 @implementation DeleteMealEatenService
 

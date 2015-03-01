@@ -6,13 +6,13 @@
 //
 //
 
-#import <BaseClassesSDK/ServiceClient.h>
-#import <BaseClassesSDK/User.h>
+#import <BaseClasses/ServiceClient.h>
+#import <BaseClasses/User.h>
 
 #import "RetrieveMealHistoryService.h"
 #import "MealEaten.h"
 #import "Meal.h"
-#import <BaseClassesSDK/RestKit/RestKit.h>
+#import <BaseClasses/RestKit/RestKit.h>
 
 @interface RetrieveMealHistoryService()
 @property (strong, nonatomic) User *user;
