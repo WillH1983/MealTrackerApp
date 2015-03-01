@@ -10,7 +10,7 @@
 #import "RestKit/RestKit.h"
 #import "Service.h"
 
-extern NSString* const LifeServiceErrorDomain;
+extern NSString* const ServiceErrorDomain;
 
 @interface ServiceClient : NSObject
 
