@@ -22,6 +22,7 @@
 		BE4FD41A1A943CA40041003F /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4FD4191A943CA40041003F /* UserService.m */; };
 		BE6947101A8DAFC500BDB146 /* RetrieveMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69470F1A8DAFC500BDB146 /* RetrieveMealService.m */; };
 		BE70BED21AA3B47C00513EE4 /* BaseClasses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE70BED11AA3B47C00513EE4 /* BaseClasses.framework */; };
+		BE70BED31AA3B66A00513EE4 /* BaseClasses.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE70BED11AA3B47C00513EE4 /* BaseClasses.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE729BFD1A93041E006823DC /* UIImage+KVNEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729BFA1A93041E006823DC /* UIImage+KVNEmpty.m */; };
 		BE729BFE1A93041E006823DC /* UIImage+KVNImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729BFC1A93041E006823DC /* UIImage+KVNImageEffects.m */; };
 		BE729C041A9304D7006823DC /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729C031A9304D7006823DC /* BaseTableViewController.m */; };
@@ -55,6 +56,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				BE70BED31AA3B66A00513EE4 /* BaseClasses.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;

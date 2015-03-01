@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.user = [User persistentUserObject];
-    self.userPointsTextField.text = [NSString stringWithFormat:@"%ld", [self.user.pointsPerWeek integerValue]];
+    self.userPointsTextField.text = [NSString stringWithFormat:@"%ld", (long)[self.user.pointsPerWeek integerValue]];
     self.userPointsTextField.delegate = self;
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
