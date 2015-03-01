@@ -70,6 +70,6 @@
  @param object The object to be evaluated.
  @return `YES` if the object matches the expectations of the receiver, else `NO`.
  */
-- (BOOL)matches:(id)object;
+- (BOOL)matches2:(id)object;
 
 @end
