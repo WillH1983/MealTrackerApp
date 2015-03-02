@@ -7,10 +7,10 @@
 //
 
 #import <BaseClasses/ServiceClient.h>
+#import <BaseClasses/RestKitMapping.h>
 
 #import "DeleteMealService.h"
 #import "Meal.h"
-#import <BaseClasses/RestKit/RKObjectMapping.h>
 
 @implementation DeleteMealService
 

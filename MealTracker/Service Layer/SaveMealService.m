@@ -6,9 +6,8 @@
 //  Copyright (c) 2015 William Hindenburg. All rights reserved.
 //
 
-#import <BaseClasses/RestKit/RKMappingResult.h>
-#import <BaseClasses/RestKit/RKObjectMapping.h>
 #import <BaseClasses/ServiceClient.h>
+#import <BaseClasses/RestKitMapping.h>
 
 #import "SaveMealService.h"
 #import "Meal.h"
