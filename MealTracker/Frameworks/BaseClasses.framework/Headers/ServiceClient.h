@@ -25,4 +25,6 @@ extern NSString* const ServiceErrorDomain;
 
 - (void)deleteObjects:(NSArray *)objects andService:(id<Service>)lifeService withSuccessBlock:(void (^)(RKMappingResult *result))successBlock andError:(void (^)(NSError *error))errorBlock;
 
+- (void)performMappingOnObject:(id)object withService:(id<Service>)service withSuccessBlock:(void (^)(RKMappingResult *result))successBlock andError:(void (^)(NSError *error))errorBlock;
+
 @end
