@@ -26,8 +26,8 @@
 		BE729C071A93126E006823DC /* UserSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729C061A93126E006823DC /* UserSettingsViewController.m */; };
 		BE7E957315C0965500AE0C94 /* TrackerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7E957215C0965500AE0C94 /* TrackerTableViewController.m */; };
 		BE852A03160E474200A35FA2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE852A02160E474200A35FA2 /* Default-568h@2x.png */; };
-		BE8DB8091AAE9AEC00374DA8 /* BaseClasses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8DB8081AAE9AEC00374DA8 /* BaseClasses.framework */; };
-		BE8DB80A1AAE9AEC00374DA8 /* BaseClasses.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE8DB8081AAE9AEC00374DA8 /* BaseClasses.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BE8DB8151AAE9FFC00374DA8 /* BaseClasses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8DB8141AAE9FFC00374DA8 /* BaseClasses.framework */; };
+		BE8DB8161AAE9FFC00374DA8 /* BaseClasses.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE8DB8141AAE9FFC00374DA8 /* BaseClasses.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE94A6001A93038400CB6231 /* KVNProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94A5FC1A93038400CB6231 /* KVNProgress.m */; };
 		BE94A6011A93038400CB6231 /* KVNProgressConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94A5FE1A93038400CB6231 /* KVNProgressConfiguration.m */; };
 		BE94A6021A93038400CB6231 /* KVNProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE94A5FF1A93038400CB6231 /* KVNProgressView.xib */; };
@@ -44,13 +44,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		BE8DB80B1AAE9AEC00374DA8 /* Embed Frameworks */ = {
+		BE8DB8171AAE9FFC00374DA8 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BE8DB80A1AAE9AEC00374DA8 /* BaseClasses.framework in Embed Frameworks */,
+				BE8DB8161AAE9FFC00374DA8 /* BaseClasses.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,7 +90,7 @@
 		BE7E957115C0965500AE0C94 /* TrackerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackerTableViewController.h; sourceTree = "<group>"; };
 		BE7E957215C0965500AE0C94 /* TrackerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackerTableViewController.m; sourceTree = "<group>"; };
 		BE852A02160E474200A35FA2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		BE8DB8081AAE9AEC00374DA8 /* BaseClasses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = BaseClasses.framework; path = "/Users/Will/Library/Developer/Xcode/DerivedData/BaseClassesProjects-dbkbdktuhuoxagaahfrxhjsbhslq/Build/Products/Debug-iphoneos/BaseClasses.framework"; sourceTree = "<absolute>"; };
+		BE8DB8141AAE9FFC00374DA8 /* BaseClasses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = BaseClasses.framework; path = "/Users/Will/Library/Developer/Xcode/DerivedData/Workspace-ggjwqblbjkpbepcesxyyroirghxg/Build/Products/Debug-iphoneos/BaseClasses.framework"; sourceTree = "<absolute>"; };
 		BE94A5FB1A93038400CB6231 /* KVNProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVNProgress.h; sourceTree = "<group>"; };
 		BE94A5FC1A93038400CB6231 /* KVNProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVNProgress.m; sourceTree = "<group>"; };
 		BE94A5FD1A93038400CB6231 /* KVNProgressConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVNProgressConfiguration.h; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 			files = (
 				BE3AFEF215BB754F006BC0D6 /* UIKit.framework in Frameworks */,
 				BE3AFEF415BB754F006BC0D6 /* Foundation.framework in Frameworks */,
-				BE8DB8091AAE9AEC00374DA8 /* BaseClasses.framework in Frameworks */,
+				BE8DB8151AAE9FFC00374DA8 /* BaseClasses.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +154,7 @@
 		BE3AFEE215BB754F006BC0D6 = {
 			isa = PBXGroup;
 			children = (
+				BE8DB8141AAE9FFC00374DA8 /* BaseClasses.framework */,
 				BE852A02160E474200A35FA2 /* Default-568h@2x.png */,
 				BE3AFEF715BB754F006BC0D6 /* MealTracker */,
 				BE3AFEF015BB754F006BC0D6 /* Frameworks */,
@@ -172,7 +173,6 @@
 		BE3AFEF015BB754F006BC0D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BE8DB8081AAE9AEC00374DA8 /* BaseClasses.framework */,
 				BE3AFEF315BB754F006BC0D6 /* Foundation.framework */,
 				BE94A5FA1A93038400CB6231 /* KVNProgressHUD */,
 				BE3AFEF115BB754F006BC0D6 /* UIKit.framework */,
@@ -281,7 +281,7 @@
 				BE3AFEE915BB754F006BC0D6 /* Sources */,
 				BE3AFEEA15BB754F006BC0D6 /* Frameworks */,
 				BE3AFEEB15BB754F006BC0D6 /* Resources */,
-				BE8DB80B1AAE9AEC00374DA8 /* Embed Frameworks */,
+				BE8DB8171AAE9FFC00374DA8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -478,6 +478,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MealTracker/Frameworks",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/BaseClassesProjects-dbkbdktuhuoxagaahfrxhjsbhslq/Build/Products/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Workspace-ggjwqblbjkpbepcesxyyroirghxg/Build/Products/Debug-iphoneos",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MealTracker/MealTracker-Prefix.pch";
@@ -506,6 +507,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MealTracker/Frameworks",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/BaseClassesProjects-dbkbdktuhuoxagaahfrxhjsbhslq/Build/Products/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Workspace-ggjwqblbjkpbepcesxyyroirghxg/Build/Products/Debug-iphoneos",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MealTracker/MealTracker-Prefix.pch";
