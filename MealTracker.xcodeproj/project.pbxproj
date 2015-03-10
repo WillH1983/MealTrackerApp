@@ -154,7 +154,6 @@
 		BE3AFEE215BB754F006BC0D6 = {
 			isa = PBXGroup;
 			children = (
-				BE8DB8141AAE9FFC00374DA8 /* BaseClasses.framework */,
 				BE852A02160E474200A35FA2 /* Default-568h@2x.png */,
 				BE3AFEF715BB754F006BC0D6 /* MealTracker */,
 				BE3AFEF015BB754F006BC0D6 /* Frameworks */,
@@ -173,6 +172,7 @@
 		BE3AFEF015BB754F006BC0D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BE8DB8141AAE9FFC00374DA8 /* BaseClasses.framework */,
 				BE3AFEF315BB754F006BC0D6 /* Foundation.framework */,
 				BE94A5FA1A93038400CB6231 /* KVNProgressHUD */,
 				BE3AFEF115BB754F006BC0D6 /* UIKit.framework */,
@@ -474,12 +474,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: William Hindenburg (5EW7K5N9Y3)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/MealTracker/Frameworks",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/BaseClassesProjects-dbkbdktuhuoxagaahfrxhjsbhslq/Build/Products/Debug-iphoneos",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Workspace-ggjwqblbjkpbepcesxyyroirghxg/Build/Products/Debug-iphoneos",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/MealTracker/Frameworks";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MealTracker/MealTracker-Prefix.pch";
 				INFOPLIST_FILE = "MealTracker/MealTracker-Info.plist";
@@ -503,12 +498,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: William Hindenburg (5EW7K5N9Y3)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/MealTracker/Frameworks",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/BaseClassesProjects-dbkbdktuhuoxagaahfrxhjsbhslq/Build/Products/Debug-iphoneos",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Workspace-ggjwqblbjkpbepcesxyyroirghxg/Build/Products/Debug-iphoneos",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/MealTracker/Frameworks";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MealTracker/MealTracker-Prefix.pch";
 				INFOPLIST_FILE = "MealTracker/MealTracker-Info.plist";
