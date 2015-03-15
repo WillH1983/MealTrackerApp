@@ -51,8 +51,9 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
-    MealEaten *mealEaten = [self.dataSource objectAtIndex:indexPath.row];
+    NSDictionary *dataSourceForSection = [self.dataSource objectAtIndex:indexPath.section];
+    NSArray *array = [dataSourceForSection valueForKey:@"meals"];
+    MealEaten *mealEaten = [array objectAtIndex:indexPath.row];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
@@ -70,12 +71,24 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return self.dataSource.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.dataSource.count;
+    NSDictionary *dataSourceForSection = [self.dataSource objectAtIndex:section];
+    NSArray *array = [dataSourceForSection valueForKey:@"meals"];
+    return array.count;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    NSDictionary *dataSourceForSection = [self.dataSource objectAtIndex:section];
+    NSDate *date = [dataSourceForSection valueForKey:@"month"];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateStyle = NSDateFormatterMediumStyle;
+    dateFormatter.timeStyle = NSDateFormatterNoStyle;
+    return [dateFormatter stringFromDate:date];
 }
 
 @end
