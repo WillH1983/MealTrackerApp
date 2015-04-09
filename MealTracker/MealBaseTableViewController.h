@@ -7,20 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <BaseClasses/BaseClasses.h>
 
-@interface MealBaseTableViewController : UITableViewController
+@interface MealBaseTableViewController : BaseTableViewController
 
 /**
  * @brief Call this method to log the user out of the app.
  */
 - (void)logout;
-
-/**
- * @brief Call this method when an error has occured during a service call
- * @param error The error that was returned from a service call
- * @param retryBlock The block that will be executed if the user taps "Retry"
- */
-- (void)showError:(NSError *)error withRetryBlock:(void (^)(void))retryBlock;
 
 /**
  * @brief Override this method to support reloading data
