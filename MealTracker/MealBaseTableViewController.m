@@ -8,14 +8,14 @@
 
 #import <BaseClasses/User.h>
 
-#import "BaseTableViewController.h"
+#import "MealBaseTableViewController.h"
 #import "KVNProgress.h"
 
-@interface BaseTableViewController ()
+@interface MealBaseTableViewController ()
 
 @end
 
-@implementation BaseTableViewController
+@implementation MealBaseTableViewController
 
 - (void)logout {
     [User deleteUser];

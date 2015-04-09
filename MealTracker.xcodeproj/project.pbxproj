@@ -22,7 +22,7 @@
 		BE6947101A8DAFC500BDB146 /* RetrieveMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69470F1A8DAFC500BDB146 /* RetrieveMealService.m */; };
 		BE729BFD1A93041E006823DC /* UIImage+KVNEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729BFA1A93041E006823DC /* UIImage+KVNEmpty.m */; };
 		BE729BFE1A93041E006823DC /* UIImage+KVNImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729BFC1A93041E006823DC /* UIImage+KVNImageEffects.m */; };
-		BE729C041A9304D7006823DC /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729C031A9304D7006823DC /* BaseTableViewController.m */; };
+		BE729C041A9304D7006823DC /* MealBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729C031A9304D7006823DC /* MealBaseTableViewController.m */; };
 		BE729C071A93126E006823DC /* UserSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729C061A93126E006823DC /* UserSettingsViewController.m */; };
 		BE7E957315C0965500AE0C94 /* TrackerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7E957215C0965500AE0C94 /* TrackerTableViewController.m */; };
 		BE852A03160E474200A35FA2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE852A02160E474200A35FA2 /* Default-568h@2x.png */; };
@@ -68,8 +68,8 @@
 		BE729BFA1A93041E006823DC /* UIImage+KVNEmpty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KVNEmpty.m"; sourceTree = "<group>"; };
 		BE729BFB1A93041E006823DC /* UIImage+KVNImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KVNImageEffects.h"; sourceTree = "<group>"; };
 		BE729BFC1A93041E006823DC /* UIImage+KVNImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KVNImageEffects.m"; sourceTree = "<group>"; };
-		BE729C021A9304D7006823DC /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
-		BE729C031A9304D7006823DC /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		BE729C021A9304D7006823DC /* MealBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealBaseTableViewController.h; sourceTree = "<group>"; };
+		BE729C031A9304D7006823DC /* MealBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealBaseTableViewController.m; sourceTree = "<group>"; };
 		BE729C051A93126E006823DC /* UserSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSettingsViewController.h; sourceTree = "<group>"; };
 		BE729C061A93126E006823DC /* UserSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSettingsViewController.m; sourceTree = "<group>"; };
 		BE7E957115C0965500AE0C94 /* TrackerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackerTableViewController.h; sourceTree = "<group>"; };
@@ -170,8 +170,8 @@
 		BE3AFEF715BB754F006BC0D6 /* MealTracker */ = {
 			isa = PBXGroup;
 			children = (
-				BE729C021A9304D7006823DC /* BaseTableViewController.h */,
-				BE729C031A9304D7006823DC /* BaseTableViewController.m */,
+				BE729C021A9304D7006823DC /* MealBaseTableViewController.h */,
+				BE729C031A9304D7006823DC /* MealBaseTableViewController.m */,
 				BE1BC63C15EDE777000E31F8 /* Categories */,
 				BE1BC63E15EDE7A9000E31F8 /* Core Data */,
 				BE16D42F1A8B0968004E897A /* Images.xcassets */,
@@ -333,7 +333,7 @@
 			files = (
 				BEBDCDC11A8C5F1A0033FD4C /* Meal.m in Sources */,
 				BE729BFD1A93041E006823DC /* UIImage+KVNEmpty.m in Sources */,
-				BE729C041A9304D7006823DC /* BaseTableViewController.m in Sources */,
+				BE729C041A9304D7006823DC /* MealBaseTableViewController.m in Sources */,
 				BE3AFEFE15BB754F006BC0D6 /* main.m in Sources */,
 				BE3AFF0215BB754F006BC0D6 /* MealTrackerAppDelegate.m in Sources */,
 				BE94A6001A93038400CB6231 /* KVNProgress.m in Sources */,

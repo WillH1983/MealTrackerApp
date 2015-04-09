@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BaseTableViewController : UITableViewController
+@interface MealBaseTableViewController : UITableViewController
 
 /**
  * @brief Call this method to log the user out of the app.

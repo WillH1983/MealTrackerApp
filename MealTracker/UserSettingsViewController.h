@@ -6,8 +6,8 @@
 //
 //
 
-#import "BaseTableViewController.h"
+#import "MealBaseTableViewController.h"
 
-@interface UserSettingsViewController : BaseTableViewController
+@interface UserSettingsViewController : MealBaseTableViewController
 
 @end
