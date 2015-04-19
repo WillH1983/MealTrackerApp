@@ -20,18 +20,18 @@
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
-	<key>ParseApplicationId</key>
-	<string>Wme1ksSkFZg9S4RyXWwvl7qsg6vREiSKk971ums0</string>
-	<key>ParseRestAPIKey</key>
-	<string>AzU3ZJMuvgWDj5ladeVSLmQozm04MJL8yA8OGI44</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>12</string>
+	<string>13</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>ParseApplicationId</key>
+	<string>Wme1ksSkFZg9S4RyXWwvl7qsg6vREiSKk971ums0</string>
+	<key>ParseRestAPIKey</key>
+	<string>AzU3ZJMuvgWDj5ladeVSLmQozm04MJL8yA8OGI44</string>
 	<key>UILaunchStoryboardName</key>
 	<string>Launch Screen</string>
 	<key>UIMainStoryboardFile</key>
