@@ -6,7 +6,7 @@
 //
 //
 
-#import <BaseClasses/BaseService.h>
+#import <BaseClasses/BaseClasses.h>
 
 @class User;
 

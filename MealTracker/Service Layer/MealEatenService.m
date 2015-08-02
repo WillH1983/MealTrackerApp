@@ -6,7 +6,6 @@
 //
 //
 
-#import <BaseClasses/ServiceClient.h>
 #import <BaseClasses/User.h>
 #import <BaseClasses/RestKitMapping.h>
 

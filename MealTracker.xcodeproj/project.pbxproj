@@ -26,15 +26,12 @@
 		BE729C071A93126E006823DC /* UserSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729C061A93126E006823DC /* UserSettingsViewController.m */; };
 		BE7E957315C0965500AE0C94 /* TrackerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7E957215C0965500AE0C94 /* TrackerTableViewController.m */; };
 		BE852A03160E474200A35FA2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE852A02160E474200A35FA2 /* Default-568h@2x.png */; };
-		BE8565CA1AD625AF00C40230 /* BaseClasses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8565C91AD625AF00C40230 /* BaseClasses.framework */; };
 		BE94A6001A93038400CB6231 /* KVNProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94A5FC1A93038400CB6231 /* KVNProgress.m */; };
 		BE94A6011A93038400CB6231 /* KVNProgressConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = BE94A5FE1A93038400CB6231 /* KVNProgressConfiguration.m */; };
 		BE94A6021A93038400CB6231 /* KVNProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE94A5FF1A93038400CB6231 /* KVNProgressView.xib */; };
 		BEA221C81A8F105B00BFC1DD /* MealEaten.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA221C71A8F105B00BFC1DD /* MealEaten.m */; };
 		BEA221CE1A8F144500BFC1DD /* MealEatenService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA221CD1A8F144500BFC1DD /* MealEatenService.m */; };
 		BEA221D21A8F319500BFC1DD /* RetrieveMealHistoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA221D11A8F319500BFC1DD /* RetrieveMealHistoryService.m */; };
-		BEA8104D1AE33CD9001BEA5C /* BaseClasses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8565C91AD625AF00C40230 /* BaseClasses.framework */; };
-		BEA8104E1AE33CD9001BEA5C /* BaseClasses.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE8565C91AD625AF00C40230 /* BaseClasses.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BEB0A2B61A91AD11004E7B82 /* DeleteMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB0A2B51A91AD11004E7B82 /* DeleteMealService.m */; };
 		BEB0A2BD1A91B39B004E7B82 /* DeleteMealEatenService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB0A2BC1A91B39B004E7B82 /* DeleteMealEatenService.m */; };
 		BEBDCDBD1A8C55740033FD4C /* SaveMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCDBC1A8C55740033FD4C /* SaveMealService.m */; };
@@ -42,6 +39,7 @@
 		BEBDCDC41A8C674A0033FD4C /* LoginTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCDC31A8C674A0033FD4C /* LoginTableViewController.m */; };
 		BEDEAC7015BBA0CA008D3BF4 /* MealEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDEAC6F15BBA0CA008D3BF4 /* MealEntryViewController.m */; };
 		BEDEAC7315BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDEAC7215BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m */; };
+		BEE47CB61B5C8A6400DDF9D6 /* BaseClasses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE47CB51B5C8A6400DDF9D6 /* BaseClasses.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,7 +49,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BEA8104E1AE33CD9001BEA5C /* BaseClasses.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,8 +88,6 @@
 		BE7E957115C0965500AE0C94 /* TrackerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackerTableViewController.h; sourceTree = "<group>"; };
 		BE7E957215C0965500AE0C94 /* TrackerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackerTableViewController.m; sourceTree = "<group>"; };
 		BE852A02160E474200A35FA2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		BE8565C91AD625AF00C40230 /* BaseClasses.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaseClasses.framework; path = "../../Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphoneos/BaseClasses.framework"; sourceTree = "<group>"; };
-		BE8DB8141AAE9FFC00374DA8 /* BaseClasses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = BaseClasses.framework; path = "/Users/Will/Library/Developer/Xcode/DerivedData/Workspace-ggjwqblbjkpbepcesxyyroirghxg/Build/Products/Debug-iphoneos/BaseClasses.framework"; sourceTree = "<absolute>"; };
 		BE94A5FB1A93038400CB6231 /* KVNProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVNProgress.h; sourceTree = "<group>"; };
 		BE94A5FC1A93038400CB6231 /* KVNProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVNProgress.m; sourceTree = "<group>"; };
 		BE94A5FD1A93038400CB6231 /* KVNProgressConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVNProgressConfiguration.h; sourceTree = "<group>"; };
@@ -119,6 +114,7 @@
 		BEDEAC6F15BBA0CA008D3BF4 /* MealEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealEntryViewController.m; sourceTree = "<group>"; };
 		BEDEAC7115BBA3D8008D3BF4 /* NSMutableDictionary+MealDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+MealDictionary.h"; sourceTree = "<group>"; };
 		BEDEAC7215BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+MealDictionary.m"; sourceTree = "<group>"; };
+		BEE47CB51B5C8A6400DDF9D6 /* BaseClasses.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaseClasses.framework; path = "../BaseClasses/BaseClasses/build/Debug-iphoneos/BaseClasses.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,9 +122,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE8565CA1AD625AF00C40230 /* BaseClasses.framework in Frameworks */,
+				BEE47CB61B5C8A6400DDF9D6 /* BaseClasses.framework in Frameworks */,
 				BE3AFEF215BB754F006BC0D6 /* UIKit.framework in Frameworks */,
-				BEA8104D1AE33CD9001BEA5C /* BaseClasses.framework in Frameworks */,
 				BE3AFEF415BB754F006BC0D6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,8 +170,7 @@
 		BE3AFEF015BB754F006BC0D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BE8565C91AD625AF00C40230 /* BaseClasses.framework */,
-				BE8DB8141AAE9FFC00374DA8 /* BaseClasses.framework */,
+				BEE47CB51B5C8A6400DDF9D6 /* BaseClasses.framework */,
 				BE3AFEF315BB754F006BC0D6 /* Foundation.framework */,
 				BE94A5FA1A93038400CB6231 /* KVNProgressHUD */,
 				BE3AFEF115BB754F006BC0D6 /* UIKit.framework */,
@@ -303,7 +297,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MealTracker;
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				TargetAttributes = {
 					BE3AFEEC15BB754F006BC0D6 = {
 						DevelopmentTeam = 5EW7K5N9Y3;
@@ -405,6 +399,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: William Hindenburg (5EW7K5N9Y3)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -493,6 +488,7 @@
 					"-ObjC",
 					"-all_load",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "DietApplications.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "12e3c392-8232-41eb-bed5-036efe6e586f";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include \"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
@@ -520,6 +516,7 @@
 					"-ObjC",
 					"-all_load",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "DietApplications.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "12e3c392-8232-41eb-bed5-036efe6e586f";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include \"$(BUILT_PRODUCTS_DIR)/../../Headers\"";

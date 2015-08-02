@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import <BaseClasses/User.h>
+@import BaseClasses.User;
 
 #import "MealTrackerTableViewController.h"
 #import "MealEntryViewController.h"

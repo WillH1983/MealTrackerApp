@@ -6,10 +6,10 @@
 //
 //
 
-#import <BaseClasses/User.h>
+@import BaseClasses.User;
 
 #import "LoginTableViewController.h"
-#import <BaseClasses/AuthenticationService.h>
+#import <BaseClasses/BaseClasses.h>
 
 @interface LoginTableViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userName;

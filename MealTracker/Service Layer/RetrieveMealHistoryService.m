@@ -6,9 +6,7 @@
 //
 //
 
-#import <BaseClasses/ServiceClient.h>
-#import <BaseClasses/User.h>
-#import <BaseClasses/RestKitMapping.h>
+#import <BaseClasses/BaseClasses.h>
 
 #import "RetrieveMealHistoryService.h"
 #import "MealEaten.h"

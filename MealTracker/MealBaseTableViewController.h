@@ -6,8 +6,9 @@
 //
 //
 
+@import BaseClasses;
+
 #import <UIKit/UIKit.h>
-#import <BaseClasses/BaseClasses.h>
 
 @interface MealBaseTableViewController : BaseTableViewController
 
