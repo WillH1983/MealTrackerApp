@@ -6,13 +6,11 @@
 //
 //
 
-#import <BaseClasses/User.h>
-#import <BaseClasses/RestKitMapping.h>
-
 #import "MealEatenService.h"
 #import "MealEaten.h"
 #import "Meal.h"
 
+@import BaseClasses;
 
 @implementation MealEatenService
 

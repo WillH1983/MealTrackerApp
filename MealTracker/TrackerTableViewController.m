@@ -6,13 +6,13 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-@import BaseClasses.User;
-
 #import "TrackerTableViewController.h"
 #import "RetrieveMealHistoryService.h"
 #import "MealEaten.h"
 #import "Meal.h"
 #import "DeleteMealEatenService.h"
+
+@import BaseClasses;
 
 @interface TrackerTableViewController ()
 @property (strong, nonatomic) User *user;

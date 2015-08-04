@@ -6,7 +6,7 @@
 //
 //
 
-#import <BaseClasses/BaseClasses.h>
+@import BaseClasses;
 
 @class MealEaten;
 

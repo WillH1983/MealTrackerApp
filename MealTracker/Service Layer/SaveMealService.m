@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 William Hindenburg. All rights reserved.
 //
 
-#import <BaseClasses/RestKitMapping.h>
-
 #import "SaveMealService.h"
 #import "Meal.h"
+
+@import BaseClasses;
 
 @interface SaveMealService()
 @property (strong, nonatomic) NSString *url;

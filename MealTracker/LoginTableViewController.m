@@ -6,10 +6,10 @@
 //
 //
 
-@import BaseClasses.User;
-
 #import "LoginTableViewController.h"
 #import <BaseClasses/BaseClasses.h>
+
+@import BaseClasses;
 
 @interface LoginTableViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userName;
@@ -49,7 +49,7 @@
     user.password = self.password.text;
     [super showActivityIndicatorAnimated:YES];
     [authService registerUser:user withSuccessBlock:^(User *user) {
-        user.password = nil;
+        user.password = @"";
         [self saveUser:user];
         [self performSegueWithIdentifier:@"tabbar" sender:self];
         self.userName.text = @"";

@@ -6,10 +6,9 @@
 //
 //
 
-#import <BaseClasses/User.h>
-#import <BaseClasses/RestKitMapping.h>
-
 #import "UserService.h"
+
+@import BaseClasses;
 
 @interface UserService()
 @property (strong, nonatomic) NSString *objectId;

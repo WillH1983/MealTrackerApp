@@ -6,8 +6,6 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-@import BaseClasses.User;
-
 #import "MealTrackerTableViewController.h"
 #import "MealEntryViewController.h"
 #import "SaveMealService.h"
@@ -16,6 +14,8 @@
 #import "MealEatenService.h"
 #import "Meal.h"
 #import "DeleteMealService.h"
+
+@import BaseClasses;
 
 @interface MealTrackerTableViewController () <MealTextEntryDelegate>
 @property (nonatomic, strong) NSArray *dataSource;

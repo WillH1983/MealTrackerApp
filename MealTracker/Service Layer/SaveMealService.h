@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 William Hindenburg. All rights reserved.
 //
 
-#import <BaseClasses/BaseClasses.h>
+@import BaseClasses;
 
 @class Meal;
 
