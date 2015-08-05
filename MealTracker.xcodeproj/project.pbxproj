@@ -34,9 +34,9 @@
 		BEA221D21A8F319500BFC1DD /* RetrieveMealHistoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA221D11A8F319500BFC1DD /* RetrieveMealHistoryService.m */; };
 		BEB0A2B61A91AD11004E7B82 /* DeleteMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB0A2B51A91AD11004E7B82 /* DeleteMealService.m */; };
 		BEB0A2BD1A91B39B004E7B82 /* DeleteMealEatenService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB0A2BC1A91B39B004E7B82 /* DeleteMealEatenService.m */; };
+		BEBB74CE1B71BB9D00D2DCBA /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBB74CD1B71BB9D00D2DCBA /* LoginTableViewController.swift */; };
 		BEBDCDBD1A8C55740033FD4C /* SaveMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCDBC1A8C55740033FD4C /* SaveMealService.m */; };
 		BEBDCDC11A8C5F1A0033FD4C /* Meal.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCDC01A8C5F1A0033FD4C /* Meal.m */; };
-		BEBDCDC41A8C674A0033FD4C /* LoginTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCDC31A8C674A0033FD4C /* LoginTableViewController.m */; };
 		BEDEAC7015BBA0CA008D3BF4 /* MealEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDEAC6F15BBA0CA008D3BF4 /* MealEntryViewController.m */; };
 		BEDEAC7315BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDEAC7215BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m */; };
 		BEE47CB61B5C8A6400DDF9D6 /* BaseClasses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE47CB51B5C8A6400DDF9D6 /* BaseClasses.framework */; };
@@ -103,13 +103,13 @@
 		BEB0A2B51A91AD11004E7B82 /* DeleteMealService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteMealService.m; sourceTree = "<group>"; };
 		BEB0A2BB1A91B39B004E7B82 /* DeleteMealEatenService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteMealEatenService.h; sourceTree = "<group>"; };
 		BEB0A2BC1A91B39B004E7B82 /* DeleteMealEatenService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteMealEatenService.m; sourceTree = "<group>"; };
+		BEBB74CC1B71BB9D00D2DCBA /* MealTracker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MealTracker-Bridging-Header.h"; sourceTree = "<group>"; };
+		BEBB74CD1B71BB9D00D2DCBA /* LoginTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
 		BEBDCDAD1A8C4C170033FD4C /* MealServiceErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealServiceErrors.h; sourceTree = "<group>"; };
 		BEBDCDBB1A8C55740033FD4C /* SaveMealService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveMealService.h; sourceTree = "<group>"; };
 		BEBDCDBC1A8C55740033FD4C /* SaveMealService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveMealService.m; sourceTree = "<group>"; };
 		BEBDCDBF1A8C5F1A0033FD4C /* Meal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meal.h; sourceTree = "<group>"; };
 		BEBDCDC01A8C5F1A0033FD4C /* Meal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meal.m; sourceTree = "<group>"; };
-		BEBDCDC21A8C674A0033FD4C /* LoginTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTableViewController.h; sourceTree = "<group>"; };
-		BEBDCDC31A8C674A0033FD4C /* LoginTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTableViewController.m; sourceTree = "<group>"; };
 		BEDEAC6E15BBA0CA008D3BF4 /* MealEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealEntryViewController.h; sourceTree = "<group>"; };
 		BEDEAC6F15BBA0CA008D3BF4 /* MealEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealEntryViewController.m; sourceTree = "<group>"; };
 		BEDEAC7115BBA3D8008D3BF4 /* NSMutableDictionary+MealDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+MealDictionary.h"; sourceTree = "<group>"; };
@@ -188,8 +188,7 @@
 				BE16D42F1A8B0968004E897A /* Images.xcassets */,
 				BE3AFF0B15BB79F9006BC0D6 /* iPhone.storyboard */,
 				BE16D4321A8B0D33004E897A /* Launch Screen.xib */,
-				BEBDCDC21A8C674A0033FD4C /* LoginTableViewController.h */,
-				BEBDCDC31A8C674A0033FD4C /* LoginTableViewController.m */,
+				BEBB74CD1B71BB9D00D2DCBA /* LoginTableViewController.swift */,
 				BEDEAC6E15BBA0CA008D3BF4 /* MealEntryViewController.h */,
 				BEDEAC6F15BBA0CA008D3BF4 /* MealEntryViewController.m */,
 				BE3AFF0015BB754F006BC0D6 /* MealTrackerAppDelegate.h */,
@@ -203,6 +202,7 @@
 				BE7E957215C0965500AE0C94 /* TrackerTableViewController.m */,
 				BE729C051A93126E006823DC /* UserSettingsViewController.h */,
 				BE729C061A93126E006823DC /* UserSettingsViewController.m */,
+				BEBB74CC1B71BB9D00D2DCBA /* MealTracker-Bridging-Header.h */,
 			);
 			path = MealTracker;
 			sourceTree = "<group>";
@@ -297,6 +297,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MealTracker;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				TargetAttributes = {
 					BE3AFEEC15BB754F006BC0D6 = {
@@ -355,11 +356,11 @@
 				BEDEAC7015BBA0CA008D3BF4 /* MealEntryViewController.m in Sources */,
 				BE729C071A93126E006823DC /* UserSettingsViewController.m in Sources */,
 				BEDEAC7315BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m in Sources */,
-				BEBDCDC41A8C674A0033FD4C /* LoginTableViewController.m in Sources */,
 				BEB0A2BD1A91B39B004E7B82 /* DeleteMealEatenService.m in Sources */,
 				BE4FD41A1A943CA40041003F /* UserService.m in Sources */,
 				BEA221C81A8F105B00BFC1DD /* MealEaten.m in Sources */,
 				BE6947101A8DAFC500BDB146 /* RetrieveMealService.m in Sources */,
+				BEBB74CE1B71BB9D00D2DCBA /* LoginTableViewController.swift in Sources */,
 				BE7E957315C0965500AE0C94 /* TrackerTableViewController.m in Sources */,
 				BE729BFE1A93041E006823DC /* UIImage+KVNImageEffects.m in Sources */,
 				BEB0A2B61A91AD11004E7B82 /* DeleteMealService.m in Sources */,
@@ -491,6 +492,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "DietApplications.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "12e3c392-8232-41eb-bed5-036efe6e586f";
+				SWIFT_OBJC_BRIDGING_HEADER = "MealTracker/MealTracker-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include \"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
 				WRAPPER_EXTENSION = app;
 			};
@@ -519,6 +522,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "DietApplications.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "12e3c392-8232-41eb-bed5-036efe6e586f";
+				SWIFT_OBJC_BRIDGING_HEADER = "MealTracker/MealTracker-Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include \"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
 				WRAPPER_EXTENSION = app;
 			};
