@@ -3,4 +3,5 @@
 //
 
 #import "MealBaseTableViewController.h"
+#import "Meal.h"
 #import <BaseClasses/BaseClasses.h>

@@ -40,6 +40,7 @@
 		BEDEAC7015BBA0CA008D3BF4 /* MealEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDEAC6F15BBA0CA008D3BF4 /* MealEntryViewController.m */; };
 		BEDEAC7315BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDEAC7215BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m */; };
 		BEE47CB61B5C8A6400DDF9D6 /* BaseClasses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE47CB51B5C8A6400DDF9D6 /* BaseClasses.framework */; };
+		BEF7833F1B8969130089968A /* MealEntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF7833E1B8969130089968A /* MealEntryTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -115,6 +116,7 @@
 		BEDEAC7115BBA3D8008D3BF4 /* NSMutableDictionary+MealDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+MealDictionary.h"; sourceTree = "<group>"; };
 		BEDEAC7215BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+MealDictionary.m"; sourceTree = "<group>"; };
 		BEE47CB51B5C8A6400DDF9D6 /* BaseClasses.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaseClasses.framework; path = "../BaseClasses/BaseClasses/build/Debug-iphoneos/BaseClasses.framework"; sourceTree = "<group>"; };
+		BEF7833E1B8969130089968A /* MealEntryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealEntryTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 				BEBB74CD1B71BB9D00D2DCBA /* LoginTableViewController.swift */,
 				BEDEAC6E15BBA0CA008D3BF4 /* MealEntryViewController.h */,
 				BEDEAC6F15BBA0CA008D3BF4 /* MealEntryViewController.m */,
+				BEF7833E1B8969130089968A /* MealEntryTableViewController.swift */,
 				BE3AFF0015BB754F006BC0D6 /* MealTrackerAppDelegate.h */,
 				BE3AFF0115BB754F006BC0D6 /* MealTrackerAppDelegate.m */,
 				BE3AFF0D15BB7A3A006BC0D6 /* MealTrackerTableViewController.h */,
@@ -345,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEBDCDC11A8C5F1A0033FD4C /* Meal.m in Sources */,
+				BEF7833F1B8969130089968A /* MealEntryTableViewController.swift in Sources */,
 				BE729BFD1A93041E006823DC /* UIImage+KVNEmpty.m in Sources */,
 				BE729C041A9304D7006823DC /* MealBaseTableViewController.m in Sources */,
 				BE3AFEFE15BB754F006BC0D6 /* main.m in Sources */,
