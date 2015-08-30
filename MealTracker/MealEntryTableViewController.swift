@@ -12,12 +12,12 @@
 
 import UIKit
 
-public protocol MealTextEntryDelegate2 {
+@objc public protocol MealTextEntryDelegate {
     func viewController(sender:UIViewController, didFinishWithMeal:Meal)
     func viewController(sender:UIViewController, didFinishEditingMeal:Meal)
 }
 
-public class MealEntryTableViewController2: UITableViewController, UITextFieldDelegate {
+@objc public class MealEntryTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var mealNameText: UITextField?
     @IBOutlet weak var carbsText: UITextField?
     @IBOutlet weak var dietaryFiberText: UITextField?
@@ -28,7 +28,7 @@ public class MealEntryTableViewController2: UITableViewController, UITextFieldDe
     @IBOutlet weak var mealDescriptionText: UITextField?
     
     var activeField: UITextField?
-    public var textEntryDelegate: MealTextEntryDelegate2?
+    public var textEntryDelegate: MealTextEntryDelegate?
     public var mealData: Meal?
     
     @IBAction func saveButtonPressed(sender:UIBarButtonItem) {
@@ -127,8 +127,19 @@ public class MealEntryTableViewController2: UITableViewController, UITextFieldDe
         self.mealDescriptionText?.resignFirstResponder()
     }
     
+    public func textFieldDidBeginEditing(textField: UITextField) {
+        self.activeField = textField
+    }
+    
     public func textFieldDidEndEditing(textField: UITextField) {
-        
+        self.activeField = nil
+        if self.totalProteinText?.text?.isEmpty == false &&
+        self.carbsText?.text?.isEmpty == false &&
+        self.totalFatText?.text?.isEmpty == false &&
+        self.dietaryFiberText?.text?.isEmpty == false {
+            let wwPoints = self.weightWatchersPointsForProtein(NSDecimalNumber(string: self.totalProteinText?.text), carbohydrates: NSDecimalNumber(string: self.carbsText?.text), totalFat: NSDecimalNumber(string: self.totalFatText?.text), andDietaryFiber:NSDecimalNumber(string:self.dietaryFiberText?.text))
+            self.WWPointsText?.text = wwPoints.stringValue
+        }
     }
 
 }

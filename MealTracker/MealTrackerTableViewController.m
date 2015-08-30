@@ -7,13 +7,13 @@
 //
 
 #import "MealTrackerTableViewController.h"
-#import "MealEntryViewController.h"
 #import "SaveMealService.h"
 #import "RetrieveMealService.h"
 #import "MealEaten.h"
 #import "MealEatenService.h"
 #import "Meal.h"
 #import "DeleteMealService.h"
+#import "MealTracker-Swift.h"
 
 @import BaseClasses;
 
@@ -49,14 +49,14 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
-    [(MealEntryViewController *)navController.topViewController setTextEntryDelegate:self];
+    [(MealEntryTableViewController *)navController.topViewController setTextEntryDelegate:self];
     
     if ([sender isKindOfClass:[UITableViewCell class]])
     {
         UITableViewCell *cell = sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
 
-        [(MealEntryViewController *)navController.topViewController setMealData:[self.dataSource objectAtIndex:indexPath.row]];
+        [(MealEntryTableViewController *)navController.topViewController setMealData:[self.dataSource objectAtIndex:indexPath.row]];
     }
 }
 
