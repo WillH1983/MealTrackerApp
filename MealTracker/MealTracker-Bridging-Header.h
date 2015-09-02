@@ -4,4 +4,9 @@
 
 #import "MealBaseTableViewController.h"
 #import "Meal.h"
+#import "SaveMealService.h"
+#import "RetrieveMealService.h"
+#import "DeleteMealService.h"
+#import "MealEaten.h"
+#import "MealEatenService.h"
 #import <BaseClasses/BaseClasses.h>

@@ -33,22 +33,22 @@ import UIKit
     
     @IBAction func saveButtonPressed(sender:UIBarButtonItem) {
         if let mealName = self.mealNameText?.text {
-            if let meal = self.mealData {
+                let meal = Meal()
                 meal.name = mealName
                 meal.mealDescription = self.mealDescriptionText?.text ?? ""
                 meal.carbs = NSDecimalNumber(string: self.carbsText?.text)
                 meal.weightWatchersPlusPoints = NSDecimalNumber(string: self.WWPointsText?.text)
-                
+            
                 self.mealData = meal
                 if (meal.objectId != nil) {
                     self.textEntryDelegate?.viewController(self, didFinishEditingMeal: self.mealData!)
                 } else {
-                    self.textEntryDelegate?.viewController(self, didFinishEditingMeal: self.mealData!)
+                    self.textEntryDelegate?.viewController(self, didFinishWithMeal: self.mealData!)
                 }
-            }
+                self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
             
         } else {
-            let alert = UIAlertView(title: "Meal Tracker", message: "Please Enter a Meal Name", delegate: nil, cancelButtonTitle: nil)
+            let alert = UIAlertView(title: "Meal Tracker", message: "Please Enter a Meal Name", delegate: nil, cancelButtonTitle: "Okay")
             alert.show()
         }
     }

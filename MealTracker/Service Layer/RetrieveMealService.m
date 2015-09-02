@@ -14,7 +14,7 @@
 
 @implementation RetrieveMealService
 
-- (void)retrieveMealsWithSuccessBlock:(void (^)(NSArray *meals))successBlock andError:(void (^)(NSError *error))errorBlock {
+- (void)retrieveMealsWithSuccessBlock:(void (^)(NSArray<Meal *> *meals))successBlock andError:(void (^)(NSError *error))errorBlock {
     ServiceClient *serviceClient = [ServiceClient new];
     [serviceClient getForService:self withSuccess:^(RKMappingResult *result) {
         successBlock(result.array);

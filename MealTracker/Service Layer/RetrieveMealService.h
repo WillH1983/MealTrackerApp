@@ -8,6 +8,8 @@
 
 #import <BaseClasses/BaseService.h>
 
+@class Meal;
+
 @interface RetrieveMealService : BaseService <Service>
-- (void)retrieveMealsWithSuccessBlock:(void (^)(NSArray *meals))successBlock andError:(void (^)(NSError *error))errorBlock;
+- (void)retrieveMealsWithSuccessBlock:(void (^)(NSArray<Meal *> *meals))successBlock andError:(void (^)(NSError *error))errorBlock;
 @end
