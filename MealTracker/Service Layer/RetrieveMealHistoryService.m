@@ -18,7 +18,7 @@
 
 @implementation RetrieveMealHistoryService
 
-- (void)loadMealHistoryBasedOnUser:(User *)user withSuccessBlock:(void (^)(NSArray * data))successBlock andError:(void (^)(NSError *error))errorBlock {
+- (void)loadMealHistoryBasedOnUser:(User *)user withSuccessBlock:(void (^)(NSArray <NSDictionary<NSString *, id> *> *data))successBlock andError:(void (^)(NSError *error))errorBlock {
     self.user = user;
     ServiceClient *serviceClient = [ServiceClient new];
     [serviceClient getForService:self withSuccess:^(RKMappingResult *result) {

@@ -9,4 +9,5 @@
 #import "DeleteMealService.h"
 #import "MealEaten.h"
 #import "MealEatenService.h"
+#import "RetrieveMealHistoryService.h"
 #import <BaseClasses/BaseClasses.h>

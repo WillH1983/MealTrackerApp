@@ -8,8 +8,13 @@
 
 #import <BaseClasses/BaseService.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class User;
 
 @interface RetrieveMealHistoryService : BaseService <Service>
-- (void)loadMealHistoryBasedOnUser:(User *)user withSuccessBlock:(void (^)(NSArray * data))successBlock andError:(void (^)(NSError *error))errorBlock;
+//<Dictionary<String, AnyObject>>
+- (void)loadMealHistoryBasedOnUser:(User *)user withSuccessBlock:(void (^)(NSArray <NSDictionary<NSString *, id> *> *data))successBlock andError:(void (^)(NSError *error))errorBlock;
 @end
+
+NS_ASSUME_NONNULL_END
