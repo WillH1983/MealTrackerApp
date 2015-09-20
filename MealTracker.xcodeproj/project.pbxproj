@@ -18,6 +18,7 @@
 		BE3AFF0C15BB79F9006BC0D6 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE3AFF0B15BB79F9006BC0D6 /* iPhone.storyboard */; };
 		BE4392E415C0AD5E00745158 /* NSDate+day.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4392E315C0AD5E00745158 /* NSDate+day.m */; };
 		BE4FD41A1A943CA40041003F /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4FD4191A943CA40041003F /* UserService.m */; };
+		BE5E1A621BAF1A84005B98A4 /* BaseClasses.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE5E1A5D1BAF1A6A005B98A4 /* BaseClasses.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE6947101A8DAFC500BDB146 /* RetrieveMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69470F1A8DAFC500BDB146 /* RetrieveMealService.m */; };
 		BE729BFD1A93041E006823DC /* UIImage+KVNEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729BFA1A93041E006823DC /* UIImage+KVNEmpty.m */; };
 		BE729BFE1A93041E006823DC /* UIImage+KVNImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729BFC1A93041E006823DC /* UIImage+KVNImageEffects.m */; };
@@ -39,9 +40,39 @@
 		BEBDCDBD1A8C55740033FD4C /* SaveMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCDBC1A8C55740033FD4C /* SaveMealService.m */; };
 		BEBDCDC11A8C5F1A0033FD4C /* Meal.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCDC01A8C5F1A0033FD4C /* Meal.m */; };
 		BEDEAC7315BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDEAC7215BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m */; };
-		BEE47CB61B5C8A6400DDF9D6 /* BaseClasses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE47CB51B5C8A6400DDF9D6 /* BaseClasses.framework */; };
 		BEF7833F1B8969130089968A /* MealEntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF7833E1B8969130089968A /* MealEntryTableViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BE5E1A5C1BAF1A6A005B98A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE5E1A561BAF1A6A005B98A4 /* BaseClasses.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEBA0CAD1A983663006E4FEA;
+			remoteInfo = BaseClasses;
+		};
+		BE5E1A5E1BAF1A6A005B98A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE5E1A561BAF1A6A005B98A4 /* BaseClasses.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEBA0CB81A983663006E4FEA;
+			remoteInfo = BaseClassesTests;
+		};
+		BE5E1A601BAF1A6A005B98A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE5E1A561BAF1A6A005B98A4 /* BaseClasses.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEB5966D1AA2D3B00037CB29;
+			remoteInfo = BaseClassesSDK;
+		};
+		BE5E1A631BAF1AAF005B98A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE5E1A561BAF1A6A005B98A4 /* BaseClasses.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BEBA0CAC1A983663006E4FEA;
+			remoteInfo = BaseClasses;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		BEA8104F1AE33CD9001BEA5C /* Embed Frameworks */ = {
@@ -50,6 +81,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				BE5E1A621BAF1A84005B98A4 /* BaseClasses.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +106,7 @@
 		BE4392E315C0AD5E00745158 /* NSDate+day.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+day.m"; sourceTree = "<group>"; };
 		BE4FD4181A943CA40041003F /* UserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserService.h; sourceTree = "<group>"; };
 		BE4FD4191A943CA40041003F /* UserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserService.m; sourceTree = "<group>"; };
+		BE5E1A561BAF1A6A005B98A4 /* BaseClasses.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BaseClasses.xcodeproj; path = /Users/Will/Developer/Workspace/../BaseClasses/BaseClasses/BaseClasses.xcodeproj; sourceTree = "<absolute>"; };
 		BE69470E1A8DAFC500BDB146 /* RetrieveMealService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetrieveMealService.h; sourceTree = "<group>"; };
 		BE69470F1A8DAFC500BDB146 /* RetrieveMealService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetrieveMealService.m; sourceTree = "<group>"; };
 		BE729BF91A93041E006823DC /* UIImage+KVNEmpty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KVNEmpty.h"; sourceTree = "<group>"; };
@@ -113,7 +146,6 @@
 		BEBDCDC01A8C5F1A0033FD4C /* Meal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meal.m; sourceTree = "<group>"; };
 		BEDEAC7115BBA3D8008D3BF4 /* NSMutableDictionary+MealDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+MealDictionary.h"; sourceTree = "<group>"; };
 		BEDEAC7215BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+MealDictionary.m"; sourceTree = "<group>"; };
-		BEE47CB51B5C8A6400DDF9D6 /* BaseClasses.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaseClasses.framework; path = "../BaseClasses/BaseClasses/build/Debug-iphoneos/BaseClasses.framework"; sourceTree = "<group>"; };
 		BEF7833E1B8969130089968A /* MealEntryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealEntryTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,7 +154,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEE47CB61B5C8A6400DDF9D6 /* BaseClasses.framework in Frameworks */,
 				BE3AFEF215BB754F006BC0D6 /* UIKit.framework in Frameworks */,
 				BE3AFEF415BB754F006BC0D6 /* Foundation.framework in Frameworks */,
 			);
@@ -170,7 +201,7 @@
 		BE3AFEF015BB754F006BC0D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BEE47CB51B5C8A6400DDF9D6 /* BaseClasses.framework */,
+				BE5E1A561BAF1A6A005B98A4 /* BaseClasses.xcodeproj */,
 				BE3AFEF315BB754F006BC0D6 /* Foundation.framework */,
 				BE94A5FA1A93038400CB6231 /* KVNProgressHUD */,
 				BE3AFEF115BB754F006BC0D6 /* UIKit.framework */,
@@ -215,6 +246,16 @@
 				BE3AFEFF15BB754F006BC0D6 /* MealTracker-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BE5E1A571BAF1A6A005B98A4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE5E1A5D1BAF1A6A005B98A4 /* BaseClasses.framework */,
+				BE5E1A5F1BAF1A6A005B98A4 /* BaseClassesTests.xctest */,
+				BE5E1A611BAF1A6A005B98A4 /* BaseClassesSDK.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		BE94A5FA1A93038400CB6231 /* KVNProgressHUD */ = {
@@ -283,6 +324,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				BE5E1A641BAF1AAF005B98A4 /* PBXTargetDependency */,
 			);
 			name = MealTracker;
 			productName = MealTracker;
@@ -314,12 +356,42 @@
 			mainGroup = BE3AFEE215BB754F006BC0D6;
 			productRefGroup = BE3AFEEE15BB754F006BC0D6 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = BE5E1A571BAF1A6A005B98A4 /* Products */;
+					ProjectRef = BE5E1A561BAF1A6A005B98A4 /* BaseClasses.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				BE3AFEEC15BB754F006BC0D6 /* MealTracker */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		BE5E1A5D1BAF1A6A005B98A4 /* BaseClasses.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BaseClasses.framework;
+			remoteRef = BE5E1A5C1BAF1A6A005B98A4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BE5E1A5F1BAF1A6A005B98A4 /* BaseClassesTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BaseClassesTests.xctest;
+			remoteRef = BE5E1A5E1BAF1A6A005B98A4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BE5E1A611BAF1A6A005B98A4 /* BaseClassesSDK.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BaseClassesSDK.framework;
+			remoteRef = BE5E1A601BAF1A6A005B98A4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BE3AFEEB15BB754F006BC0D6 /* Resources */ = {
@@ -371,6 +443,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BE5E1A641BAF1AAF005B98A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BaseClasses;
+			targetProxy = BE5E1A631BAF1AAF005B98A4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BE3AFEFA15BB754F006BC0D6 /* InfoPlist.strings */ = {
