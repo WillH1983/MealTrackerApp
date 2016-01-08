@@ -7,7 +7,8 @@
 //
 
 #import "UserService.h"
-#import "MealTracker-Swift.h"
+
+@import BaseClassesSwift;
 
 @interface UserService()
 @property (strong, nonatomic) NSString *objectId;

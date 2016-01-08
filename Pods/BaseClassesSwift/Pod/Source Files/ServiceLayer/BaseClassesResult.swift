@@ -8,6 +8,6 @@
 
 import UIKit
 
-class ScrubTechResult: NSObject {
+class BaseClassesResult: NSObject {
 
 }

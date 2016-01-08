@@ -8,7 +8,8 @@
 
 #import "UserSettingsViewController.h"
 #import "UserService.h"
-#import "MealTracker-Swift.h"
+
+@import BaseClassesSwift;
 
 @interface UserSettingsViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userPointsTextField;

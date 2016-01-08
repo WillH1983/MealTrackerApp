@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BaseClassesSwift
 
 class MealTrackerTableViewController: MealBaseTableViewController, MealTextEntryDelegate {
     var dataSource:Array <Meal>?

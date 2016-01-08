@@ -18,7 +18,7 @@ public enum ScrubTechServiceErrorCode {
     case GenericError
 }
 
-class ScrubTechBaseModel:NSObject, Mappable {
+public class BaseModel:NSObject, Mappable {
     
     var id = 0
     
@@ -49,11 +49,11 @@ class ScrubTechBaseModel:NSObject, Mappable {
     }
     
     
-    required init?(_ map: Map) {
+    required public init?(_ map: Map) {
         
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         id <- map["id"]
         result <- map["result"]
         error <- map["error"]

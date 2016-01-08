@@ -9,27 +9,27 @@
 import UIKit
 import Alamofire
 
-protocol ScrubTechService: URLStringConvertible {
+public protocol BaseClassesService: URLStringConvertible {
     var serviceURL:String {get}
     var baseURL:String {get}
     var rootRequestKeyPath:String {get}
     var rootKeyPath:String {get}
 }
 
-extension ScrubTechService {
-    var baseURL:String {
+extension BaseClassesService {
+    public var baseURL:String {
         return "https://www.scrub-tech.com"
     }
     
-    var URLString:String {
+    public var URLString:String {
         return self.baseURL + self.serviceURL
     }
     
-    var rootRequestKeyPath:String {
+    public var rootRequestKeyPath:String {
         return "request"
     }
     
-    var rootKeyPath:String {
+    public var rootKeyPath:String {
         return "object"
     }
 }

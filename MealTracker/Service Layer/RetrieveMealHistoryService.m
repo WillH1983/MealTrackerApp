@@ -9,7 +9,8 @@
 #import "RetrieveMealHistoryService.h"
 #import "MealEaten.h"
 #import "Meal.h"
-#import "MealTracker-Swift.h"
+
+@import BaseClassesSwift;
 
 @interface RetrieveMealHistoryService()
 @property (strong, nonatomic) User *user;

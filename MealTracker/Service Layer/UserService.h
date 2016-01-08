@@ -8,7 +8,7 @@
 
 #import "BaseService.h"
 
-@class User;
+@import BaseClassesSwift;
 
 @interface UserService : BaseService //<Service>
 - (void)updateUser:(User *)user withSuccessBlock:(void (^)(User *user))successBlock andError:(void (^)(NSError *error))errorBlock;

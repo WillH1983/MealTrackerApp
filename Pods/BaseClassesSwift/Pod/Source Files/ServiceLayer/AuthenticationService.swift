@@ -7,9 +7,8 @@
 //
 
 import Foundation
-import BaseClassesSwift
 
-@objc public class AuthenticationService: BaseService {//, Service {
+public class AuthenticationService: BaseClassesService {
     private var params = [String: String]()
     private var loggingIn = false
     
@@ -40,7 +39,7 @@ import BaseClassesSwift
 //        }
     }
     
-    public func serviceURL() -> String {
+    public var serviceURL:String {
         if self.loggingIn {
             return "/1/login"
         } else {

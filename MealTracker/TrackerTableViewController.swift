@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BaseClassesSwift
 
 class TrackerTableViewController2: MealBaseTableViewController {
 

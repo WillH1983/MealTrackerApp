@@ -11,9 +11,9 @@ import AlamofireObjectMapper
 import ObjectMapper
 import Alamofire
 
-class ScrubTechServiceClient: NSObject {
+public class BaseClassesServiceClient: NSObject {
     private var errorDomain = "ScrubTech.ErrorDomain"
-    func postObject<Service:ScrubTechService, PostObject:ScrubTechBaseModel, ResponseObject:ScrubTechBaseModel>(object:PostObject, andService:Service, successBlock:(ResponseObject -> Void), errorBlock:(NSError -> Void)) {
+    public func postObject<Service:BaseClassesService, PostObject:BaseModel, ResponseObject:BaseModel>(object:PostObject, andService:Service, successBlock:(ResponseObject -> Void), errorBlock:(NSError -> Void)) {
         let JSONString = Mapper().toJSON(object)
         let dictionary = [andService.rootRequestKeyPath:JSONString]
         let request = Alamofire.request(.POST, andService, parameters: dictionary, encoding: .JSON, headers: nil)
@@ -45,7 +45,7 @@ class ScrubTechServiceClient: NSObject {
 
     }
     
-    func checkForErrorInObject(object:ScrubTechBaseModel) -> NSError? {
+    private func checkForErrorInObject(object:BaseModel) -> NSError? {
         
         var error:NSError?
         
