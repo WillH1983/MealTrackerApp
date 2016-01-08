@@ -6,21 +6,18 @@
 //
 //
 
-#import <BaseClasses/BaseClasses.h>
-#import <BaseClasses/RestKitMapping.h>
-
 #import "RetrieveMealService.h"
 #import "Meal.h"
 
 @implementation RetrieveMealService
 
 - (void)retrieveMealsWithSuccessBlock:(void (^)(NSArray<Meal *> *meals))successBlock andError:(void (^)(NSError *error))errorBlock {
-    ServiceClient *serviceClient = [ServiceClient new];
-    [serviceClient getForService:self withSuccess:^(RKMappingResult *result) {
-        successBlock(result.array);
-    } andError:^(NSError *error) {
-        errorBlock(error);
-    }];
+//    ServiceClient *serviceClient = [ServiceClient new];
+//    [serviceClient getForService:self withSuccess:^(RKMappingResult *result) {
+//        successBlock(result.array);
+//    } andError:^(NSError *error) {
+//        errorBlock(error);
+//    }];
 }
 
 - (NSString *)serviceURL {
@@ -40,20 +37,20 @@
     return nil;
 }
 
-- (RKObjectMapping *)mappingProvider {
-    RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[Meal class]];
-    [mapping addAttributeMappingsFromDictionary:@{@"calories":@"calories"}];
-    [mapping addAttributeMappingsFromDictionary:@{@"carbs":@"carbs"}];
-    [mapping addAttributeMappingsFromDictionary:@{@"dietaryFiber":@"dietaryFiber"}];
-    [mapping addAttributeMappingsFromDictionary:@{@"mealDescription":@"mealDescription"}];
-    [mapping addAttributeMappingsFromDictionary:@{@"name":@"name"}];
-    [mapping addAttributeMappingsFromDictionary:@{@"protein":@"protein"}];
-    [mapping addAttributeMappingsFromDictionary:@{@"servingSize":@"servingSize"}];
-    [mapping addAttributeMappingsFromDictionary:@{@"totalFat":@"totalFat"}];
-    [mapping addAttributeMappingsFromDictionary:@{@"weightWatchersPlusPoints":@"weightWatchersPlusPoints"}];
-    [mapping addAttributeMappingsFromDictionary:@{@"whenEaten":@"whenEaten"}];
-    [mapping addAttributeMappingsFromDictionary:@{@"objectId":@"objectId"}];
-    return mapping;
-}
+//- (RKObjectMapping *)mappingProvider {
+//    RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[Meal class]];
+//    [mapping addAttributeMappingsFromDictionary:@{@"calories":@"calories"}];
+//    [mapping addAttributeMappingsFromDictionary:@{@"carbs":@"carbs"}];
+//    [mapping addAttributeMappingsFromDictionary:@{@"dietaryFiber":@"dietaryFiber"}];
+//    [mapping addAttributeMappingsFromDictionary:@{@"mealDescription":@"mealDescription"}];
+//    [mapping addAttributeMappingsFromDictionary:@{@"name":@"name"}];
+//    [mapping addAttributeMappingsFromDictionary:@{@"protein":@"protein"}];
+//    [mapping addAttributeMappingsFromDictionary:@{@"servingSize":@"servingSize"}];
+//    [mapping addAttributeMappingsFromDictionary:@{@"totalFat":@"totalFat"}];
+//    [mapping addAttributeMappingsFromDictionary:@{@"weightWatchersPlusPoints":@"weightWatchersPlusPoints"}];
+//    [mapping addAttributeMappingsFromDictionary:@{@"whenEaten":@"whenEaten"}];
+//    [mapping addAttributeMappingsFromDictionary:@{@"objectId":@"objectId"}];
+//    return mapping;
+//}
 
 @end

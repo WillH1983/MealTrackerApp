@@ -8,8 +8,7 @@
 
 #import "MealBaseTableViewController.h"
 #import "KVNProgress.h"
-
-@import BaseClasses;
+#import "MealTracker-Swift.h"
 
 @interface MealBaseTableViewController ()
 

@@ -1,0 +1,33 @@
+{
+  "name": "BaseClassesSwift",
+  "version": "0.1.0",
+  "summary": "A Library of Base Classes that connect to Parse",
+  "description": "A library of classes that provides the user quick integration with parse, that has a built in feature set",
+  "homepage": "https://github.com/WillH1983/BaseClassesSwift",
+  "license": "MIT",
+  "authors": {
+    "Will Hindenburg": "WillH1983@yahoo.com"
+  },
+  "source": {
+    "git": "https://github.com/WillH1983/BaseClassesSwift.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Source Files/**/*",
+  "resource_bundles": {
+    "BaseClassesSwift": [
+      "Pod/Assets/*.png"
+    ]
+  },
+  "dependencies": {
+    "AlamofireObjectMapper": [
+      "~> 2.1"
+    ],
+    "KVNProgress": [
+
+    ]
+  }
+}

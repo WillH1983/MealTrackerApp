@@ -6,10 +6,10 @@
 //
 //
 
-#import <BaseClasses/BaseClasses.h>
+#import "BaseService.h"
 
 @class User;
 
-@interface UserService : BaseService <Service>
+@interface UserService : BaseService //<Service>
 - (void)updateUser:(User *)user withSuccessBlock:(void (^)(User *user))successBlock andError:(void (^)(NSError *error))errorBlock;
 @end

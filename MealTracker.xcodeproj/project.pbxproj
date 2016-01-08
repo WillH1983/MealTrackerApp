@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		898634DC2EE80F821BADBD2E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53DAD975038881BC9894646 /* Pods.framework */; };
 		BE16D4301A8B0968004E897A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE16D42F1A8B0968004E897A /* Images.xcassets */; };
 		BE16D4331A8B0D33004E897A /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE16D4321A8B0D33004E897A /* Launch Screen.xib */; };
 		BE2C9AD815C47E2300DD6070 /* plusButton.png in Resources */ = {isa = PBXBuildFile; fileRef = BE2C9AD715C47E2300DD6070 /* plusButton.png */; };
@@ -17,8 +18,17 @@
 		BE3AFF0215BB754F006BC0D6 /* MealTrackerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AFF0115BB754F006BC0D6 /* MealTrackerAppDelegate.m */; };
 		BE3AFF0C15BB79F9006BC0D6 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE3AFF0B15BB79F9006BC0D6 /* iPhone.storyboard */; };
 		BE4392E415C0AD5E00745158 /* NSDate+day.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4392E315C0AD5E00745158 /* NSDate+day.m */; };
+		BE47885A1C3F59EC00CC9CBB /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4788581C3F59EC00CC9CBB /* BaseTableViewController.m */; };
+		BE47885B1C3F59EC00CC9CBB /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4788591C3F59EC00CC9CBB /* BaseTableViewController.swift */; };
+		BE4788661C3F5B8900CC9CBB /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4788641C3F5B8900CC9CBB /* BaseModel.m */; };
+		BE4788671C3F5B8900CC9CBB /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4788651C3F5B8900CC9CBB /* BaseModel.swift */; };
+		BE4788691C3F5B9200CC9CBB /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4788681C3F5B9200CC9CBB /* Config.swift */; };
+		BE47886B1C3F5BBB00CC9CBB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE47886A1C3F5BBB00CC9CBB /* User.swift */; };
+		BE47886F1C3F5DB900CC9CBB /* BaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = BE47886D1C3F5DB900CC9CBB /* BaseService.m */; };
+		BE4788701C3F5DB900CC9CBB /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE47886E1C3F5DB900CC9CBB /* BaseService.swift */; };
+		BE4788721C3F5E5300CC9CBB /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4788711C3F5E5300CC9CBB /* AuthenticationService.swift */; };
+		BE4788771C3F602100CC9CBB /* ServiceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4788761C3F602100CC9CBB /* ServiceErrors.swift */; };
 		BE4FD41A1A943CA40041003F /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4FD4191A943CA40041003F /* UserService.m */; };
-		BE5E1A621BAF1A84005B98A4 /* BaseClasses.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE5E1A5D1BAF1A6A005B98A4 /* BaseClasses.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE6947101A8DAFC500BDB146 /* RetrieveMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69470F1A8DAFC500BDB146 /* RetrieveMealService.m */; };
 		BE729BFD1A93041E006823DC /* UIImage+KVNEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729BFA1A93041E006823DC /* UIImage+KVNEmpty.m */; };
 		BE729BFE1A93041E006823DC /* UIImage+KVNImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729BFC1A93041E006823DC /* UIImage+KVNImageEffects.m */; };
@@ -40,39 +50,9 @@
 		BEBDCDBD1A8C55740033FD4C /* SaveMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCDBC1A8C55740033FD4C /* SaveMealService.m */; };
 		BEBDCDC11A8C5F1A0033FD4C /* Meal.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCDC01A8C5F1A0033FD4C /* Meal.m */; };
 		BEDEAC7315BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDEAC7215BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m */; };
+		BEDFED951C3F4735008857CA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BEDFED941C3F4735008857CA /* Podfile */; };
 		BEF7833F1B8969130089968A /* MealEntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF7833E1B8969130089968A /* MealEntryTableViewController.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		BE5E1A5C1BAF1A6A005B98A4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BE5E1A561BAF1A6A005B98A4 /* BaseClasses.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BEBA0CAD1A983663006E4FEA;
-			remoteInfo = BaseClasses;
-		};
-		BE5E1A5E1BAF1A6A005B98A4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BE5E1A561BAF1A6A005B98A4 /* BaseClasses.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BEBA0CB81A983663006E4FEA;
-			remoteInfo = BaseClassesTests;
-		};
-		BE5E1A601BAF1A6A005B98A4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BE5E1A561BAF1A6A005B98A4 /* BaseClasses.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BEB5966D1AA2D3B00037CB29;
-			remoteInfo = BaseClassesSDK;
-		};
-		BE5E1A631BAF1AAF005B98A4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BE5E1A561BAF1A6A005B98A4 /* BaseClasses.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BEBA0CAC1A983663006E4FEA;
-			remoteInfo = BaseClasses;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		BEA8104F1AE33CD9001BEA5C /* Embed Frameworks */ = {
@@ -81,7 +61,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BE5E1A621BAF1A84005B98A4 /* BaseClasses.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +68,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3B74C23929AAF1F5A1B6F833 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		7DB03A31EACD0D3900E63513 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BE16D42F1A8B0968004E897A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BE16D4321A8B0D33004E897A /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		BE2C9AD715C47E2300DD6070 /* plusButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusButton.png; sourceTree = "<group>"; };
@@ -104,9 +85,22 @@
 		BE3AFF0B15BB79F9006BC0D6 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
 		BE4392E215C0AD5E00745158 /* NSDate+day.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+day.h"; sourceTree = "<group>"; };
 		BE4392E315C0AD5E00745158 /* NSDate+day.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+day.m"; sourceTree = "<group>"; };
+		BE4788571C3F59EC00CC9CBB /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		BE4788581C3F59EC00CC9CBB /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		BE4788591C3F59EC00CC9CBB /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		BE4788631C3F5B8900CC9CBB /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = SOURCE_ROOT; };
+		BE4788641C3F5B8900CC9CBB /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = SOURCE_ROOT; };
+		BE4788651C3F5B8900CC9CBB /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = SOURCE_ROOT; };
+		BE4788681C3F5B9200CC9CBB /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = SOURCE_ROOT; };
+		BE47886A1C3F5BBB00CC9CBB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = SOURCE_ROOT; };
+		BE47886C1C3F5DB900CC9CBB /* BaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseService.h; sourceTree = "<group>"; };
+		BE47886D1C3F5DB900CC9CBB /* BaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseService.m; sourceTree = "<group>"; };
+		BE47886E1C3F5DB900CC9CBB /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		BE4788711C3F5E5300CC9CBB /* AuthenticationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		BE4788751C3F5FDF00CC9CBB /* ServiceErrors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceErrors.h; sourceTree = "<group>"; };
+		BE4788761C3F602100CC9CBB /* ServiceErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceErrors.swift; sourceTree = "<group>"; };
 		BE4FD4181A943CA40041003F /* UserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserService.h; sourceTree = "<group>"; };
 		BE4FD4191A943CA40041003F /* UserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserService.m; sourceTree = "<group>"; };
-		BE5E1A561BAF1A6A005B98A4 /* BaseClasses.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BaseClasses.xcodeproj; path = /Users/Will/Developer/Workspace/../BaseClasses/BaseClasses/BaseClasses.xcodeproj; sourceTree = "<absolute>"; };
 		BE69470E1A8DAFC500BDB146 /* RetrieveMealService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetrieveMealService.h; sourceTree = "<group>"; };
 		BE69470F1A8DAFC500BDB146 /* RetrieveMealService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetrieveMealService.m; sourceTree = "<group>"; };
 		BE729BF91A93041E006823DC /* UIImage+KVNEmpty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KVNEmpty.h"; sourceTree = "<group>"; };
@@ -146,7 +140,9 @@
 		BEBDCDC01A8C5F1A0033FD4C /* Meal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meal.m; sourceTree = "<group>"; };
 		BEDEAC7115BBA3D8008D3BF4 /* NSMutableDictionary+MealDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+MealDictionary.h"; sourceTree = "<group>"; };
 		BEDEAC7215BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+MealDictionary.m"; sourceTree = "<group>"; };
+		BEDFED941C3F4735008857CA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BEF7833E1B8969130089968A /* MealEntryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealEntryTableViewController.swift; sourceTree = "<group>"; };
+		C53DAD975038881BC9894646 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +152,7 @@
 			files = (
 				BE3AFEF215BB754F006BC0D6 /* UIKit.framework in Frameworks */,
 				BE3AFEF415BB754F006BC0D6 /* Foundation.framework in Frameworks */,
+				898634DC2EE80F821BADBD2E /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,10 +180,26 @@
 		BE3AFEE215BB754F006BC0D6 = {
 			isa = PBXGroup;
 			children = (
+				BE4788761C3F602100CC9CBB /* ServiceErrors.swift */,
+				BE4788751C3F5FDF00CC9CBB /* ServiceErrors.h */,
+				BE4788711C3F5E5300CC9CBB /* AuthenticationService.swift */,
+				BE4788571C3F59EC00CC9CBB /* BaseTableViewController.h */,
+				BE4788581C3F59EC00CC9CBB /* BaseTableViewController.m */,
+				BE4788591C3F59EC00CC9CBB /* BaseTableViewController.swift */,
+				BE4788631C3F5B8900CC9CBB /* BaseModel.h */,
+				BE47886A1C3F5BBB00CC9CBB /* User.swift */,
+				BE4788641C3F5B8900CC9CBB /* BaseModel.m */,
+				BE4788651C3F5B8900CC9CBB /* BaseModel.swift */,
+				BE4788681C3F5B9200CC9CBB /* Config.swift */,
+				BE47886C1C3F5DB900CC9CBB /* BaseService.h */,
+				BE47886D1C3F5DB900CC9CBB /* BaseService.m */,
+				BE47886E1C3F5DB900CC9CBB /* BaseService.swift */,
+				BEDFED941C3F4735008857CA /* Podfile */,
 				BE852A02160E474200A35FA2 /* Default-568h@2x.png */,
 				BE3AFEF715BB754F006BC0D6 /* MealTracker */,
 				BE3AFEF015BB754F006BC0D6 /* Frameworks */,
 				BE3AFEEE15BB754F006BC0D6 /* Products */,
+				EF8CDE112EC03F90DADAAE3F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -201,10 +214,10 @@
 		BE3AFEF015BB754F006BC0D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BE5E1A561BAF1A6A005B98A4 /* BaseClasses.xcodeproj */,
 				BE3AFEF315BB754F006BC0D6 /* Foundation.framework */,
 				BE94A5FA1A93038400CB6231 /* KVNProgressHUD */,
 				BE3AFEF115BB754F006BC0D6 /* UIKit.framework */,
+				C53DAD975038881BC9894646 /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -246,16 +259,6 @@
 				BE3AFEFF15BB754F006BC0D6 /* MealTracker-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		BE5E1A571BAF1A6A005B98A4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				BE5E1A5D1BAF1A6A005B98A4 /* BaseClasses.framework */,
-				BE5E1A5F1BAF1A6A005B98A4 /* BaseClassesTests.xctest */,
-				BE5E1A611BAF1A6A005B98A4 /* BaseClassesSDK.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		BE94A5FA1A93038400CB6231 /* KVNProgressHUD */ = {
@@ -309,6 +312,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		EF8CDE112EC03F90DADAAE3F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7DB03A31EACD0D3900E63513 /* Pods.debug.xcconfig */,
+				3B74C23929AAF1F5A1B6F833 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -316,15 +328,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE3AFF0515BB754F006BC0D6 /* Build configuration list for PBXNativeTarget "MealTracker" */;
 			buildPhases = (
+				2542EF46F18E4895937F9ED9 /* Check Pods Manifest.lock */,
 				BE3AFEE915BB754F006BC0D6 /* Sources */,
 				BE3AFEEA15BB754F006BC0D6 /* Frameworks */,
 				BE3AFEEB15BB754F006BC0D6 /* Resources */,
 				BEA8104F1AE33CD9001BEA5C /* Embed Frameworks */,
+				6044FFA22E000CAAC591349E /* Embed Pods Frameworks */,
+				461F5387D7E2FAC47C0D5E53 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BE5E1A641BAF1AAF005B98A4 /* PBXTargetDependency */,
 			);
 			name = MealTracker;
 			productName = MealTracker;
@@ -356,42 +370,12 @@
 			mainGroup = BE3AFEE215BB754F006BC0D6;
 			productRefGroup = BE3AFEEE15BB754F006BC0D6 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = BE5E1A571BAF1A6A005B98A4 /* Products */;
-					ProjectRef = BE5E1A561BAF1A6A005B98A4 /* BaseClasses.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				BE3AFEEC15BB754F006BC0D6 /* MealTracker */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		BE5E1A5D1BAF1A6A005B98A4 /* BaseClasses.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = BaseClasses.framework;
-			remoteRef = BE5E1A5C1BAF1A6A005B98A4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		BE5E1A5F1BAF1A6A005B98A4 /* BaseClassesTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = BaseClassesTests.xctest;
-			remoteRef = BE5E1A5E1BAF1A6A005B98A4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		BE5E1A611BAF1A6A005B98A4 /* BaseClassesSDK.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = BaseClassesSDK.framework;
-			remoteRef = BE5E1A601BAF1A6A005B98A4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BE3AFEEB15BB754F006BC0D6 /* Resources */ = {
@@ -400,6 +384,7 @@
 			files = (
 				BE3AFEFC15BB754F006BC0D6 /* InfoPlist.strings in Resources */,
 				BE16D4301A8B0968004E897A /* Images.xcassets in Resources */,
+				BEDFED951C3F4735008857CA /* Podfile in Resources */,
 				BE3AFF0C15BB79F9006BC0D6 /* iPhone.storyboard in Resources */,
 				BE2C9AD815C47E2300DD6070 /* plusButton.png in Resources */,
 				BE852A03160E474200A35FA2 /* Default-568h@2x.png in Resources */,
@@ -410,6 +395,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2542EF46F18E4895937F9ED9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		461F5387D7E2FAC47C0D5E53 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6044FFA22E000CAAC591349E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BE3AFEE915BB754F006BC0D6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -417,17 +450,26 @@
 			files = (
 				BEBDCDC11A8C5F1A0033FD4C /* Meal.m in Sources */,
 				BE7D22891B92B7370047AE03 /* MealTrackerTableViewController.swift in Sources */,
+				BE47885B1C3F59EC00CC9CBB /* BaseTableViewController.swift in Sources */,
 				BEF7833F1B8969130089968A /* MealEntryTableViewController.swift in Sources */,
+				BE47886B1C3F5BBB00CC9CBB /* User.swift in Sources */,
 				BE729BFD1A93041E006823DC /* UIImage+KVNEmpty.m in Sources */,
+				BE47885A1C3F59EC00CC9CBB /* BaseTableViewController.m in Sources */,
 				BE729C041A9304D7006823DC /* MealBaseTableViewController.m in Sources */,
 				BE3AFEFE15BB754F006BC0D6 /* main.m in Sources */,
 				BE3AFF0215BB754F006BC0D6 /* MealTrackerAppDelegate.m in Sources */,
+				BE4788771C3F602100CC9CBB /* ServiceErrors.swift in Sources */,
 				BE94A6001A93038400CB6231 /* KVNProgress.m in Sources */,
+				BE4788661C3F5B8900CC9CBB /* BaseModel.m in Sources */,
+				BE4788721C3F5E5300CC9CBB /* AuthenticationService.swift in Sources */,
 				BEA221CE1A8F144500BFC1DD /* MealEatenService.m in Sources */,
 				BEBDCDBD1A8C55740033FD4C /* SaveMealService.m in Sources */,
 				BE729C071A93126E006823DC /* UserSettingsViewController.m in Sources */,
 				BEDEAC7315BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m in Sources */,
 				BE8358FB1B96A08F001ADB1A /* TrackerTableViewController.swift in Sources */,
+				BE4788691C3F5B9200CC9CBB /* Config.swift in Sources */,
+				BE4788671C3F5B8900CC9CBB /* BaseModel.swift in Sources */,
+				BE47886F1C3F5DB900CC9CBB /* BaseService.m in Sources */,
 				BEB0A2BD1A91B39B004E7B82 /* DeleteMealEatenService.m in Sources */,
 				BE4FD41A1A943CA40041003F /* UserService.m in Sources */,
 				BEA221C81A8F105B00BFC1DD /* MealEaten.m in Sources */,
@@ -439,18 +481,11 @@
 				BE4392E415C0AD5E00745158 /* NSDate+day.m in Sources */,
 				BEA221D21A8F319500BFC1DD /* RetrieveMealHistoryService.m in Sources */,
 				BE94A6011A93038400CB6231 /* KVNProgressConfiguration.m in Sources */,
+				BE4788701C3F5DB900CC9CBB /* BaseService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		BE5E1A641BAF1AAF005B98A4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = BaseClasses;
-			targetProxy = BE5E1A631BAF1AAF005B98A4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BE3AFEFA15BB754F006BC0D6 /* InfoPlist.strings */ = {
@@ -551,6 +586,7 @@
 		};
 		BE3AFF0615BB754F006BC0D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DB03A31EACD0D3900E63513 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -581,6 +617,7 @@
 		};
 		BE3AFF0715BB754F006BC0D6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B74C23929AAF1F5A1B6F833 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

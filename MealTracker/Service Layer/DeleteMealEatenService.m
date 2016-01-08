@@ -5,9 +5,6 @@
 //  Created by William Hindenburg on 2/15/15.
 //
 //
-
-#import <BaseClasses/RestKitMapping.h>
-
 #import "DeleteMealEatenService.h"
 #import "MealEaten.h"
 
@@ -19,28 +16,28 @@
         mealEaten.path = [self deletePathWithObjectId:mealEaten.objectId];
     }
     
-    ServiceClient *serviceClient = [ServiceClient new];
-    [serviceClient deleteObjects:mealsEaten andService:self withSuccessBlock:^(RKMappingResult *result) {
-        [self cleanupMealArrayAfterServiceCall:mealsEaten];
-        if (successBlock) successBlock();
-    } andError:^(NSError *error) {
-        [self cleanupMealArrayAfterServiceCall:mealsEaten];
-        if (errorBlock) errorBlock(error);
-    }];
+//    ServiceClient *serviceClient = [ServiceClient new];
+//    [serviceClient deleteObjects:mealsEaten andService:self withSuccessBlock:^(RKMappingResult *result) {
+//        [self cleanupMealArrayAfterServiceCall:mealsEaten];
+//        if (successBlock) successBlock();
+//    } andError:^(NSError *error) {
+//        [self cleanupMealArrayAfterServiceCall:mealsEaten];
+//        if (errorBlock) errorBlock(error);
+//    }];
 }
 
 - (void)removeMealEaten:(MealEaten *)mealEaten withSuccessBlock:(void (^)())successBlock andError:(void (^)(NSError *error))errorBlock {
         mealEaten.method = @"DELETE";
         mealEaten.path = [self deletePathWithObjectId:mealEaten.objectId];
     
-    ServiceClient *serviceClient = [ServiceClient new];
-    [serviceClient deleteObject:mealEaten andService:self withSuccessBlock:^(RKMappingResult *result) {
-        [self cleanupMealAfterServiceCall:mealEaten];
-        if (successBlock) successBlock();
-    } andError:^(NSError *error) {
-        [self cleanupMealAfterServiceCall:mealEaten];
-        if (errorBlock) errorBlock(error);
-    }];
+//    ServiceClient *serviceClient = [ServiceClient new];
+//    [serviceClient deleteObject:mealEaten andService:self withSuccessBlock:^(RKMappingResult *result) {
+//        [self cleanupMealAfterServiceCall:mealEaten];
+//        if (successBlock) successBlock();
+//    } andError:^(NSError *error) {
+//        [self cleanupMealAfterServiceCall:mealEaten];
+//        if (errorBlock) errorBlock(error);
+//    }];
 }
 
 - (NSString *)deletePathWithObjectId:(NSString *)objectId {
@@ -70,12 +67,12 @@
     return @"";
 }
 
-- (RKObjectMapping *)serializedMappingProvider {
-    RKObjectMapping *seriallMapping = [RKObjectMapping mappingForClass:[MealEaten class]];
-    [seriallMapping addAttributeMappingsFromDictionary:@{@"method":@"method"}];
-    [seriallMapping addAttributeMappingsFromDictionary:@{@"path":@"path"}];
-    
-    return seriallMapping;
-}
+//- (RKObjectMapping *)serializedMappingProvider {
+//    RKObjectMapping *seriallMapping = [RKObjectMapping mappingForClass:[MealEaten class]];
+//    [seriallMapping addAttributeMappingsFromDictionary:@{@"method":@"method"}];
+//    [seriallMapping addAttributeMappingsFromDictionary:@{@"path":@"path"}];
+//    
+//    return seriallMapping;
+//}
 
 @end

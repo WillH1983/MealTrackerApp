@@ -9,8 +9,6 @@
 #import "SaveMealService.h"
 #import "Meal.h"
 
-@import BaseClasses;
-
 @interface SaveMealService()
 @property (strong, nonatomic) NSString *url;
 @property (strong, nonatomic) NSString *keyPath;
@@ -21,23 +19,23 @@
 @implementation SaveMealService
 
 - (void)saveMeal:(Meal *)meal withSuccessBlock:(void (^)(Meal *meal))successBlock andError:(void (^)(NSError *error))errorBlock {
-    ServiceClient *serviceClient = [ServiceClient new];
-    [serviceClient postObject:meal andService:self withSuccessBlock:^(RKMappingResult *result) {
-        successBlock(result.firstObject);
-    } andError:^(NSError *error) {
-        errorBlock(error);
-    }];
+//    ServiceClient *serviceClient = [ServiceClient new];
+//    [serviceClient postObject:meal andService:self withSuccessBlock:^(RKMappingResult *result) {
+//        successBlock(result.firstObject);
+//    } andError:^(NSError *error) {
+//        errorBlock(error);
+//    }];
 }
 
 - (void)updateMeal:(Meal *)meal withSuccessBlock:(void (^)())successBlock andError:(void (^)(NSError *error))errorBlock {
     self.isUpdatingMeal = YES;
     self.mealObjectId = meal.objectId;
-    ServiceClient *serviceClient = [ServiceClient new];
-    [serviceClient putObject:meal andService:self withSuccessBlock:^(RKMappingResult *result) {
-        successBlock();
-    } andError:^(NSError *error) {
-        errorBlock(error);
-    }];
+//    ServiceClient *serviceClient = [ServiceClient new];
+//    [serviceClient putObject:meal andService:self withSuccessBlock:^(RKMappingResult *result) {
+//        successBlock();
+//    } andError:^(NSError *error) {
+//        errorBlock(error);
+//    }];
 }
 
 - (NSString *)serviceURL {
@@ -60,27 +58,27 @@
     return nil;
 }
 
-- (RKObjectMapping *)mappingProvider {
-    RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[Meal class]];
-    [mapping addAttributeMappingsFromDictionary:@{@"objectId":@"objectId"}];
-    return mapping;
-}
+//- (RKObjectMapping *)mappingProvider {
+//    RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[Meal class]];
+//    [mapping addAttributeMappingsFromDictionary:@{@"objectId":@"objectId"}];
+//    return mapping;
+//}
 
-- (RKObjectMapping *)serializedMappingProvider {
-    RKObjectMapping *seriallMapping = [RKObjectMapping mappingForClass:[Meal class]];
-    [seriallMapping addAttributeMappingsFromDictionary:@{@"calories":@"calories"}];
-    [seriallMapping addAttributeMappingsFromDictionary:@{@"carbs":@"carbs"}];
-    [seriallMapping addAttributeMappingsFromDictionary:@{@"dietaryFiber":@"dietaryFiber"}];
-    [seriallMapping addAttributeMappingsFromDictionary:@{@"mealDescription":@"mealDescription"}];
-    [seriallMapping addAttributeMappingsFromDictionary:@{@"name":@"name"}];
-    [seriallMapping addAttributeMappingsFromDictionary:@{@"protein":@"protein"}];
-    [seriallMapping addAttributeMappingsFromDictionary:@{@"servingSize":@"servingSize"}];
-    [seriallMapping addAttributeMappingsFromDictionary:@{@"totalFat":@"totalFat"}];
-    [seriallMapping addAttributeMappingsFromDictionary:@{@"weightWatchersPlusPoints":@"weightWatchersPlusPoints"}];
-    [seriallMapping addAttributeMappingsFromDictionary:@{@"whenEaten":@"whenEaten"}];
-    
-    
-    return seriallMapping;
-}
+//- (RKObjectMapping *)serializedMappingProvider {
+//    RKObjectMapping *seriallMapping = [RKObjectMapping mappingForClass:[Meal class]];
+//    [seriallMapping addAttributeMappingsFromDictionary:@{@"calories":@"calories"}];
+//    [seriallMapping addAttributeMappingsFromDictionary:@{@"carbs":@"carbs"}];
+//    [seriallMapping addAttributeMappingsFromDictionary:@{@"dietaryFiber":@"dietaryFiber"}];
+//    [seriallMapping addAttributeMappingsFromDictionary:@{@"mealDescription":@"mealDescription"}];
+//    [seriallMapping addAttributeMappingsFromDictionary:@{@"name":@"name"}];
+//    [seriallMapping addAttributeMappingsFromDictionary:@{@"protein":@"protein"}];
+//    [seriallMapping addAttributeMappingsFromDictionary:@{@"servingSize":@"servingSize"}];
+//    [seriallMapping addAttributeMappingsFromDictionary:@{@"totalFat":@"totalFat"}];
+//    [seriallMapping addAttributeMappingsFromDictionary:@{@"weightWatchersPlusPoints":@"weightWatchersPlusPoints"}];
+//    [seriallMapping addAttributeMappingsFromDictionary:@{@"whenEaten":@"whenEaten"}];
+//    
+//    
+//    return seriallMapping;
+//}
 
 @end

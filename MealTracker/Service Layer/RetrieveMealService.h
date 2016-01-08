@@ -6,10 +6,10 @@
 //
 //
 
-#import <BaseClasses/BaseService.h>
+#import "BaseService.h"
 
 @class Meal;
 
-@interface RetrieveMealService : BaseService <Service>
+@interface RetrieveMealService : BaseService //<Service>
 - (void)retrieveMealsWithSuccessBlock:(void (^)(NSArray<Meal *> *meals))successBlock andError:(void (^)(NSError *error))errorBlock;
 @end

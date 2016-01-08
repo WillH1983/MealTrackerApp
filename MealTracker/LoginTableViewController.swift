@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import BaseClasses
 
 class LoginTableViewController: MealBaseTableViewController {
     @IBOutlet weak var userName: UITextField?

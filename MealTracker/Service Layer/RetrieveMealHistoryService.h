@@ -6,13 +6,13 @@
 //
 //
 
-#import <BaseClasses/BaseService.h>
+#import "BaseService.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @class User;
 
-@interface RetrieveMealHistoryService : BaseService <Service>
+@interface RetrieveMealHistoryService : BaseService //<Service>
 //<Dictionary<String, AnyObject>>
 - (void)loadMealHistoryBasedOnUser:(User *)user withSuccessBlock:(void (^)(NSArray <NSDictionary<NSString *, id> *> *data))successBlock andError:(void (^)(NSError *error))errorBlock;
 @end
