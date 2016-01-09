@@ -7,13 +7,15 @@
 //
 
 #import "MealEatenService.h"
-#import "MealEaten.h"
 #import "Meal.h"
+#import "MealTracker-Swift.h"
 
+@import BaseClassesSwift;
 
 @implementation MealEatenService
 
 - (void)saveMealEaten:(MealEaten *)mealEaten withSuccessBlock:(void (^)(MealEaten *mealEaten))successBlock andError:(void (^)(NSError *error))errorBlock {
+    
 //    ServiceClient *serviceClient = [ServiceClient new];
 //    [serviceClient postObject:mealEaten andService:self withSuccessBlock:^(RKMappingResult *result) {
 //        successBlock(result.firstObject);

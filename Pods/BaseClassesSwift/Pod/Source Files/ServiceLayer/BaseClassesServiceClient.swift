@@ -104,24 +104,6 @@ public class BaseClassesServiceClient: NSObject {
     }
     
     private func checkForErrorInObject(object:BaseModel) -> NSError? {
-        
-        var error:NSError?
-        
-        switch object.errorType {
-        case .ActivationKeyExpired:
-            error = NSError(domain: errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "Your activation key has expired, please request a new one"])
-        case .ActivationKeyIncorrect:
-            error = NSError(domain: errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "Your activation key is incorrect, please try again"])
-        case .ActivationKeyLocked:
-            error = NSError(domain: errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "Your activation key has been locked from too many access attempts, please request a new one"])
-        case .UserInputInvalid:
-            error = NSError(domain: errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "Your email or activation code is incorrect, please try again"])
-        case .GenericError:
-            error = NSError(domain: errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "Something went wrong, please try again"])
-        case .NoError:
-            error = nil
-        }
-        return error
-        
+        return NSError(domain: errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "Something went wrong, please try again"])
     }
 }

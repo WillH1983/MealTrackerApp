@@ -12,19 +12,12 @@ import ObjectMapper
 public class User: BaseModel {
     public var username = ""
     public var password = ""
-    public var objectId = ""
     public var sessionToken = ""
     public var pointsPerWeek:NSNumber = 0
     
     public var className: String {
         get {
             return "_User"
-        }
-    }
-    
-    public var objectType: String {
-        get {
-            return "Pointer"
         }
     }
     

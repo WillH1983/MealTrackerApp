@@ -8,9 +8,9 @@
 
 #import "TrackerTableViewController.h"
 #import "RetrieveMealHistoryService.h"
-#import "MealEaten.h"
 #import "Meal.h"
 #import "DeleteMealEatenService.h"
+#import "MealTracker-Swift.h"
 
 @import BaseClassesSwift;
 

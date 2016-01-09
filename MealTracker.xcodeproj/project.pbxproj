@@ -18,12 +18,11 @@
 		BE3AFF0215BB754F006BC0D6 /* MealTrackerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AFF0115BB754F006BC0D6 /* MealTrackerAppDelegate.m */; };
 		BE3AFF0C15BB79F9006BC0D6 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE3AFF0B15BB79F9006BC0D6 /* iPhone.storyboard */; };
 		BE4392E415C0AD5E00745158 /* NSDate+day.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4392E315C0AD5E00745158 /* NSDate+day.m */; };
-		BE4788661C3F5B8900CC9CBB /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4788641C3F5B8900CC9CBB /* BaseModel.m */; };
-		BE4788671C3F5B8900CC9CBB /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4788651C3F5B8900CC9CBB /* BaseModel.swift */; };
 		BE4788691C3F5B9200CC9CBB /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4788681C3F5B9200CC9CBB /* Config.swift */; };
 		BE47886F1C3F5DB900CC9CBB /* BaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = BE47886D1C3F5DB900CC9CBB /* BaseService.m */; };
 		BE4788701C3F5DB900CC9CBB /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE47886E1C3F5DB900CC9CBB /* BaseService.swift */; };
 		BE4FD41A1A943CA40041003F /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4FD4191A943CA40041003F /* UserService.m */; };
+		BE5B98671C40E71500B4466B /* MealEaten.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5B98661C40E71500B4466B /* MealEaten.swift */; };
 		BE6947101A8DAFC500BDB146 /* RetrieveMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69470F1A8DAFC500BDB146 /* RetrieveMealService.m */; };
 		BE729C041A9304D7006823DC /* MealBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729C031A9304D7006823DC /* MealBaseTableViewController.m */; };
 		BE729C071A93126E006823DC /* UserSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729C061A93126E006823DC /* UserSettingsViewController.m */; };
@@ -31,7 +30,6 @@
 		BE7E957315C0965500AE0C94 /* TrackerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7E957215C0965500AE0C94 /* TrackerTableViewController.m */; };
 		BE8358FB1B96A08F001ADB1A /* TrackerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8358FA1B96A08F001ADB1A /* TrackerTableViewController.swift */; };
 		BE852A03160E474200A35FA2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE852A02160E474200A35FA2 /* Default-568h@2x.png */; };
-		BEA221C81A8F105B00BFC1DD /* MealEaten.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA221C71A8F105B00BFC1DD /* MealEaten.m */; };
 		BEA221CE1A8F144500BFC1DD /* MealEatenService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA221CD1A8F144500BFC1DD /* MealEatenService.m */; };
 		BEA221D21A8F319500BFC1DD /* RetrieveMealHistoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA221D11A8F319500BFC1DD /* RetrieveMealHistoryService.m */; };
 		BEB0A2B61A91AD11004E7B82 /* DeleteMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB0A2B51A91AD11004E7B82 /* DeleteMealService.m */; };
@@ -75,9 +73,6 @@
 		BE3AFF0B15BB79F9006BC0D6 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
 		BE4392E215C0AD5E00745158 /* NSDate+day.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+day.h"; sourceTree = "<group>"; };
 		BE4392E315C0AD5E00745158 /* NSDate+day.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+day.m"; sourceTree = "<group>"; };
-		BE4788631C3F5B8900CC9CBB /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = SOURCE_ROOT; };
-		BE4788641C3F5B8900CC9CBB /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = SOURCE_ROOT; };
-		BE4788651C3F5B8900CC9CBB /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = SOURCE_ROOT; };
 		BE4788681C3F5B9200CC9CBB /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = SOURCE_ROOT; };
 		BE47886C1C3F5DB900CC9CBB /* BaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseService.h; sourceTree = "<group>"; };
 		BE47886D1C3F5DB900CC9CBB /* BaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseService.m; sourceTree = "<group>"; };
@@ -85,6 +80,7 @@
 		BE4788751C3F5FDF00CC9CBB /* ServiceErrors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceErrors.h; sourceTree = "<group>"; };
 		BE4FD4181A943CA40041003F /* UserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserService.h; sourceTree = "<group>"; };
 		BE4FD4191A943CA40041003F /* UserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserService.m; sourceTree = "<group>"; };
+		BE5B98661C40E71500B4466B /* MealEaten.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealEaten.swift; sourceTree = "<group>"; };
 		BE69470E1A8DAFC500BDB146 /* RetrieveMealService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetrieveMealService.h; sourceTree = "<group>"; };
 		BE69470F1A8DAFC500BDB146 /* RetrieveMealService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetrieveMealService.m; sourceTree = "<group>"; };
 		BE729C021A9304D7006823DC /* MealBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealBaseTableViewController.h; sourceTree = "<group>"; };
@@ -96,8 +92,6 @@
 		BE7E957215C0965500AE0C94 /* TrackerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackerTableViewController.m; sourceTree = "<group>"; };
 		BE8358FA1B96A08F001ADB1A /* TrackerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerTableViewController.swift; sourceTree = "<group>"; };
 		BE852A02160E474200A35FA2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		BEA221C61A8F105B00BFC1DD /* MealEaten.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealEaten.h; sourceTree = "<group>"; };
-		BEA221C71A8F105B00BFC1DD /* MealEaten.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealEaten.m; sourceTree = "<group>"; };
 		BEA221CC1A8F144500BFC1DD /* MealEatenService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealEatenService.h; sourceTree = "<group>"; };
 		BEA221CD1A8F144500BFC1DD /* MealEatenService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealEatenService.m; sourceTree = "<group>"; };
 		BEA221D01A8F319500BFC1DD /* RetrieveMealHistoryService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetrieveMealHistoryService.h; sourceTree = "<group>"; };
@@ -156,9 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				BE4788751C3F5FDF00CC9CBB /* ServiceErrors.h */,
-				BE4788631C3F5B8900CC9CBB /* BaseModel.h */,
-				BE4788641C3F5B8900CC9CBB /* BaseModel.m */,
-				BE4788651C3F5B8900CC9CBB /* BaseModel.swift */,
 				BE4788681C3F5B9200CC9CBB /* Config.swift */,
 				BE47886C1C3F5DB900CC9CBB /* BaseService.h */,
 				BE47886D1C3F5DB900CC9CBB /* BaseService.m */,
@@ -257,8 +248,7 @@
 			children = (
 				BEBDCDBF1A8C5F1A0033FD4C /* Meal.h */,
 				BEBDCDC01A8C5F1A0033FD4C /* Meal.m */,
-				BEA221C61A8F105B00BFC1DD /* MealEaten.h */,
-				BEA221C71A8F105B00BFC1DD /* MealEaten.m */,
+				BE5B98661C40E71500B4466B /* MealEaten.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -404,18 +394,16 @@
 				BE729C041A9304D7006823DC /* MealBaseTableViewController.m in Sources */,
 				BE3AFEFE15BB754F006BC0D6 /* main.m in Sources */,
 				BE3AFF0215BB754F006BC0D6 /* MealTrackerAppDelegate.m in Sources */,
-				BE4788661C3F5B8900CC9CBB /* BaseModel.m in Sources */,
 				BEA221CE1A8F144500BFC1DD /* MealEatenService.m in Sources */,
 				BEBDCDBD1A8C55740033FD4C /* SaveMealService.m in Sources */,
 				BE729C071A93126E006823DC /* UserSettingsViewController.m in Sources */,
+				BE5B98671C40E71500B4466B /* MealEaten.swift in Sources */,
 				BEDEAC7315BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m in Sources */,
 				BE8358FB1B96A08F001ADB1A /* TrackerTableViewController.swift in Sources */,
 				BE4788691C3F5B9200CC9CBB /* Config.swift in Sources */,
-				BE4788671C3F5B8900CC9CBB /* BaseModel.swift in Sources */,
 				BE47886F1C3F5DB900CC9CBB /* BaseService.m in Sources */,
 				BEB0A2BD1A91B39B004E7B82 /* DeleteMealEatenService.m in Sources */,
 				BE4FD41A1A943CA40041003F /* UserService.m in Sources */,
-				BEA221C81A8F105B00BFC1DD /* MealEaten.m in Sources */,
 				BE6947101A8DAFC500BDB146 /* RetrieveMealService.m in Sources */,
 				BEBB74CE1B71BB9D00D2DCBA /* LoginTableViewController.swift in Sources */,
 				BE7E957315C0965500AE0C94 /* TrackerTableViewController.m in Sources */,
@@ -533,6 +521,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: William Hindenburg (5EW7K5N9Y3)";
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/MealTracker/Frameworks",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Build/Products/Debug-iphoneos",
@@ -565,6 +554,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: William Hindenburg (5EW7K5N9Y3)";
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/MealTracker/Frameworks",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Build/Products/Debug-iphoneos",

@@ -7,6 +7,7 @@
 //
 
 #import "BaseService.h"
+#import "MealTracker-Swift.h"
 
 @import BaseClassesSwift;
 

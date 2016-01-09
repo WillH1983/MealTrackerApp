@@ -6,7 +6,7 @@
 //
 //
 #import "DeleteMealEatenService.h"
-#import "MealEaten.h"
+#import "MealTracker-Swift.h"
 
 @implementation DeleteMealEatenService
 

@@ -7,6 +7,5 @@
 #import "SaveMealService.h"
 #import "RetrieveMealService.h"
 #import "DeleteMealService.h"
-#import "MealEaten.h"
 #import "MealEatenService.h"
 #import "RetrieveMealHistoryService.h"

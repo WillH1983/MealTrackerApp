@@ -20,32 +20,12 @@ public enum ScrubTechServiceErrorCode {
 
 public class BaseModel:NSObject, Mappable {
     
-    var id = 0
+
+    public var objectId = ""
+    public var objectType = "Pointer"
     
-    var error = ""
-    var result = ""
-    
-    lazy var errorType:ScrubTechServiceErrorCode = {
-        if self.result == "fail" {
-            if self.error == "input" {
-                return ScrubTechServiceErrorCode.UserInputInvalid
-            } else if self.error == "time" {
-                return ScrubTechServiceErrorCode.ActivationKeyExpired
-            } else if self.error == "key" {
-                return ScrubTechServiceErrorCode.ActivationKeyIncorrect
-            } else if self.error == "lock" {
-                return ScrubTechServiceErrorCode.ActivationKeyLocked
-            } else {
-                return ScrubTechServiceErrorCode.GenericError
-            }
-        } else {
-            return ScrubTechServiceErrorCode.NoError
-        }
-        
-        }()
-    
-    override init() {
-        
+    public override init() {
+        super.init()
     }
     
     
@@ -54,8 +34,7 @@ public class BaseModel:NSObject, Mappable {
     }
     
     public func mapping(map: Map) {
-        id <- map["id"]
-        result <- map["result"]
-        error <- map["error"]
+        objectType <- map["__type"]
+        objectId <- map["objectId"]
     }
 }

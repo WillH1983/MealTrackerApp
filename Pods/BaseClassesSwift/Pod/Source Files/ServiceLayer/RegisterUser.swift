@@ -18,13 +18,7 @@ public class RegisterUser: BaseModel {
             return "_User"
         }
     }
-    
-    public var objectType: String {
-        get {
-            return "Pointer"
-        }
-    }
-    
+        
     override public init() {
         super.init()
     }

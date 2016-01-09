@@ -26,16 +26,16 @@ class TrackerTableViewController2: MealBaseTableViewController {
     
     func retrieveMealHistory() {
         super.showActivityIndicatorAnimated(true)
-        RetrieveMealHistoryService().loadMealHistoryBasedOnUser(self.user, withSuccessBlock: { (dataSource) -> Void in
-            self.dataSource = dataSource
-            self.tableView.reloadData()
-            super.hideActivityIndicatorAnimated(true)
-        }) { (error) -> Void in
-            super.hideActivityIndicatorAnimated(true)
-            super.showError(error, withRetryBlock: { () -> Void in
-                self.retrieveMealHistory()
-            })
-        }
+//        RetrieveMealHistoryService().loadMealHistoryBasedOnUser(self.user, withSuccessBlock: { (dataSource) -> Void in
+//            self.dataSource = dataSource
+//            self.tableView.reloadData()
+//            super.hideActivityIndicatorAnimated(true)
+//        }) { (error) -> Void in
+//            super.hideActivityIndicatorAnimated(true)
+//            super.showError(error, withRetryBlock: { () -> Void in
+//                self.retrieveMealHistory()
+//            })
+//        }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
