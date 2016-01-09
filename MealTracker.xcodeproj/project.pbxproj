@@ -23,6 +23,7 @@
 		BE4788701C3F5DB900CC9CBB /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE47886E1C3F5DB900CC9CBB /* BaseService.swift */; };
 		BE4FD41A1A943CA40041003F /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4FD4191A943CA40041003F /* UserService.m */; };
 		BE5B98671C40E71500B4466B /* MealEaten.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5B98661C40E71500B4466B /* MealEaten.swift */; };
+		BE5B98691C40F94500B4466B /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5B98681C40F94500B4466B /* Meal.swift */; };
 		BE6947101A8DAFC500BDB146 /* RetrieveMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69470F1A8DAFC500BDB146 /* RetrieveMealService.m */; };
 		BE729C041A9304D7006823DC /* MealBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729C031A9304D7006823DC /* MealBaseTableViewController.m */; };
 		BE729C071A93126E006823DC /* UserSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729C061A93126E006823DC /* UserSettingsViewController.m */; };
@@ -36,7 +37,6 @@
 		BEB0A2BD1A91B39B004E7B82 /* DeleteMealEatenService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB0A2BC1A91B39B004E7B82 /* DeleteMealEatenService.m */; };
 		BEBB74CE1B71BB9D00D2DCBA /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBB74CD1B71BB9D00D2DCBA /* LoginTableViewController.swift */; };
 		BEBDCDBD1A8C55740033FD4C /* SaveMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCDBC1A8C55740033FD4C /* SaveMealService.m */; };
-		BEBDCDC11A8C5F1A0033FD4C /* Meal.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCDC01A8C5F1A0033FD4C /* Meal.m */; };
 		BEDEAC7315BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDEAC7215BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m */; };
 		BEDFED951C3F4735008857CA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BEDFED941C3F4735008857CA /* Podfile */; };
 		BEF7833F1B8969130089968A /* MealEntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF7833E1B8969130089968A /* MealEntryTableViewController.swift */; };
@@ -81,6 +81,7 @@
 		BE4FD4181A943CA40041003F /* UserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserService.h; sourceTree = "<group>"; };
 		BE4FD4191A943CA40041003F /* UserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserService.m; sourceTree = "<group>"; };
 		BE5B98661C40E71500B4466B /* MealEaten.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealEaten.swift; sourceTree = "<group>"; };
+		BE5B98681C40F94500B4466B /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		BE69470E1A8DAFC500BDB146 /* RetrieveMealService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetrieveMealService.h; sourceTree = "<group>"; };
 		BE69470F1A8DAFC500BDB146 /* RetrieveMealService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetrieveMealService.m; sourceTree = "<group>"; };
 		BE729C021A9304D7006823DC /* MealBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealBaseTableViewController.h; sourceTree = "<group>"; };
@@ -105,8 +106,6 @@
 		BEBDCDAD1A8C4C170033FD4C /* MealServiceErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealServiceErrors.h; sourceTree = "<group>"; };
 		BEBDCDBB1A8C55740033FD4C /* SaveMealService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveMealService.h; sourceTree = "<group>"; };
 		BEBDCDBC1A8C55740033FD4C /* SaveMealService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveMealService.m; sourceTree = "<group>"; };
-		BEBDCDBF1A8C5F1A0033FD4C /* Meal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meal.h; sourceTree = "<group>"; };
-		BEBDCDC01A8C5F1A0033FD4C /* Meal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meal.m; sourceTree = "<group>"; };
 		BEDEAC7115BBA3D8008D3BF4 /* NSMutableDictionary+MealDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+MealDictionary.h"; sourceTree = "<group>"; };
 		BEDEAC7215BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+MealDictionary.m"; sourceTree = "<group>"; };
 		BEDFED941C3F4735008857CA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -246,8 +245,7 @@
 		BEBDCDBE1A8C5EFD0033FD4C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BEBDCDBF1A8C5F1A0033FD4C /* Meal.h */,
-				BEBDCDC01A8C5F1A0033FD4C /* Meal.m */,
+				BE5B98681C40F94500B4466B /* Meal.swift */,
 				BE5B98661C40E71500B4466B /* MealEaten.swift */,
 			);
 			path = Model;
@@ -388,10 +386,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEBDCDC11A8C5F1A0033FD4C /* Meal.m in Sources */,
 				BE7D22891B92B7370047AE03 /* MealTrackerTableViewController.swift in Sources */,
 				BEF7833F1B8969130089968A /* MealEntryTableViewController.swift in Sources */,
 				BE729C041A9304D7006823DC /* MealBaseTableViewController.m in Sources */,
+				BE5B98691C40F94500B4466B /* Meal.swift in Sources */,
 				BE3AFEFE15BB754F006BC0D6 /* main.m in Sources */,
 				BE3AFF0215BB754F006BC0D6 /* MealTrackerAppDelegate.m in Sources */,
 				BEA221CE1A8F144500BFC1DD /* MealEatenService.m in Sources */,

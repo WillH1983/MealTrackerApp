@@ -8,7 +8,6 @@
 
 #import "TrackerTableViewController.h"
 #import "RetrieveMealHistoryService.h"
-#import "Meal.h"
 #import "DeleteMealEatenService.h"
 #import "MealTracker-Swift.h"
 

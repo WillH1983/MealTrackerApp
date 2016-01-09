@@ -3,7 +3,6 @@
 //
 
 #import "MealBaseTableViewController.h"
-#import "Meal.h"
 #import "SaveMealService.h"
 #import "RetrieveMealService.h"
 #import "DeleteMealService.h"

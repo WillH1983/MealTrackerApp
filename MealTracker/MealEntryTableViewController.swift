@@ -40,7 +40,7 @@ import UIKit
                 meal.weightWatchersPlusPoints = NSDecimalNumber(string: self.WWPointsText?.text)
             
                 self.mealData = meal
-                if (meal.objectId != nil) {
+                if (meal.objectId.isEmpty == false) {
                     self.textEntryDelegate?.viewController(self, didFinishEditingMeal: self.mealData!)
                 } else {
                     self.textEntryDelegate?.viewController(self, didFinishWithMeal: self.mealData!)

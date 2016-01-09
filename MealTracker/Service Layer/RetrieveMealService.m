@@ -7,7 +7,7 @@
 //
 
 #import "RetrieveMealService.h"
-#import "Meal.h"
+#import "MealTracker-Swift.h"
 
 @implementation RetrieveMealService
 

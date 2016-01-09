@@ -7,7 +7,7 @@
 //
 
 #import "SaveMealService.h"
-#import "Meal.h"
+#import "MealTracker-Swift.h"
 
 @interface SaveMealService()
 @property (strong, nonatomic) NSString *url;

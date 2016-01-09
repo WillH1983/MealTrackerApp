@@ -7,7 +7,6 @@
 //
 
 #import "RetrieveMealHistoryService.h"
-#import "Meal.h"
 #import "MealTracker-Swift.h"
 
 @import BaseClassesSwift;
