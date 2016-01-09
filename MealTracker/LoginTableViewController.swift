@@ -27,7 +27,7 @@ class LoginTableViewController: MealBaseTableViewController {
     }
     
     @IBAction func registerNowTapped(sender:AnyObject) {
-        let user = User()
+        let user = RegisterUser()
         let userNameString = self.userName?.text
         let passwordString = self.password?.text
         super.showActivityIndicatorAnimated(true)
@@ -54,7 +54,7 @@ class LoginTableViewController: MealBaseTableViewController {
     }
     
     @IBAction func loginTapped(sender:AnyObject) {
-        let user = User()
+        let user = RegisterUser()
         let userNameString = self.userName?.text
         let passwordString = self.password?.text
         super.showActivityIndicatorAnimated(true)

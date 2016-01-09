@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import ObjectMapper
 
-public class User: NSObject {
+public class User: BaseModel {
     public var username = ""
     public var password = ""
     public var objectId = ""
@@ -25,6 +26,14 @@ public class User: NSObject {
         get {
             return "Pointer"
         }
+    }
+    
+    override public init() {
+        super.init()
+    }
+    
+    required public init?(_ map: Map) {
+        super.init(map)
     }
     
     public class func persistentUserObject() -> User {
@@ -61,5 +70,11 @@ public class User: NSObject {
         return user
     }
     
-    
+    public override func mapping(map: Map) {
+        objectId <- map["objectId"]
+        sessionToken <- map["sessionToken"]
+        username <- map["username"]
+        pointsPerWeek <- map["pointsPerWeek"]
+        password <- map["password"]
+    }
 }

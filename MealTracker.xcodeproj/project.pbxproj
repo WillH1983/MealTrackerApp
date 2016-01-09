@@ -23,7 +23,6 @@
 		BE4788691C3F5B9200CC9CBB /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4788681C3F5B9200CC9CBB /* Config.swift */; };
 		BE47886F1C3F5DB900CC9CBB /* BaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = BE47886D1C3F5DB900CC9CBB /* BaseService.m */; };
 		BE4788701C3F5DB900CC9CBB /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE47886E1C3F5DB900CC9CBB /* BaseService.swift */; };
-		BE4788721C3F5E5300CC9CBB /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4788711C3F5E5300CC9CBB /* AuthenticationService.swift */; };
 		BE4FD41A1A943CA40041003F /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4FD4191A943CA40041003F /* UserService.m */; };
 		BE6947101A8DAFC500BDB146 /* RetrieveMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69470F1A8DAFC500BDB146 /* RetrieveMealService.m */; };
 		BE729C041A9304D7006823DC /* MealBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE729C031A9304D7006823DC /* MealBaseTableViewController.m */; };
@@ -83,7 +82,6 @@
 		BE47886C1C3F5DB900CC9CBB /* BaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseService.h; sourceTree = "<group>"; };
 		BE47886D1C3F5DB900CC9CBB /* BaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseService.m; sourceTree = "<group>"; };
 		BE47886E1C3F5DB900CC9CBB /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
-		BE4788711C3F5E5300CC9CBB /* AuthenticationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		BE4788751C3F5FDF00CC9CBB /* ServiceErrors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceErrors.h; sourceTree = "<group>"; };
 		BE4FD4181A943CA40041003F /* UserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserService.h; sourceTree = "<group>"; };
 		BE4FD4191A943CA40041003F /* UserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserService.m; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				BE4788751C3F5FDF00CC9CBB /* ServiceErrors.h */,
-				BE4788711C3F5E5300CC9CBB /* AuthenticationService.swift */,
 				BE4788631C3F5B8900CC9CBB /* BaseModel.h */,
 				BE4788641C3F5B8900CC9CBB /* BaseModel.m */,
 				BE4788651C3F5B8900CC9CBB /* BaseModel.swift */,
@@ -408,7 +405,6 @@
 				BE3AFEFE15BB754F006BC0D6 /* main.m in Sources */,
 				BE3AFF0215BB754F006BC0D6 /* MealTrackerAppDelegate.m in Sources */,
 				BE4788661C3F5B8900CC9CBB /* BaseModel.m in Sources */,
-				BE4788721C3F5E5300CC9CBB /* AuthenticationService.swift in Sources */,
 				BEA221CE1A8F144500BFC1DD /* MealEatenService.m in Sources */,
 				BEBDCDBD1A8C55740033FD4C /* SaveMealService.m in Sources */,
 				BE729C071A93126E006823DC /* UserSettingsViewController.m in Sources */,

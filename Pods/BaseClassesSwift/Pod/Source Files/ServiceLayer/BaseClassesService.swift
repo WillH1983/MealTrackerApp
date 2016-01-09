@@ -12,24 +12,38 @@ import Alamofire
 public protocol BaseClassesService: URLStringConvertible {
     var serviceURL:String {get}
     var baseURL:String {get}
-    var rootRequestKeyPath:String {get}
+    var rootRequestKeyPath:String? {get}
     var rootKeyPath:String {get}
+    var requestQueryParameters:Dictionary<String, String>? {get}
 }
 
 extension BaseClassesService {
     public var baseURL:String {
-        return "https://www.scrub-tech.com"
+        return "https://api.parse.com"
     }
     
     public var URLString:String {
-        return self.baseURL + self.serviceURL
+        var urlString = self.baseURL + self.serviceURL
+        if self.requestQueryParameters != nil {
+            var queryString = "?"
+            for (key, value) in self.requestQueryParameters! {
+                queryString = queryString + key + "=" + value + "&"
+            }
+            urlString = urlString + queryString
+            urlString = String(urlString.characters.dropLast())
+        }
+        return urlString
     }
     
-    public var rootRequestKeyPath:String {
-        return "request"
+    public var rootRequestKeyPath:String? {
+        return nil
     }
     
     public var rootKeyPath:String {
-        return "object"
+        return ""
+    }
+    
+    public var requestQueryParameters:Dictionary<String, String>? {
+        return nil
     }
 }
