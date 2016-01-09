@@ -28,7 +28,7 @@ public class AuthenticationService: BaseClassesService {
     public func loginUser(userObject:RegisterUser, withSuccessBlock:(User -> Void), andError:(NSError -> Void)) {
         self.params = ["username": userObject.username, "password": userObject.password]
         self.loggingIn = true
-        BaseClassesServiceClient().get(self, successBlock: { (object:User) -> Void in
+        BaseClassesServiceClient().getObject(self, successBlock: { (object:User) -> Void in
             withSuccessBlock(object)
         }) { (error) -> Void in
             andError(error)

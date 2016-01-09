@@ -32,6 +32,7 @@ extension BaseClassesService {
             urlString = urlString + queryString
             urlString = String(urlString.characters.dropLast())
         }
+        var url = NSURL(string: urlString)
         return urlString
     }
     
