@@ -26,7 +26,7 @@ class RetrieveMealHistoryServiceSwift:NSObject, BaseClassesService {
         return "/1/classes/MealEaten"
     }
     
-    var rootRequestKeyPath:String? {
+    var rootKeyPath:String {
         return "results"
     }
     
