@@ -60,7 +60,7 @@ class MealTrackerTableViewController: MealBaseTableViewController, MealTextEntry
     
     func retrieveMealsFromService() {
         super.showActivityIndicatorAnimated(true)
-        RetrieveMealService().retrieveMealsWithSuccessBlock({ (meals) -> Void in
+        RetrieveMealService().retrieveMeals({ (meals) -> Void in
             self.dataSource = meals
             self.tableView.reloadData()
             super.hideActivityIndicatorAnimated(true)
