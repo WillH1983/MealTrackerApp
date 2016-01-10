@@ -14,8 +14,8 @@ import ObjectMapper
     var dateEaten = NSDate()
     var user = User()
     var meal = Meal()
-    var method = ""
-    var path = ""
+    var method:String?
+    var path:String?
 
     override init() {
         super.init()

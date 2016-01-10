@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'E6E35ED8C9C59969FE9B75ED'
+               BlueprintIdentifier = '6250E96A357153CD5A536DAA'
                BlueprintName = 'BaseClassesSwift-BaseClassesSwift'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'BaseClassesSwift.bundle'>

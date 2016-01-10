@@ -46,9 +46,41 @@ public class BaseClassesServiceClient: NSObject {
             }
             
         }
+    }
+    
+    public func putObject<Service:BaseClassesService, PostObject:BaseModel, ResponseObject:BaseModel>(object:PostObject, andService:Service, successBlock:(ResponseObject -> Void), errorBlock:(NSError -> Void)) {
+        let JSONDictionary = Mapper().toJSON(object)
+        var postDictionary = [String: AnyObject]()
+        if let rootRequestKeyPath = andService.rootRequestKeyPath {
+            postDictionary = [rootRequestKeyPath: JSONDictionary]
+        } else {
+            postDictionary = JSONDictionary
+        }
         
-        
-
+        let request = Alamofire.request(.PUT, andService, parameters: postDictionary, encoding: .JSON, headers: self.authenticationHeaders())
+        request.responseObject(andService.rootKeyPath) { (response: Response<ResponseObject, NSError>) -> Void in
+            let mappedObject = response.result.value
+            if mappedObject != nil {
+                successBlock(mappedObject!)
+                
+            } else {
+                request.responseObject { (response: Response<ResponseObject, NSError>) -> Void in
+                    let mappedObject = response.result.value
+                    if mappedObject != nil {
+                        let error = self.checkForErrorInObject(response.result.value!)
+                        if error != nil {
+                            errorBlock(error!)
+                            return
+                        } else {
+                            successBlock(mappedObject!)
+                        }
+                    } else {
+                        errorBlock(NSError(domain: self.errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "An error has occured, please try again later"]))
+                    }
+                }
+            }
+            
+        }
     }
     
     public func getObject<Service:BaseClassesService, ResponseObject:BaseModel>(service:Service, successBlock:(ResponseObject -> Void), errorBlock:(NSError -> Void)) {

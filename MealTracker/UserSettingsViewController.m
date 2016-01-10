@@ -7,7 +7,7 @@
 //
 
 #import "UserSettingsViewController.h"
-#import "UserService.h"
+#import "MealTracker-Swift.h"
 
 @import BaseClassesSwift;
 
@@ -41,10 +41,10 @@
 - (void)saveWeeklyPoints:(NSString *)points {
     self.user.pointsPerWeek = [NSNumber numberWithInteger:[points integerValue]];
     UserService *service = [UserService new];
-    [service updateUser:self.user withSuccessBlock:^(User *user) {
+    [service updateUser:self.user successBlock:^(User *user) {
         [user save];
         [super hideActivityIndicatorAnimated:YES];
-    } andError:^(NSError *error) {
+    } errorBlock:^(NSError *error) {
         [super hideActivityIndicatorAnimated:YES];
         [super showError:error withRetryBlock:^{
             [self saveWeeklyPoints:points];
