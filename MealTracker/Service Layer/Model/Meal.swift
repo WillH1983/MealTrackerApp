@@ -47,15 +47,15 @@ public class Meal: BaseModel {
     
     override public func mapping(map: Map) {
         super.mapping(map)
-        calories <- map["calories"]
-        carbs <- map["carbs"]
-        dietaryFiber <- map["dietaryFiber"]
+        calories <- (map["calories"], BaseClassesDecimalNumberTransform())
+        carbs <- (map["carbs"], BaseClassesDecimalNumberTransform())
+        dietaryFiber <- (map["dietaryFiber"], BaseClassesDecimalNumberTransform())
         mealDescription <- map["mealDescription"]
         name <- map["name"]
-        protein <- map["protein"]
+        protein <- (map["protein"], BaseClassesDecimalNumberTransform())
         servingSize <- map["servingSize"]
-        totalFat <- map["totalFat"]
-        weightWatchersPlusPoints <- map["weightWatchersPlusPoints"]
+        totalFat <- (map["totalFat"], BaseClassesDecimalNumberTransform())
+        weightWatchersPlusPoints <- (map["weightWatchersPlusPoints"], BaseClassesDecimalNumberTransform())
         whenEaten <- map["whenEaten"]
     }
 }
