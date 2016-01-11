@@ -14,12 +14,7 @@ public class User: BaseModel {
     public var password = ""
     public var sessionToken = ""
     public var pointsPerWeek:NSNumber = 0
-    
-    public var className: String {
-        get {
-            return "_User"
-        }
-    }
+    public var className = "_User"
     
     override public init() {
         super.init()
@@ -69,5 +64,6 @@ public class User: BaseModel {
         username <- map["username"]
         pointsPerWeek <- map["pointsPerWeek"]
         password <- map["password"]
+        className <- map["className"]
     }
 }

@@ -11,7 +11,7 @@ import ObjectMapper
 
 public class BaseClassesDateTransform: TransformType {
     public typealias Object = NSDate
-    public typealias JSON = Double
+    public typealias JSON = String
     
     public init() {}
     
@@ -31,9 +31,13 @@ public class BaseClassesDateTransform: TransformType {
         return nil
     }
     
-    public func transformToJSON(value: NSDate?) -> Double? {
+    public func transformToJSON(value: NSDate?) -> String? {
         if let date = value {
-            return Double(date.timeIntervalSince1970)
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+            dateFormatter.timeZone = NSTimeZone(name: "UTC")
+            let dateString = dateFormatter.stringFromDate(date)
+            return dateString
         }
         return nil
     }

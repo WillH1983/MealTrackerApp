@@ -157,7 +157,7 @@ class MealTrackerTableViewController: MealBaseTableViewController, MealTextEntry
     
     func saveMealEaten(mealEaten:MealEaten) {
         super.showActivityIndicatorAnimated(true)
-        MealEatenService().saveMealEaten(mealEaten, withSuccessBlock: { (meal) -> Void in
+        MealEatenServiceSwift().saveMealEaten(mealEaten, successBlock: { (meal) -> Void in
             super.hideActivityIndicatorAnimated(true)
         }) { (error) -> Void in
             super.hideActivityIndicatorAnimated(true)

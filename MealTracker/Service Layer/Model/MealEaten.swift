@@ -26,9 +26,9 @@ import ObjectMapper
     }
     
     override func mapping(map: Map) {
-        super.mapping(map)
         dateEaten <- (map["dateEaten"], BaseClassesDateTransform())
         user <- map ["user"]
         meal <- map ["meal"]
+        objectId <- map["objectId"]
     }
 }

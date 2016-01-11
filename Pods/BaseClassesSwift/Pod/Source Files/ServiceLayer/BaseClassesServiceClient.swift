@@ -87,26 +87,36 @@ public class BaseClassesServiceClient: NSObject {
 
         let request = Alamofire.request(.GET, service, parameters: nil, encoding: .JSON, headers: self.authenticationHeaders())
         request.responseObject(service.rootKeyPath) { (response: Response<ResponseObject, NSError>) -> Void in
-            let mappedObject = response.result.value
-            if mappedObject != nil {
-                successBlock(mappedObject!)
-                
-            } else {
-                request.responseObject { (response: Response<ResponseObject, NSError>) -> Void in
-                    let mappedObject = response.result.value
-                    if mappedObject != nil {
-                        let error = self.checkForErrorInObject(response.result.value!)
-                        if error != nil {
-                            errorBlock(error!)
-                            return
+            if response.result.isSuccess {
+                let mappedObject = response.result.value
+                if mappedObject != nil {
+                    successBlock(mappedObject!)
+                    
+                } else {
+                    request.responseObject { (response: Response<ResponseObject, NSError>) -> Void in
+                        let mappedObject = response.result.value
+                        if mappedObject != nil {
+                            let error = self.checkForErrorInObject(response.result.value!)
+                            if error != nil {
+                                errorBlock(error!)
+                                return
+                            } else {
+                                successBlock(mappedObject!)
+                            }
                         } else {
-                            successBlock(mappedObject!)
+                            errorBlock(NSError(domain: self.errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "An error has occured, please try again later"]))
                         }
-                    } else {
-                        errorBlock(NSError(domain: self.errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "An error has occured, please try again later"]))
                     }
                 }
+            } else {
+                if let error = response.result.error {
+                    errorBlock(error)
+                } else {
+                    errorBlock(NSError(domain: self.errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "An error has occured, please try again later"]))
+                }
+                
             }
+            
             
         }
     }
