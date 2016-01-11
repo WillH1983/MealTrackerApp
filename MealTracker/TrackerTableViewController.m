@@ -8,7 +8,6 @@
 
 #import "TrackerTableViewController.h"
 #import "RetrieveMealHistoryService.h"
-#import "DeleteMealEatenService.h"
 #import "MealTracker-Swift.h"
 
 @import BaseClassesSwift;
@@ -120,12 +119,12 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [super showActivityIndicatorAnimated:YES];
         MealEaten *meal = [self mealEatenForIndexPath:indexPath];
-        [[DeleteMealEatenService new] removeMealEaten:meal withSuccessBlock:^{
+        [[DeleteMealEatenServiceSwift new] removeMealEaten:meal successBlock:^{
             NSMutableArray *mutableCapsuleArray = [self dataSourceArrayForSection:indexPath.section];
             [mutableCapsuleArray removeObjectAtIndex:indexPath.row];
             [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationAutomatic];
             [super hideActivityIndicatorAnimated:YES];
-        } andError:^(NSError *error) {
+        } errorBlock:^(NSError *error) {
             [super hideActivityIndicatorAnimated:YES];
             [super showError:error withRetryBlock:^{
                 [self tableView:tableView commitEditingStyle:editingStyle forRowAtIndexPath:indexPath];

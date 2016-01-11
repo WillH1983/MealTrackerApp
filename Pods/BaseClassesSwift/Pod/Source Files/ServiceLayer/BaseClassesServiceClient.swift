@@ -23,6 +23,7 @@ public class BaseClassesServiceClient: NSObject {
         }
         
         let request = Alamofire.request(.POST, andService, parameters: postDictionary, encoding: .JSON, headers: self.authenticationHeaders())
+        request.validate()
         request.responseObject(andService.rootKeyPath) { (response: Response<ResponseObject, NSError>) -> Void in
             let mappedObject = response.result.value
             if mappedObject != nil {
@@ -58,6 +59,7 @@ public class BaseClassesServiceClient: NSObject {
         }
         
         let request = Alamofire.request(.PUT, andService, parameters: postDictionary, encoding: .JSON, headers: self.authenticationHeaders())
+        request.validate()
         request.responseObject(andService.rootKeyPath) { (response: Response<ResponseObject, NSError>) -> Void in
             let mappedObject = response.result.value
             if mappedObject != nil {
@@ -86,8 +88,8 @@ public class BaseClassesServiceClient: NSObject {
     public func getObject<Service:BaseClassesService, ResponseObject:BaseModel>(service:Service, successBlock:(ResponseObject -> Void), errorBlock:(NSError -> Void)) {
 
         let request = Alamofire.request(.GET, service, parameters: nil, encoding: .JSON, headers: self.authenticationHeaders())
+        request.validate()
         request.responseObject(service.rootKeyPath) { (response: Response<ResponseObject, NSError>) -> Void in
-            if response.result.isSuccess {
                 let mappedObject = response.result.value
                 if mappedObject != nil {
                     successBlock(mappedObject!)
@@ -108,22 +110,13 @@ public class BaseClassesServiceClient: NSObject {
                         }
                     }
                 }
-            } else {
-                if let error = response.result.error {
-                    errorBlock(error)
-                } else {
-                    errorBlock(NSError(domain: self.errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "An error has occured, please try again later"]))
-                }
-                
-            }
-            
-            
         }
     }
     
     public func getObjects<Service:BaseClassesService, ResponseObject:BaseModel>(service:Service, successBlock:([ResponseObject] -> Void), errorBlock:(NSError -> Void)) {
         
         let request = Alamofire.request(.GET, service, parameters: nil, encoding: .JSON, headers: self.authenticationHeaders())
+        request.validate()
         request.responseArray(service.rootKeyPath) { (response: Response<[ResponseObject], NSError>) -> Void in
             let mappedObject = response.result.value
             if mappedObject != nil {

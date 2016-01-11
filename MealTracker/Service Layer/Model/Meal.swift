@@ -22,8 +22,8 @@ public class Meal: BaseModel {
     var weightWatchersPlusPoints = NSDecimalNumber()
     var whenEaten = NSSet()
     var className = "Meal"
-    var method = ""
-    var path = ""
+    var method:String?
+    var path:String?
     
     class func mealForDictionaryInfo(mealDictionary:Dictionary<String, AnyObject>) {
         let meal = Meal()
