@@ -17,12 +17,11 @@ class RemoveMeals: BaseModel {
         super.init()
     }
     
-    required public init?(_ map: Map) {
+    required init?(_ map: Map) {
         super.init(map)
     }
     
-    override public func mapping(map: Map) {
-        super.mapping(map)
+    override func mapping(map: Map) {
         requests <- map["requests"]
     }
 }

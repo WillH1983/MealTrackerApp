@@ -58,6 +58,8 @@ public class Meal: BaseModel {
         weightWatchersPlusPoints <- (map["weightWatchersPlusPoints"], BaseClassesDecimalNumberTransform())
         whenEaten <- map["whenEaten"]
         className <- map["className"]
+        method <- map["method"]
+        path <- map["path"]
     }
 }
 

@@ -30,5 +30,7 @@ import ObjectMapper
         user <- map ["user"]
         meal <- map ["meal"]
         objectId <- map["objectId"]
+        method <- map["method"]
+        path <- map["path"]
     }
 }

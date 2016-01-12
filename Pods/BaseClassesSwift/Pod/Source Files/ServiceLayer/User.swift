@@ -59,7 +59,7 @@ public class User: BaseModel {
     }
     
     public override func mapping(map: Map) {
-        objectId <- map["objectId"]
+        super.mapping(map)
         sessionToken <- map["sessionToken"]
         username <- map["username"]
         pointsPerWeek <- map["pointsPerWeek"]

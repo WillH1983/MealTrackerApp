@@ -109,11 +109,11 @@ class MealTrackerTableViewController: MealBaseTableViewController, MealTextEntry
         if editingStyle == UITableViewCellEditingStyle.Delete {
             let meal = self.dataSource?[indexPath.row]
             super.showActivityIndicatorAnimated(true)
-            DeleteMealService().removeMeal(meal, withSuccessBlock: { () -> Void in
+            DeleteMealServiceSwift().removeMeal(meal!, successBlock: { () -> Void in
                 self.dataSource?.removeAtIndex(indexPath.row)
                 self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
                 super.hideActivityIndicatorAnimated(true)
-            }, andError: { (error) -> Void in
+            }, errorBlock: { (error) -> Void in
                 super.hideActivityIndicatorAnimated(true)
                 super.showError(error, withRetryBlock: { () -> Void in
                     self.tableView(tableView, commitEditingStyle: editingStyle, forRowAtIndexPath: indexPath)

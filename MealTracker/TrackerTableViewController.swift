@@ -97,6 +97,24 @@ class TrackerTableViewController2: MealBaseTableViewController {
         return ""
     }
     
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            super.showActivityIndicatorAnimated(true)
+            let meal = self.mealEatenForIndexPath(indexPath)
+            DeleteMealEatenServiceSwift().removeMealEaten(meal!, successBlock: { () -> Void in
+                var mutableCapsuleArray = self.dataSourceArrayForSection(indexPath.section)
+                mutableCapsuleArray.removeAtIndex(indexPath.row)
+                self.tableView.reloadSections(NSIndexSet(index: indexPath.section), withRowAnimation: UITableViewRowAnimation.Automatic)
+                super.hideActivityIndicatorAnimated(true)
+            }, errorBlock: { (error) -> Void in
+                super.hideActivityIndicatorAnimated(true)
+                super.showError(error, withRetryBlock: { () -> Void in
+                    self.tableView(tableView, commitEditingStyle:editingStyle , forRowAtIndexPath: indexPath)
+                })
+            })
+        }
+    }
+    
     func dataSourceArrayForSection(section:Int) -> Array<Dictionary<String, AnyObject>> {
         let dataSourceForSection = self.dataSource[section]
         if let array = dataSourceForSection["meals"] as? Array<Dictionary<String,AnyObject>> {
@@ -117,6 +135,7 @@ class TrackerTableViewController2: MealBaseTableViewController {
         } else {
             return nil
         }
+        
     }
 
 }

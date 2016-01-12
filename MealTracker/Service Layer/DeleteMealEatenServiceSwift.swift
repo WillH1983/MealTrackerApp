@@ -15,7 +15,7 @@ class DeleteMealEatenServiceSwift: NSObject, BaseClassesService {
             mealEaten.method = "DELETE"
             mealEaten.path = self.deletePath(mealEaten.objectId)
         }
-        BaseClassesServiceClient().postObject(mealsEaten, andService: self, successBlock: { (object:Meal) -> Void in
+        BaseClassesServiceClient().postObject(mealsEaten, andService: self, successBlock: { (object) -> Void in
             self.cleanupMealArrayAfterServiceCall(mealsEaten.requests)
             successBlock()
         }) { (error) -> Void in
