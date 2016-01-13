@@ -15,7 +15,7 @@ class MealTrackerTableViewController: MealBaseTableViewController, MealTextEntry
     
     func viewController(sender: UIViewController, didFinishWithMeal: Meal) {
         super.showActivityIndicatorAnimated(true)
-        SaveMealService().saveMeal(didFinishWithMeal, withSuccessBlock: { (meal) -> Void in
+        SaveMealServiceSwift().saveMeal(didFinishWithMeal, successBlock: { (meal) -> Void in
             self.tableView.reloadData()
             super.hideActivityIndicatorAnimated(true)
         }) { (error) -> Void in
@@ -28,7 +28,7 @@ class MealTrackerTableViewController: MealBaseTableViewController, MealTextEntry
     
     func viewController(sender: UIViewController, didFinishEditingMeal: Meal) {
         super.showActivityIndicatorAnimated(true)
-        SaveMealService().updateMeal(didFinishEditingMeal, withSuccessBlock: { () -> Void in
+        SaveMealServiceSwift().updateMeal(didFinishEditingMeal, successBlock: { () -> Void in
             super.hideActivityIndicatorAnimated(true)
         }) { (error) -> Void in
             super.hideActivityIndicatorAnimated(true)

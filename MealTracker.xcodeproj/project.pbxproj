@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		898634DC2EE80F821BADBD2E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53DAD975038881BC9894646 /* Pods.framework */; };
+		BE06A6131C460A28008DB69C /* SaveMealServiceSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE06A6121C460A28008DB69C /* SaveMealServiceSwift.swift */; };
+		BE06A6151C460E23008DB69C /* NewMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE06A6141C460E23008DB69C /* NewMeal.swift */; };
 		BE16D4301A8B0968004E897A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE16D42F1A8B0968004E897A /* Images.xcassets */; };
 		BE16D4331A8B0D33004E897A /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE16D4321A8B0D33004E897A /* Launch Screen.xib */; };
 		BE2C9AD815C47E2300DD6070 /* plusButton.png in Resources */ = {isa = PBXBuildFile; fileRef = BE2C9AD715C47E2300DD6070 /* plusButton.png */; };
@@ -63,6 +65,8 @@
 /* Begin PBXFileReference section */
 		3B74C23929AAF1F5A1B6F833 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7DB03A31EACD0D3900E63513 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		BE06A6121C460A28008DB69C /* SaveMealServiceSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveMealServiceSwift.swift; sourceTree = "<group>"; };
+		BE06A6141C460E23008DB69C /* NewMeal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMeal.swift; sourceTree = "<group>"; };
 		BE16D42F1A8B0968004E897A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BE16D4321A8B0D33004E897A /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		BE2C9AD715C47E2300DD6070 /* plusButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusButton.png; sourceTree = "<group>"; };
@@ -244,6 +248,7 @@
 				BE471A7D1C42FB160081C7C1 /* RetrieveMealService.swift */,
 				BEBDCDBB1A8C55740033FD4C /* SaveMealService.h */,
 				BEBDCDBC1A8C55740033FD4C /* SaveMealService.m */,
+				BE06A6121C460A28008DB69C /* SaveMealServiceSwift.swift */,
 				BE471A7F1C43246A0081C7C1 /* UserService.swift */,
 			);
 			path = "Service Layer";
@@ -252,6 +257,7 @@
 		BEBDCDBE1A8C5EFD0033FD4C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BE06A6141C460E23008DB69C /* NewMeal.swift */,
 				BE5B98681C40F94500B4466B /* Meal.swift */,
 				BED512EC1C4379510087950F /* RemoveMealsEaten.swift */,
 				BE5B98661C40E71500B4466B /* MealEaten.swift */,
@@ -414,12 +420,14 @@
 				BE8358FB1B96A08F001ADB1A /* TrackerTableViewController.swift in Sources */,
 				BE4788691C3F5B9200CC9CBB /* Config.swift in Sources */,
 				BEC21D7D1C41725300683139 /* RetrieveMealHistoryServiceSwift.swift in Sources */,
+				BE06A6151C460E23008DB69C /* NewMeal.swift in Sources */,
 				BE47886F1C3F5DB900CC9CBB /* BaseService.m in Sources */,
 				BED512F11C43810D0087950F /* RemoveMeals.swift in Sources */,
 				BE471A821C4328390081C7C1 /* MealEatenService.swift in Sources */,
 				BEBB74CE1B71BB9D00D2DCBA /* LoginTableViewController.swift in Sources */,
 				BE7E957315C0965500AE0C94 /* TrackerTableViewController.m in Sources */,
 				BEB0A2B61A91AD11004E7B82 /* DeleteMealService.m in Sources */,
+				BE06A6131C460A28008DB69C /* SaveMealServiceSwift.swift in Sources */,
 				BE4392E415C0AD5E00745158 /* NSDate+day.m in Sources */,
 				BEA221D21A8F319500BFC1DD /* RetrieveMealHistoryService.m in Sources */,
 				BE4788701C3F5DB900CC9CBB /* BaseService.swift in Sources */,
