@@ -47,6 +47,7 @@
 		BEDEAC7315BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDEAC7215BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m */; };
 		BEDFED951C3F4735008857CA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BEDFED941C3F4735008857CA /* Podfile */; };
 		BEF7833F1B8969130089968A /* MealEntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF7833E1B8969130089968A /* MealEntryTableViewController.swift */; };
+		BEFE1FF01C4B54A000F10161 /* BatchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFE1FEF1C4B54A000F10161 /* BatchResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -121,6 +122,7 @@
 		BEDEAC7215BBA3D9008D3BF4 /* NSMutableDictionary+MealDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+MealDictionary.m"; sourceTree = "<group>"; };
 		BEDFED941C3F4735008857CA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BEF7833E1B8969130089968A /* MealEntryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealEntryTableViewController.swift; sourceTree = "<group>"; };
+		BEFE1FEF1C4B54A000F10161 /* BatchResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatchResponse.swift; sourceTree = "<group>"; };
 		C53DAD975038881BC9894646 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -257,11 +259,12 @@
 		BEBDCDBE1A8C5EFD0033FD4C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BE06A6141C460E23008DB69C /* NewMeal.swift */,
+				BEFE1FEF1C4B54A000F10161 /* BatchResponse.swift */,
 				BE5B98681C40F94500B4466B /* Meal.swift */,
-				BED512EC1C4379510087950F /* RemoveMealsEaten.swift */,
 				BE5B98661C40E71500B4466B /* MealEaten.swift */,
+				BE06A6141C460E23008DB69C /* NewMeal.swift */,
 				BED512F01C43810D0087950F /* RemoveMeals.swift */,
+				BED512EC1C4379510087950F /* RemoveMealsEaten.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 			files = (
 				BE7D22891B92B7370047AE03 /* MealTrackerTableViewController.swift in Sources */,
 				BE471A801C43246A0081C7C1 /* UserService.swift in Sources */,
+				BEFE1FF01C4B54A000F10161 /* BatchResponse.swift in Sources */,
 				BED512EF1C437FFD0087950F /* DeleteMealServiceSwift.swift in Sources */,
 				BEF7833F1B8969130089968A /* MealEntryTableViewController.swift in Sources */,
 				BE729C041A9304D7006823DC /* MealBaseTableViewController.m in Sources */,

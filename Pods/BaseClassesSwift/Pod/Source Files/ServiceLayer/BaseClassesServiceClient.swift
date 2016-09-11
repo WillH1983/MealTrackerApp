@@ -35,13 +35,13 @@ public class BaseClassesServiceClient: NSObject {
                     if mappedObject != nil {
                         let error = self.checkForErrorInObject(response.result.value!)
                         if error != nil {
-                            errorBlock(error!)
+                            errorBlock(response.result.error!)
                             return
                         } else {
                             successBlock(mappedObject!)
                         }
                     } else {
-                        errorBlock(NSError(domain: self.errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "An error has occured, please try again later"]))
+                        errorBlock(response.result.error!)
                     }
                 }
             }
