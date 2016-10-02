@@ -21,7 +21,7 @@ class LoginTableViewController: MealBaseTableViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         let user = User.persistentUserObject()
-        if user.sessionToken.isEmpty == false {
+        if user.idToken.isEmpty == false {
             self.performSegueWithIdentifier("tabbar", sender: self)
         }
     }

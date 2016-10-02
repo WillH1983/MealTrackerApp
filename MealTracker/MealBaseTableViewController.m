@@ -36,7 +36,7 @@
 }
 
 - (void)showError:(NSError *)error withRetryBlock:(void (^)(void))completion {
-    if ([User persistentUserObject].sessionToken) {
+    if ([User persistentUserObject].idToken) {
         NSString *errorMessage = [error localizedDescription];
         NSString *title;
         UIAlertControllerStyle style = UIAlertControllerStyleActionSheet;
