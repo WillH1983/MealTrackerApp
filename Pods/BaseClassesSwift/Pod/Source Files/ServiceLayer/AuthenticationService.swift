@@ -9,9 +9,6 @@
 import Foundation
 
 public class AuthenticationService: BaseClassesService {
-    private var params = [String: String]()
-    private var loggingIn = false
-    
     public init () {
         
     }
@@ -26,9 +23,7 @@ public class AuthenticationService: BaseClassesService {
     }
     
     public func loginUser(userObject:RegisterUser, withSuccessBlock:(User -> Void), andError:(NSError -> Void)) {
-        self.params = ["username": userObject.username, "password": userObject.password]
-        self.loggingIn = true
-        BaseClassesServiceClient().getObject(self, successBlock: { (object:User) -> Void in
+        BaseClassesServiceClient().postObject(userObject, andService: self, successBlock: { (object:User) -> Void in
             withSuccessBlock(object)
         }) { (error) -> Void in
             andError(error)
@@ -36,14 +31,7 @@ public class AuthenticationService: BaseClassesService {
     }
     
     public var serviceURL:String {
-        if self.loggingIn {
-            return "/1/login"
-        } else {
-            return "/1/users"
-        }
+        return "/us-east-1_gdE6wH38Z/SignUp"
     }
-    
-    public var requestQueryParameters:Dictionary<String, String>? {
-        return self.params
-    }
+
 }

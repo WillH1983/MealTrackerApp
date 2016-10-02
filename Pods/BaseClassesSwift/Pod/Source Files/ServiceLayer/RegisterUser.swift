@@ -12,6 +12,8 @@ import ObjectMapper
 public class RegisterUser: BaseModel {
     public var username = ""
     public var password = ""
+    public var ClientId = "3g30ulm3nd6so3ee0pofaobs6g"
+    private var UserAttributes = Array<Dictionary<String, AnyObject>>()
     
     public var className: String {
         get {
@@ -28,7 +30,10 @@ public class RegisterUser: BaseModel {
     }
     
     public override func mapping(map: Map) {
-        username <- map["username"]
-        password <- map["password"]
+        username <- map["Username"]
+        password <- map["Password"]
+        let dictionary = ["email": username]
+        UserAttributes = [dictionary]
+        UserAttributes <- map["UserAttributes"]
     }
 }

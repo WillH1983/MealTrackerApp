@@ -1,13 +1,13 @@
 PODS:
-  - Alamofire (3.1.4)
-  - AlamofireObjectMapper (2.1.0):
-    - Alamofire (~> 3.1.0)
+  - Alamofire (3.5.1)
+  - AlamofireObjectMapper (2.1.2):
+    - Alamofire (~> 3.2)
     - ObjectMapper (~> 1.0)
   - BaseClassesSwift (0.1.0):
     - AlamofireObjectMapper (~> 2.1)
     - KVNProgress
-  - KVNProgress (2.2.2)
-  - ObjectMapper (1.1.1)
+  - KVNProgress (2.3.1)
+  - ObjectMapper (1.5.0)
 
 DEPENDENCIES:
   - BaseClassesSwift (from `https://github.com/WillH1983/BaseClassesSwift.git`)
@@ -18,14 +18,14 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   BaseClassesSwift:
-    :commit: 29334b92e2a3794b1b41448cfc3ad79fd9d509e6
+    :commit: 785feed7ec7e4deeb10eebe9ee57ad3edcb01ac4
     :git: https://github.com/WillH1983/BaseClassesSwift.git
 
 SPEC CHECKSUMS:
-  Alamofire: fbc829692f351fa1d8a31dd75fd7f7f56fea31fb
-  AlamofireObjectMapper: 24097576202064f8b0a583452dd934064f78dc0e
+  Alamofire: 0dfba1184a543e2aa160f4e39cac4e8aba48d223
+  AlamofireObjectMapper: 82391c31f23e37bdb2660da174bcf81b202da39d
   BaseClassesSwift: d52179b98f7673b2b841e56b0d440f9f34ca869e
-  KVNProgress: 4697347e21e37fdaa5264ebc24e377c205a50328
-  ObjectMapper: 4143abed1dbd49b73d75092fe8fa1c88ed6434b7
+  KVNProgress: 8167b1f19e2758290c0b6143020ed9dcbb0477a1
+  ObjectMapper: 386645adca9d9d23b95eda43090b09d66444cf14
 
 COCOAPODS: 0.39.0

@@ -2,6 +2,7 @@
 
 #import "KVNProgress.h"
 #import "KVNProgressConfiguration.h"
+#import "KVNRotationViewController.h"
 #import "UIColor+KVNContrast.h"
 #import "UIImage+KVNEmpty.h"
 #import "UIImage+KVNImageEffects.h"

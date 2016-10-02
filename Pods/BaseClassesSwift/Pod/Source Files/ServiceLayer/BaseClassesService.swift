@@ -19,7 +19,7 @@ public protocol BaseClassesService: URLStringConvertible {
 
 extension BaseClassesService {
     public var baseURL:String {
-        return "https://api.parse.com"
+        return "https://cognito-identity.us-east-1.amazonaws.com"
     }
     
     public var URLString:String {
