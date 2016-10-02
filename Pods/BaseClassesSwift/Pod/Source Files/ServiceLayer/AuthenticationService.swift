@@ -31,7 +31,7 @@ public class AuthenticationService: BaseClassesService {
     }
     
     public var serviceURL:String {
-        return "/us-east-1_gdE6wH38Z/SignUp"
+        return "/register"
     }
 
 }
