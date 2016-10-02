@@ -34,6 +34,7 @@ class LoginTableViewController: MealBaseTableViewController {
         if userNameString != nil && passwordString != nil {
             user.username = userNameString!
             user.password = passwordString!
+            user.email = userNameString!
             let authService = AuthenticationService()
             authService.registerUser(user, withSuccessBlock: { (userObject) -> Void in
                 user.password = ""
