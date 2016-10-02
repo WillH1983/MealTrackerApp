@@ -11,10 +11,6 @@ import BaseClassesSwift
 
 class DeleteMealServiceSwift: NSObject, BaseClassesService {
     func removeMeals(meals:RemoveMeals, successBlock:(Void -> Void), errorBlock:(NSError -> Void)) {
-        for meal in meals.requests {
-            meal.method = "DELETE"
-            meal.path = self.deletePath(meal.objectId)
-        }
         BaseClassesServiceClient().postObject(meals, andService: self, successBlock: { (object:BatchResponse) -> Void in
             self.cleanupMealArrayAfterServiceCall(meals.requests)
             successBlock()
@@ -37,8 +33,7 @@ class DeleteMealServiceSwift: NSObject, BaseClassesService {
     }
     
     func cleanupMealAfterServiceCall(meal:Meal) {
-        meal.method = nil
-        meal.path = nil
+
     }
     
     func deletePath(objectId:String) -> String {

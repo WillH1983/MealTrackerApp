@@ -20,10 +20,10 @@ class RetrieveMealService: NSObject, BaseClassesService {
     }
     
     var serviceURL:String {
-        return "/1/classes/Meal"
+        return "/meals"
     }
     
     var rootKeyPath:String {
-        return "results"
+        return "items"
     }
 }

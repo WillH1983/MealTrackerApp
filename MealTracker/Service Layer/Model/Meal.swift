@@ -21,9 +21,6 @@ public class Meal: BaseModel {
     var totalFat = NSDecimalNumber()
     var weightWatchersPlusPoints = NSDecimalNumber()
     var whenEaten = NSSet()
-    var className = "Meal"
-    var method:String?
-    var path:String?
     
     class func mealForDictionaryInfo(mealDictionary:Dictionary<String, AnyObject>) {
         let meal = Meal()
@@ -44,22 +41,33 @@ public class Meal: BaseModel {
     required public init?(_ map: Map) {
         super.init(map)
     }
+    /*
+     {
+     "Carbs": "1",
+     "Calories": "9",
+     "Name": "SecondMealViaPOSTMAN",
+     "ServingSize": "6",
+     "Protein": "5",
+     "WeightWatchersPlusPoints": "8",
+     "DietaryFiber": "2",
+     "TotalFat": "7",
+     "ObjectId": 5895642622745281,
+     "MealDescription": "3"
+     }
+ */
     
     override public func mapping(map: Map) {
         super.mapping(map)
-        calories <- (map["calories"], BaseClassesDecimalNumberTransform())
-        carbs <- (map["carbs"], BaseClassesDecimalNumberTransform())
-        dietaryFiber <- (map["dietaryFiber"], BaseClassesDecimalNumberTransform())
-        mealDescription <- map["mealDescription"]
-        name <- map["name"]
-        protein <- (map["protein"], BaseClassesDecimalNumberTransform())
-        servingSize <- map["servingSize"]
-        totalFat <- (map["totalFat"], BaseClassesDecimalNumberTransform())
-        weightWatchersPlusPoints <- (map["weightWatchersPlusPoints"], BaseClassesDecimalNumberTransform())
+        calories <- (map["Calories"], BaseClassesDecimalNumberTransform())
+        carbs <- (map["Carbs"], BaseClassesDecimalNumberTransform())
+        dietaryFiber <- (map["DietaryFiber"], BaseClassesDecimalNumberTransform())
+        mealDescription <- map["MealDescription"]
+        name <- map["Name"]
+        protein <- (map["Protein"], BaseClassesDecimalNumberTransform())
+        servingSize <- map["ServingSize"]
+        totalFat <- (map["TotalFat"], BaseClassesDecimalNumberTransform())
+        weightWatchersPlusPoints <- (map["WeightWatchersPlusPoints"], BaseClassesDecimalNumberTransform())
         whenEaten <- map["whenEaten"]
-        className <- map["className"]
-        method <- map["method"]
-        path <- map["path"]
     }
 }
 

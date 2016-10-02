@@ -13,8 +13,7 @@
 
 - (void)removeMeals:(NSArray *)meals withSuccessBlock:(void (^)())successBlock andError:(void (^)(NSError *error))errorBlock {
     for (Meal *meal in meals) {
-        meal.method = @"DELETE";
-        meal.path = [self deletePathWithObjectId:meal.objectId];
+
     }
     
 //    ServiceClient *serviceClient = [ServiceClient new];
@@ -28,8 +27,7 @@
 }
 
 - (void)removeMeal:(Meal *)meal withSuccessBlock:(void (^)())successBlock andError:(void (^)(NSError *error))errorBlock {
-    meal.method = @"DELETE";
-    meal.path = [self deletePathWithObjectId:meal.objectId];
+
     
 //    ServiceClient *serviceClient = [ServiceClient new];
 //    [serviceClient deleteObject:meal andService:self withSuccessBlock:^(RKMappingResult *result) {
@@ -52,8 +50,7 @@
 }
 
 - (void)cleanupMealAfterServiceCall:(Meal *)meal {
-    meal.method = nil;
-    meal.path = nil;
+
 }
 
 - (NSString *)serviceURL {
