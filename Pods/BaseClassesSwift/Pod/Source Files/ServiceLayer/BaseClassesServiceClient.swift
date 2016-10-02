@@ -138,8 +138,8 @@ public class BaseClassesServiceClient: NSObject {
     private func authenticationHeaders() -> [String: String] {
         var httpHeaders = [String: String]()
         
-        let userSessionToken = User.persistentUserObject().sessionToken as String
-        httpHeaders["X-Parse-Session-Token"] = userSessionToken
+        let userSessionToken = User.persistentUserObject().idToken as String
+        httpHeaders["Authorization"] = userSessionToken
         
         if let AWSAPIKey = NSBundle.mainBundle().infoDictionary?["AWSAPIKey"] as? String {
             httpHeaders["x-api-key"] = AWSAPIKey

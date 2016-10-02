@@ -89,7 +89,7 @@ public class BaseTableViewController: UITableViewController {
     }
     
     public func showError(error:NSError, retryBlock:(Void -> Void)) {
-        if User.persistentUserObject().sessionToken.isEmpty == false {
+        if User.persistentUserObject().idToken.isEmpty == false {
             let errorMessage = error.localizedDescription
             var title = ""
             var style = UIAlertControllerStyle.ActionSheet

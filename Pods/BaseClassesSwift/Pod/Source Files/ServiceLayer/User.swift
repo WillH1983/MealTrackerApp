@@ -12,9 +12,9 @@ import ObjectMapper
 public class User: BaseModel {
     public var username = ""
     public var password = ""
-    public var sessionToken = ""
+    public var refreshToken = ""
+    public var idToken = ""
     public var pointsPerWeek:NSNumber = 0
-    public var className = "_User"
     
     override public init() {
         super.init()
@@ -46,24 +46,25 @@ public class User: BaseModel {
     }
     
     private func dictionaryRepresentation() -> [String: AnyObject] {
-        return ["username": self.username, "objectId": self.objectId, "sessionToken": self.sessionToken, "pointsPerWeek": self.pointsPerWeek]
+        return ["username": self.username, "objectId": self.objectId, "sessionToken": self.refreshToken, "pointsPerWeek": self.pointsPerWeek, "idToken": self.idToken]
     }
     
     private class func userObjectFromDictionary(userDictionary: [String: AnyObject]) -> User {
         let user = User()
         user.username = userDictionary["username"] as? String ?? ""
         user.objectId = userDictionary["objectId"] as? String ?? ""
-        user.sessionToken = userDictionary["sessionToken"] as? String ?? ""
+        user.refreshToken = userDictionary["sessionToken"] as? String ?? ""
         user.pointsPerWeek = userDictionary["pointsPerWeek"] as? NSNumber ?? 0
+        user.idToken = userDictionary["idToken"] as? String ?? ""
         return user
     }
     
     public override func mapping(map: Map) {
         super.mapping(map)
-        sessionToken <- map["sessionToken"]
+        refreshToken <- map["RefreshToken"]
         username <- map["username"]
         pointsPerWeek <- map["pointsPerWeek"]
         password <- map["password"]
-        className <- map["className"]
+        idToken <- map["IdToken"]
     }
 }

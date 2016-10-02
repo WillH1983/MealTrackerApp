@@ -13,7 +13,6 @@ public class RegisterUser: BaseModel {
     public var username = ""
     public var password = ""
     public var email = ""
-    public var ClientId = "3g30ulm3nd6so3ee0pofaobs6g"
     
     public var className: String {
         get {

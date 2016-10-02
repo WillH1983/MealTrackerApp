@@ -9,14 +9,23 @@
 import Foundation
 
 public class AuthenticationService: BaseClassesService {
+    var registeringUser = false
+    
     public init () {
         
     }
     
     public func registerUser(userObject:RegisterUser, withSuccessBlock:(User -> Void), andError:(NSError -> Void)) -> Void {
+        self.registeringUser = true
         BaseClassesServiceClient().postObject(userObject, andService: self, successBlock: { (object:User) -> Void in
-            object.username = userObject.username
-            withSuccessBlock(object)
+            self.registeringUser = false
+            self.loginUser(userObject, withSuccessBlock: { (loginObject) in
+                loginObject.username = userObject.username
+                withSuccessBlock(loginObject)
+            }, andError: { (error) in
+                    
+            })
+            
         }) { (error) -> Void in
             andError(error)
         }
@@ -31,7 +40,12 @@ public class AuthenticationService: BaseClassesService {
     }
     
     public var serviceURL:String {
-        return "/register"
+        if self.registeringUser {
+            return "/register"
+        } else {
+            return "/login"
+        }
+        
     }
 
 }
