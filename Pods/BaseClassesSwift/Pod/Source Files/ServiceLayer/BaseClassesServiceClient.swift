@@ -118,6 +118,9 @@ public class BaseClassesServiceClient: NSObject {
         let request = Alamofire.request(.GET, service, parameters: nil, encoding: .JSON, headers: self.authenticationHeaders())
         request.validate()
         request.responseArray(service.rootKeyPath) { (response: Response<[ResponseObject], NSError>) -> Void in
+            print(response.response)
+            print(response.result.error?.userInfo)
+            print (response.result.error?.localizedDescription)
             let mappedObject = response.result.value
             if mappedObject != nil {
                 successBlock(mappedObject!)
@@ -128,6 +131,11 @@ public class BaseClassesServiceClient: NSObject {
                     if mappedObject != nil {
                         successBlock(mappedObject!)
                     } else {
+                        if self.sessionRefreshRequired(response.data) {
+                            errorBlock(NSError(domain: self.errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "Token Refresh Required"]))
+                        } else {
+                           errorBlock(NSError(domain: self.errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "An error has occured, please try again later"]))
+                        }
                         errorBlock(NSError(domain: self.errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "An error has occured, please try again later"]))
                     }
                 }
@@ -152,5 +160,21 @@ public class BaseClassesServiceClient: NSObject {
     
     private func checkForErrorInObject(object:BaseModel) -> NSError? {
         return NSError(domain: errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "Something went wrong, please try again"])
+    }
+    
+    private func sessionRefreshRequired(data:NSData?) -> Bool {
+        if let updatedData = data {
+            if let object = try? NSJSONSerialization.JSONObjectWithData(updatedData, options: []) {
+                print(object)
+                if let dictionary = object as? Dictionary<String, String> {
+                    if let errorMessage = dictionary["message"] {
+                        if errorMessage == "Identity token has expired" {
+                            return true
+                        }
+                    }
+                }
+            }
+        }
+        return false
     }
 }

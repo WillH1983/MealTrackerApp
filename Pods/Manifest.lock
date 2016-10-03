@@ -18,7 +18,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   BaseClassesSwift:
-    :commit: e8c1cc11b522ec8d2a29896c869f326f32def291
+    :commit: f8a5ae920f4a3636a91802bb98d5349b20dfe717
     :git: https://github.com/WillH1983/BaseClassesSwift.git
 
 SPEC CHECKSUMS:
