@@ -20,7 +20,6 @@ public class NewMeal: BaseModel {
     var servingSize = ""
     var totalFat = NSDecimalNumber()
     var weightWatchersPlusPoints = NSDecimalNumber()
-    var whenEaten = NSSet()
     
     override init() {
         super.init()
@@ -31,15 +30,14 @@ public class NewMeal: BaseModel {
     }
     
     override public func mapping(map: Map) {
-        calories <- (map["calories"], BaseClassesDecimalNumberTransform())
-        carbs <- (map["carbs"], BaseClassesDecimalNumberTransform())
-        dietaryFiber <- (map["dietaryFiber"], BaseClassesDecimalNumberTransform())
-        mealDescription <- map["mealDescription"]
-        name <- map["name"]
-        protein <- (map["protein"], BaseClassesDecimalNumberTransform())
-        servingSize <- map["servingSize"]
-        totalFat <- (map["totalFat"], BaseClassesDecimalNumberTransform())
-        weightWatchersPlusPoints <- (map["weightWatchersPlusPoints"], BaseClassesDecimalNumberTransform())
-        whenEaten <- map["whenEaten"]
+        calories <- (map["Calories"], BaseClassesDecimalNumberTransform())
+        carbs <- (map["Carbs"], BaseClassesDecimalNumberTransform())
+        dietaryFiber <- (map["DietaryFiber"], BaseClassesDecimalNumberTransform())
+        mealDescription <- map["MealDescription"]
+        name <- map["Name"]
+        protein <- (map["Protein"], BaseClassesDecimalNumberTransform())
+        servingSize <- map["ServingSize"]
+        totalFat <- (map["TotalFat"], BaseClassesDecimalNumberTransform())
+        weightWatchersPlusPoints <- (map["WeightWatchersPlusPoints"], BaseClassesDecimalNumberTransform())
     }
 }

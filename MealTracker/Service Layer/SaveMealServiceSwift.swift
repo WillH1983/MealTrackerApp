@@ -42,7 +42,6 @@ class SaveMealServiceSwift: BaseClassesService {
         postMeal.servingSize = meal.servingSize
         postMeal.totalFat = meal.totalFat
         postMeal.weightWatchersPlusPoints = meal.weightWatchersPlusPoints
-        postMeal.whenEaten = meal.whenEaten
         return postMeal
     }
     
@@ -50,7 +49,7 @@ class SaveMealServiceSwift: BaseClassesService {
         if self.isUpdatingMeal {
             return "/1/classes/Meal/\(self.mealObjectId)"
         } else {
-            return "/1/classes/Meal"
+            return "/meals"
         }
     }
 }
