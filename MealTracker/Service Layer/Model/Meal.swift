@@ -21,6 +21,7 @@ public class Meal: BaseModel {
     var totalFat = NSDecimalNumber()
     var weightWatchersPlusPoints = NSDecimalNumber()
     var whenEaten = NSSet()
+    var newObjectId = 0
     
     class func mealForDictionaryInfo(mealDictionary:Dictionary<String, AnyObject>) {
         let meal = Meal()
@@ -41,20 +42,6 @@ public class Meal: BaseModel {
     required public init?(_ map: Map) {
         super.init(map)
     }
-    /*
-     {
-     "Carbs": "1",
-     "Calories": "9",
-     "Name": "SecondMealViaPOSTMAN",
-     "ServingSize": "6",
-     "Protein": "5",
-     "WeightWatchersPlusPoints": "8",
-     "DietaryFiber": "2",
-     "TotalFat": "7",
-     "ObjectId": 5895642622745281,
-     "MealDescription": "3"
-     }
- */
     
     override public func mapping(map: Map) {
         super.mapping(map)
@@ -67,6 +54,7 @@ public class Meal: BaseModel {
         servingSize <- map["ServingSize"]
         totalFat <- (map["TotalFat"], BaseClassesDecimalNumberTransform())
         weightWatchersPlusPoints <- (map["WeightWatchersPlusPoints"], BaseClassesDecimalNumberTransform())
+        newObjectId <- map["ObjectId"]
         whenEaten <- map["whenEaten"]
     }
 }

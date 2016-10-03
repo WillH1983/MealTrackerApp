@@ -148,7 +148,6 @@ class MealTrackerTableViewController: MealBaseTableViewController, MealTextEntry
             if let indexPath = self.tableView.indexPathForCell(cell) {
                 let mealEaten = MealEaten()
                 mealEaten.meal = (self.dataSource?[indexPath.row])!
-                mealEaten.user = self.user!
                 mealEaten.dateEaten = NSDate()
                 self.saveMealEaten(mealEaten)
             }            

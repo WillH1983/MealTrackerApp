@@ -19,7 +19,7 @@ class MealEatenServiceSwift: NSObject, BaseClassesService {
     }
     
     var serviceURL:String {
-        return "/1/classes/MealEaten"
+        return "/mealseaten"
     }
 
 }

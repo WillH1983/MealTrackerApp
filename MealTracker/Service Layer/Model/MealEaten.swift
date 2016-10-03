@@ -12,11 +12,9 @@ import ObjectMapper
 
 @objc class MealEaten: BaseModel {
     var dateEaten = NSDate()
-    var user = User()
     var meal = Meal()
-    var method:String?
-    var path:String?
-
+    var mealObjectId = 0
+    
     override init() {
         super.init()
     }
@@ -26,11 +24,8 @@ import ObjectMapper
     }
     
     override func mapping(map: Map) {
-        dateEaten <- (map["dateEaten"], BaseClassesDateTransform())
-        user <- map ["user"]
-        meal <- map ["meal"]
-        objectId <- map["objectId"]
-        method <- map["method"]
-        path <- map["path"]
+        dateEaten <- (map["DateEaten"], BaseClassesDateTransform())
+        mealObjectId = meal.newObjectId
+        mealObjectId <- map ["meal"]
     }
 }
