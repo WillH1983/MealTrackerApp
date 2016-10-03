@@ -35,8 +35,12 @@ import UIKit
         if let mealName = self.mealNameText?.text {
                 let meal = Meal()
                 meal.name = mealName
-                meal.mealDescription = self.mealDescriptionText?.text ?? ""
                 meal.carbs = NSDecimalNumber(string: self.carbsText?.text)
+                meal.dietaryFiber = NSDecimalNumber(string: self.dietaryFiberText?.text)
+                meal.protein = NSDecimalNumber(string: self.totalProteinText?.text)
+                meal.servingSize = self.servingSizeText?.text ?? ""
+                meal.totalFat = NSDecimalNumber(string: self.totalFatText?.text)
+                meal.mealDescription = self.mealDescriptionText?.text ?? ""
                 meal.weightWatchersPlusPoints = NSDecimalNumber(string: self.WWPointsText?.text)
             
                 self.mealData = meal
