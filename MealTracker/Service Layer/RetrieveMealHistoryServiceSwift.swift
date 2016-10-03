@@ -10,10 +10,8 @@ import UIKit
 import BaseClassesSwift
 
 class RetrieveMealHistoryServiceSwift:NSObject, BaseClassesService {
-    var user:User!
     
     func loadMealHistory(user:User, successBlock:(Array<MealEaten> -> Void), errorBlock:(NSError -> Void)) -> Void {
-        self.user = user
         let serviceClient = BaseClassesServiceClient()
         serviceClient.getObjects(self, successBlock: { (object:[MealEaten]) -> Void in
             successBlock(object)
@@ -23,17 +21,10 @@ class RetrieveMealHistoryServiceSwift:NSObject, BaseClassesService {
     }
     
     var serviceURL:String {
-        return "/1/classes/MealEaten"
+        return "/mealseaten"
     }
     
     var rootKeyPath:String {
-        return "results"
-    }
-    
-    var requestQueryParameters:Dictionary<String, String>? {
-        var query = "{\"user\":{\"__type\": \"Pointer\", \"className\": \"_User\",\"objectId\": \"\(self.user.objectId)\"}}"
-        query = query.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
-        let queryDictionary = ["where":query, "include":"meal"]
-        return queryDictionary
+        return "items"
     }
 }

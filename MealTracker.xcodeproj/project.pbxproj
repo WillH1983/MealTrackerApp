@@ -10,6 +10,7 @@
 		898634DC2EE80F821BADBD2E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53DAD975038881BC9894646 /* Pods.framework */; };
 		BE06A6131C460A28008DB69C /* SaveMealServiceSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE06A6121C460A28008DB69C /* SaveMealServiceSwift.swift */; };
 		BE06A6151C460E23008DB69C /* NewMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE06A6141C460E23008DB69C /* NewMeal.swift */; };
+		BE169DDD1DA1E07E00650483 /* MealEatenPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE169DDC1DA1E07E00650483 /* MealEatenPost.swift */; };
 		BE16D4301A8B0968004E897A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE16D42F1A8B0968004E897A /* Images.xcassets */; };
 		BE16D4331A8B0D33004E897A /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE16D4321A8B0D33004E897A /* Launch Screen.xib */; };
 		BE2C9AD815C47E2300DD6070 /* plusButton.png in Resources */ = {isa = PBXBuildFile; fileRef = BE2C9AD715C47E2300DD6070 /* plusButton.png */; };
@@ -68,6 +69,7 @@
 		7DB03A31EACD0D3900E63513 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BE06A6121C460A28008DB69C /* SaveMealServiceSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveMealServiceSwift.swift; sourceTree = "<group>"; };
 		BE06A6141C460E23008DB69C /* NewMeal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMeal.swift; sourceTree = "<group>"; };
+		BE169DDC1DA1E07E00650483 /* MealEatenPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealEatenPost.swift; sourceTree = "<group>"; };
 		BE16D42F1A8B0968004E897A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BE16D4321A8B0D33004E897A /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		BE2C9AD715C47E2300DD6070 /* plusButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusButton.png; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 		BEBDCDBE1A8C5EFD0033FD4C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BE169DDC1DA1E07E00650483 /* MealEatenPost.swift */,
 				BEFE1FEF1C4B54A000F10161 /* BatchResponse.swift */,
 				BE5B98681C40F94500B4466B /* Meal.swift */,
 				BE5B98661C40E71500B4466B /* MealEaten.swift */,
@@ -404,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE169DDD1DA1E07E00650483 /* MealEatenPost.swift in Sources */,
 				BE7D22891B92B7370047AE03 /* MealTrackerTableViewController.swift in Sources */,
 				BE471A801C43246A0081C7C1 /* UserService.swift in Sources */,
 				BEFE1FF01C4B54A000F10161 /* BatchResponse.swift in Sources */,

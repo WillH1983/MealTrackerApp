@@ -146,7 +146,7 @@ class MealTrackerTableViewController: MealBaseTableViewController, MealTextEntry
             })
             
             if let indexPath = self.tableView.indexPathForCell(cell) {
-                let mealEaten = MealEaten()
+                let mealEaten = MealEatenPost()
                 mealEaten.meal = (self.dataSource?[indexPath.row])!
                 mealEaten.dateEaten = NSDate()
                 self.saveMealEaten(mealEaten)
@@ -154,7 +154,7 @@ class MealTrackerTableViewController: MealBaseTableViewController, MealTextEntry
         }
     }
     
-    func saveMealEaten(mealEaten:MealEaten) {
+    func saveMealEaten(mealEaten:MealEatenPost) {
         super.showActivityIndicatorAnimated(true)
         MealEatenServiceSwift().saveMealEaten(mealEaten, successBlock: { (meal) -> Void in
             super.hideActivityIndicatorAnimated(true)

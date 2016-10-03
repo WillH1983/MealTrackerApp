@@ -10,9 +10,10 @@ import UIKit
 import BaseClassesSwift
 import ObjectMapper
 
-@objc class MealEaten: BaseModel {
+@objc class MealEatenPost: BaseModel {
     var dateEaten = NSDate()
     var meal = Meal()
+    var mealObjectId = 0
     
     override init() {
         super.init()
@@ -24,6 +25,7 @@ import ObjectMapper
     
     override func mapping(map: Map) {
         dateEaten <- (map["DateEaten"], BaseClassesDateTransform())
-        meal <- map ["meal"]
+        mealObjectId = meal.newObjectId
+        mealObjectId <- map ["meal"]
     }
 }
