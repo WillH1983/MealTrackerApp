@@ -132,7 +132,15 @@ public class BaseClassesServiceClient: NSObject {
                         successBlock(mappedObject!)
                     } else {
                         if self.sessionRefreshRequired(response.data) {
-                            errorBlock(NSError(domain: self.errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "Token Refresh Required"]))
+                            let user = User.persistentUserObject()
+                            let refreshObject = RefreshUser()
+                            refreshObject.refreshToken = user.refreshToken
+                            AuthenticationService().refreshUser(refreshObject, withSuccessBlock: { (user) in
+                                user.save()
+                                self.getObjects(service, successBlock: successBlock, errorBlock: errorBlock)
+                            }, andError: { (error) in
+                                errorBlock(NSError(domain: self.errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "An error has occured, please try again later"]))
+                            })
                         } else {
                            errorBlock(NSError(domain: self.errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "An error has occured, please try again later"]))
                         }
