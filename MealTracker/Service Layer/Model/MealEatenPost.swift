@@ -26,6 +26,6 @@ import ObjectMapper
     override func mapping(map: Map) {
         dateEaten <- (map["DateEaten"], BaseClassesDateTransform())
         mealObjectId = meal.newObjectId
-        mealObjectId <- map ["meal"]
+        mealObjectId <- map ["Meal"]
     }
 }

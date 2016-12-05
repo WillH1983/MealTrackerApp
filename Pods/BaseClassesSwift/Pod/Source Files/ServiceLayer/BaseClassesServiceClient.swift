@@ -33,15 +33,11 @@ public class BaseClassesServiceClient: NSObject {
                 request.responseObject { (response: Response<ResponseObject, NSError>) -> Void in
                     let mappedObject = response.result.value
                     if mappedObject != nil {
-                        let error = self.checkForErrorInObject(response.result.value!)
-                        if error != nil {
-                            errorBlock(response.result.error!)
-                            return
-                        } else {
-                            successBlock(mappedObject!)
-                        }
+                        successBlock(mappedObject!)
                     } else {
-                        errorBlock(response.result.error!)
+                        self.handleErrorResponse(response.data, refreshCompletionBlock: { () in
+                            self.postObject(object, andService: andService, successBlock: successBlock, errorBlock: errorBlock)
+                        }, errorBlock: errorBlock)
                     }
                 }
             }
@@ -69,15 +65,11 @@ public class BaseClassesServiceClient: NSObject {
                 request.responseObject { (response: Response<ResponseObject, NSError>) -> Void in
                     let mappedObject = response.result.value
                     if mappedObject != nil {
-                        let error = self.checkForErrorInObject(response.result.value!)
-                        if error != nil {
-                            errorBlock(error!)
-                            return
-                        } else {
-                            successBlock(mappedObject!)
-                        }
+                        successBlock(mappedObject!)
                     } else {
-                        errorBlock(NSError(domain: self.errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "An error has occured, please try again later"]))
+                        self.handleErrorResponse(response.data, refreshCompletionBlock: { () in
+                            self.putObject(object, andService: andService, successBlock: successBlock, errorBlock: errorBlock)
+                        }, errorBlock: errorBlock)
                     }
                 }
             }
@@ -93,20 +85,15 @@ public class BaseClassesServiceClient: NSObject {
                 let mappedObject = response.result.value
                 if mappedObject != nil {
                     successBlock(mappedObject!)
-                    
                 } else {
                     request.responseObject { (response: Response<ResponseObject, NSError>) -> Void in
                         let mappedObject = response.result.value
                         if mappedObject != nil {
-                            let error = self.checkForErrorInObject(response.result.value!)
-                            if error != nil {
-                                errorBlock(error!)
-                                return
-                            } else {
-                                successBlock(mappedObject!)
-                            }
+                            successBlock(mappedObject!)
                         } else {
-                            errorBlock(NSError(domain: self.errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "An error has occured, please try again later"]))
+                            self.handleErrorResponse(response.data, refreshCompletionBlock: { () in
+                                self.getObject(service, successBlock: successBlock, errorBlock: errorBlock)
+                            }, errorBlock: errorBlock)
                         }
                     }
                 }
@@ -131,23 +118,29 @@ public class BaseClassesServiceClient: NSObject {
                     if mappedObject != nil {
                         successBlock(mappedObject!)
                     } else {
-                        if self.sessionRefreshRequired(response.data) {
-                            let user = User.persistentUserObject()
-                            let refreshObject = RefreshUser()
-                            refreshObject.refreshToken = user.refreshToken
-                            AuthenticationService().refreshUser(refreshObject, withSuccessBlock: { (user) in
-                                user.save()
-                                self.getObjects(service, successBlock: successBlock, errorBlock: errorBlock)
-                            }, andError: { (error) in
-                                errorBlock(NSError(domain: self.errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "An error has occured, please try again later"]))
-                            })
-                        } else {
-                           errorBlock(NSError(domain: self.errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "An error has occured, please try again later"]))
-                        }
-                        errorBlock(NSError(domain: self.errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "An error has occured, please try again later"]))
+                        self.handleErrorResponse(response.data, refreshCompletionBlock: { () in
+                            self.getObjects(service, successBlock: successBlock, errorBlock: errorBlock)
+                        }, errorBlock: errorBlock)
+                        
                     }
                 }
             }
+        }
+    }
+    
+    private func handleErrorResponse(responseData:NSData?, refreshCompletionBlock:(Void -> Void), errorBlock:(NSError -> Void)) {
+        if self.sessionRefreshRequired(responseData) {
+            let user = User.persistentUserObject()
+            let refreshObject = RefreshUser()
+            refreshObject.refreshToken = user.refreshToken
+            AuthenticationService().refreshUser(refreshObject, withSuccessBlock: { (user) in
+                user.save()
+                refreshCompletionBlock()
+            }, andError: { (error) in
+                    errorBlock(NSError(domain: self.errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "An error has occured, please try again later"]))
+            })
+        } else {
+            errorBlock(NSError(domain: self.errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "An error has occured, please try again later"]))
         }
     }
     
