@@ -8,16 +8,16 @@
 
 import UIKit
 
-public class SwiftBaseService: NSObject {
-    public func baseURL() -> String {
+open class SwiftBaseService: NSObject {
+    open func baseURL() -> String {
         return "https://api.parse.com"
     }
     
-    public func parameters() -> [String: AnyObject]? {
+    open func parameters() -> [String: AnyObject]? {
         return nil
     }
     
-    public func rootRequestKeyPath() -> String? {
+    open func rootRequestKeyPath() -> String? {
         return nil
     }
 }

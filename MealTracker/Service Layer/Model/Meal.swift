@@ -10,7 +10,7 @@ import UIKit
 import BaseClassesSwift
 import ObjectMapper
 
-public class Meal: BaseModel {
+open class Meal: BaseModel {
     var calories = NSDecimalNumber()
     var carbs = NSDecimalNumber()
     var dietaryFiber = NSDecimalNumber()
@@ -23,7 +23,7 @@ public class Meal: BaseModel {
     var whenEaten = NSSet()
     var newObjectId = 0
     
-    class func mealForDictionaryInfo(mealDictionary:Dictionary<String, AnyObject>) {
+    class func mealForDictionaryInfo(_ mealDictionary:Dictionary<String, AnyObject>) {
         let meal = Meal()
         meal.name = mealDictionary.name
         meal.carbs = mealDictionary.carbs
@@ -43,7 +43,7 @@ public class Meal: BaseModel {
         super.init(map)
     }
     
-    override public func mapping(map: Map) {
+    override open func mapping(_ map: Map) {
         super.mapping(map)
         calories <- (map["Calories"], BaseClassesDecimalNumberTransform())
         carbs <- (map["Carbs"], BaseClassesDecimalNumberTransform())

@@ -16,17 +16,17 @@ class TrackerTableViewController2: MealBaseTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.user = User.persistentUserObject();
         self.retrieveMealHistory()
     }
     
     func retrieveMealHistory() {
-        super.showActivityIndicatorAnimated(true)
+        super.showActivityIndicator(animated: true)
         RetrieveMealHistoryService().loadMealHistoryBasedOnUser(self.user, withSuccessBlock: { (dataSource) -> Void in
             self.dataSource = dataSource
             self.tableView.reloadData()
@@ -39,19 +39,19 @@ class TrackerTableViewController2: MealBaseTableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "Date Eaten Cell"
-        var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
+        var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
         if cell == nil {
-            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: cellIdentifier)
+            cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: cellIdentifier)
         }
         
         if let mealEaten = self.mealEatenForIndexPath(indexPath) {
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-            dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = DateFormatter.Style.medium
+            dateFormatter.timeStyle = DateFormatter.Style.short
             
-            let formattedDateString = dateFormatter.stringFromDate(mealEaten.dateEaten)
+            let formattedDateString = dateFormatter.string(from: mealEaten.dateEaten as Date)
             let fullString = formattedDateString + " - " + mealEaten.meal.weightWatchersPlusPoints.stringValue + " Points"
             cell?.detailTextLabel?.text = fullString
             cell?.textLabel?.text = mealEaten.meal.name
@@ -60,15 +60,15 @@ class TrackerTableViewController2: MealBaseTableViewController {
 
     }
     
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 45.0
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return self.dataSource.count
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let dataSourceForSection = self.dataSource[section]
         if let array = dataSourceForSection["meals"] as? Array<MealEaten> {
             return array.count
@@ -77,20 +77,20 @@ class TrackerTableViewController2: MealBaseTableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let dataSourceForSection = self.dataSource[section]
-        if let date = dataSourceForSection["month"] as? NSDate {
+        if let date = dataSourceForSection["month"] as? Date {
             if let array = dataSourceForSection["meals"] as? Array<MealEaten> {
-                let dateFormatter = NSDateFormatter()
-                dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-                dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateStyle = DateFormatter.Style.medium
+                dateFormatter.timeStyle = DateFormatter.Style.none
                 
                 var points = 0
                 for dateEaten in array {
                     points += dateEaten.meal.weightWatchersPlusPoints.integerValue
                 }
                 let pointsLeft = self.user.pointsPerWeek.integerValue - points
-                let sectionTitle = dateFormatter.stringFromDate(date)
+                let sectionTitle = dateFormatter.string(from: date)
                 let fullSectionTitle = sectionTitle + " - " + String(pointsLeft) + " Points Left"
                 return fullSectionTitle
             }
@@ -98,25 +98,25 @@ class TrackerTableViewController2: MealBaseTableViewController {
         return ""
     }
     
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.Delete {
-            super.showActivityIndicatorAnimated(true)
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            super.showActivityIndicator(animated: true)
             let meal = self.mealEatenForIndexPath(indexPath)
             DeleteMealEatenServiceSwift().removeMealEaten(meal!, successBlock: { () -> Void in
                 var mutableCapsuleArray = self.dataSourceArrayForSection(indexPath.section)
-                mutableCapsuleArray.removeAtIndex(indexPath.row)
-                self.tableView.reloadSections(NSIndexSet(index: indexPath.section), withRowAnimation: UITableViewRowAnimation.Automatic)
-                super.hideActivityIndicatorAnimated(true)
+                mutableCapsuleArray.remove(at: indexPath.row)
+                self.tableView.reloadSections(IndexSet(integer: indexPath.section), with: UITableViewRowAnimation.automatic)
+                super.hideActivityIndicator(animated: true)
             }, errorBlock: { (error) -> Void in
-                super.hideActivityIndicatorAnimated(true)
-                super.showError(error, withRetryBlock: { () -> Void in
-                    self.tableView(tableView, commitEditingStyle:editingStyle , forRowAtIndexPath: indexPath)
+                super.hideActivityIndicator(animated: true)
+                super.showError(error, withRetry: { () -> Void in
+                    self.tableView(tableView, commit:editingStyle , forRowAt: indexPath)
                 })
             })
         }
     }
     
-    func dataSourceArrayForSection(section:Int) -> Array<Dictionary<String, AnyObject>> {
+    func dataSourceArrayForSection(_ section:Int) -> Array<Dictionary<String, AnyObject>> {
         let dataSourceForSection = self.dataSource[section]
         if let array = dataSourceForSection["meals"] as? Array<Dictionary<String,AnyObject>> {
             return array
@@ -125,7 +125,7 @@ class TrackerTableViewController2: MealBaseTableViewController {
         }
     }
     
-    func mealEatenForIndexPath(indexPath:NSIndexPath) -> MealEaten? {
+    func mealEatenForIndexPath(_ indexPath:IndexPath) -> MealEaten? {
         let dataSourceForSection = self.dataSource[indexPath.section]
         if let array = dataSourceForSection["meals"] as? Array<AnyObject> {
             if let mealEaten = array[indexPath.row] as? MealEaten {

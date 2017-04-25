@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class Config: NSObject {
-    public var MaintenanceMode:Dictionary<String, AnyObject>? = nil
-    public var configRefreshIntervalSeconds:NSNumber? = nil
-    public var forceUpgrade:Dictionary<String, AnyObject>? = nil
+open class Config: NSObject {
+    open var MaintenanceMode:Dictionary<String, AnyObject>? = nil
+    open var configRefreshIntervalSeconds:NSNumber? = nil
+    open var forceUpgrade:Dictionary<String, AnyObject>? = nil
     
 }

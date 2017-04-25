@@ -21,7 +21,7 @@ class RemoveMeals: BaseModel {
         super.init(map)
     }
     
-    override func mapping(map: Map) {
+    override func mapping(_ map: Map) {
         requests <- map["requests"]
     }
 }

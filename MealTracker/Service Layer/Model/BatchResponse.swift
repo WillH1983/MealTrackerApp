@@ -21,7 +21,7 @@ class BatchResponse: BaseModel {
         super.init(map)
     }
     
-    override func mapping(map: Map) {
+    override func mapping(_ map: Map) {
         successArray <- map["success"]
 
     }

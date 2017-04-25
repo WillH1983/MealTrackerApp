@@ -18,19 +18,19 @@ class LoginTableViewController: MealBaseTableViewController {
 
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let user = User.persistentUserObject()
         if user.idToken.isEmpty == false {
-            self.performSegueWithIdentifier("tabbar", sender: self)
+            self.performSegue(withIdentifier: "tabbar", sender: self)
         }
     }
     
-    @IBAction func registerNowTapped(sender:AnyObject) {
+    @IBAction func registerNowTapped(_ sender:AnyObject) {
         let user = RegisterUser()
         let userNameString = self.userName?.text
         let passwordString = self.password?.text
-        super.showActivityIndicatorAnimated(true)
+        super.showActivityIndicator(animated: true)
         if userNameString != nil && passwordString != nil {
             user.username = userNameString!
             user.password = passwordString!
@@ -50,15 +50,15 @@ class LoginTableViewController: MealBaseTableViewController {
                 })
             })
         } else {
-            super.hideActivityIndicatorAnimated(true)
+            super.hideActivityIndicator(animated: true)
         }
     }
     
-    @IBAction func loginTapped(sender:AnyObject) {
+    @IBAction func loginTapped(_ sender:AnyObject) {
         let user = RegisterUser()
         let userNameString = self.userName?.text
         let passwordString = self.password?.text
-        super.showActivityIndicatorAnimated(true)
+        super.showActivityIndicator(animated: true)
         if userNameString != nil && passwordString != nil {
             user.username = userNameString!
             user.password = passwordString!
@@ -77,11 +77,11 @@ class LoginTableViewController: MealBaseTableViewController {
                     })
             })
         } else {
-            super.hideActivityIndicatorAnimated(true)
+            super.hideActivityIndicator(animated: true)
         }
     }
     
-    func saveUser(user:User) {
+    func saveUser(_ user:User) {
         user.save()
     }
 

@@ -13,7 +13,7 @@ class SaveMealServiceSwift: BaseClassesService {
     var isUpdatingMeal = false
     var mealObjectId = ""
     
-    func saveMeal(meal:Meal, successBlock:(Meal -> Void), errorBlock:(NSError -> Void)) {
+    func saveMeal(_ meal:Meal, successBlock:@escaping ((Meal) -> Void), errorBlock:@escaping ((NSError) -> Void)) {
         BaseClassesServiceClient().postObject(self.createNewMealFrom(meal), andService: self, successBlock: { (meal:Meal) -> Void in
             successBlock(meal)
         }) { (error) -> Void in
@@ -21,7 +21,7 @@ class SaveMealServiceSwift: BaseClassesService {
         }
     }
     
-    func updateMeal(meal:Meal, successBlock:(Void -> Void), errorBlock:(NSError -> Void)) {
+    func updateMeal(_ meal:Meal, successBlock:@escaping ((Void) -> Void), errorBlock:@escaping ((NSError) -> Void)) {
         self.isUpdatingMeal = true
         self.mealObjectId = meal.objectId
         BaseClassesServiceClient().putObject(self.createNewMealFrom(meal), andService: self, successBlock: { (meal:Meal) -> Void in
@@ -31,7 +31,7 @@ class SaveMealServiceSwift: BaseClassesService {
         }
     }
     
-    func createNewMealFrom(meal:Meal) -> NewMeal {
+    func createNewMealFrom(_ meal:Meal) -> NewMeal {
         let postMeal = NewMeal()
         postMeal.calories = meal.calories
         postMeal.carbs = meal.carbs

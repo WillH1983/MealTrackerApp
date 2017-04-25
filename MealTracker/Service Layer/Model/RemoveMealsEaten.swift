@@ -10,7 +10,7 @@ import Foundation
 import BaseClassesSwift
 import ObjectMapper
 
-public class RemoveMealsEaten: BaseModel {
+open class RemoveMealsEaten: BaseModel {
     var requests = [MealEaten]()
     
     override init() {
@@ -21,7 +21,7 @@ public class RemoveMealsEaten: BaseModel {
         super.init(map)
     }
     
-    override public func mapping(map: Map) {
+    override open func mapping(_ map: Map) {
         super.mapping(map)
         requests <- map["requests"]
     }

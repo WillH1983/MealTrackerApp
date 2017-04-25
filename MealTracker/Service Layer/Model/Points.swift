@@ -10,8 +10,8 @@ import UIKit
 import BaseClassesSwift
 import ObjectMapper
 
-@objc class Points: BaseModel {
-    var dateEaten = NSDate()
+class Points: BaseModel {
+    var dateEaten = Date()
     var points = "0"
     
     override init() {
@@ -22,7 +22,7 @@ import ObjectMapper
         super.init(map)
     }
     
-    override func mapping(map: Map) {
+    override func mapping(_ map: Map) {
         points <- map ["points"]
     }
 }

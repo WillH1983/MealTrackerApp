@@ -10,7 +10,7 @@ import Foundation
 import BaseClassesSwift
 import ObjectMapper
 
-public class NewMeal: BaseModel {
+open class NewMeal: BaseModel {
     var calories = NSDecimalNumber()
     var carbs = NSDecimalNumber()
     var dietaryFiber = NSDecimalNumber()
@@ -29,7 +29,7 @@ public class NewMeal: BaseModel {
         super.init(map)
     }
     
-    override public func mapping(map: Map) {
+    override open func mapping(_ map: Map) {
         calories <- (map["Calories"], BaseClassesDecimalNumberTransform())
         carbs <- (map["Carbs"], BaseClassesDecimalNumberTransform())
         dietaryFiber <- (map["DietaryFiber"], BaseClassesDecimalNumberTransform())

@@ -11,7 +11,7 @@ import BaseClassesSwift
 
 class RetrieveMealHistoryServiceSwift:NSObject, BaseClassesService {
     
-    func loadMealHistory(user:User, successBlock:(Array<MealEaten> -> Void), errorBlock:(NSError -> Void)) -> Void {
+    func loadMealHistory(_ user:User, successBlock:@escaping ((Array<MealEaten>) -> Void), errorBlock:@escaping ((NSError) -> Void)) -> Void {
         let serviceClient = BaseClassesServiceClient()
         serviceClient.getObjects(self, successBlock: { (object:[MealEaten]) -> Void in
             successBlock(object)

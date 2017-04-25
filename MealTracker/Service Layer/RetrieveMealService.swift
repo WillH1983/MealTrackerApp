@@ -10,7 +10,7 @@ import Foundation
 import BaseClassesSwift
 
 class RetrieveMealService: NSObject, BaseClassesService {
-    func retrieveMeals(successBlock:(Array<Meal> -> Void), errorBlock:(NSError -> Void)) -> Void {
+    func retrieveMeals(_ successBlock:@escaping ((Array<Meal>) -> Void), errorBlock:@escaping ((NSError) -> Void)) -> Void {
         let serviceClient = BaseClassesServiceClient()
         serviceClient.getObjects(self, successBlock: { (object:[Meal]) -> Void in
             successBlock(object)

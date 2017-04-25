@@ -12,7 +12,7 @@ import BaseClassesSwift
 class UserService: NSObject, BaseClassesService {
     var objectId = ""
     
-    func updateUser(user:User, successBlock:(User -> Void), errorBlock:(NSError -> Void)) {
+    func updateUser(_ user:User, successBlock:((User) -> Void), errorBlock:@escaping ((NSError) -> Void)) {
         self.objectId = user.objectId
         BaseClassesServiceClient().putObject(user, andService: self, successBlock: { (user:User) -> Void in
             successBlock(user)
@@ -21,7 +21,7 @@ class UserService: NSObject, BaseClassesService {
         }
     }
     
-    func updatePoints(points:Points, successBlock:(Points -> Void), errorBlock:(NSError -> Void)) {
+    func updatePoints(_ points:Points, successBlock:@escaping ((Points) -> Void), errorBlock:@escaping ((NSError) -> Void)) {
         BaseClassesServiceClient().postObject(points, andService: self, successBlock: { (points:Points) -> Void in
             successBlock(points)
         }) { (error) -> Void in
@@ -29,7 +29,7 @@ class UserService: NSObject, BaseClassesService {
         }
     }
     
-    func getPoints(successBlock:(Points -> Void), errorBlock:(NSError -> Void)) {
+    func getPoints(_ successBlock:@escaping ((Points) -> Void), errorBlock:@escaping ((NSError) -> Void)) {
         BaseClassesServiceClient().getObject(self, successBlock: { (points:Points) in
             successBlock(points)
         }) { (error) in

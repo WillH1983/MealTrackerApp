@@ -13,11 +13,11 @@
 import UIKit
 
 @objc public protocol MealTextEntryDelegate {
-    func viewController(sender:UIViewController, didFinishWithMeal:Meal)
-    func viewController(sender:UIViewController, didFinishEditingMeal:Meal)
+    func viewController(_ sender:UIViewController, didFinishWithMeal:Meal)
+    func viewController(_ sender:UIViewController, didFinishEditingMeal:Meal)
 }
 
-@objc public class MealEntryTableViewController: UITableViewController, UITextFieldDelegate {
+@objc open class MealEntryTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var mealNameText: UITextField?
     @IBOutlet weak var carbsText: UITextField?
     @IBOutlet weak var dietaryFiberText: UITextField?
@@ -28,10 +28,10 @@ import UIKit
     @IBOutlet weak var mealDescriptionText: UITextField?
     
     var activeField: UITextField?
-    public var textEntryDelegate: MealTextEntryDelegate?
-    public var mealData: Meal?
+    open var textEntryDelegate: MealTextEntryDelegate?
+    open var mealData: Meal?
     
-    @IBAction func saveButtonPressed(sender:UIBarButtonItem) {
+    @IBAction func saveButtonPressed(_ sender:UIBarButtonItem) {
         if let mealName = self.mealNameText?.text {
                 let meal = Meal()
                 meal.name = mealName
@@ -49,7 +49,7 @@ import UIKit
                 } else {
                     self.textEntryDelegate?.viewController(self, didFinishWithMeal: self.mealData!)
                 }
-                self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+                self.presentingViewController?.dismiss(animated: true, completion: nil)
             
         } else {
             let alert = UIAlertView(title: "Meal Tracker", message: "Please Enter a Meal Name", delegate: nil, cancelButtonTitle: "Okay")
@@ -57,21 +57,21 @@ import UIKit
         }
     }
     
-    @IBAction func cancelButtonPressed(sender:UIBarButtonItem) {
+    @IBAction func cancelButtonPressed(_ sender:UIBarButtonItem) {
         if let viewControllerPresenting = self.presentingViewController {
-            viewControllerPresenting.dismissViewControllerAnimated(true, completion: nil)
+            viewControllerPresenting.dismiss(animated: true, completion: nil)
         }
     }
     
-    func weightWatchersPointsForProtein(p: NSDecimalNumber, carbohydrates: NSDecimalNumber, totalFat: NSDecimalNumber, andDietaryFiber:NSDecimalNumber) -> NSDecimalNumber {
+    func weightWatchersPointsForProtein(_ p: NSDecimalNumber, carbohydrates: NSDecimalNumber, totalFat: NSDecimalNumber, andDietaryFiber:NSDecimalNumber) -> NSDecimalNumber {
         let pp = max(round((p.doubleValue * 16 + carbohydrates.doubleValue * 19 + totalFat.doubleValue * 45)/175) - andDietaryFiber.doubleValue * (2/25), 0)
-        return NSDecimalNumber(double: pp)
+        return NSDecimalNumber(value: pp as Double)
     
     }
     
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
-        let tap = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap = UITapGestureRecognizer(target: self, action: #selector(MealEntryTableViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
         
@@ -98,23 +98,23 @@ import UIKit
             self.mealDescriptionText?.text = meal.mealDescription
             self.servingSizeText?.text = meal.servingSize
             
-            if meal.carbs != NSDecimalNumber.notANumber() {
+            if meal.carbs != NSDecimalNumber.notANumber {
                 self.carbsText?.text = meal.carbs.stringValue
             }
             
-            if meal.dietaryFiber != NSDecimalNumber.notANumber() {
+            if meal.dietaryFiber != NSDecimalNumber.notANumber {
                 self.dietaryFiberText?.text = meal.dietaryFiber.stringValue
             }
             
-            if meal.protein != NSDecimalNumber.notANumber() {
+            if meal.protein != NSDecimalNumber.notANumber {
                 self.totalProteinText?.text = meal.protein.stringValue
             }
             
-            if meal.totalFat != NSDecimalNumber.notANumber() {
+            if meal.totalFat != NSDecimalNumber.notANumber {
                 self.totalFatText?.text = meal.totalFat.stringValue
             }
             
-            if meal.weightWatchersPlusPoints != NSDecimalNumber.notANumber() {
+            if meal.weightWatchersPlusPoints != NSDecimalNumber.notANumber {
                 self.WWPointsText?.text = meal.weightWatchersPlusPoints.stringValue
             }
         }
@@ -131,11 +131,11 @@ import UIKit
         self.mealDescriptionText?.resignFirstResponder()
     }
     
-    public func textFieldDidBeginEditing(textField: UITextField) {
+    open func textFieldDidBeginEditing(_ textField: UITextField) {
         self.activeField = textField
     }
     
-    public func textFieldDidEndEditing(textField: UITextField) {
+    open func textFieldDidEndEditing(_ textField: UITextField) {
         self.activeField = nil
         if self.totalProteinText?.text?.isEmpty == false &&
         self.carbsText?.text?.isEmpty == false &&
