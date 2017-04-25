@@ -39,6 +39,7 @@
 		BEA221D21A8F319500BFC1DD /* RetrieveMealHistoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA221D11A8F319500BFC1DD /* RetrieveMealHistoryService.m */; };
 		BEB0A2B61A91AD11004E7B82 /* DeleteMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB0A2B51A91AD11004E7B82 /* DeleteMealService.m */; };
 		BEBB74CE1B71BB9D00D2DCBA /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBB74CD1B71BB9D00D2DCBA /* LoginTableViewController.swift */; };
+		BEBD57971DFCF8CD008317A7 /* Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBD57961DFCF8CD008317A7 /* Points.swift */; };
 		BEBDCDBD1A8C55740033FD4C /* SaveMealService.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCDBC1A8C55740033FD4C /* SaveMealService.m */; };
 		BEC21D7D1C41725300683139 /* RetrieveMealHistoryServiceSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC21D7C1C41725300683139 /* RetrieveMealHistoryServiceSwift.swift */; };
 		BED512EB1C4375B00087950F /* DeleteMealEatenServiceSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED512EA1C4375B00087950F /* DeleteMealEatenServiceSwift.swift */; };
@@ -112,6 +113,7 @@
 		BEB0A2B51A91AD11004E7B82 /* DeleteMealService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteMealService.m; sourceTree = "<group>"; };
 		BEBB74CC1B71BB9D00D2DCBA /* MealTracker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MealTracker-Bridging-Header.h"; sourceTree = "<group>"; };
 		BEBB74CD1B71BB9D00D2DCBA /* LoginTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
+		BEBD57961DFCF8CD008317A7 /* Points.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Points.swift; sourceTree = "<group>"; };
 		BEBDCDAD1A8C4C170033FD4C /* MealServiceErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealServiceErrors.h; sourceTree = "<group>"; };
 		BEBDCDBB1A8C55740033FD4C /* SaveMealService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveMealService.h; sourceTree = "<group>"; };
 		BEBDCDBC1A8C55740033FD4C /* SaveMealService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveMealService.m; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				BEFE1FEF1C4B54A000F10161 /* BatchResponse.swift */,
 				BE5B98681C40F94500B4466B /* Meal.swift */,
 				BE5B98661C40E71500B4466B /* MealEaten.swift */,
+				BEBD57961DFCF8CD008317A7 /* Points.swift */,
 				BE06A6141C460E23008DB69C /* NewMeal.swift */,
 				BED512F01C43810D0087950F /* RemoveMeals.swift */,
 				BED512EC1C4379510087950F /* RemoveMealsEaten.swift */,
@@ -316,7 +319,8 @@
 				LastUpgradeCheck = 0700;
 				TargetAttributes = {
 					BE3AFEEC15BB754F006BC0D6 = {
-						DevelopmentTeam = 5EW7K5N9Y3;
+						DevelopmentTeam = 23MWXJ84NV;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -435,6 +439,7 @@
 				BEBB74CE1B71BB9D00D2DCBA /* LoginTableViewController.swift in Sources */,
 				BE7E957315C0965500AE0C94 /* TrackerTableViewController.m in Sources */,
 				BEB0A2B61A91AD11004E7B82 /* DeleteMealService.m in Sources */,
+				BEBD57971DFCF8CD008317A7 /* Points.swift in Sources */,
 				BE06A6131C460A28008DB69C /* SaveMealServiceSwift.swift in Sources */,
 				BE4392E415C0AD5E00745158 /* NSDate+day.m in Sources */,
 				BEA221D21A8F319500BFC1DD /* RetrieveMealHistoryService.m in Sources */,
@@ -549,7 +554,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: William Hindenburg (5EW7K5N9Y3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 23MWXJ84NV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/MealTracker/Frameworks",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Build/Products/Debug-iphoneos",
@@ -564,9 +571,9 @@
 					"-all_load",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "DietApplications.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = DietApplications.Meals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "649f0e61-80ea-4d77-9e57-826daf6f67f5";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MealTracker/MealTracker-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 2.3;
@@ -583,7 +590,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: William Hindenburg (5EW7K5N9Y3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 23MWXJ84NV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/MealTracker/Frameworks",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Build/Products/Debug-iphoneos",
@@ -598,9 +607,9 @@
 					"-all_load",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "DietApplications.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = DietApplications.Meals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "649f0e61-80ea-4d77-9e57-826daf6f67f5";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MealTracker/MealTracker-Bridging-Header.h";
 				SWIFT_VERSION = 2.3;
 				USER_HEADER_SEARCH_PATHS = "$(inherited) /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include \"$(BUILT_PRODUCTS_DIR)/../../Headers\"";

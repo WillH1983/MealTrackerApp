@@ -21,7 +21,23 @@ class UserService: NSObject, BaseClassesService {
         }
     }
     
+    func updatePoints(points:Points, successBlock:(Points -> Void), errorBlock:(NSError -> Void)) {
+        BaseClassesServiceClient().postObject(points, andService: self, successBlock: { (points:Points) -> Void in
+            successBlock(points)
+        }) { (error) -> Void in
+            errorBlock(error)
+        }
+    }
+    
+    func getPoints(successBlock:(Points -> Void), errorBlock:(NSError -> Void)) {
+        BaseClassesServiceClient().getObject(self, successBlock: { (points:Points) in
+            successBlock(points)
+        }) { (error) in
+            errorBlock(error)
+        }
+    }
+    
     var serviceURL:String {
-        return "/1/users/" + self.objectId
+        return "/weeklypoints"
     }
 }

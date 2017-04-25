@@ -21,6 +21,7 @@ class TrackerTableViewController2: MealBaseTableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        self.user = User.persistentUserObject();
         self.retrieveMealHistory()
     }
     

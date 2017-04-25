@@ -32,6 +32,18 @@
     [self.view addGestureRecognizer:tap];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [super showActivityIndicatorAnimated:YES];
+    [[UserService new] getPoints:^(Points * _Nonnull points) {
+        [super hideActivityIndicatorAnimated:YES];
+        self.userPointsTextField.text = points.points;
+        self.user.pointsPerWeek = [NSNumber numberWithInteger:[points.points integerValue]];
+        [self.user save];
+    } errorBlock:^(NSError * _Nonnull error) {
+        [super hideActivityIndicatorAnimated:YES];
+    }];
+}
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     [super showActivityIndicatorAnimated:YES];
@@ -40,11 +52,13 @@
 
 - (void)saveWeeklyPoints:(NSString *)points {
     self.user.pointsPerWeek = [NSNumber numberWithInteger:[points integerValue]];
+    Points *pointsModel = [Points new];
+    pointsModel.points = points;
+    
     UserService *service = [UserService new];
-    [service updateUser:self.user successBlock:^(User *user) {
-        [user save];
+    [service updatePoints:pointsModel successBlock:^(Points * _Nonnull updatedPoints) {
         [super hideActivityIndicatorAnimated:YES];
-    } errorBlock:^(NSError *error) {
+    } errorBlock:^(NSError * _Nonnull error) {
         [super hideActivityIndicatorAnimated:YES];
         [super showError:error withRetryBlock:^{
             [self saveWeeklyPoints:points];
