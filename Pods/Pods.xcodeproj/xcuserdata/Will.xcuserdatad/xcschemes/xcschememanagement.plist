@@ -34,7 +34,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-MealTracker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -42,37 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<key>2F5622F3B18DF497981AB58C6D1FC72F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>85071F675A3EE33B6027E40998190D9C</key>
+		<key>73903388F74085C405D8ABBEF18E0E67</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AD0C991E87A891BB617336C884C1E594</key>
+		<key>87E225894AD55AB72A2B090698A8C778</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B2F36412A9FC647FFFE72CAD884D33AF</key>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C5CBCAA97E951CC882334464FBDF983D</key>
+		<key>9502FB01641FBABB78522037E882757B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CD877974BFF93928152875A849AA74C9</key>
+		<key>A2E528B7BAE891D2A7AA73061A7B859D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FBD082A0D35F7917EAB9DD9D3CCA9976</key>
+		<key>E47843E0F7EB32F47686384CA2FAB3B6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

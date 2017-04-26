@@ -9,18 +9,18 @@
 import UIKit
 import ObjectMapper
 
-public class RefreshUser: BaseModel {
-    public var refreshToken = ""
+open class RefreshUser: BaseModel {
+    open var refreshToken = ""
     
     override public init() {
         super.init()
     }
     
-    required public init?(_ map: Map) {
-        super.init(map)
+    required public init?(map: Map) {
+        super.init(map: map)
     }
     
-    public override func mapping(map: Map) {
+    open override func mapping(map: Map) {
         refreshToken <- map["RefreshToken"]
     }
 }

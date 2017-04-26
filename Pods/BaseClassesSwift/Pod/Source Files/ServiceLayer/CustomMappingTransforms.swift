@@ -9,47 +9,47 @@
 import Foundation
 import ObjectMapper
 
-public class BaseClassesDateTransform: TransformType {
-    public typealias Object = NSDate
+open class BaseClassesDateTransform: TransformType {
+    public typealias Object = Date
     public typealias JSON = String
     
     public init() {}
     
-    public func transformFromJSON(value: AnyObject?) -> NSDate? {
+    open func transformFromJSON(_ value: Any?) -> Date? {
         if let timeInt = value as? Double {
-            return NSDate(timeIntervalSince1970: NSTimeInterval(timeInt))
+            return Date(timeIntervalSince1970: TimeInterval(timeInt))
         }
         
         if let timeStr = value as? String {
-            let dateFormatter = NSDateFormatter()
+            let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
-            dateFormatter.timeZone = NSTimeZone(name: "UTC")
-            let date = dateFormatter.dateFromString(timeStr)
+            dateFormatter.timeZone = TimeZone(identifier: "UTC")
+            let date = dateFormatter.date(from: timeStr)
             return date
         }
         
         return nil
     }
     
-    public func transformToJSON(value: NSDate?) -> String? {
+    open func transformToJSON(_ value: Date?) -> String? {
         if let date = value {
-            let dateFormatter = NSDateFormatter()
+            let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
-            dateFormatter.timeZone = NSTimeZone(name: "UTC")
-            let dateString = dateFormatter.stringFromDate(date)
+            dateFormatter.timeZone = TimeZone(identifier: "UTC")
+            let dateString = dateFormatter.string(from: date)
             return dateString
         }
         return nil
     }
 }
 
-public class BaseClassesDecimalNumberTransform: TransformType {
+open class BaseClassesDecimalNumberTransform: TransformType {
     public typealias Object = NSDecimalNumber
     public typealias JSON = String
     
     public init() {}
     
-    public func transformFromJSON(value: AnyObject?) -> NSDecimalNumber? {
+    open func transformFromJSON(_ value: Any?) -> NSDecimalNumber? {
         if let stringValue = value as? String {
             let number = NSDecimalNumber(string: stringValue)
             return number
@@ -57,10 +57,10 @@ public class BaseClassesDecimalNumberTransform: TransformType {
         return nil
     }
     
-    public func transformToJSON(value: NSDecimalNumber?) -> String? {
+    open func transformToJSON(_ value: NSDecimalNumber?) -> String? {
         if let numberValue = value {
-            let formatter = NSNumberFormatter()
-            let stringValue = formatter.stringFromNumber(numberValue)
+            let formatter = NumberFormatter()
+            let stringValue = formatter.string(from: numberValue)
             return stringValue
         }
         return nil

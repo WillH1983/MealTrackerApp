@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class AuthenticationService: BaseClassesService {
+open class AuthenticationService: BaseClassesService {
     var registeringUser = false
     var refreshingToken = false
     
@@ -16,7 +16,7 @@ public class AuthenticationService: BaseClassesService {
         
     }
     
-    public func registerUser(userObject:RegisterUser, withSuccessBlock:(User -> Void), andError:(NSError -> Void)) -> Void {
+    open func registerUser(_ userObject:RegisterUser, withSuccessBlock:@escaping ((User) -> Void), andError:@escaping ((NSError) -> Void)) -> Void {
         self.registeringUser = true
         BaseClassesServiceClient().postObject(userObject, andService: self, successBlock: { (object:User) -> Void in
             self.registeringUser = false
@@ -32,7 +32,7 @@ public class AuthenticationService: BaseClassesService {
         }
     }
     
-    public func loginUser(userObject:RegisterUser, withSuccessBlock:(User -> Void), andError:(NSError -> Void)) {
+    open func loginUser(_ userObject:RegisterUser, withSuccessBlock:@escaping ((User) -> Void), andError:@escaping ((NSError) -> Void)) {
         BaseClassesServiceClient().postObject(userObject, andService: self, successBlock: { (object:User) -> Void in
             object.username = userObject.username
             withSuccessBlock(object)
@@ -41,7 +41,7 @@ public class AuthenticationService: BaseClassesService {
         }
     }
     
-    public func refreshUser(refreshObject:RefreshUser, withSuccessBlock:(User -> Void), andError:(NSError -> Void)) {
+    open func refreshUser(_ refreshObject:RefreshUser, withSuccessBlock:@escaping ((User) -> Void), andError:@escaping ((NSError) -> Void)) {
         self.refreshingToken = true
         BaseClassesServiceClient().postObject(refreshObject, andService: self, successBlock: { (object:User) -> Void in
             var userObject = User.persistentUserObject()
@@ -52,7 +52,7 @@ public class AuthenticationService: BaseClassesService {
         }
     }
     
-    public var serviceURL:String {
+    open var serviceURL:String {
         if refreshingToken == false {
             if self.registeringUser {
                 return "/register"

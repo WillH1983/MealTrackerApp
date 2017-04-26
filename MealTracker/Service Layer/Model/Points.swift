@@ -18,11 +18,11 @@ class Points: BaseModel {
         super.init()
     }
     
-    required init?(_ map: Map) {
-        super.init(map)
+    required init?(map: Map) {
+        super.init(map: map)
     }
     
-    override func mapping(_ map: Map) {
+    override func mapping(map: Map) {
         points <- map ["points"]
     }
 }

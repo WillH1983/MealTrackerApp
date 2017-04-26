@@ -9,17 +9,22 @@
 import UIKit
 import Alamofire
 
-public protocol BaseClassesService: URLStringConvertible {
+public protocol BaseClassesService: URLConvertible {
     var serviceURL:String {get}
     var baseURL:String {get}
     var rootRequestKeyPath:String? {get}
     var rootKeyPath:String {get}
     var requestQueryParameters:Dictionary<String, String>? {get}
+    func asURL() throws -> URL
 }
 
 extension BaseClassesService {
     public var baseURL:String {
         return "https://m4cnztuipf.execute-api.us-east-1.amazonaws.com/prod"
+    }
+    
+    public func asURL() throws -> URL {
+        return URL(string: self.URLString)!;
     }
     
     public var URLString:String {

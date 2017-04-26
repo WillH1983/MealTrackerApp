@@ -39,13 +39,13 @@ class LoginTableViewController: MealBaseTableViewController {
             authService.registerUser(user, withSuccessBlock: { (userObject) -> Void in
                 user.password = ""
                 self.saveUser(userObject)
-                self.performSegueWithIdentifier("tabbar", sender: self)
+                self.performSegue(withIdentifier: "tabbar", sender: self)
                 self.userName?.text = ""
                 self.password?.text = ""
-                super.hideActivityIndicatorAnimated(true)
+                super.hideActivityIndicator(animated: true)
             }, andError: { (error) -> Void in
-                super.hideActivityIndicatorAnimated(true)
-                super.showError(error, withRetryBlock: { () -> Void in
+                super.hideActivityIndicator(animated: true)
+                super.showError(error, withRetry: { () -> Void in
                     self.registerNowTapped(sender)
                 })
             })
@@ -66,13 +66,13 @@ class LoginTableViewController: MealBaseTableViewController {
             let authService = AuthenticationService()
             authService.loginUser(user, withSuccessBlock: { (userObject) -> Void in
                 self.saveUser(userObject)
-                self.performSegueWithIdentifier("tabbar", sender: self)
+                self.performSegue(withIdentifier: "tabbar", sender: self)
                 self.userName?.text = ""
                 self.password?.text = ""
-                super.hideActivityIndicatorAnimated(true)
+                super.hideActivityIndicator(animated: true)
                 }, andError: { (error) -> Void in
-                    super.hideActivityIndicatorAnimated(true)
-                    super.showError(error, withRetryBlock: { () -> Void in
+                    super.hideActivityIndicator(animated: true)
+                    super.showError(error, withRetry: { () -> Void in
                         self.loginTapped(sender)
                     })
             })

@@ -9,9 +9,9 @@
 import Foundation
 
 enum SwiftServiceErrorCode: Int {
-    case MaintenanceMode
-    case ForceUpgrade
-    case Generic
+    case maintenanceMode
+    case forceUpgrade
+    case generic
 }
 
 let kMaintenanceModeErrorTitleKey = "maintModeErrorTitle"

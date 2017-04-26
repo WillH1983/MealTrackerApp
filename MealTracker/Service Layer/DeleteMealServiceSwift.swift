@@ -20,7 +20,7 @@ class DeleteMealServiceSwift: NSObject, BaseClassesService {
         }
     }
     
-    func removeMeal(_ meal:Meal, successBlock:((Void) -> Void), errorBlock:((NSError) -> Void)) {
+    func removeMeal(_ meal:Meal, successBlock:@escaping ((Void) -> Void), errorBlock:@escaping ((NSError) -> Void)) {
         let meals = RemoveMeals()
         meals.requests = [meal]
         self.removeMeals(meals, successBlock: successBlock, errorBlock: errorBlock)

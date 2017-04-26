@@ -12,7 +12,7 @@ import BaseClassesSwift
 class UserService: NSObject, BaseClassesService {
     var objectId = ""
     
-    func updateUser(_ user:User, successBlock:((User) -> Void), errorBlock:@escaping ((NSError) -> Void)) {
+    func updateUser(_ user:User, successBlock:@escaping ((User) -> Void), errorBlock:@escaping ((NSError) -> Void)) {
         self.objectId = user.objectId
         BaseClassesServiceClient().putObject(user, andService: self, successBlock: { (user:User) -> Void in
             successBlock(user)

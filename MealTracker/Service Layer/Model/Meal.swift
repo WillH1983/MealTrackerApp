@@ -39,12 +39,12 @@ open class Meal: BaseModel {
         super.init()
     }
     
-    required public init?(_ map: Map) {
-        super.init(map)
+    required public init?(map: Map) {
+        super.init(map: map)
     }
     
-    override open func mapping(_ map: Map) {
-        super.mapping(map)
+    override open func mapping(map: Map) {
+        super.mapping(map: map)
         calories <- (map["Calories"], BaseClassesDecimalNumberTransform())
         carbs <- (map["Carbs"], BaseClassesDecimalNumberTransform())
         dietaryFiber <- (map["DietaryFiber"], BaseClassesDecimalNumberTransform())

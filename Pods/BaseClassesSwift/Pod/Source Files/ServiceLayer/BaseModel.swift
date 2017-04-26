@@ -10,30 +10,30 @@ import UIKit
 import ObjectMapper
 
 public enum ScrubTechServiceErrorCode {
-    case NoError
-    case ActivationKeyExpired
-    case ActivationKeyIncorrect
-    case ActivationKeyLocked
-    case UserInputInvalid
-    case GenericError
+    case noError
+    case activationKeyExpired
+    case activationKeyIncorrect
+    case activationKeyLocked
+    case userInputInvalid
+    case genericError
 }
 
-public class BaseModel:NSObject, Mappable {
+open class BaseModel:NSObject, Mappable {
     
 
-    public var objectId = ""
-    public var objectType = "Pointer"
+    open var objectId = ""
+    open var objectType = "Pointer"
     
     public override init() {
         super.init()
     }
     
     
-    required public init?(_ map: Map) {
+    required public init?(map: Map) {
         
     }
     
-    public func mapping(map: Map) {
+    open func mapping(map: Map) {
         objectType <- map["__type"]
         objectId <- map["objectId"]
     }

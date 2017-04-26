@@ -27,13 +27,13 @@ class TrackerTableViewController2: MealBaseTableViewController {
     
     func retrieveMealHistory() {
         super.showActivityIndicator(animated: true)
-        RetrieveMealHistoryService().loadMealHistoryBasedOnUser(self.user, withSuccessBlock: { (dataSource) -> Void in
-            self.dataSource = dataSource
+        RetrieveMealHistoryService().loadMealHistoryBased(on: self.user, withSuccessBlock: { (dataSource) -> Void in
+//            self.dataSource = dataSource
             self.tableView.reloadData()
-            super.hideActivityIndicatorAnimated(true)
+            super.hideActivityIndicator(animated: true)
         }) { (error) -> Void in
-            super.hideActivityIndicatorAnimated(true)
-            super.showError(error, withRetryBlock: { () -> Void in
+            super.hideActivityIndicator(animated: true)
+            super.showError(error, withRetry: { () -> Void in
                 self.retrieveMealHistory()
             })
         }
@@ -87,9 +87,9 @@ class TrackerTableViewController2: MealBaseTableViewController {
                 
                 var points = 0
                 for dateEaten in array {
-                    points += dateEaten.meal.weightWatchersPlusPoints.integerValue
+                    points += dateEaten.meal.weightWatchersPlusPoints.intValue
                 }
-                let pointsLeft = self.user.pointsPerWeek.integerValue - points
+                let pointsLeft = self.user.pointsPerWeek.intValue - points
                 let sectionTitle = dateFormatter.string(from: date)
                 let fullSectionTitle = sectionTitle + " - " + String(pointsLeft) + " Points Left"
                 return fullSectionTitle

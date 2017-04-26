@@ -9,23 +9,23 @@
 import UIKit
 import ObjectMapper
 
-public class User: BaseModel {
-    public var username = ""
-    public var password = ""
-    public var refreshToken = ""
-    public var idToken = ""
-    public var pointsPerWeek:NSNumber = 0
+open class User: BaseModel {
+    open var username = ""
+    open var password = ""
+    open var refreshToken = ""
+    open var idToken = ""
+    open var pointsPerWeek:NSNumber = 0
     
     override public init() {
         super.init()
     }
     
-    required public init?(_ map: Map) {
-        super.init(map)
+    required public init?(map: Map) {
+        super.init(map: map)
     }
     
-    public class func persistentUserObject() -> User {
-        if let userDictionary = NSUserDefaults.standardUserDefaults().objectForKey("userData") as? [String: AnyObject] {
+    open class func persistentUserObject() -> User {
+        if let userDictionary = UserDefaults.standard.object(forKey: "userData") as? [String: AnyObject] {
             return self.userObjectFromDictionary(userDictionary)
         } else {
             return User()
@@ -33,23 +33,23 @@ public class User: BaseModel {
         
     }
     
-    public class func deleteUser() {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        userDefaults.removeObjectForKey("userData")
+    open class func deleteUser() {
+        let userDefaults = UserDefaults.standard
+        userDefaults.removeObject(forKey: "userData")
         userDefaults.synchronize()
     }
     
-    public func save() {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        userDefaults.setObject(self.dictionaryRepresentation(), forKey: "userData")
+    open func save() {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(self.dictionaryRepresentation(), forKey: "userData")
         userDefaults.synchronize()
     }
     
-    private func dictionaryRepresentation() -> [String: AnyObject] {
-        return ["username": self.username, "objectId": self.objectId, "sessionToken": self.refreshToken, "pointsPerWeek": self.pointsPerWeek, "idToken": self.idToken]
+    fileprivate func dictionaryRepresentation() -> [String: AnyObject] {
+        return ["username": self.username as AnyObject, "objectId": self.objectId as AnyObject, "sessionToken": self.refreshToken as AnyObject, "pointsPerWeek": self.pointsPerWeek, "idToken": self.idToken as AnyObject]
     }
     
-    private class func userObjectFromDictionary(userDictionary: [String: AnyObject]) -> User {
+    fileprivate class func userObjectFromDictionary(_ userDictionary: [String: AnyObject]) -> User {
         let user = User()
         user.username = userDictionary["username"] as? String ?? ""
         user.objectId = userDictionary["objectId"] as? String ?? ""
@@ -59,8 +59,8 @@ public class User: BaseModel {
         return user
     }
     
-    public override func mapping(map: Map) {
-        super.mapping(map)
+    open override func mapping(map: Map) {
+        super.mapping(map: map)
         refreshToken <- map["RefreshToken"]
         username <- map["username"]
         pointsPerWeek <- map["pointsPerWeek"]

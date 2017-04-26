@@ -9,12 +9,12 @@
 import UIKit
 import ObjectMapper
 
-public class RegisterUser: BaseModel {
-    public var username = ""
-    public var password = ""
-    public var email = ""
+open class RegisterUser: BaseModel {
+    open var username = ""
+    open var password = ""
+    open var email = ""
     
-    public var className: String {
+    open var className: String {
         get {
             return "_User"
         }
@@ -24,11 +24,11 @@ public class RegisterUser: BaseModel {
         super.init()
     }
     
-    required public init?(_ map: Map) {
-        super.init(map)
+    required public init?(map: Map) {
+        super.init(map: map)
     }
     
-    public override func mapping(map: Map) {
+    open override func mapping(map: Map) {
         username <- map["username"]
         password <- map["password"]
         email <- map["email"]

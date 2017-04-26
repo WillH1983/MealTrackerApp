@@ -9,26 +9,26 @@
 import UIKit
 import KVNProgress
 
-public class BaseTableViewController: UITableViewController {
+open class BaseTableViewController: UITableViewController {
     
-    override public func viewWillAppear(animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setToolbarHidden(true, animated: animated)
         self.tableView.tableFooterView = UIView()
     }
     
-    public func showActivityIndicatorAnimated(animated:Bool) {
+    open func showActivityIndicatorAnimated(_ animated:Bool) {
         KVNProgress.show()
     }
     
-    public func hideActivityIndicatorAnimated(animated:Bool) {
+    open func hideActivityIndicatorAnimated(_ animated:Bool) {
         KVNProgress.dismiss()
     }
     
-    public func createAlertController(title:String, message:String, defaultButton:Bool) -> UIAlertController {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+    open func createAlertController(_ title:String, message:String, defaultButton:Bool) -> UIAlertController {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         if defaultButton {
-            let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: { (action) -> Void in
                 
             })
             alertController.addAction(alertAction)
@@ -36,90 +36,90 @@ public class BaseTableViewController: UITableViewController {
         return alertController
     }
     
-    public func displayGenericNetworkError() {
+    open func displayGenericNetworkError() {
         let alert = self.createAlertController("Error", message: "Something went wrong, please try again", defaultButton: true)
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     
-    public func displayError(error:NSError) {
+    open func displayError(_ error:NSError) {
         let alert = self.createAlertController("Error", message: error.localizedDescription, defaultButton: true)
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     
-    public func displayLocationServicesNotEnabledError() {
+    open func displayLocationServicesNotEnabledError() {
         let alertController = UIAlertController(
             title: "Location Access Disabled",
             message: "To enable Scrub Tech to use your location please open this app's settings and set location access to 'While Using the App'.",
-            preferredStyle: .Alert)
+            preferredStyle: .alert)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
         
-        let openAction = UIAlertAction(title: "Open Settings", style: .Default) { (action) in
-            if let url = NSURL(string:UIApplicationOpenSettingsURLString) {
-                UIApplication.sharedApplication().openURL(url)
+        let openAction = UIAlertAction(title: "Open Settings", style: .default) { (action) in
+            if let url = URL(string:UIApplicationOpenSettingsURLString) {
+                UIApplication.shared.openURL(url)
             }
         }
         alertController.addAction(openAction)
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
     
-    public func displayLocationServicesNotAvaliableError() {
+    open func displayLocationServicesNotAvaliableError() {
         let alertController = UIAlertController(
             title: "Location Access Disabled",
             message: "To enable Scrub Tech your location is required. Your location is not available.",
-            preferredStyle: .Alert)
+            preferredStyle: .alert)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
 
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
     
-    public func displayDeviceLocationServicesNotAvaliableError() {
+    open func displayDeviceLocationServicesNotAvaliableError() {
         let alertController = UIAlertController(
             title: "Location Services Disabled",
             message: "To enable Scrub Tech your location is required. Your location is not available on your device.  Please enable your device location services",
-            preferredStyle: .Alert)
+            preferredStyle: .alert)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
         
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
     
-    public func showError(error:NSError, retryBlock:(Void -> Void)) {
+    open func showError(_ error:NSError, retryBlock:@escaping ((Void) -> Void)) {
         if User.persistentUserObject().idToken.isEmpty == false {
             let errorMessage = error.localizedDescription
             var title = ""
-            var style = UIAlertControllerStyle.ActionSheet
+            var style = UIAlertControllerStyle.actionSheet
             
-            if error.code == SwiftServiceErrorCode.ForceUpgrade.rawValue {
+            if error.code == SwiftServiceErrorCode.forceUpgrade.rawValue {
                 title = error.userInfo[kForceUpgradeTitleKey] as? String ?? "Error"
-                style = UIAlertControllerStyle.Alert
+                style = UIAlertControllerStyle.alert
                 
-            } else if error.code == SwiftServiceErrorCode.MaintenanceMode.rawValue {
+            } else if error.code == SwiftServiceErrorCode.maintenanceMode.rawValue {
                 title = error.userInfo[kMaintenanceModeErrorTitleKey] as? String ?? "Error"
             }
             
             let errorAlert = UIAlertController(title: title, message: errorMessage, preferredStyle: style)
             
-            if error.code != SwiftServiceErrorCode.ForceUpgrade.rawValue {
-                errorAlert.addAction(UIAlertAction(title: "Retry", style: UIAlertActionStyle.Destructive, handler: { (action) -> Void in
+            if error.code != SwiftServiceErrorCode.forceUpgrade.rawValue {
+                errorAlert.addAction(UIAlertAction(title: "Retry", style: UIAlertActionStyle.destructive, handler: { (action) -> Void in
                     retryBlock()
                 }))
             } else {
                 if let url = error.userInfo[kForceUpgradeURL] as? String {
-                    errorAlert.addAction(UIAlertAction(title: "Upgrade", style: UIAlertActionStyle.Destructive, handler: { (action) -> Void in
-                        let actualURL = NSURL(string: url)
+                    errorAlert.addAction(UIAlertAction(title: "Upgrade", style: UIAlertActionStyle.destructive, handler: { (action) -> Void in
+                        let actualURL = URL(string: url)
                         if (actualURL != nil) {
-                            UIApplication.sharedApplication().openURL(actualURL!)
+                            UIApplication.shared.openURL(actualURL!)
                         }
                         
                     }))
                 }
             }
-            errorAlert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+            errorAlert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
             
             
         }
