@@ -28,7 +28,7 @@ class TrackerTableViewController2: MealBaseTableViewController {
     func retrieveMealHistory() {
         super.showActivityIndicator(animated: true)
         RetrieveMealHistoryService().loadMealHistoryBased(on: self.user, withSuccessBlock: { (dataSource) -> Void in
-//            self.dataSource = dataSource
+            self.dataSource = dataSource as Array<Dictionary<String, AnyObject>>
             self.tableView.reloadData()
             super.hideActivityIndicator(animated: true)
         }) { (error) -> Void in
